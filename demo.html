@@ -131,6 +131,7 @@
     this.style.display = 'none';
  
     bg.style.backgroundImage = 'url('+this.src+')';
+    bg.style.backgroundRepeat = 'repeat';
     bg.style.backgroundSize = bgP.useW? (bgP.bgw+'px auto') : ('auto '+bgP.bgh+'px');
  
     mc.add(new Hammer.Pan({ threshold: 0, pointers: 0 }));
@@ -154,8 +155,6 @@
     function onPan(ev) {
       bgP.x += ev.deltaX - bgP.dx;
       bgP.y += ev.deltaY - bgP.dy;
- 
-      console.log('x='+(ev.deltaX - bgP.dx)+', y='+(ev.deltaY - bgP.dy));
       bgP.dx = ev.deltaX;
       bgP.dy = ev.deltaY;
    
@@ -213,7 +212,6 @@
       html2canvas(document.querySelector("#imgbj")).then(canvas => {
         $('#imgBox').show();
         $('#generateImg').attr('src',canvas.toDataURL())
-        console.log(canvas.toDataURL());
       });
     }
 </script>

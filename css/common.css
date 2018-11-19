@@ -120,9 +120,8 @@ ol, ul,li {
 	display: block;
 	position:  relative;
 	width: 70%;
-	height: 35px;
 	margin: 0 auto;
-	line-height: 35px;
+	line-height: 32px;
 	background: #fe5d03;
 	border-radius:30px;
 	color: #fff;
