@@ -1,0 +1,236 @@
+
+.common{ padding-bottom:50px;}
+.bodyTop {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	min-height:200px;
+	background: -webkit-linear-gradient(#84cdba, #ffffff); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#84cdba, #ffffff); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(#84cdba, #ffffff); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#84cdba, #ffffff); /* 标准的语法 */
+}
+.bodyTop .left_per, .bodyTop .middle_per, .bodyTop .right_per {
+	position:absolute;
+}
+.bodyTop .left_per {
+	top:60px;
+	width:18.5%;
+	left:15.66666%;
+}
+.bodyTop .middle_per {
+	top:20px;
+	width:30.93333333%;
+	left:50%;
+	margin-left:-15.4666666%
+}
+.bodyTop .right_per {
+	top:60px;
+	width:18.5%;
+	left:66.666666666%;
+}
+.bodyTop .left_per img, .bodyTop .right_per img, .bodyTop .middle_per img {
+	display:block;
+	width:88%;
+	margin:0 auto;
+}
+.bodyTop .btn {
+	width:100%;
+	overflow:hidden;
+	margin-top:10px;
+	text-align:center;
+}
+.bodyTop .btn a {
+	display:inline-block;
+	padding:0px 4px 1px;
+	background:#fd8f21;
+	border-radius:30px;
+	font-size:0.875rem;
+	color:#fff;
+}
+.bodyTop .left_per .btn a {
+	padding:0px 8px 1px;
+}
+.bodyTop .middle_per .btn a {
+	font-size:1rem;
+}
+.bodyTop .line {
+	width:100%;
+	height:2rem;
+	position:relative;
+	margin:170px 0 20px;
+	overflow:hidden;
+}
+.bodyTop .lineword {
+	width:59.2%;
+	height:2rem;
+	line-height:2rem;
+	font-size:0.9375rem;
+	margin:0 auto;
+	text-align:center;
+}
+.line .left_line, .line .right_line {
+	position:absolute;
+	width:20.4%;
+	height:1px;
+	top:17px;
+	background:#84cdba;
+}
+.line .left_line {
+	left:0;
+}
+.line .right_line {
+	right:0;
+}
+.bodys {
+	position:relative;
+	width:100%;
+	overflow:hidden;
+	padding:20px 0;
+}
+.bodys .listIndex {
+	position:absolute;
+	width:23.5%;
+	border:#e1e1e1 solid 1px;
+	border-radius:50%;
+}
+.bodys .listIndex .img {
+	position:absolute;
+	top:-14px;
+	width:44.57%;
+	left:50%;
+	margin-left:-22.285%;
+	background:#fff;
+}
+.bodys .listIndex .img img {
+	display:block;
+	width:79.48%;
+	margin:0 auto;
+	overflow:hidden;
+}
+.bodys .listIndex p {
+	width:100%;
+	margin-top:34%;
+	text-align:center;
+	font-size:1.2rem;
+	line-height:1.8rem;
+	font-weight:bold;
+}
+.bodys .listIndex small {
+	display:block;
+	font-size:0.625rem;
+	text-align:center;
+	color:#999;
+}
+.bodys .health {
+	left:3.2%;
+}
+.bodys .day {
+	left:38.4%;
+}
+.bodys .proportion {
+	left:72.4%;
+}
+.lan {
+	width:100%;
+	height:10px;
+	background:#fafafa;
+	overflow:hidden;
+}
+.setItem {
+	padding-left:3.2%;
+	overflow:hidden;
+}
+.setItem .list {
+	padding:0.8rem 3.3058% 0.8rem 0;
+	overflow:hidden;
+	border-bottom:#e1e1e1 solid 1px;
+}
+/*.setItem .list:last-child{ border:0;}*/
+.editItem .list{
+	padding:0.6rem 3.3058% 0.6rem 0;
+}
+.setItem .list > a{
+	display:block;
+	width:100%;
+	height:2rem;
+	line-height:2rem;
+	font-size:0.9375rem;
+	background:url(../images/list.png) no-repeat center right; background-size:2.5%;
+	overflow:hidden;
+	text-overflow:ellipsis; white-space:nowrap;
+}
+.setItem .list .icon{ float:left; height:100%; width:10.54%; max-width:48px; min-width:30px;}
+.setItem .list .edit{ background:url(../images/edit.png) no-repeat center left; background-size:50%;}
+.setItem .list .member{ background:url(../images/member.png) no-repeat center left; background-size:50%;}
+.setItem .list .aount{ background:url(../images/aount.png) no-repeat center left; background-size:50%;}
+.setItem .list .buy{ background:url(../images/buy.png) no-repeat center left; background-size:50%;}
+.setItem .list .ask{ background:url(../images/ask.png) no-repeat center left; background-size:50%;}
+.setItem .list .set{ background:url(../images/set.png) no-repeat center left; background-size:50%;}
+.setItem .list .help{ background:url(../images/help.png) no-repeat center left; background-size:50%;}
+.setItem .list .news{ background:url(../images/news.png) no-repeat center left; background-size:50%;}
+.setItem .list .question{ background:url(../images/question.png) no-repeat center left; background-size:50%;}
+.setItem .list a span{ font-size:0.875rem; color:#666;}
+.setItem .list .title{ width:30%; overflow:hidden}
+.setItem .list .title p,.setItem .list .inputBox p{ font-size:0.9375rem; line-height:2rem;}
+.setItem .list .inputBox p{ text-align:right;}
+.setItem .list .inputBox p a{ display:block; color:#84cdba;}
+.setItem .list .inputBox{ width:55%; overflow:hidden;}
+.setItem .list .inputBox .inputClss{ width:100%; height:30px; outline:0; border:0; text-align:right; font-size:0.9375rem; color:#999;appearance:none;
+	-webkit-appearance: none;
+	-moz-appearance:none;}
+.setItem .list .inputBox p.inputClss{ height:2rem;}
+.editHead{ width:100%; padding:15px 0; overflow:hidden;}
+.editHead a{ display:block; width:21.2%; margin:0 auto; overflow:hidden;}
+.editHead a img{ display:block; width:100%; max-width:100%;}
+.memberBox{ padding:15px 3.3058% 0; overflow:hidden;}
+.memberBox .memberList{ width:33.33333%; float:left; margin-bottom:15px;}
+.memberBox .memberList .Left{ text-align:left;}
+.memberBox .memberList .Center{ text-align:center;}
+.memberBox .memberList .Right{ text-align:right;}
+.memberBox .memberList .add{display:block; text-align:center;}
+.memberBox .memberList .add img{display:inline-block; width:70.5%;}
+.memberBox .memberListcom{ text-align:center;}
+.memberBox .memberListcom img{ display:inline-block; width:70.5%; max-width:100%; overflow:hidden;}
+.memberBox .memberListcom p{ display:inline-block; width:70.5%; text-align:center; font-size:0.75rem;}
+@media screen and (max-width:320px) {
+ .bodyTop .left_per {
+	 top:49px;
+	 width:20.5%;
+	 left:13.66666%;
+	}
+ .bodyTop .middle_per {
+	 top:20px;
+	 width:30.93333333%;
+	 left:50%;
+	 margin-left:-15.4666666%
+	}
+ .bodyTop .right_per {
+	 top:49px;
+	 width:20.5%;
+	 left:66.666666666%;
+	}
+ .bodyTop .line {
+	margin-top:160px;
+	}
+ .bodys .listIndex p {
+	margin-top:22%;
+	}
+ .bodys .listIndex small {
+	display:block;
+	font-size:0.625rem;
+	text-align:center;
+	color:#999;
+	}
+}
+@media screen and (min-width: 381px) and (max-width: 415px) {
+ .bodyTop .left_per {
+ top:73px;
+}
+ .bodyTop .right_per {
+ top:72px;
+}
+ .bodyTop .line {
+margin-top:190px;
+}
+}
