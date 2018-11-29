@@ -59,7 +59,7 @@
 <script type="text/javascript">
   $(function(){
      var ua = window.navigator.userAgent;
-    if(ua.match(/MicroMessenger/i) != 'MicroMessenger'){
+    /*if(ua.match(/MicroMessenger/i) != 'MicroMessenger'){
       document.body.innerHTML = '请在微信手机端打开';
       window.location.href = "demo1.html"
       return
@@ -73,7 +73,7 @@
         document.body.innerHTML = '请在微信手机端打开';
         window.location.href = "demo1.html"
       }
-    }
+    }*/
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 5,
         paginationClickable: true,
@@ -95,15 +95,15 @@
         return window[Hammer.prefixed(window, 'requestAnimationFrame')] || function (callback) {
             window.setTimeout(callback, 1000 / 60);
         };
-      })();
-      var bg = document.getElementById("imgbj");
-      var xy = getxy(bg);
-      var bgP = {
-              x:0,y:0,dx:0,dy:0,
-              s:1,ls:1,bdw:xy[0],bdh:xy[1]
-      };
-      var mc = new Hammer.Manager(bg);
-      function getxy(e){
+    })();
+    var bg = document.getElementById("imgbj");
+    var xy = getxy(bg);
+    var bgP = {
+            x:0,y:0,dx:0,dy:0,
+            s:1,ls:1,bdw:xy[0],bdh:xy[1]
+    };
+    var mc = new Hammer.Manager(bg);
+    function getxy(e){
       var a=new Array()
       var t=e.offsetTop;
       var l=e.offsetLeft;
@@ -130,7 +130,7 @@
     this.style.display = 'none';
  
     bg.style.backgroundImage = 'url('+this.src+')';
-    bg.style.backgroundRepeat = 'repeat';
+    bg.style.backgroundRepeat = 'no-repeat';
     bg.style.backgroundSize = bgP.useW? (bgP.bgw+'px auto') : ('auto '+bgP.bgh+'px');
  
     mc.add(new Hammer.Pan({ threshold: 0, pointers: 0 }));
@@ -156,21 +156,19 @@
       bgP.y += ev.deltaY - bgP.dy;
       bgP.dx = ev.deltaX;
       bgP.dy = ev.deltaY;
-   
+      
       if(bgP.x>0) bgP.x = 0;
       if(bgP.y>0) bgP.y = 0;
-   
-      if(bgP.x+bgP.bgw*bgP.s<bgP.bdw)
+
+      if(bgP.x+bgP.bgw*bgP.s < bgP.bdw)
         bgP.x = bgP.bdw - bgP.bgw*bgP.s;
-   
       if(bgP.y+bgP.bgh*bgP.s<bgP.bdh)
         bgP.y = bgP.bdh - bgP.bgh*bgP.s;
-   
       var pos = bgP.x+'px '+bgP.y+'px';
-        bg.style.backgroundPosition = pos;
-      }
+      bg.style.backgroundPosition = pos;
+    }
  
-      var initScale = 1;
+    var initScale = 1;
     function onPinch(ev) {
         if(ev.type == 'pinchstart') {
             initScale = transform.scale || 1;
@@ -203,9 +201,7 @@
       img.src = src;
       img.style.opacity = '0.01';
       img.onload = imgLoaded;
-    }
-    
-    
+    } 
   })
   function generate(){
       html2canvas(document.querySelector("#imgbj")).then(canvas => {

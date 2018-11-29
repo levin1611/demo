@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>demo</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+</head>
+<body>
+<div class="warp" id="warp" >
+  <div class="top">
+    <div class="show">
+      <div class="imgbj" id="imgbj">
+        <div class="avatar" id="avatar"></div>
+        <img src="img/img1.png" id="showImg">
+      </div>
+
+    </div>
+  </div>
+  <div class="foot">
+    <div class="btns">
+      <div class="fl w50"><a href="javascript:void(0)">上传图片</a><input type="file" id="Mavatar-file" accept="image/gif, image/jpeg"></div>
+      <div class="fl w50">
+          <a class="grey" href="javascript:void(0)" id="generateBtn">生成图片</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="imgBox" id="imgBox">
+    <img id="generateImg">
+    <p>长按图片保存 分享得资料！
+        <a href="javascript:void(0)" id="showRule">奖励发放规则</a>
+    </p>
+  </div>
+</div>
+<div class="showLoad" id="showLoad">
+  <img src="img/loading.png">
+</div>
+<div class="rule" id="rule">
+  <div class="ruleBox">
+    <div class="ruleBoxText">
+      <h2>奖励发放规则</h2>
+      <p>
+        <b> 1. 参与方式</b>
+        <span> ·保存您的专属海报并分享到朋友圈
+  （至少1小时）</span>
+        <span>·或相关专业微信群<br>
+  （50人以上，保留至少1小时）</span>
+        <b>2. 发送说明</b>
+        <span>截图发送到冷暖在线后台，我们将在
+   48小时内给您发送资料网盘信息</span>
+      </p>
+      <p>
+        准备这套素材花了很长的时间
+  整理不易，请勿秒删、分组可见
+  再次感谢可爱的你！
+      </p>
+    </div>
+      
+      <a href="javascript:void(0)" class="knowBtn" id="knowBtn">我知道啦</a> 
+  </div>
+</div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/mavatar.js"></script>
+<script type="text/javascript" src="js/hammer.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+</body>
+</html>
