@@ -73,7 +73,6 @@ $(function(){
  
     bg.style.backgroundImage = 'url('+this.src+')';
     bg.style.backgroundRepeat = 'no-repeat';
-     bg.style.backgroundAttachment = 'fixed';
     bg.style.backgroundSize = bgP.useW? (bgP.bgw+'px auto') : ('auto '+bgP.bgh+'px');
     mc.add(new Hammer.Pan({ threshold: 0, pointers: 0 }));
  
@@ -150,8 +149,25 @@ $(function(){
   })
   function generate(){
       $('#showLoad').show();
+       var copyDom = $("#imgbj");
+      var width = copyDom.offsetWidth;//dom宽
+      var height = copyDom.offsetHeight;//dom高
+      var scale = 2;//放大倍数
+      var canvas = document.createElement('canvas');
+      canvas.width = width*scale;//canvas宽度
+      canvas.height = height*scale;//canvas高度
+      var content = canvas.getContext("2d");
+      content.scale(scale,scale);
+      var rect = copyDom.get(0).getBoundingClientRect();//获取元素相对于视察的偏移量
+      content.translate(-rect.left,-rect.top);
       setTimeout(function(){
-        html2canvas(document.querySelector("#imgbj")).then(canvas => {
+        html2canvas(copyDom[0],{
+            dpi: window.devicePixelRatio*2,
+            scale:scale,
+            canvas:canvas,
+            width:width,
+            heigth:height,
+        }).then(canvas => {
           $('#imgBox').show();
           $('#generateImg').attr('src',canvas.toDataURL());
           $('#showLoad').fadeOut();
