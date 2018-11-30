@@ -216,20 +216,20 @@ ol, ul,li {
 }
 .ruleBox .ruleBoxText h2{
 	text-align: center;
-	padding: 3.875rem 0 1.6275rem 0;
+	padding: 1.875rem 0 1.0275rem 0;
 	line-height: 1;
 }
 .ruleBox .ruleBoxText p{
 	 font-size: 1rem;
 	 line-height: 1.5rem;
 	 color: #70696a;
-	 padding-bottom: 2rem;
+	 padding-bottom: 1rem;
 }
 .ruleBox .ruleBoxText p b{
 	font-size: 1.125rem;
 	line-height: 1;
 	display: block;
-	padding: 1.6275rem 0; 
+	padding: 0.875rem 0; 
 	font-weight:normal;
 }
 .ruleBox .ruleBoxText p span{
@@ -238,7 +238,7 @@ ol, ul,li {
 .ruleBox .knowBtn{
 	display: block;
 	width: 45%;
-	margin: 1.3125rem auto 2.375rem;
+	margin: 0.5rem auto 1.5rem;
 	line-height: 3rem;
 	background: url('../img/btnImg.png') no-repeat 0 center;
 	background-size: 100%;
