@@ -169,16 +169,17 @@ $(function(){
             heigth:height,
         }).then(canvas => {
           $('#imgBox').show();
+          
           var context = canvas.getContext('2d');
           // 【重要】关闭抗锯齿
           context.mozImageSmoothingEnabled = false;
           context.webkitImageSmoothingEnabled = false;
           context.msImageSmoothingEnabled = false;
           context.imageSmoothingEnabled = false;
-          
+          $('#generateImg').attr('src',canvas.toDataURL())
           // 【重要】默认转化的格式为png,也可设置为其他格式
-          var img = Canvas2Image.convertToJPEG(canvas, canvas.width*2, canvas.height*2);
-          $('#imgBox').append(img);
+          /*var img = Canvas2Image.convertToJPEG(canvas, canvas.width*2, canvas.height*2);
+          $('#imgBox').append(img);*/
           $('#showLoad').fadeOut();
         });
       },1500)
