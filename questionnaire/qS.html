@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" href="css/style2.css?t=12" />
+        <script>
+            // 调整字体大小
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var baseFontSize = 100; // 根元素基准字体大小
+                        var designWidth = 750; // 设计稿宽度
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = baseFontSize * (clientWidth / designWidth) + 'px';
+                    };
+
+                // Abort if browser does not support addEventListener
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script>
+        <script>
+            if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+                var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
+                    version = parseInt(v[1], 10);
+                if (version >= 8) {
+                    document.documentElement.classList.add('hairlines')
+                }
+            }
+        </script>
+	</head>
+	<body>
+		<div class="page newpage">
+            <div class="newlogo"></div>
+            <div class="wrapper">
+                <div class="item">
+                    <div class="item-wrapper">
+                        <div class="item-title"><b>低温强热涡旋压缩机技术是否助力 热泵制热行业的发展？（单选）</b></div>
+                        <div class="item-list">
+                            <div class="nschkbox">
+                                <span class="bg red"></span>
+                                <span class="text">A．非常多</span>
+                                <em class="percent"></em>
+                                <em class="vote-number"></em>
+                            </div>
+                            <div class="nschkbox">
+                                <span class="bg yellow"></span>
+                                <span class="text">B．很多</span>
+                                <em class="percent"></em>
+                                <em class="vote-number"></em>
+                            </div>
+                            <div class="nschkbox">
+                                <span class="bg blue"></span>
+                                <span class="text">C．有一些</span>
+                                <em class="percent"></em>
+                                <em class="vote-number"></em>
+                            </div>
+                            <div class="nschkbox">
+                                <span class="bg green"></span>
+                                <span class="text">D．完全不</span>
+                                <em class="percent"></em>
+                                <em class="vote-number"></em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-btn">
+                         
+                    </div>
+                </div>
+            </div>
+		</div>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            var res = [
+                {
+                    'option': 'A',
+                    'percent': 0.66,
+                    'voteNumber': 45
+                },
+                {
+                    'option': 'B',
+                    'percent': 0.16,
+                    'voteNumber': 11
+                },
+                {
+                    'option': 'C',
+                    'percent': 0.65,
+                    'voteNumber': 44
+                },
+                {
+                    'option': 'D',
+                    'percent': 0.21,
+                    'voteNumber': 14
+                }
+            ]
+
+            res.forEach(function (item, index) {
+                var _percent = parseInt(item.percent * 100) + '%'
+                $('.nschkbox').eq(index).find('.bg').css('width', _percent)
+                $('.nschkbox').eq(index).find('.percent').html(_percent)
+                $('.nschkbox').eq(index).find('.vote-number').html(item.voteNumber + '票')
+            })
+        </script>
+	</body>
+</html>
+

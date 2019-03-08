@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+		<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+		<meta content="telephone=no" name="format-detection" />
+		<link rel="stylesheet" href="css/style2.css?t=1" />
+        <script>
+            // 调整字体大小
+            (function (doc, win) {
+                var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var baseFontSize = 100; // 根元素基准字体大小
+                        var designWidth = 750; // 设计稿宽度
+                        var clientWidth = docEl.clientWidth;
+                        if (!clientWidth) return;
+                        docEl.style.fontSize = baseFontSize * (clientWidth / designWidth) + 'px';
+						console.log(docEl.style.fontSize)
+                    };
+
+                // Abort if browser does not support addEventListener
+                if (!doc.addEventListener) return;
+                win.addEventListener(resizeEvt, recalc, false);
+                doc.addEventListener('DOMContentLoaded', recalc, false);
+            })(document, window);
+        </script>
+        <script>
+            if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+                var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
+                    version = parseInt(v[1], 10);
+                if (version >= 8) {
+                    document.documentElement.classList.add('hairlines')
+                }
+            }
+        </script>
+	</head>
+	<body>
+		<div class="page newpage">
+            <div class="newlogo"></div>
+            <form action="qS.html" name="form1" id="form1"  method="post">
+            <div class="wrapper">
+                <div class="item">
+                    <div class="item-wrapper ns-checkbox">
+                        <div class="item-title"><b>低温强热涡旋压缩机技术是否助力 热泵制热行业的发展？（单选）</b></div>
+                        <div class="item-list">
+                       
+                             <input value="A" name="q1"  title="A. 非常多" type="radio">
+                             <input value="B" name="q1"  title="B. 很多" type="radio">
+                             <input value="C"  name="q1" title="C．有一些" type="radio">
+                             <input value="D" name="q1"  title="D. 完全不" type="radio">
+                        </div>
+                    </div>
+                    <div class="item-btn">
+                        <a id="submitQusetion" class="disable" href="javascript:;">投票</a>
+                    </div>
+                </div>
+            </div>
+            </form>
+		</div>
+        <div class="tips-popup" style="display: none ">
+            <div class="tips-box">
+                <div class="img"></div>
+                <p></p>
+            </div>
+        </div>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            $('#submitQusetion').on('click', function () {
+                if (!$(this).hasClass('disable')) {
+                    // tipsPopup('type1','投票环节未开始') 
+                    //  tipsPopup('type2','对不起，请完成投票再提交哦。') 
+ if (chkRadioOrCheckBox("q1") <1) {
+                        tipsPopup('type2','请完成投票再提交哦。')
+                        return;
+                    }
+                    if (chkRadioOrCheckBox("q1") > 3) {
+                        tipsPopup('type3', '请最多选择三项。');
+                        return;
+                    }
+                    //tipsPopup('type4', '谢谢您的参与');
+                    
+                    document.getElementById("form1").submit();
+                }
+            })
+            function chkRadioOrCheckBox(name) {
+                var isChk = false;
+                var dd = document.getElementsByName(name);
+                var numX = 0;
+                for (var ii = 0; ii < dd.length; ii++) {
+                    if (dd[ii].checked) {
+                        numX = numX + 1;
+                    }
+                }
+                return numX;
+            }
+            function tipsPopup(_class, txt) {
+                $('.tips-popup').fadeIn().addClass(_class).find('p').html(txt)
+                setTimeout(function () {
+                    $('.tips-popup').fadeOut(function () {
+                        $(this).removeClass(_class).find('p').html('');
+                    })
+                }, 2000)
+            }
+        </script>
+	</body>
+</html>

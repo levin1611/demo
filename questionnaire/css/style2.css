@@ -1,0 +1,523 @@
+@charset "utf-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+html,
+body{
+  height:100%;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle;
+}
+caption,
+th,
+td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+a img {
+  border: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+main {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]),
+[hidden] {
+  display: none;
+}
+/* iPhone4/5 */
+@media (max-width: 320px) {
+  html {
+    font-size: 42.66665px;
+  }
+}
+/* iPhone 6 */
+@media (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 50px;
+  }
+}
+/* iPhone 6 + */
+@media (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  html {
+    font-size: 55.2px;
+  }
+}
+@media (min-width: 321px) and (max-device-width: 374px) {
+  html {
+    font-size: 47px;
+  }
+}
+@media (min-width: 737px) and (max-device-width: 1024px) {
+  html {
+    font-size: 80px;
+  }
+}
+body {
+  font-family: PingFangSC-Light, 'helvetica neue', 'hiragino sans gb', tahoma, 'microsoft yahei ui', 'microsoft yahei', simsun, sans-serif;
+  font-size: 0.28rem;
+  color: #333;
+  -webkit-text-size-adjust: 100% !important;
+}
+a,
+img,
+div,
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+input,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+nav {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+}
+.afterfix:after{
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility:hidden;
+}
+a{
+  color:#fff;
+  text-decoration:none;
+}
+a:hover{
+text-decoration:none;
+outline:none;
+}
+
+a:focus{
+text-decoration:none;
+outline:none;
+}
+
+:focus{
+outline:0;
+}
+form{
+	height:100%;
+}
+
+/*页面滑动指示箭头*/
+.arrow {
+    position: absolute;
+    width: 0.96rem;
+    height: 1rem;
+    bottom: 0.3rem;
+    left: 50%;
+    margin-left: -0.48rem;
+    z-index: 99;
+    background: url("../images/next.png") no-repeat bottom center;
+    background-size: 100% auto;
+    opacity:0;
+    z-index: 20;
+}
+.arrowAni{
+    animation: spin 1s ease-out infinite 0s alternate;
+    -webkit-animation: spin 1s ease-out infinite 0s alternate;
+}
+@keyframes spin {
+  0% {
+      /*bottom: 0.2rem;*/
+      opacity:0;
+   }
+   100% {
+      /*bottom: 0.5rem;*/
+      opacity:0.75;
+  }
+}
+@-webkit-keyframes spin {
+    0% {
+      /*bottom: 0.2rem;*/
+      opacity:0;
+    }
+    100% {
+      /*bottom: 0.5rem;*/
+      opacity:0.75;
+    }
+}
+
+
+/*//针对虚拟按键的手机*/
+@media screen and (max-aspect-ratio:9/12) and (min-aspect-ratio:9/14){
+}
+
+.page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/bg.jpg') 0 0 no-repeat;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.page{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('../images/bg.jpg') 0 0 no-repeat;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.newpage{
+	background:#c8000c;
+}
+.page .wrapper{
+  position: absolute;
+  top: 1.4rem;
+  left: .3rem;
+  right: .3rem;
+  bottom: .3rem;
+  background-color: #fff;
+  border-radius: 9px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling : touch;
+}
+.newpage .wrapper{
+	top:3.25rem;
+	bottom:.3rem;
+}
+.page .logo{
+  width: 2.25rem;
+  height: .66rem;
+  position: absolute;
+  top: .34rem;
+  left: 50%;
+  margin-left: -1.125rem;
+  z-index: 10;
+  background: url('../images/logo.png') 0 0 no-repeat;
+  -webkit-background-size: 100% auto;
+  background-size: 100% auto;
+}
+.newpage .newlogo{
+	position:absolute;
+	width:100%;
+	height:3.25rem;
+	top:0;
+	left:0;
+	background:url('../images/newbj.jpg') 0 0 no-repeat;
+	background-size:100%;
+}
+.item-wrapper{
+  padding:.45rem .4rem;
+}
+
+.item-title{
+  font-size: .26rem;
+  line-height: .46rem;
+}
+.newpage .item-title{
+ font-size: .4rem;
+  line-height: .52rem;
+}
+	
+.item-list{
+  padding-top: .1rem;
+}
+
+.nschkbox{
+  display: block;
+  width: 100%;
+  line-height: .6rem;
+  padding: 0 .25rem;
+  margin-bottom: .28rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid  #ddd;
+  font-size: .24rem;
+  color: #333;
+  position: relative;
+}
+.newpage .item-list{
+	padding-top: .48rem;
+}
+.newpage .nschkbox{
+	height:.92rem;
+	line-height: .92rem;
+    margin-bottom: .28rem;
+	font-size: .35rem;
+}
+.nschkbox.chk{
+  border: 1px solid  #eb0000;
+  color: #eb0000;
+}
+.nschkbox .text{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 0 .25rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.nschkbox .bg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.nschkbox .percent{
+  display: block;
+  width: .7rem;
+  height: 100%;
+  text-align: center;
+  font-size: .22rem;
+  color: #999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+.nschkbox .vote-number{
+  display: block;
+  height: 100%;
+  text-align: right;
+  font-size: .22rem;
+  color: #999;
+  position: absolute;
+  top: 0;
+  right: .7rem;
+  z-index: 3;
+}
+
+
+.nschkbox .bg.red{
+  background-color: #fd918a;
+}
+.nschkbox .bg.yellow{
+  background-color: #ffe586;
+}
+.nschkbox .bg.blue{
+  background-color: #9be9ff;
+}
+.nschkbox .bg.green{
+  background-color: #8dffad;
+}
+.nschkbox .bg.purple{
+  background-color: #B1A1FF;
+}
+.nschkbox .bg.cheng{
+  background-color: #FEAE89;
+}
+
+.item-btn{
+  width: 100%;
+  height: 1.6rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  text-align: center;
+}
+.item-btn a{
+  display: inline-block;
+  width: 2.18rem;
+  height: .82rem;
+  line-height: .82rem;
+  text-align: center;
+  border-radius: 12px;
+  border: 1px solid  #ec2929;
+  font-size: .3rem;
+  color: #ec2929;
+}
+.newpage .item-btn{
+	height:1.25rem;
+}
+.newpage .item-btn a{
+	height: .9rem;
+  line-height: .9rem;
+  font-size:.35rem;
+}
+.item-btn a.disable{
+  border: 1px solid  #bfbfbf;
+  color: #bfbfbf;
+}
+
+.tips-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+}
+.tips-box{
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2.5rem;
+  margin-left: -2.5rem;
+  z-index: 1;
+  background-color: rgba(0,0,0,.65);
+  border-radius: 10px;
+}
+.tips-box .img{
+  width: 2.68rem;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size:100% auto;
+  background-size:100% auto;
+}
+.type1 .tips-box .img{
+  background-image: url('../images/icon1.png');
+  margin-top: 1.1rem;
+  height: 1.6rem;
+}
+.type2 .tips-box .img{
+  background-image: url('../images/icon2.png');
+  margin-top: .6rem;
+  height: 2.3rem;
+}
+.type3 .tips-box .img{
+  background-image: url('../images/icon3.png');
+  margin-top: .6rem;
+  height: 2.68rem;
+}
+.type4 .tips-box .img{
+  background-image: url('../images/icon4.png');
+  margin-top: .6rem;
+  height: 2.3rem;
+}
+.tips-box p{
+  text-align: center;
+  color: #fff;
+  font-size: .32rem;
+  padding-top: .6rem;
+}
+.type1.tips-popup{
+  background-color: rgba(0,0,0,.8);
+}
+.type1 .tips-box p{
+  font-size: .4rem;
+  padding-top: .4rem;
+}
+.type3 .tips-box p{
+  padding-top: .3rem;
+}
