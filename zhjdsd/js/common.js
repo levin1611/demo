@@ -166,9 +166,20 @@ function getUrlParam(name) {
 }
 
 function audioPlay(id) {
-    $('#audioBox').show();
-    var audio = document.getElementById(id);
+    $('#audioBox').fadeIn();
+    var audio1 = 'http://music.163.com/song/media/outer/url?id=435289279.mp3';
+    var audio2 = 'https://www.runoob.com/try/demo_source/horse.mp3';
+    
+    var audio = document.getElementById('audio');
     if (audio) {
+        if(id == 'audioYin'){
+            $('#audio').attr('src',audio1)
+        }else{
+            $('#audio').attr('src',audio2)
+        }
+        
+        $('#' + id).fadeIn();
+        audio.load();
         audio.play();
     }
 }

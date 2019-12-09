@@ -189,7 +189,9 @@ a.zw{
     text-align: center;
     z-index: 99;
     display: none;
+    text-align: center;
 }
 .audio-box audio{
+    margin: 0 auto;
     height: 30px;
 }
