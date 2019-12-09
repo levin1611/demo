@@ -1,0 +1,171 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: url(../img/bj_footer.jpg) repeat-x left bottom;
+}
+.main{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: url(../img/bj_top.jpg) repeat-x left top;
+}
+.main_box{
+    width: 100%;
+    height: 100%;
+    background: url(../img/bj_aside_left.jpg) repeat-y left top;
+}
+.main_box .main-com{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url(../img/bj_aside.jpg) repeat-y right top;
+}
+.main-com .img-box{
+    position: absolute;
+    width: 240px;
+    height: 212px;
+    top: 15px;
+    left: 15px;
+    background: url(../img/bj_logo.jpg) no-repeat center center;
+}
+a.back{
+    right: 40px;
+    bottom: 50px;
+}
+a.second-back{
+    left: 80px;
+    bottom: 50px;
+}
+a.level3-back{
+    top: 50px;
+    right: 40px;
+}
+a.yinsong{
+    right: 40px;
+    bottom: 50px;
+}
+a.zw{
+    right: 40px;
+    bottom: 50px;
+    background: url(../img/zw.png) no-repeat 0 0;
+}
+.main-common {
+    position: relative;
+    width: 100%;
+    min-width: 980px;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align:center;
+    overflow: hidden;
+}
+.main-common .title{
+    width: 300px;
+    margin: 10px auto 20px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    border-bottom: #466b7d solid 1px;
+}
+.main-common ul{
+    display: inline-block;
+    margin: 0 30px;
+    padding: 15px 15px 5px;
+    background: #ebf8ff;
+}
+.main-common ul li{
+    width: 188px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.main-common ul li a{
+    display: block;
+    line-height: 30px;
+    font-size: 16px;
+    color: #333;
+    background: url(../img/btn.png) no-repeat 0 0;
+}
+.classic p{
+    display: inline-block;
+    margin:0 20px 10px;
+    padding: 4px 15px;
+    background: #ebf8ff
+}
+.classic p a{
+    display: block;
+    width: 188px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #333;
+    background: url(../img/btn.png) no-repeat 0 0;
+    text-align: center;
+}
+.poetry-box{
+    position: relative;
+    margin: 10px;
+    height: calc(100% - 20px);
+    overflow: hidden;
+    background: url(../img/level_bj.jpg) #eef4f7 no-repeat bottom center;
+    background-size:100%;
+    border-radius:8px; 
+    z-index: 30;
+}
+.poetry-box .poetry-img{
+    position: relative;
+    width: 60%;
+    min-width: 660px;
+    max-width: 1080px;
+    margin: 20px auto 40px;
+    z-index: 30;
+}
+.poetry-box .threelevel1-img{
+    width: 80%;
+    max-width: 1366px;
+    min-width: 860px;
+    margin-top: 80px;
+}
+.poetry-box .poetry-img img{
+    display: block;
+    width: 100%;
+}
+.poetry-box .poetry-btns{
+    text-align: center;
+}
+.poetry-box .poetry-btns a{
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    vertical-align: middle;
+    margin: 0 20px;
+}
+.poetry-box .poetry-btns .yin{
+    background: url(../img/yin.png) no-repeat center center;
+    background-size: 100%
+}
+.poetry-box .poetry-btns .song{
+    background: url(../img/song.png) no-repeat center center;
+    background-size: 100%
+}
+.level-footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 15px;
+    background: url(../img/bj_footer_level.jpg) repeat-x 0 0;
+    z-index: 10;
+}
+.bg-ys{
+    position: absolute;
+    width: 150px;
+    height: 42px;
+    top: 20px;
+    left: 20px;
+    background: url(../img/bj_ys.jpg) no-repeat 0 0;
+    background-size: 100%;
+    z-index: 10;
+}
