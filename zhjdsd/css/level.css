@@ -124,9 +124,18 @@ a.zw{
 }
 .poetry-box .threelevel1-img{
     width: 80%;
-    max-width: 1366px;
+    max-width: 1366ox;
     min-width: 860px;
     margin-top: 80px;
+}
+@media screen and (max-width: 1366px){
+    .poetry-box .poetry-img{
+        max-width: 660px;
+    }
+    .poetry-box .threelevel1-img{
+        max-width: 780px;
+        min-width: 660px;
+    }
 }
 .poetry-box .poetry-img img{
     display: block;
