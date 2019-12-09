@@ -136,11 +136,22 @@ a.zw{
     text-align: center;
 }
 .poetry-box .poetry-btns a{
+    position: relative;
     display: inline-block;
     width: 80px;
     height: 80px;
     vertical-align: middle;
     margin: 0 20px;
+}
+.poetry-box .poetry-btns a audio{
+    position: absolute;
+    display: block;
+    width: 240px;
+    height: 30px;
+    left: -80px;
+    bottom: -10px;
+    display: none;
+    z-index: 30;
 }
 .poetry-box .poetry-btns .yin{
     background: url(../img/yin.png) no-repeat center center;
@@ -168,4 +179,17 @@ a.zw{
     background: url(../img/bj_ys.jpg) no-repeat 0 0;
     background-size: 100%;
     z-index: 10;
+}
+.audio-box{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 15px;
+    left: 0;
+    text-align: center;
+    z-index: 99;
+    display: none;
+}
+.audio-box audio{
+    height: 30px;
 }

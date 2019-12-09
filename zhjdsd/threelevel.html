@@ -7,9 +7,6 @@
     <title>中华经典诵读教学资源库</title>
     <link href="css/common.css" type="text/css" rel="stylesheet" />
     <link href="css/level.css" type="text/css" rel="stylesheet" />
-    <style type="text/css" rel="stylesheet" >
-      
-    </style>  
 </head>
 <body>
     <!--主体开始-->
@@ -23,8 +20,20 @@
                         <img src="img/poetry.png">
                     </div>
                     <div class="poetry-btns">
-                        <a href="javascript:void(0)" class="yin"></a>
-                        <a href="javascript:void(0)" class="song"></a>
+                        <a href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin" onmouseover="showAudio('audioYin')" onmouseleave="hideAudio('audioYin')">
+                            <audio controls id="audioYin" onmouseover="showAudio('audioYin')">
+                                <source src="https://www.runoob.com/try/demo_source/horse.ogg" >
+                                <source src="https://www.runoob.com/try/demo_source/horse.mp3" >
+                              您的浏览器不支持 audio 元素。
+                              </audio>
+                        </a>
+                        <a href="javascript:void(0)" onclick="audioPlay('audioSong')" class="song" onmouseover="showAudio('audioSong')" onmouseleave="hideAudio('audioSong')">
+                            <audio controls id="audioSong">
+                                <source src="https://www.runoob.com/try/demo_source/horse.ogg" >
+                                <source src="https://www.runoob.com/try/demo_source/horse.mp3" >
+                              您的浏览器不支持 audio 元素。
+                              </audio>
+                        </a>
                     </div>
                 </div>
                 <div class="level-footer"></div>
