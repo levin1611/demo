@@ -191,8 +191,8 @@ a.zw{
     display: none;
 }
 .audio-box audio{
-    width: 56%;
-    min-width: 660px;
+    width: 30%;
+    min-width: 460px;
     max-width: 1080px;
     height: 50px;
     margin: 0 auto;
