@@ -56,3 +56,17 @@ a.yinsong{
     background: url(../img/yinsong.png) no-repeat center center;
     z-index: 999; 
 }
+a.pre{
+    position: absolute;
+    width: 150px;
+    height: 104px;
+    background: url(../img/pre.png) no-repeat center center;
+    z-index: 999; 
+}
+a.next{
+    position: absolute;
+    width: 150px;
+    height: 104px;
+    background: url(../img/next.png) no-repeat center center;
+    z-index: 999; 
+}

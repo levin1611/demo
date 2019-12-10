@@ -8,27 +8,28 @@
     <link href="css/common.css" type="text/css" rel="stylesheet" />
     <link href="css/level.css" type="text/css" rel="stylesheet" />
 </head>
+
 <body>
     <!--主体开始-->
     <div class="main">
         <div class="main_box">
             <div class="main-com">
                 <a href="javascript:void(0)" onclick="goBack()" class="back level3-back"></a>
-                <a href="javascript:void(0)" onclick="toPage()" class="yinsong"></a>
                 <div class="poetry-box">
                     <div class="poetry-img">
-                        <img id="poetryTitle" src="img/poetry_title.png">
-                        <img id="poetryBody" src="img/poetry_body.png">
+                        <img id="szjImg" src="img/poetry_title.png">
                     </div>
-                    <div class="poetry-btns">
-                        <a href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin" ></a>
-                        <a href="javascript:void(0)" onclick="audioPlay('audioSong')" class="song"></a>
+                    <div class="poetry-btns positon-left">
+                        <a href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin">
+                        </a>
+                        <a href="javascript:void(0)" onclick="audioPlay('audioSong')" class="song">
+                        </a>
                     </div>
                 </div>
                 <div class="level-footer"></div>
                 <div class="audio-box" id="audioBox">
                     <audio controls id="audio" ondrag>
-                      您的浏览器不支持 audio 元素。
+                        您的浏览器不支持 audio 元素。
                     </audio>
                 </div>
             </div>
@@ -39,30 +40,36 @@
     <script>
         $(function () {
             var id = getUrlParam('id');
-            var poetryList =[];
-            if(id){
+            $('#szjImg').attr('src','img/szj/szj'+id+'.png');
+            var poetryList = [];
+            if (id) {
                 poetryList = getPoetryList(id);
                 var html = '<ul>';
                 var listLegth = poetryList.length;
-                for(var i =0;i<poetryList.length;i++){
-                    if(((i+1)%8) == 0){
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li></ul><ul>';
-                    }else{
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li>';
+                //如果当前id是第一个就不显示上一页
+                if (id == 1) {
+                    $('.pre').hide()
+                }
+                //如果当前id是最后一个就不显示下一页
+                if (id == listLegth.length) {
+                    $('.next').hide()
+                }
+                
+                for (var i = 0; i < poetryList.length; i++) {
+                    if (((i + 1) % 8) == 0) {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li></ul><ul>';
+                    } else {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li>';
                     }
                 }
-                if(listLegth%8 == 0){
-                    html = html.substr(0,(html.length-4))
-                }else{
-                    html = html+'</ul>';
+                if (listLegth % 8 == 0) {
+                    html = html.substr(0, (html.length - 4))
+                } else {
+                    html = html + '</ul>';
                 }
                 $('#classBox').html(html);
             }
         })
-        function toPage(){
-            var id = getUrlParam('id');
-            window.location.href = 'threelevel_ys.html?id='+id;
-        }
     </script>
 </body>
 
