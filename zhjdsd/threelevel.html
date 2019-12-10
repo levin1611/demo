@@ -17,8 +17,8 @@
                 <a href="javascript:void(0)" onclick="toPage()" class="yinsong"></a>
                 <div class="poetry-box">
                     <div class="poetry-img">
-                        <img id="poetryTitle" src="img/poetry_title.png">
-                        <img id="poetryBody" src="img/poetry_body.png">
+                        <img id="poetryTitle">
+                        <img id="poetryBody">
                     </div>
                     <div class="poetry-btns">
                         <a href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin" ></a>
@@ -41,6 +41,8 @@
             var id = getUrlParam('id');
             var poetryList =[];
             if(id){
+                $('#poetryTitle').attr('src','img/imgpoetry/'+id+'title.png');
+                $('#poetryBody').attr('src','img/imgpoetry/'+id+'body.png');
                 poetryList = getPoetryList(id);
                 var html = '<ul>';
                 var listLegth = poetryList.length;
@@ -61,7 +63,12 @@
         })
         function toPage(){
             var id = getUrlParam('id');
-            window.location.href = 'threelevel_ys.html?id='+id;
+            if(id == '2' || id == '3'){
+                window.location.href = 'threelevel_ys_btn_left.html?id='+id;
+            }else{
+                window.location.href = 'threelevel_ys.html?id='+id;
+            }
+            
         }
     </script>
 </body>

@@ -23,8 +23,8 @@
                     </div>
                     <p class="title">经典选篇</p>
                     <div class="classic">
-                        <p><a href="szj.html?id=1">三字经</a></p>
-                        <p><a href="bjx.html?id=1">百家姓(节选)</a></p>
+                        <p><a href="">三字经</a></p>
+                        <p><a href="">百家姓(节选)</a></p>
                         
                     </div>
                 </div>
@@ -35,7 +35,7 @@
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function () {
-            var id = getUrlParam('id') ? getUrlParam('id'):1;
+            var id = getUrlParam('id');
             var poetryList =[];
             if(id){
                 poetryList = getPoetryList(id);
@@ -54,6 +54,7 @@
                     html = html+'</ul>';
                 }
                 $('#classBox').html(html);
+                console.log(html)
             }
         })
     </script>

@@ -135,9 +135,6 @@ var ALLCLASS = [{
 function goBack() {
     window.history.back();
 }
-function to(html) {
-    window.location.href = html;
-}
 
 function getAllClass() {
     var arr = [];
@@ -211,14 +208,4 @@ function showAudio(id) {
 
 function hideAudio(id) {
     $('#' + id).fadeOut();
-}
-function next(){
-    var id = getUrlParam('id');
-    var location = window.location.href.substr(0,window.location.href.indexOf('?'));
-    window.location.href = location+'?id='+(Number(id)+1)
-}
-function pre(){
-    var id = getUrlParam('id');
-    var location = window.location.href.substr(0,window.location.href.indexOf('?'));
-    window.location.href = location+'?id='+(Number(id)-1)
 }

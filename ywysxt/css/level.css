@@ -52,14 +52,6 @@ a.zw{
     bottom: 50px;
     background: url(../img/zw.png) no-repeat 0 0;
 }
-a.next{
-    right: 40px;
-    bottom: 50px;
-}
-a.pre{
-    left: 40px;
-    bottom: 50px;
-}
 .main-common {
     position: relative;
     width: 100%;
@@ -136,39 +128,12 @@ a.pre{
     min-width: 860px;
     margin-top: 80px;
 }
-.poetry-box .bjx-img{
-    width: 50%;
-    min-width: 660px;
-    max-width: 1080px;
-}
-@media screen and (max-width: 1366px){
-    .poetry-box .poetry-img{
-        max-width: 660px;
-    }
-    .poetry-box .threelevel1-img{
-        max-width: 780px;
-        min-width: 660px;
-    }
-}
 .poetry-box .poetry-img img{
     display: block;
     width: 100%;
 }
 .poetry-box .poetry-btns{
-    position: absolute;
-    width: 100%;
-    bottom: 40px;
     text-align: center;
-}
-.poetry-box .positon-left{
-    width: 150px;
-    left: 40px;
-    bottom: 50px;
-}
-.poetry-box .positon-right{
-    width: 150px;
-    right: 40px;
-    bottom: 50px;
 }
 .poetry-box .poetry-btns a{
     position: relative;
@@ -177,13 +142,6 @@ a.pre{
     height: 80px;
     vertical-align: middle;
     margin: 0 20px;
-}
-.poetry-box .poetry-btns.big a{
-    width: 100px;
-    height: 100px;
-}
-.poetry-box .positon-left a{
-    margin: 20px 0 0;
 }
 .poetry-box .poetry-btns a audio{
     position: absolute;
@@ -201,21 +159,6 @@ a.pre{
 }
 .poetry-box .poetry-btns .song{
     background: url(../img/song.png) no-repeat center center;
-    background-size: 100%
-}
-.poetry-box .poetry-btns.positon-left .yin{
-    display: none;
-}
-.poetry-box .poetry-btns.positon-left .bjx-pre{
-    width: 150px;
-    height: 104px;
-    background: url(../img/pre.png) no-repeat center center;
-    background-size: 100%
-}
-.poetry-box .poetry-btns.positon-right .bjx-next{
-    width: 150px;
-    height: 104px;
-    background: url(../img/next.png) no-repeat center center;
     background-size: 100%
 }
 .level-footer{

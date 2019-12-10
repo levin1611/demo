@@ -16,14 +16,16 @@
             <div class="main-com">
                 <a href="javascript:void(0)" onclick="goBack()" class="back level3-back"></a>
                 <div class="poetry-box">
-                    <div class="poetry-img">
-                        <img id="szjImg" src="img/poetry_title.png">
+                    <div class="poetry-img bjx-img">
+                        <img id="bjxImg">
                     </div>
-                    <div class="poetry-btns positon-left">
-                        <a href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin">
-                        </a>
-                        <a href="javascript:void(0)" onclick="audioPlay('audioSong')" class="song">
-                        </a>
+                    <div class="poetry-btns big positon-left">
+                        <a id="leftBtn" href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin"></a>
+                        <a href="javascript:void(0)" class="bjx-pre" onclick="pre()"></a>
+                    </div>
+                    <div class="poetry-btns big positon-right">
+                        <a id="rightBtn" href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin"></a>
+                        <a href="javascript:void(0)" class="bjx-next" onclick="next()"></a>
                     </div>
                 </div>
                 <div class="level-footer"></div>
@@ -40,34 +42,20 @@
     <script>
         $(function () {
             var id = getUrlParam('id');
-            $('#szjImg').attr('src','img/szj/szj'+id+'.png');
-            var poetryList = [];
+            $('#bjxImg').attr('src','img/imgpoetry/bjx'+id+'.png');
             if (id) {
-                poetryList = getPoetryList(id);
-                var html = '<ul>';
-                var listLegth = poetryList.length;
                 //如果当前id是第一个就不显示上一页
-                if (id == 1) {
-                    $('.pre').hide()
+                if (id == '1' || id != '4' ) {
+                    $('.bjx-pre').hide();
+                    $('#leftBtn').css({display:'block'});
+                    $('#rightBtn').hide()
                 }
                 //如果当前id是最后一个就不显示下一页
-                if (id == listLegth.length) {
-                    $('.next').hide()
+                if (id == '4') {
+                    $('.bjx-next').hide();
+                    $('#leftBtn').hide();
+                    $('#rightBtn').css({display:'block'});
                 }
-                
-                for (var i = 0; i < poetryList.length; i++) {
-                    if (((i + 1) % 8) == 0) {
-                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li></ul><ul>';
-                    } else {
-                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li>';
-                    }
-                }
-                if (listLegth % 8 == 0) {
-                    html = html.substr(0, (html.length - 4))
-                } else {
-                    html = html + '</ul>';
-                }
-                $('#classBox').html(html);
             }
         })
     </script>

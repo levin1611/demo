@@ -8,25 +8,31 @@
     <link href="css/common.css" type="text/css" rel="stylesheet" />
     <link href="css/level.css" type="text/css" rel="stylesheet" />
 </head>
-
 <body>
     <!--主体开始-->
     <div class="main">
         <div class="main_box">
             <div class="main-com">
-                <div class="img-box"></div>
-                <a href="javascript:void(0)" onclick="goBack()" class="back second-back"></a>
-                <div class="main-common">
-                    <p class="title">古诗词</p>
-                    <div id="classBox" class="class-menu">
-                       
+                <a href="javascript:void(0)" onclick="goBack()" class="back level3-back"></a>
+                <a href="javascript:void(0)" onclick="toPage()" class="yinsong"></a>
+                <div class="poetry-box">
+                    <div class="poetry-img">
+                        <img src="img/poetry.png">
                     </div>
-                    <p class="title">经典选篇</p>
-                    <div class="classic">
-                        <p><a href="szj.html?id=1">三字经</a></p>
-                        <p><a href="bjx.html?id=1">百家姓(节选)</a></p>
-                        
+                    <div class="poetry-btns">
+                        <a href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin" >
+                            
+                        </a>
+                        <a href="javascript:void(0)" onclick="audioPlay('audioSong')" class="song">
+                            
+                        </a>
                     </div>
+                </div>
+                <div class="level-footer"></div>
+                <div class="audio-box" id="audioBox">
+                    <audio controls id="audio" ondrag>
+                      您的浏览器不支持 audio 元素。
+                    </audio>
                 </div>
             </div>
         </div>
@@ -35,7 +41,7 @@
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function () {
-            var id = getUrlParam('id') ? getUrlParam('id'):1;
+            var id = getUrlParam('id');
             var poetryList =[];
             if(id){
                 poetryList = getPoetryList(id);
@@ -56,6 +62,10 @@
                 $('#classBox').html(html);
             }
         })
+        function toPage(){
+            var id = getUrlParam('id');
+            window.location.href = 'threelevel1.html?to=ys&id='+id;
+        }
     </script>
 </body>
 
