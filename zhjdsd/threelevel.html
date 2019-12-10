@@ -39,31 +39,14 @@
     <script>
         $(function () {
             var id = getUrlParam('id');
-            var poetryList =[];
             if(id){
                 $('#poetryTitle').attr('src','img/imgpoetry/'+id+'title.png');
                 $('#poetryBody').attr('src','img/imgpoetry/'+id+'body.png');
-                poetryList = getPoetryList(id);
-                var html = '<ul>';
-                var listLegth = poetryList.length;
-                for(var i =0;i<poetryList.length;i++){
-                    if(((i+1)%8) == 0){
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li></ul><ul>';
-                    }else{
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li>';
-                    }
-                }
-                if(listLegth%8 == 0){
-                    html = html.substr(0,(html.length-4))
-                }else{
-                    html = html+'</ul>';
-                }
-                $('#classBox').html(html);
             }
         })
         function toPage(){
             var id = getUrlParam('id');
-            if(id == '2' || id == '3'){
+            if(id == '2' || id == '3'|| id == '10'){
                 window.location.href = 'threelevel_ys_btn_left.html?id='+id;
             }else{
                 window.location.href = 'threelevel_ys.html?id='+id;

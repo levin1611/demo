@@ -157,8 +157,9 @@ a.pre{
 .poetry-box .poetry-btns{
     position: absolute;
     width: 100%;
-    bottom: 40px;
+    bottom: 25px;
     text-align: center;
+    z-index: 40;
 }
 .poetry-box .positon-left{
     width: 150px;
