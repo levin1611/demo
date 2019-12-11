@@ -141,7 +141,7 @@ function getAllClass() {
     for (var i = 0; i < ALLCLASS.length; i++) {
         var obj = {
             name: ALLCLASS[i].name,
-            id: ALLCLASS[i].id,
+            id: ALLCLASS[i].id
         }
         arr.push(obj);
     }
