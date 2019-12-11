@@ -78,11 +78,21 @@ a.pre{
     line-height: 30px;
     border-bottom: #466b7d solid 1px;
 }
-.main-common ul{
+.class-menu .class-box-body{
     display: inline-block;
     margin: 0 30px;
+    background: url(../img/class_bj_body.png) repeat-y 0 0;
+    background-size:100% ;
+}
+.class-menu .class-box-top{
+    background: url(../img/class_bj_top.png) no-repeat 0 0;
+    background-size:100% ;
+}
+.main-common ul{
+    display: inline-block;
+    background: url(../img/class_bj_footer.png) no-repeat 0 bottom;
+    background-size:100% ;
     padding: 15px 15px 5px;
-    background: #ebf8ff;
 }
 .main-common ul li{
     width: 188px;
@@ -97,11 +107,16 @@ a.pre{
     color: #333;
     background: url(../img/btn.png) no-repeat 0 0;
 }
+.classic{
+    width: 600px;
+    margin: 0 auto;
+}
 .classic p{
     display: inline-block;
     margin:0 20px 10px;
     padding: 4px 15px;
-    background: #ebf8ff
+    background: url(../img/classic-bj.png) no-repeat 0 0;
+    background-size:100% ;
 }
 .classic p a{
     display: block;
@@ -174,8 +189,8 @@ a.pre{
 .poetry-box .poetry-btns a{
     position: relative;
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     vertical-align: middle;
     margin: 0 20px;
 }

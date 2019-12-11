@@ -17,14 +17,18 @@
                 <div class="img-box"></div>
                 <a href="javascript:void(0)" onclick="goBack()" class="back second-back"></a>
                 <div class="main-common">
-                    <p class="title">古诗词</p>
+                    <p class="title" id="title">古诗词</p>
                     <div id="classBox" class="class-menu">
-                       
+                       <div class="class-box-body">
+                         <div class="class-box-top">
+                             <ul><li><a href="">三字经</a></li></ul>
+                         </div>
+                       </div>
                     </div>
-                    <p class="title">经典选篇</p>
-                    <div class="classic">
-                        <p><a href="szj.html?id=1">三字经</a></p>
-                        <p><a href="bjx.html?id=1">百家姓(节选)</a></p>
+                    <p class="title" id="electiveTitle">经典选篇</p>
+                    <div class="classic" id="classic">
+                        <p><a href="">三字经</a></p>
+                        <p><a href="">百家姓(节选)</a></p>
                         
                     </div>
                 </div>
@@ -36,24 +40,36 @@
     <script>
         $(function () {
             var id = getUrlParam('id') ? getUrlParam('id'):1;
+            var selectObj = getSelectObj(id)
+            $('#title').html(selectObj.title);
+            $('#electiveTitle').html(selectObj.electiveTitle);
             var poetryList =[];
+            var electiveList =[];
             if(id){
-                poetryList = getPoetryList(id);
-                var html = '<ul>';
+                poetryList = getPoetryList(id, 'poetryList');
+                electiveList = getPoetryList(id, 'electiveList');
+                var htmlLength = '<div class="class-box-body"><div class="class-box-top"><ul>'.length;
+                var html = '<div class="class-box-body"><div class="class-box-top"><ul>';
+                var electiveHtml = '';
                 var listLegth = poetryList.length;
-                for(var i =0;i<poetryList.length;i++){
-                    if(((i+1)%8) == 0){
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li></ul><ul>';
-                    }else{
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li>';
+                var electiveListLength = electiveList.length;
+                for (var i = 0; i < poetryList.length; i++) {
+                    if (((i + 1) % 8) == 0) {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li></ul></div></div><div class="class-box-body"><div class="class-box-top"><ul>';
+                    } else {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li>';
                     }
                 }
-                if(listLegth%8 == 0){
-                    html = html.substr(0,(html.length-4))
-                }else{
-                    html = html+'</ul>';
+                if (listLegth % 8 == 0) {
+                    html = html.substr(0, (html.length - htmlLength))
+                } else {
+                    html = html + '</ul></div></div>';
+                }
+                for (var i = 0; i < electiveList.length; i++) {
+                    electiveHtml += '<p><a href="'+ electiveList[i].href+'?id=' + electiveList[i].id + '">' + electiveList[i].title + '</a></p>';
                 }
                 $('#classBox').html(html);
+                $('#classic').html(electiveHtml);
             }
         })
     </script>

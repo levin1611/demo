@@ -1,0 +1,110 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中华经典诵读教学资源库</title>
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/level.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--主体开始-->
+    <div class="main">
+        <div class="main_box">
+            <div class="main-com">
+                <div class="img-box"></div>
+                <a href="javascript:void(0)" onclick="to('firstLevel.html')" class="back level3-back"></a>
+                <a href="javascript:void(0)" onclick="nextPage()" class="next"></a>
+                <a href="javascript:void(0)" onclick="prePage()" class="pre"></a>
+                <div class="main-common">
+                    <div id="mainBox">
+                        <p class="title" id="title"></p>
+                        <div id="classBox" class="class-menu">
+                        </div>
+                    </div>
+
+                    <!-- <div id="electiveBox">
+                        <p class="title" id="electiveTitle"></p>
+                        <div class="classic" id="classic">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+        $(function () {
+            var id = getUrlParam('id') ? getUrlParam('id') : 4;
+            var nowPage = getUrlParam('page') ? getUrlParam('page') : 1;
+            //如果当前id是第一个就不显示上一页
+            if (nowPage == '1') {
+                $('.pre').hide()
+            }
+            //如果当前id是最后一个就不显示下一页
+            if (nowPage == '3') {
+                $('.next').hide()
+            }
+            var selectObj = getSelectObj(id)
+            if(nowPage <3){
+                $('#title').html(selectObj.title);
+            }else{
+                $('#title').html(selectObj.electiveTitle);
+            }
+            
+            //$('#electiveTitle').html(selectObj.electiveTitle);
+            var poetryList = [];
+            var electiveList = [];
+            if (id) {
+                poetryList = getPoetryList(id, 'poetryList');
+                electiveList = getPoetryList(id, 'electiveList');
+                var htmlLength = '<div class="class-box-body"><div class="class-box-top"><ul>'.length;
+                var html = '<div class="class-box-body"><div class="class-box-top"><ul>';
+                var electiveHtml = '';
+                var listLegth = poetryList.length;
+                var electiveListLength = electiveList.length;
+                if (nowPage == 1) {
+                    var page1List = poetryList.slice(0, 18);
+                    for (var i = 0; i < page1List.length; i++) {
+                        if (((i + 1) % 9) == 0) {
+                            html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li></ul></div></div><div class="class-box-body"><div class="class-box-top"><ul>';
+                        } else {
+                            html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li>';
+                        }
+                    }
+                    html = html.substr(0, (html.length - htmlLength))
+                    //html = html + '</ul></div></div>';
+                }
+                if (nowPage == 2) {
+                    var page1List = poetryList.slice(18);
+                    for (var i = 0; i < page1List.length; i++) {
+                        if (((i + 1) % 8) == 0) {
+                            html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li></ul></div></div><div class="class-box-body"><div class="class-box-top"><ul>';
+                        } else {
+                            html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title + '</a></li>';
+                        }
+                    }
+                    html = html.substr(0, (html.length - htmlLength))
+                }
+                if (nowPage == 3) {
+                    for (var i = 0; i < electiveList.length; i++) {
+                        if (((i + 1) % 9) == 0) {
+                            html += '<li><a href="'+electiveList[i].href+'?id=' + electiveList[i].id + '">' + electiveList[i].title + '</a></li></ul></div></div><div class="class-box-body"><div class="class-box-top"><ul>';
+                        } else {
+                            html += '<li><a href="'+electiveList[i].href+'?id=' + electiveList[i].id + '">' + electiveList[i].title + '</a></li>';
+                        }
+                    }
+                    html = html.substr(0, (html.length - htmlLength))
+                }
+
+                $('#classBox').html(html);
+                //$('#classic').html(electiveHtml);
+            }
+        })
+    </script>
+</body>
+
+</html>
