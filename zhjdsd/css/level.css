@@ -153,12 +153,13 @@ a.pre{
 }
 .poetry-box .bjx-img{
     width: 50%;
-    min-width: 600px;
+    min-width: 660px;
     max-width: 1080px;
 }
 @media screen and (max-width: 1366px){
     .poetry-box .poetry-img{
-        max-width: 600px;
+        min-width:500px;
+        max-width: 580px;
     }
     .poetry-box .threelevel1-img{
         max-width: 780px;
