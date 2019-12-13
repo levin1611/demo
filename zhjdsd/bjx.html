@@ -20,6 +20,8 @@
                         <img id="bjxImg">
                     </div>
                     <div class="poetry-btns big positon-left">
+                        <a id="leftBtn1" href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin"></a>
+                        <a id="leftBtn2" href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin"></a>
                         <a id="leftBtn" href="javascript:void(0)" onclick="audioPlay('audioYin')" class="yin"></a>
                         <a href="javascript:void(0)" class="bjx-pre" onclick="pre()"></a>
                     </div>
@@ -44,6 +46,10 @@
             var id = getUrlParam('id');
             $('#bjxImg').attr('src','img/imgpoetry/bjx'+id+'.png');
             if (id) {
+                if(id == ''){
+                    $('#leftBtn1').css({display:'block'});
+                    $('#leftBtn2').css({display:'block'});
+                }
                 //如果当前id是第一个就不显示上一页
                 if (id == '1') {
                     $('.bjx-pre').hide();
