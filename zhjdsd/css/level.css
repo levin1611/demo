@@ -158,7 +158,7 @@ a.pre{
 }
 @media screen and (max-width: 1366px){
     .poetry-box .poetry-img{
-        max-width: 640px;
+        max-width: 620px;
     }
     .poetry-box .threelevel1-img{
         max-width: 780px;
