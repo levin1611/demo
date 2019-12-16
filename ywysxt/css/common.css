@@ -1,5 +1,5 @@
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0; font-family:"微软雅黑";}
-body{ background:#fff; min-width: 980px;}
+body{min-width: 980px;  background: url(../img/bj.jpg) repeat 0 0;}
 table{border-collapse:collapse;border-spacing:0}
 input{ border:none;}
 select{
@@ -40,3 +40,13 @@ pre{white-space:pre;}
 html{ overflow-x: hidden;}
 .fixClear{*zoom:1;*overflow:hidden;}
 .fixClear:after{display:table;content:"";clear:both;}
+a.back{
+    position: absolute;
+    width: 120px;
+    height: 72px;
+    z-index: 99;
+}
+a.back img{
+    display: block;
+    width: 100%;
+}

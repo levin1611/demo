@@ -2,20 +2,105 @@ html,body{
     width: 100%;
     height: 100%;
 }
-body{
-    background: url(../img/bj_footer.jpg) repeat-x left bottom;
-}
 .main{
+    position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
     background: url(../img/bj_top.jpg) repeat-x left top;
 }
-.main_box{
+.main .bj{
+    display: block;
     width: 100%;
     height: 100%;
-    background: url(../img/bj_aside_left.jpg) repeat-y left top;
 }
+.main_box{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+.main_box .title,.main_box .poetry-title{
+    width: 100%;
+    margin: 40px 0;
+}
+.poetry-title{
+    margin: 40px 0 10px;
+}
+.main_box .title img{
+    display: block;
+    width: 90px;
+    margin: 0 auto;
+}
+.main_box .class-list{
+    max-width: 640px;
+    margin: 0 auto;
+}
+.main_box .class-list ul{
+    display: block;
+    width: 100%;
+}
+.main_box .class-list ul li{
+    float: left;
+    width: 50%;
+    margin-bottom: 20px;
+}
+.main_box .class-list li a{
+    display: block;
+    background: url(../img/class-list-bj-btn.gif) no-repeat left center;
+    line-height: 32px;
+    height: 32px;
+    padding-left: 60px;
+}
+.main_box .class-list li a span{
+    display: block;
+    width: 80%;
+    background: url(../img/class-list-bj.png) no-repeat center center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+.main_box .class-title{
+    margin-left: 100px;
+    width: 240px;
+    background: url(../img/class-title-btn.gif) no-repeat left center;
+    line-height: 35px;
+    height: 35px;
+    padding-left: 60px;
+}
+.main_box .class-title span{
+    display: block;
+    background: url(../img/class-list-bj.png) no-repeat center center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+.main_box .poetry-list{
+    padding-top: 20px;
+}
+.main_box .poetry-list ul{
+    width: 360px;
+    margin: 0 auto;
+}
+.main_box .poetry-list li{
+    background: url(../img/class-list-bj-btn.gif) no-repeat left center;
+    line-height: 32px;
+    height: 32px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+}
+.main_box .poetry-list li a{
+    display: block;
+    width: 280px;
+    background: url(../img/class-list-bj.png) no-repeat center center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+
 .main_box .main-com{
     position: relative;
     width: 100%;
@@ -32,7 +117,7 @@ body{
     background: url(../img/bj_logo.jpg) no-repeat center center;
 }
 a.back{
-    right: 40px;
+    right: 60px;
     bottom: 50px;
 }
 a.second-back{

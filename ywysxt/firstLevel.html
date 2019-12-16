@@ -1,34 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>中华经典诵读教学资源库</title>
     <link href="css/common.css" type="text/css" rel="stylesheet" />
     <link href="css/level.css" type="text/css" rel="stylesheet" />
 </head>
+
 <body>
     <!--主体开始-->
     <div class="main">
+        <img class="bj" src="./img/level-bj.jpg">
         <div class="main_box">
-            <div class="main-com">
-                <div class="img-box"></div>
-                <a href="javascript:void(0)" onclick="goBack()" class="back"></a>
-                <div class="main-common">
-                    <p class="title">点击年级进入课本</p>
-                    <ul id="classMenu">
-                    </ul>
-                </div>
+            <div class="title"><img src="./img/ml.gif"></div>
+            <div class="class-list">
+                <ul id="classMenu">
+                </ul>
             </div>
         </div>
+        <a class="back" href="javascript:void(0)" onclick="goBack()">
+            <img src="./img/back.png" alt="返回">
+        </a>
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
-        $(function(){
+        $(function () {
             var classList = getAllClass();
-            var li='';
-            for(var i=0;i<classList.length;i++){
-                li += '<li><a href="secondlevel.html?id='+ classList[i].id + '">'+classList[i].name+'</a></li>'
+            var li = '';
+            for (var i = 0; i < classList.length; i++) {
+                // if(classList[i].id=='4'){
+                //     li += '<li><a href="secondlevel_more.html?id=' + classList[i].id + '"><span>' + classList[i].name + '</span></a></li>';
+                // }else{
+                    li += '<li><a href="secondlevel.html?id=' + classList[i].id + '"><span>' + classList[i].name + '</span></a></li>';
+                //}
             }
             $('#classMenu').html(li);
         })

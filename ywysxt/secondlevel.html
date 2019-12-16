@@ -12,49 +12,47 @@
 <body>
     <!--主体开始-->
     <div class="main">
+        <img class="bj" src="./img/level-bj.jpg">
         <div class="main_box">
-            <div class="main-com">
-                <div class="img-box"></div>
-                <a href="javascript:void(0)" onclick="goBack()" class="back second-back"></a>
-                <div class="main-common">
-                    <p class="title">古诗词</p>
-                    <div id="classBox" class="class-menu">
-                       
-                    </div>
-                    <p class="title">经典选篇</p>
-                    <div class="classic">
-                        <p><a href="">三字经</a></p>
-                        <p><a href="">百家姓(节选)</a></p>
-                        
-                    </div>
-                </div>
+            <div class="title poetry-title"><img src="./img/ml.gif"></div>
+            <div class="class-title">
+                <span>一年级上册</span>
+            </div>
+            <div class="poetry-list" id="poetryList">
+                <ul>
+                    <li><a href="">悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>
+                </ul>
             </div>
         </div>
+        <a class="back" href="javascript:void(0)" onclick="goBack()">
+            <img src="./img/back.png" alt="返回">
+        </a>
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function () {
             var id = getUrlParam('id');
-            var poetryList =[];
-            if(id){
-                poetryList = getPoetryList(id);
-                var html = '<ul>';
+            if (id) {
+                var poetryList = getPoetryList(id);
                 var listLegth = poetryList.length;
-                for(var i =0;i<poetryList.length;i++){
-                    if(((i+1)%8) == 0){
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li></ul><ul>';
-                    }else{
-                        html += '<li><a href="threelevel.html?id='+ poetryList[i].id + '">'+poetryList[i].title+'</a></li>';
+                if (listLegth <= 10) {
+                    var html = '<ul>';
+                    for (var i = 0; i < poetryList.length; i++) {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">'+poetryList[i].title;'悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>'
+                        if(poetryList[i].subtitle){
+                            html += '<small>('+poetryList[i].subtitle+')</small>';
+                        }
+                        if(poetryList[i].dynasty){
+                            html += '<small>【'+poetryList[i].dynasty+'】</small>';
+                        }
+                        if(poetryList[i].author){
+                            html += '<small>'+poetryList[i].author+'</small>';
+                        }
+                        html += '</a></li>'
                     }
                 }
-                if(listLegth%8 == 0){
-                    html = html.substr(0,(html.length-4))
-                }else{
-                    html = html+'</ul>';
-                }
-                $('#classBox').html(html);
-                console.log(html)
+                $('#poetryList').html(html);
             }
         })
     </script>
