@@ -1,13 +1,16 @@
 html,body{
     width: 100%;
     height: 100%;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }
 .main{
     position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background: url(../img/bj_top.jpg) repeat-x left top;
 }
 .main .bj{
     display: block;
@@ -106,6 +109,7 @@ html,body{
     color: #333;
 }
 .main_box .menus{
+    width: 130px;
     position: absolute;
     height: 100%;
 }
@@ -143,6 +147,7 @@ html,body{
 .btn-list .left-btn{
     float: left;
     padding-top: 3px;
+    overflow: hidden;
     width: 30px;
     height: 101px;
     margin-top: 35px;
@@ -152,9 +157,15 @@ html,body{
     color: #fff;
     font-weight: bold;
     font-size: 16px;
+    cursor: pointer;
+    -ms-user-select:none;
+    user-select:none;
+    writing-mode: vertical-lr; 
+    letter-spacing: 1px;
 }
 .btn-list .right-btn{
     padding-left: 45px;
+    display: none;
 }
 .btn-list .right-btn a{
     display: block;
@@ -174,10 +185,7 @@ html,body{
     margin-top: 20px;
 }
 .top2 .right-btn ,.top6 .right-btn{
-    margin-top: 20px;
-}
-.right-btns{
-    width: 130px;
+    margin-top: 18px;
 }
 .right-btns .btn-list{
     width: 100%;
@@ -204,89 +212,34 @@ a.poetry-back{
 .poetry-box{
     position: relative;
     width: 70%;
+    height: 100%;
     margin: 0 auto;
     overflow: hidden;
 }
-.poetry-box .poetry-img{
-    position: relative;
-    width: 60%;
-    min-width: 660px;
-    max-width: 1080px;
-    margin: 20px auto 40px;
-    z-index: 30;
-}
-.poetry-box .threelevel1-img{
-    width: 80%;
-    max-width: 1366px;
-    min-width: 860px;
-    margin-top: 80px;
-}
-.poetry-box .poetry-img img{
-    display: block;
-    width: 100%;
-}
-.poetry-box .poetry-btns{
-    text-align: center;
-}
-.poetry-box .poetry-btns a{
-    position: relative;
-    display: inline-block;
-    width: 80px;
-    height: 80px;
-    vertical-align: middle;
-    margin: 0 20px;
-}
-.poetry-box .poetry-btns a audio{
+.poetry-box .class-abbr-title{
     position: absolute;
-    display: block;
-    width: 240px;
+    left: 10px;
+    top: 50px;
+    font-size: 14px;
+    color: #000;
+    font-family: '仿宋';
+    font-weight: bold;
+}
+.poetry-box .poetry-title{
+    width: 100%;
     height: 30px;
-    left: -80px;
-    bottom: -10px;
-    display: none;
-    z-index: 30;
+    margin-bottom: 20px;
 }
-.poetry-box .poetry-btns .yin{
-    background: url(../img/yin.png) no-repeat center center;
-    background-size: 100%
+.poetry-box .poetry-title img{
+    display: block;
+    width: 73px;
+    margin: 0 auto;
 }
-.poetry-box .poetry-btns .song{
-    background: url(../img/song.png) no-repeat center center;
-    background-size: 100%
-}
-.level-footer{
-    position: absolute;
+.poetry-box .poetry-com{
     width: 100%;
-    bottom: 0;
-    left: 0;
-    height: 15px;
-    background: url(../img/bj_footer_level.jpg) repeat-x 0 0;
-    z-index: 10;
 }
-.bg-ys{
-    position: absolute;
-    width: 150px;
-    height: 42px;
-    top: 20px;
-    left: 20px;
-    background: url(../img/bj_ys.jpg) no-repeat 0 0;
-    background-size: 100%;
-    z-index: 10;
-}
-.audio-box{
-    position: absolute;
-    width: 100%;
-    height: 50px;
-    bottom: 15px;
-    left: 0;
-    text-align: center;
-    z-index: 99;
-    display: none;
-}
-.audio-box audio{
-    width: 30%;
-    min-width: 460px;
-    max-width: 1080px;
-    height: 50px;
+.poetry-box .poetry-com img{
+    display: block;
+    width: 50%;
     margin: 0 auto;
 }

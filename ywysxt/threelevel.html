@@ -77,19 +77,28 @@
                 </div>
             </div>
             <div class="poetry-box">
-                
+                <a class="back" href="javascript:void(0)" onclick="goBack()">
+                    <img src="./img/back.png" alt="返回">
+                </a>
+                <p class="class-abbr-title">一上 日积月累</p>
+                <div class="poetry-title">
+                    <img src="./img/titlte.gif">
+                </div>
+                <div class="poetry-com">
+                        <img src="./img/poetry.gif">
+                    </div>
             </div>
         </div>
     </div>
-    <a class="back poetry-back" href="javascript:void(0)" onclick="goBack()">
-        <img src="./img/back.png" alt="返回">
-    </a>
+
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function () {
-
+            $('.btn-list > .left-btn').click(function () {
+                $(this).siblings('.right-btn').toggle();
+            })
         })
         function toPage() {
             var id = getUrlParam('id');
