@@ -79,10 +79,16 @@ html,body{
 }
 .main_box .poetry-list{
     padding-top: 20px;
+    max-width: 730px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 .main_box .poetry-list ul{
     width: 360px;
     margin: 0 auto;
+}
+.main_box .poetry-list ul.more-list{
+    float: left;
 }
 .main_box .poetry-list li{
     background: url(../img/class-list-bj-btn.gif) no-repeat left center;
@@ -99,105 +105,107 @@ html,body{
     font-weight: bold;
     color: #333;
 }
-
-
-.main_box .main-com{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: url(../img/bj_aside.jpg) repeat-y right top;
-}
-.main-com .img-box{
+.main_box .menus{
     position: absolute;
-    width: 240px;
-    height: 212px;
-    top: 15px;
-    left: 15px;
-    background: url(../img/bj_logo.jpg) no-repeat center center;
+    height: 100%;
 }
+.main_box .left-btns{
+    left: 1.5%;
+}
+.main_box .right-btns{
+    right: 1.5%;
+}
+.main_box .menus .btn-list{
+    position: absolute;
+    overflow: hidden;
+}
+.main_box .menus .top1{
+    top: 8%;
+}
+.main_box .menus .top2{
+    top: 42%;
+}
+.main_box .menus .top3{
+    top: 64%;
+}
+.main_box .menus .top4{
+    top: 8%;
+}
+.main_box .menus .top5{
+    top: 30%;
+}
+.main_box .menus .top6{
+    top: 52%;
+}
+.main_box .menus .top7{
+    top: 72%;
+}
+.btn-list .left-btn{
+    float: left;
+    padding-top: 3px;
+    width: 30px;
+    height: 101px;
+    margin-top: 35px;
+    line-height: 24px;
+    background: url(../img/menu-bj.gif) no-repeat 0 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+}
+.btn-list .right-btn{
+    padding-left: 45px;
+}
+.btn-list .right-btn a{
+    display: block;
+    width: 75px;
+    line-height: 22px;
+    background: url(../img/btn-bj.gif) no-repeat 0 0;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.top2 .left-btn ,.top4 .left-btn ,.top5 .left-btn ,.top6 .left-btn{
+    margin-top: 0;
+}
+.top3 .left-btn,.top7 .left-btn{
+    margin-top: 20px;
+}
+.top2 .right-btn ,.top6 .right-btn{
+    margin-top: 20px;
+}
+.right-btns{
+    width: 130px;
+}
+.right-btns .btn-list{
+    width: 100%;
+    overflow: hidden;
+}
+.right-btns .btn-list .left-btn{
+    float: right;
+    padding-left: 0px;
+}
+.right-btns .btn-list .right-btn{
+    float: left;
+    padding: 0;
+}
+
 a.back{
     right: 60px;
     bottom: 50px;
 }
-a.second-back{
-    left: 80px;
+a.poetry-back{
+    right:200px;
     bottom: 50px;
 }
-a.level3-back{
-    top: 50px;
-    right: 40px;
-}
-a.yinsong{
-    right: 40px;
-    bottom: 50px;
-}
-a.zw{
-    right: 40px;
-    bottom: 50px;
-    background: url(../img/zw.png) no-repeat 0 0;
-}
-.main-common {
-    position: relative;
-    width: 100%;
-    min-width: 980px;
-    max-width: 1366px;
-    margin: 0 auto;
-    padding-top: 30px;
-    text-align:center;
-    overflow: hidden;
-}
-.main-common .title{
-    width: 300px;
-    margin: 10px auto 20px;
-    font-size: 16px;
-    text-align: center;
-    line-height: 30px;
-    border-bottom: #466b7d solid 1px;
-}
-.main-common ul{
-    display: inline-block;
-    margin: 0 30px;
-    padding: 15px 15px 5px;
-    background: #ebf8ff;
-}
-.main-common ul li{
-    width: 188px;
-    line-height: 30px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.main-common ul li a{
-    display: block;
-    line-height: 30px;
-    font-size: 16px;
-    color: #333;
-    background: url(../img/btn.png) no-repeat 0 0;
-}
-.classic p{
-    display: inline-block;
-    margin:0 20px 10px;
-    padding: 4px 15px;
-    background: #ebf8ff
-}
-.classic p a{
-    display: block;
-    width: 188px;
-    line-height: 30px;
-    font-size: 16px;
-    color: #333;
-    background: url(../img/btn.png) no-repeat 0 0;
-    text-align: center;
-}
+
 .poetry-box{
     position: relative;
-    margin: 10px;
-    height: calc(100% - 20px);
+    width: 70%;
+    margin: 0 auto;
     overflow: hidden;
-    background: url(../img/level_bj.jpg) #eef4f7 no-repeat bottom center;
-    background-size:100%;
-    border-radius:8px; 
-    z-index: 30;
 }
 .poetry-box .poetry-img{
     position: relative;

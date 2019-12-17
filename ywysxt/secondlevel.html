@@ -51,6 +51,32 @@
                         }
                         html += '</a></li>'
                     }
+                }else{
+                    var html = '<ul class="more-list">';
+                    var htmlLength = html.length;
+                    for (var i = 0; i < poetryList.length; i++) {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">'+poetryList[i].title;'悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>'
+                        if(poetryList[i].subtitle){
+                            html += '<small>('+poetryList[i].subtitle+')</small>';
+                        }
+                        if(poetryList[i].dynasty){
+                            html += '<small>【'+poetryList[i].dynasty+'】</small>';
+                        }
+                        if(poetryList[i].author){
+                            html += '<small>'+poetryList[i].author+'</small>';
+                        }
+                        if (((i + 1) % 10) == 0) {
+                            html += '</a></li></ul><ul class="more-list">';
+                        }else{
+                            html += '</a></li>';
+                        }
+                        html += '</a></li>';
+                    }
+                    if(listLegth % 10 == 0){
+                        html = html.substr(0,-htmlLength)
+                    }else{
+                        html= html+='</ul>'
+                    }
                 }
                 $('#poetryList').html(html);
             }
