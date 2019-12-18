@@ -1,62 +1,75 @@
-html,body{
+html,
+body {
     width: 100%;
     height: 100%;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-.main{
+
+.main {
     position: relative;
     height: 100%;
     width: 100%;
     overflow: hidden;
 }
-.main .bj{
+
+.main .bj {
     display: block;
     width: 100%;
     height: 100%;
 }
-.main_box{
+
+.main_box {
     position: absolute;
     left: 20px;
     top: 20px;
     right: 20px;
     bottom: 20px;
 }
-.main_box .title,.main_box .poetry-title{
+
+.main_box .title,
+.main_box .poetry-title {
     width: 100%;
     margin: 40px 0;
 }
-.poetry-title{
+
+.poetry-title {
     margin: 40px 0 10px;
 }
-.main_box .title img{
+
+.main_box .title img {
     display: block;
     width: 90px;
     margin: 0 auto;
 }
-.main_box .class-list{
+
+.main_box .class-list {
     max-width: 640px;
     margin: 0 auto;
 }
-.main_box .class-list ul{
+
+.main_box .class-list ul {
     display: block;
     width: 100%;
 }
-.main_box .class-list ul li{
+
+.main_box .class-list ul li {
     float: left;
     width: 50%;
     margin-bottom: 20px;
 }
-.main_box .class-list li a{
+
+.main_box .class-list li a {
     display: block;
     background: url(../img/class-list-bj-btn.gif) no-repeat left center;
     line-height: 32px;
     height: 32px;
     padding-left: 60px;
 }
-.main_box .class-list li a span{
+
+.main_box .class-list li a span {
     display: block;
     width: 80%;
     background: url(../img/class-list-bj.png) no-repeat center center;
@@ -64,7 +77,8 @@ html,body{
     font-weight: bold;
     color: #333;
 }
-.main_box .class-title{
+
+.main_box .class-title {
     margin-left: 100px;
     width: 240px;
     background: url(../img/class-title-btn.gif) no-repeat left center;
@@ -72,7 +86,8 @@ html,body{
     height: 35px;
     padding-left: 60px;
 }
-.main_box .class-title span{
+
+.main_box .class-title span {
     display: block;
     background: url(../img/class-list-bj.png) no-repeat center center;
     text-align: center;
@@ -80,27 +95,32 @@ html,body{
     color: #333;
     font-size: 16px;
 }
-.main_box .poetry-list{
+
+.main_box .poetry-list {
     padding-top: 20px;
     max-width: 730px;
     margin: 0 auto;
     overflow: hidden;
 }
-.main_box .poetry-list ul{
+
+.main_box .poetry-list ul {
     width: 360px;
     margin: 0 auto;
 }
-.main_box .poetry-list ul.more-list{
+
+.main_box .poetry-list ul.more-list {
     float: left;
 }
-.main_box .poetry-list li{
+
+.main_box .poetry-list li {
     background: url(../img/class-list-bj-btn.gif) no-repeat left center;
     line-height: 32px;
     height: 32px;
     padding-left: 30px;
     margin-bottom: 20px;
 }
-.main_box .poetry-list li a{
+
+.main_box .poetry-list li a {
     display: block;
     width: 280px;
     background: url(../img/class-list-bj.png) no-repeat center center;
@@ -108,43 +128,55 @@ html,body{
     font-weight: bold;
     color: #333;
 }
-.main_box .menus{
+
+.main_box .menus {
     width: 130px;
     position: absolute;
     height: 100%;
 }
-.main_box .left-btns{
+
+.main_box .left-btns {
     left: 1.5%;
 }
-.main_box .right-btns{
+
+.main_box .right-btns {
     right: 1.5%;
 }
-.main_box .menus .btn-list{
+
+.main_box .menus .btn-list {
     position: absolute;
     overflow: hidden;
 }
-.main_box .menus .top1{
+
+.main_box .menus .top1 {
     top: 8%;
 }
-.main_box .menus .top2{
+
+.main_box .menus .top2 {
     top: 42%;
 }
-.main_box .menus .top3{
+
+.main_box .menus .top3 {
     top: 64%;
 }
-.main_box .menus .top4{
+
+.main_box .menus .top4 {
     top: 8%;
 }
-.main_box .menus .top5{
+
+.main_box .menus .top5 {
     top: 30%;
 }
-.main_box .menus .top6{
+
+.main_box .menus .top6 {
     top: 52%;
 }
-.main_box .menus .top7{
+
+.main_box .menus .top7 {
     top: 72%;
 }
-.btn-list .left-btn{
+
+.btn-list .left-btn {
     float: left;
     padding-top: 3px;
     overflow: hidden;
@@ -158,16 +190,17 @@ html,body{
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-    -ms-user-select:none;
-    user-select:none;
-    writing-mode: vertical-lr; 
+    -ms-user-select: none;
+    user-select: none;
     letter-spacing: 1px;
 }
-.btn-list .right-btn{
+
+.btn-list .right-btn {
     padding-left: 45px;
     display: none;
 }
-.btn-list .right-btn a{
+
+.btn-list .right-btn a {
     display: block;
     width: 75px;
     line-height: 22px;
@@ -178,68 +211,151 @@ html,body{
     font-weight: bold;
     margin-bottom: 15px;
 }
-.top2 .left-btn ,.top4 .left-btn ,.top5 .left-btn ,.top6 .left-btn{
+
+.top2 .left-btn,
+.top4 .left-btn,
+.top5 .left-btn,
+.top6 .left-btn {
     margin-top: 0;
 }
-.top3 .left-btn,.top7 .left-btn{
+
+.top3 .left-btn,
+.top7 .left-btn {
     margin-top: 20px;
 }
-.top2 .right-btn ,.top6 .right-btn{
+
+.top2 .right-btn,
+.top6 .right-btn {
     margin-top: 18px;
 }
-.right-btns .btn-list{
+
+.right-btns .btn-list {
     width: 100%;
     overflow: hidden;
 }
-.right-btns .btn-list .left-btn{
+
+.right-btns .btn-list .left-btn {
     float: right;
     padding-left: 0px;
 }
-.right-btns .btn-list .right-btn{
+
+.right-btns .btn-list .right-btn {
     float: left;
     padding: 0;
 }
 
-a.back{
+a.back {
     right: 60px;
     bottom: 50px;
 }
-a.poetry-back{
-    right:200px;
+
+a.poetry-back {
+    right: 200px;
     bottom: 50px;
 }
 
-.poetry-box{
-    position: relative;
+.poetry-box {
+    position: absolute;
     width: 70%;
     height: 100%;
-    margin: 0 auto;
+    left: 50%;
+    margin-left: -35%;
     overflow: hidden;
 }
-.poetry-box .class-abbr-title{
+
+.poetry-box .class-abbr-title {
     position: absolute;
     left: 10px;
-    top: 50px;
-    font-size: 14px;
+    top: 80px;
+    font-size: 24px;
     color: #000;
     font-family: '仿宋';
     font-weight: bold;
 }
-.poetry-box .poetry-title{
+
+.poetry-box .poetry-title {
     width: 100%;
-    height: 30px;
+    *padding-top: 80px;
     margin-bottom: 20px;
 }
-.poetry-box .poetry-title img{
+
+.poetry-box .poetry-title img {
     display: block;
-    width: 73px;
+    width: 100px;
     margin: 0 auto;
 }
-.poetry-box .poetry-com{
+
+.poetry-box .poetry-com {
     width: 100%;
 }
-.poetry-box .poetry-com img{
+
+.poetry-box .poetry-com img {
     display: block;
     width: 50%;
+    margin: 0 auto;
+}
+.show-btns-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 1%;
+}
+.media-btn {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+}
+.media-btn a {
+    display: inline-block;
+    _zoom: 1;
+    _display: inline;
+    width: 75px;
+    line-height: 22px;
+    background: url(../img/btn-bj.gif) no-repeat 0 0;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.media-btn-list{
+    width: 100%;
+    text-align: center;
+}
+.media-btn-list a{
+    display: inline-block;
+    _zoom: 1;
+    _display: inline;
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+}
+.media-btn-list a.yin1{
+    background: url(../img/yin1.png) no-repeat 0 0;
+}
+.media-btn-list a.song{
+    background: url(../img/song.png) no-repeat 0 0;
+}
+.media-btn-list a.lu{
+    background: url(../img/lu.png) no-repeat 0 0;
+}
+.media-btn-list a.yin{
+    background: url(../img/yin.png) no-repeat 0 0;
+}
+.audio-box{
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    bottom: 15px;
+    left:50%;
+    margin-left: -150px;
+    text-align: center;
+    z-index: 99;
+    display: none;
+    background: #000;
+}
+.audio-box .audio {
+    width: 100%;
+    height: 30px;
     margin: 0 auto;
 }

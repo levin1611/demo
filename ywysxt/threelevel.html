@@ -1,12 +1,15 @@
-<!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>中华经典诵读教学资源库</title>
     <link href="css/common.css" type="text/css" rel="stylesheet" />
     <link href="css/level.css" type="text/css" rel="stylesheet" />
+    
+    <!-- <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script> -->
+
 </head>
 
 <body>
@@ -77,6 +80,7 @@
                 </div>
             </div>
             <div class="poetry-box">
+
                 <a class="back" href="javascript:void(0)" onclick="goBack()">
                     <img src="./img/back.png" alt="返回">
                 </a>
@@ -85,24 +89,49 @@
                     <img src="./img/titlte.gif">
                 </div>
                 <div class="poetry-com">
-                        <img src="./img/poetry.gif">
+                    <img src="./img/poetry.gif">
+                </div>
+                <div class="show-btns-btn">
+                    <div class="media-btn">
+                        <a href="javascript:void(0)" onclick="audioPlay('ds')">读诵</a>
+                        <a href="javascript:void(0)" onclick="audioPlay('qy')">清吟</a>
+                        <a href="javascript:void(0)" onclick="audioPlay('yy')">乐吟</a>
+                        <a href="javascript:void(0)" onclick="audioPlay('ct')">传统</a>
+                        <a href="javascript:void(0)" onclick="audioPlay('bz')">伴奏</a>
+                        <a href="javascript:void(0)" onclick="audioPlay('lx')">录像</a>
                     </div>
+                    <div class="media-btn-list">
+                        <a href="javascript:void(0)" onclick="showMediaBtn()" class="yin1"></a>
+                        <a href="javascript:void(0)" onclick="showMediaBtn()" class="song"></a>
+                        <a href="javascript:void(0)" onclick="showMediaBtn()" class="lu"></a>
+                        <a href="javascript:void(0)" onclick="showMediaBtn()" class="yin"></a>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="audio-box" id="audioBox">
+            <audio id="audio" class="audio" controls preload>
+                <!-- <audio controls id="audio" ondrag>
+                您的浏览器不支持 audio 元素。
+            </audio> -->
+        </div>
     </div>
-
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function () {
+            //$('#audio').attr('src', 'http://music.163.com/song/media/outer/url?id=435289279.mp3')
             $('.btn-list > .left-btn').click(function () {
                 $(this).siblings('.right-btn').toggle();
             })
         })
-        function toPage() {
-            var id = getUrlParam('id');
-            window.location.href = 'threelevel1.html?to=ys&id=' + id;
+        function showMediaBtn() {
+            $('.media-btn').toggle();
+        }
+        function toNext(type) {
+            console.log(type)
+            return false;
         }
     </script>
 </body>
