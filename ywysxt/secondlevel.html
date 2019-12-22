@@ -39,7 +39,7 @@
                 if (listLegth <= 10) {
                     var html = '<ul>';
                     for (var i = 0; i < poetryList.length; i++) {
-                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">'+poetryList[i].title;'悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>'
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">'+poetryList[i].title;
                         if(poetryList[i].subtitle){
                             html += '<small>('+poetryList[i].subtitle+')</small>';
                         }
@@ -51,11 +51,13 @@
                         }
                         html += '</a></li>'
                     }
+                    html= html+='</ul>'
+                   
                 }else{
                     var html = '<ul class="more-list">';
                     var htmlLength = html.length;
                     for (var i = 0; i < poetryList.length; i++) {
-                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">'+poetryList[i].title;'悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>'
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">'+poetryList[i].title;
                         if(poetryList[i].subtitle){
                             html += '<small>('+poetryList[i].subtitle+')</small>';
                         }

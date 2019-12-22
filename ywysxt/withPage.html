@@ -1,0 +1,71 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中华经典诵读教学资源库</title>
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/level.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--主体开始-->
+    <div class="main">
+        <img class="bj" src="./img/level-bj.jpg">
+        <div class="main_box">
+            <div class="theme-title">
+                <img id="themeTitle">
+            </div>
+            <div class="theme-com">
+                <img id="themePic" src="">
+            </div>
+        </div>
+        <div class="page-turn">
+            <a class="page-pre" id="pre" onclick="pre()">
+                <img src="./img/pre.png" alt="上一页">
+            </a>
+            <a class="page-next" id="next" onclick="next()">
+                <img src="./img/next.png" alt="下一页">
+            </a></div>
+        <a class="back" onclick="goBack()">
+            <img src="./img/back.png" alt="返回">
+        </a>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+        var nowPage = 1;
+        var id = getUrlParam('id');
+        var type = getUrlParam('theme');
+        $(function () {
+            
+            isShow()
+            $('#themeTitle').attr('src', 'img/titlePic/' + type + '.png');
+            $('#themePic').attr('src', 'img/pic/' + id + '-' + type+nowPage + '.png')
+        })
+        function isShow(){
+            if (nowPage == 1) {
+                $('#pre').css({display:'none'});
+                $('#next').css({display:'block'});
+            }else{
+                $('#pre').css({display:'block'});
+                if(nowPage == 2){
+                    $('#next').css({display:'none'});
+                }
+            }
+        }
+        function next() {
+            nowPage = nowPage+1;
+            $('#themePic').attr('src', 'img/pic/' + id + '-' + type+nowPage + '.png')
+            isShow()
+        }
+        function pre() {
+            nowPage = nowPage - 1;
+            $('#themePic').attr('src', 'img/pic/' + id + '-' + type+nowPage + '.png')
+            isShow()
+        }
+    </script>
+</body>
+
+</html>

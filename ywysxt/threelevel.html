@@ -7,7 +7,7 @@
     <title>中华经典诵读教学资源库</title>
     <link href="css/common.css" type="text/css" rel="stylesheet" />
     <link href="css/level.css" type="text/css" rel="stylesheet" />
-    
+
     <!-- <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script> -->
 
 </head>
@@ -20,62 +20,62 @@
             <div class="menus left-btns">
                 <div class="btn-list top1">
                     <a class="left-btn">背景释义</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('zs')">注释</a>
-                        <a href="jacascript:void(0)" onclick="toNext('dy')">大义</a>
-                        <a href="jacascript:void(0)" onclick="toNext('bj')">背景</a>
-                        <a href="jacascript:void(0)" onclick="toNext('zz')">作者</a>
-                        <a href="jacascript:void(0)" onclick="toNext('jt')">解题</a>
+                    <div class="right-btn" id="bjsy">
+                        <a onclick="toNext('zs')">注释</a>
+                        <a onclick="toNext('dy')">大义</a>
+                        <a onclick="toNext('bj')">背景</a>
+                        <a onclick="toNext('zz')">作者</a>
+                        <a onclick="toNext('jt')">解题</a>
                     </div>
                 </div>
                 <div class="btn-list top2">
                     <a class="left-btn">吟诵图谱</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('ystp')">吟诵图谱</a>
-                        <a href="jacascript:void(0)" onclick="toNext('wzp')">文字谱</a>
+                    <div class="right-btn" id="ystp">
+                        <a onclick="toNext('yyfh')">吟诵符号</a>
+                        <a onclick="toNext('wzp')">文字谱</a>
                     </div>
                 </div>
                 <div class="btn-list top3">
                     <a class="left-btn">声韵含义</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('wt')">文体</a>
-                        <a href="jacascript:void(0)" onclick="toNext('rsz')">入声字</a>
-                        <a href="jacascript:void(0)" onclick="toNext('y')">韵</a>
-                        <a href="jacascript:void(0)" onclick="toNext('gl')">格律</a>
+                    <div class="right-btn" id="syhy">
+                        <a onclick="toNext('wt')">文体</a>
+                        <a onclick="toNext('rsz')">入声字</a>
+                        <a onclick="toNext('yun')">韵</a>
+                        <a onclick="toNext('gl')">格律</a>
                     </div>
                 </div>
             </div>
             <div class="menus right-btns">
                 <div class="btn-list top4">
                     <a class="left-btn">诗艺文法</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('yx')">意象</a>
-                        <a href="jacascript:void(0)" onclick="toNext('xc')">修辞</a>
-                        <a href="jacascript:void(0)" onclick="toNext('sc')">诗思</a>
+                    <div class="right-btn" id="sywf">
+                        <a onclick="toNext('yx')">意象</a>
+                        <a onclick="toNext('xc')">修辞</a>
+                        <a onclick="toNext('sc')">诗思</a>
                     </div>
                 </div>
                 <div class="btn-list top5">
                     <a class="left-btn">文化教育</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('ztfx')">主题分析</a>
-                        <a href="jacascript:void(0)" onclick="toNext('whjs')">文化精神</a>
-                        <a href="jacascript:void(0)" onclick="toNext('ldsr')">立德树人</a>
+                    <div class="right-btn" id="whjy">
+                        <a onclick="toNext('ztfx')">主题分析</a>
+                        <a onclick="toNext('whjs')">文化精神</a>
+                        <a onclick="toNext('ldsr')">立德树人</a>
                     </div>
                 </div>
                 <div class="btn-list top6">
                     <a class="left-btn">教学实例</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('kj')">课件</a>
-                        <a href="jacascript:void(0)" onclick="toNext('ckja')">参考教案</a>
+                    <div class="right-btn" id="jxsl">
+                        <a onclick="toNext('kj')">课件</a>
+                        <a onclick="toNext('ja')">参考教案</a>
                     </div>
                 </div>
                 <div class="btn-list top7">
                     <a class="left-btn">教学资源</a>
-                    <div class="right-btn">
-                        <a href="jacascript:void(0)" onclick="toNext('sjyj')">诗教义解</a>
-                        <a href="jacascript:void(0)" onclick="toNext('jxsj')">教学设计</a>
-                        <a href="jacascript:void(0)" onclick="toNext('yszl')">吟诵资料</a>
-                        <a href="jacascript:void(0)" onclick="toNext('ysbk')">吟诵百科</a>
+                    <div class="right-btn" id="jxzy">
+                        <a onclick="toNext('sjyj')">诗教义解</a>
+                        <a onclick="toNext('jxsj')">教学设计</a>
+                        <a onclick="toNext('yszl')">吟诵资料</a>
+                        <a onclick="toNext('ysbk')">吟诵百科</a>
                     </div>
                 </div>
             </div>
@@ -86,10 +86,10 @@
                 </a>
                 <p class="class-abbr-title">一上 日积月累</p>
                 <div class="poetry-title">
-                    <img src="./img/titlte.gif">
+                    <img id="poetryTitle" src="">
                 </div>
                 <div class="poetry-com">
-                    <img src="./img/poetry.gif">
+                    <img id="poetryCom" src="">
                 </div>
                 <div class="show-btns-btn">
                     <div class="media-btn">
@@ -98,7 +98,7 @@
                         <a href="javascript:void(0)" onclick="audioPlay('yy')">乐吟</a>
                         <a href="javascript:void(0)" onclick="audioPlay('ct')">传统</a>
                         <a href="javascript:void(0)" onclick="audioPlay('bz')">伴奏</a>
-                        <a href="javascript:void(0)" onclick="audioPlay('lx')">录像</a>
+                        <a href="javascript:void(0)" onclick="vedioPlay()">录像</a>
                     </div>
                     <div class="media-btn-list">
                         <a href="javascript:void(0)" onclick="showMediaBtn()" class="yin1"></a>
@@ -118,20 +118,95 @@
     </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function () {
-            //$('#audio').attr('src', 'http://music.163.com/song/media/outer/url?id=435289279.mp3')
+            var id = getUrlParam('id');
+            $('#poetryTitle').attr('src','./img/poetry/'+id+'-title.gif');
+            $('#poetryCom').attr('src','./img/poetry/'+id+'-com.gif');
+            var show = $.cookie('show');
             $('.btn-list > .left-btn').click(function () {
+                console.log(show)
+                var nowId = $(this).siblings('.right-btn').attr('id');
+                if(show && show.indexOf(nowId) != -1){
+                    show = show.replace(nowId);
+                    $.cookie('show', show);
+                }
                 $(this).siblings('.right-btn').toggle();
             })
+            
+            if (show && show.indexOf('bjsy') != -1) {
+                $('#bjsy').show();
+            }
+            if (show && show.indexOf('ystp') != -1) {
+                $('#ystp').show();
+            }
+            if (show && show.indexOf('syhy') != -1) {
+                $('#syhy').show();
+            }
+            if (show && show.indexOf('sywf') != -1) {
+                $('#sywf').show();
+            }
+            if (show && show.indexOf('jxsl') != -1) {
+                $('#jxsl').show();
+            }
+            if (show && show.indexOf('whjy') != -1) {
+                $('#whjy').show();
+            }
+            if (show && show.indexOf('jxsl') != -1) {
+                $('#jxsl').show();
+            }
         })
         function showMediaBtn() {
             $('.media-btn').toggle();
         }
         function toNext(type) {
-            console.log(type)
-            return false;
+            var id = getUrlParam('id');
+            var show = $.cookie('show') ? $.cookie('show') : '';
+            if (type == 'zs' || type == 'dy' || type == 'bj' || type == 'zz' || type == 'jt') {
+                if (show.indexOf('bjsy') == -1) {
+                    show += 'bjsy'
+                }
+            }
+            if (type == 'yyfh' || type == 'wzp') {
+                if (show.indexOf('ystp') == -1) {
+                    show += 'ystp'
+                }
+            }
+            if (type == 'wt' || type == 'rsz' || type == 'yun' || type == 'zz' || type == 'gl') {
+                if (show.indexOf('syhy') == -1) {
+                    show += 'syhy'
+                }
+                if(type == 'yun'){
+                    $.cookie('show', show);
+                    window.location.href = "withPage.html?id=" + id + '&theme=' + type;
+                    return;
+                }
+            }
+            if (type == 'yx' || type == 'xc' || type == 'sc') {
+                if (show.indexOf('sywf') == -1) {
+                    show += 'sywf'
+                }
+            }
+            if (type == 'ztfx' || type == 'whjs' || type == 'ldsr') {
+                if (show.indexOf('whjy') == -1) {
+                    show += 'whjy'
+                }
+            }
+            if (type == 'kj' || type == 'ckja') {
+                if (show.indexOf('jxsl') == -1) {
+                    show += 'jxsl'
+                }
+            }
+            if (type == 'sjyj' || type == 'jxsj' || type == 'yszl' || type == 'ysbk') {
+                if (show.indexOf('jxzy') == -1) {
+                    show += 'jxzy'
+                }
+            }
+            $.cookie('show', show);
+            window.location.href = "fourlevel.html?id=" + id + '&theme=' + type;
+
         }
     </script>
 </body>

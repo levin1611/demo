@@ -45,6 +45,7 @@ a.back{
     width: 120px;
     height: 72px;
     z-index: 99;
+    cursor: pointer;
 }
 a.back img{
     display: block;

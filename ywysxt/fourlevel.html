@@ -1,0 +1,81 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>中华经典诵读教学资源库</title>
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/level.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--主体开始-->
+    <div class="main">
+        <img class="bj" src="./img/level-bj.jpg">
+        <div class="main_box">
+            <div class="theme-title">
+                <img id="themeTitle" src="img/titlePic/bj.png">
+            </div>
+            <div class="theme-com">
+                <img id="themePic" src="">
+            </div>
+            <div class="poetry-list" id="intentionList">
+                <ul>
+                    <li><a href="">悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>
+                </ul>
+            </div>
+        </div>
+        <a class="back" href="javascript:void(0)" onclick="goBack()">
+            <img src="./img/back.png" alt="返回">
+        </a>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+        $(function () {
+            var type = getUrlParam('theme');
+            var id = getUrlParam('id');
+
+            if (type == 'yx') {
+                $('.theme-com').hide();
+                var parentId = id.split('-')[0];
+                var poetryList = getIntention(parentId,id);
+                var intention = poetryList.intentionList;
+                if (intention.length <= 10) {
+                    var html = '<ul>';
+                    for (var i = 0; i < intention.length; i++) {
+                        html += '<li><a href="yx.html?id=' + intention[i].id + '">' + intention[i].text + '</a></li>';
+                    }
+                    html += '</ul>';
+                } else {
+                    var html = '<ul class="more-list">';
+                    var htmlLength = html.length;
+                    for (var i = 0; i < intention.length; i++) {
+                        html += '<li><a href="yx.html?id=' + intention[i].id + '">' + intention[i].text + '</a></li>';
+                        if ((i + 1) % 10 == 0) {
+                            html += '</ul><ul class="more-list">'
+                        }
+                    }
+                    if (intention.length % 10 == 0) {
+                        html = html.substr(0, -htmlLength)
+                    } else {
+                        html = html += '</ul>'
+                    }
+                }
+                console.log(html)
+                $('#intentionList').html(html);
+            } else if (type == 'wzp') {
+                $('.theme-title').hide();
+                $('#themePic').attr('src', 'img/pic/' + id + '-' + type + '.gif');
+            } else {
+                $('#intentionList').hide();
+                $('#themeTitle').attr('src', 'img/titlePic/' + type + '.gif');
+                $('#themePic').attr('src', 'img/pic/' + id + '-' + type + '.png')
+            }
+
+        })
+    </script>
+</body>
+
+</html>

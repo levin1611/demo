@@ -5,7 +5,16 @@ var ALLCLASS = [{
                 subtitle: '',
                 dynasty: '唐',
                 author: '骆宾王',
-                id: '1-1'
+                id: '1-1',
+                intentionList:[
+                    { id:'1-1-intention-1',text:'鹅'},
+                    { id:'1-1-intention-2',text:'曲项'},
+                    { id:'1-1-intention-3',text:'天'},
+                    { id:'1-1-intention-4',text:'白毛'},
+                    { id:'1-1-intention-5',text:'绿水'},
+                    { id:'1-1-intention-6',text:'红掌'},
+                    { id:'1-1-intention-7',text:'清波'}
+                ]
             },
             {
                 title: '江南 汉乐府',
@@ -125,7 +134,15 @@ function getPoetryList(id) {
         }
     }
 }
+function getIntention(parentid,id){
+    var poetryList = getPoetryList(parentid);
+    for(var i=0;i<poetryList.length;i++){
+        if(poetryList[i].id == id){
+            return poetryList[i];
+        }
 
+    }
+}
 function getUrlParam(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var param = window.location.search.substr(1).match(reg);
@@ -164,9 +181,9 @@ function audioPlay(id) {
     var audio2 = 'https://www.runoob.com/try/demo_source/horse.mp3';
     var html = '';
     if (id == 'ds') {
-        html = '<audio id="audio" src="' + audio2 + '" class="audio" controls preload>'
+        html = '<audio id="audio" src="' + audio2 + '" class="audio" controls autoplay>'
     } else {
-        html = '<audio id="audio" src="' + audio1 + '" class="audio" controls preload>'
+        html = '<audio id="audio" src="' + audio1 + '" class="audio" controls autoplay>'
     }
     $('#audioBox').html(html)
     addScript();
@@ -190,11 +207,7 @@ function addScript() {
     document.getElementsByTagName('head')[0].appendChild(js);
 
 }
-
-function showAudio(id) {
-    $('#' + id).fadeIn();
-}
-
-function hideAudio(id) {
-    $('#' + id).fadeOut();
+function vedioPlay(){
+    var id = getUrlParam('id');
+    window.location.href = "video.html?id=" + id;
 }
