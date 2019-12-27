@@ -67,7 +67,9 @@
                 $('#intentionList').html(html);
             } else if (type == 'wzp') {
                 $('.theme-title').hide();
-                $('#themePic').attr('src', 'img/pic/' + id + '-' + type + '.gif');
+                $('#intentionList').hide();
+                $('.theme-com').addClass('wzp')
+                $('#themePic').attr('src', 'img/pic/' + id + '-' + type + '.png');
             } else {
                 $('#intentionList').hide();
                 $('#themeTitle').attr('src', 'img/titlePic/' + type + '.gif');
