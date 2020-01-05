@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>中华经典诵读教学资源库</title>
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/level.css" type="text/css" rel="stylesheet" />
+
+    <!-- <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script> -->
+
+</head>
+
+<body>
+    <!--主体开始-->
+    <div class="main">
+        <img class="bj" id="poetryCom">
+        <div class="poetry-box">
+            <a class="song" onclick="audioPlay('audioSong')">
+                <img src="./img/song.png">
+            </a>
+            <a class="yin" onclick="audioPlay('audioYin')">
+                <img src="./img/yin.png">
+            </a>
+        </div>
+        <a class="back" href="javascript:void(0)" onclick="goBack()">
+            <img src="./img/back.png" alt="返回">
+        </a>
+        <a href="javascript:void(0)" onclick="toPage()" class="yinsong"></a>
+        <div class="audio-box" id="audioBox">
+           按住此次可拖动
+            <audio id="audio" class="audio" controls preload>
+                <!-- <audio controls id="audio" ondrag>
+                您的浏览器不支持 audio 元素。
+            </audio> -->
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/drag.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+        $(function () {
+            var id = getUrlParam('id');
+            $('#poetryCom').attr('src', './img/poetry/' + id + '.jpg')
+        })
+        function toPage(){
+            var id = getUrlParam('id');
+            window.location.href = 'threelevel_ys.html?id='+id;
+            
+        }
+    </script>
+</body>
+
+</html>

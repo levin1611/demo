@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>中华经典诵读教学资源库</title>
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/level.css" type="text/css" rel="stylesheet" />
+
+    <!-- <script src="https://api.html5media.info/1.2.2/html5media.min.js"></script> -->
+
+</head>
+
+<body>
+    <!--主体开始-->
+    <div class="main">
+        <img class="bj" id="poetryCom">
+        <a class="zw" href="javascript:void(0)" onclick="goBack()"></a>
+        <div class="poetry-box">
+            <a class="song" onclick="audioPlay('audioSong')">
+                <img src="./img/song.png">
+            </a>
+            <a class="yin" onclick="audioPlay('audioYin')">
+                <img src="./img/yin.png">
+            </a>
+        </div>
+        <div class="audio-box" id="audioBox">
+            按住此次可拖动
+            <audio id="audio" class="audio" controls preload>
+                <!-- <audio controls id="audio" ondrag>
+                您的浏览器不支持 audio 元素。
+            </audio> -->
+        </div>
+        <div class="page-turn">
+            <a class="page-pre" id="pre" onclick="pre()">
+                <img src="./img/pre.png" alt="上一页">
+            </a>
+            <a class="page-next" id="next" onclick="next()">
+                <img src="./img/next.png" alt="下一页">
+            </a></div>
+    </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/drag.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+         var nowPage = 1;
+        var id = getUrlParam('id');
+        $(function () {
+            if(id == '5'){
+                $('#next').css({display:'block'});
+            }
+            $('#poetryCom').attr('src', './img/poetry/' + id + '-1.jpg')
+        })
+        function isShow(){
+            if (nowPage == 1) {
+                $('#pre').css({display:'none'});
+                $('#next').css({display:'block'});
+            }else{
+                $('#pre').css({display:'block'});
+                if(nowPage == 2){
+                    $('#next').css({display:'none'});
+                }
+            }
+        }
+        function next() {
+            nowPage = nowPage+1;
+            $('#themePic').attr('src', 'img/pic/' + id + '-' +nowPage + '.png')
+            isShow()
+        }
+        function pre() {
+            nowPage = nowPage - 1;
+            $('#themePic').attr('src', 'img/pic/' + id + '-'+nowPage + '.png')
+            isShow()
+        }
+    </script>
+</body>
+
+</html>

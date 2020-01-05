@@ -1,0 +1,239 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main .bj {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.main_box {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    right: 20px;
+    bottom: 20px;
+}
+
+.main_box .title,
+.main_box .poetry-title {
+    width: 100%;
+    margin: 30px 0 20px;
+}
+
+
+.main_box .title img {
+    display: block;
+    width: 90px;
+    margin: 0 auto;
+}
+
+.main_box .class-list {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.main_box .class-list ul {
+    display: block;
+    width: 100%;
+}
+
+.main_box .class-list ul li {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.main_box .class-list li a {
+    display: block;
+    background: url(../img/class-list-bj-btn.gif) no-repeat left center;
+    line-height: 32px;
+    height: 32px;
+    padding-left: 60px;
+    cursor: pointer;
+}
+
+.main_box .class-list li a span {
+    display: block;
+    width: 80%;
+    background: url(../img/class-list-bj.png) no-repeat center center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.main_box .class-title {
+    margin-left: 100px;
+    width: 240px;
+    background: url(../img/class-title-btn.gif) no-repeat left center;
+    line-height: 35px;
+    height: 35px;
+    padding-left: 60px;
+}
+
+.main_box .class-title span {
+    display: block;
+    background: url(../img/class-list-bj.png) no-repeat center center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.main_box .poetry-list {
+    max-width: 930px;
+    max-height: 440px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 auto;
+}
+.main_box .poetry-list li {
+    float: left;
+    width: 270px;
+    background: url(../img/class-list-bj-btn.gif) no-repeat left center;
+    line-height: 32px;
+    height: 32px;
+    padding-left: 30px;
+    margin-bottom: 8px;
+}
+.main_box .poetry-list li a {
+    display: block;
+    width: 280px;
+    background: url(../img/class-list-bj.png) no-repeat center center;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+#intentionList {
+    max-width: 566px;
+}
+#intentionList ul{
+    width: 280px;
+}
+#intentionList ul li{
+    background: none;
+    padding: 0;
+}
+a.back {
+    right: 50px;
+    top: 80px;
+}
+
+a.yinsong{
+    right: 40px;
+    bottom: 70px;
+}
+a.zw{
+    position: absolute;
+    width: 100px;
+    height: 104px;
+    z-index: 999;
+    right: 40px;
+    bottom: 50px;
+    background: url(../img/zw.png) no-repeat 0 0;
+}
+.poetry-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.poetry-box a{
+    position: absolute;
+    width: 120px;
+    height: 41px;
+    bottom: 30px;
+    cursor: pointer;
+}
+.poetry-box .song{
+    left: 15%;
+}
+.poetry-box .yin{
+    right: 15%;
+}
+.poetry-box a img{
+   display: block;
+   width: 100%;
+   overflow: hidden;
+}
+
+.theme-title{
+    width: 100%;
+    height: 60px;
+    margin: 20px 0;
+}
+.theme-title img{
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.theme-com{
+    width: 60%;
+    height: 100%;
+    max-height: 430px;
+    _height:430px;
+    overflow: auto;
+    position: relative;
+    margin:auto;
+}
+.video-com{
+    width:100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+    margin:auto;
+}
+.audio-box{
+    position: fixed;
+    width: 540px;
+    height: 60px;
+    bottom: 50px;
+    background: #ccc;
+    left: 50%;
+    line-height: 30px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin-left: -270px;
+    z-index: 99;
+    display: none;
+}
+.audio-box audio{
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0 auto;
+    background: #f1f1f1;
+}
+.page-turn{
+    position: absolute;
+    left: 60px;
+    bottom: 50px;
+    z-index: 99;
+}
+.page-turn a{
+    display: none;
+    width: 120px;
+    height: 72px;
+    cursor: pointer;
+}
+.page-turn a img{
+    display: block;
+    width: 100%;
+}
