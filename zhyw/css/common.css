@@ -42,7 +42,7 @@ html{ overflow-x: hidden;}
 .fixClear:after{display:table;content:"";clear:both;}
 a.back{
     position: absolute;
-    width: 120px;
+    width: 8.78%;
     height: 72px;
     z-index: 99;
     cursor: pointer;
@@ -53,7 +53,7 @@ a.back img{
 }
 a.yinsong{
     position: absolute;
-    width: 150px;
+    width: 11%;
     height: 104px;
     background: url(../img/yinsong.png) no-repeat center center;
     z-index: 999; 
