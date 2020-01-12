@@ -15,82 +15,27 @@
 <body>
     <!--主体开始-->
     <div class="main">
-        <img class="bj" src="./img/poetry-bj.jpg">
+        <!-- 独立背景开始 -->
+        <!-- <img class="bj" src="./img/poetry-bj.jpg"> -->
+        <!-- 独立背景结束 -->
+        <!-- 整体背景开始 -->
+        <img class="bj" id="poetry">
+        <!-- 整体背景结束 -->
         <div class="main_box">
-            <div class="menus left-btns">
-                <div class="btn-list top1">
-                    <a class="left-btn">背景释义</a>
-                    <div class="right-btn" id="bjsy">
-                        <a onclick="toNext('zs')">注释</a>
-                        <a onclick="toNext('dy')">大义</a>
-                        <a onclick="toNext('bj')">背景</a>
-                        <a onclick="toNext('zz')">作者</a>
-                        <a onclick="toNext('jt')">解题</a>
-                    </div>
-                </div>
-                <div class="btn-list top2">
-                    <a class="left-btn">吟诵图谱</a>
-                    <div class="right-btn" id="ystp">
-                        <a onclick="toNext('ysfh')">吟诵符号</a>
-                        <a onclick="toNext('wzp')">文字谱</a>
-                    </div>
-                </div>
-                <div class="btn-list top3">
-                    <a class="left-btn">声韵含义</a>
-                    <div class="right-btn" id="syhy">
-                        <a onclick="toNext('wt')">文体</a>
-                        <a onclick="toNext('rsz')">入声字</a>
-                        <a onclick="toNext('yun')">韵</a>
-                        <a onclick="toNext('gl')">格律</a>
-                    </div>
-                </div>
-            </div>
-            <div class="menus right-btns">
-                <div class="btn-list top4">
-                    <a class="left-btn">诗艺文法</a>
-                    <div class="right-btn" id="sywf">
-                        <a onclick="toNext('yx')">意象</a>
-                        <a onclick="toNext('xc')">修辞</a>
-                        <a onclick="toNext('ss')">诗思</a>
-                    </div>
-                </div>
-                <div class="btn-list top5">
-                    <a class="left-btn">文化教育</a>
-                    <div class="right-btn" id="whjy">
-                        <a onclick="toNext('ztfx')">主题分析</a>
-                        <a onclick="toNext('whjs')">文化精神</a>
-                        <a onclick="toNext('ldsr')">立德树人</a>
-                    </div>
-                </div>
-                <div class="btn-list top6">
-                    <a class="left-btn">教学实例</a>
-                    <div class="right-btn" id="jxsl">
-                        <a onclick="toNext('kj')">课件</a>
-                        <a onclick="toNext('ja')">参考教案</a>
-                    </div>
-                </div>
-                <div class="btn-list top7">
-                    <a class="left-btn">教学资源</a>
-                    <div class="right-btn" id="jxzy">
-                        <a onclick="toNext('sjyj')">诗教义解</a>
-                        <a onclick="toNext('jxsj')">教学设计</a>
-                        <a onclick="toNext('yszl')">吟诵资料</a>
-                        <a onclick="toNext('ysbk')">吟诵百科</a>
-                    </div>
-                </div>
-            </div>
+            <div id="menus-box"></div>
             <div class="poetry-box">
-
                 <a class="back" href="javascript:void(0)" onclick="goBack()">
                     <img src="./img/back.png" alt="返回">
                 </a>
-                <p class="class-abbr-title">一上 日积月累</p>
+                <!-- 独立背景开始 -->
+                <!-- <p class="class-abbr-title">一上 日积月累</p> 
                 <div class="poetry-title">
                     <img id="poetryTitle" src="">
                 </div>
                 <div class="poetry-com">
                     <img id="poetryCom" src="">
-                </div>
+                </div> -->
+                <!-- 独立背景结束 -->
                 <div class="show-btns-btn">
                     <div class="media-btn">
                         <a href="javascript:void(0)" onclick="audioPlay('ds')">读诵</a>
@@ -123,40 +68,65 @@
     <script>
         $(function () {
             var id = getUrlParam('id');
-            $('#poetryTitle').attr('src','./img/poetry/'+id+'-title.gif');
-            $('#poetryCom').attr('src','./img/poetry/'+id+'-com.gif');
-            var show = $.cookie('show');
-            $('.btn-list > .left-btn').click(function () {
-                console.log(show)
-                var nowId = $(this).siblings('.right-btn').attr('id');
-                if(show && show.indexOf(nowId) != -1){
-                    show = show.replace(nowId);
-                    $.cookie('show', show);
+            var parentId = id.split('-')[0];
+            var btnList = getIntention(parentId, id).intentionBtn;
+            var leftHtml = '<div class="menus left-btns">';
+            var rightHtml = '<div class="menus right-btns">';
+            for (var i = 0; i < btnList.length; i++) {
+                if (btnList[i].position == 'left') {
+                    var btns = btnList[i].childen;
+                    var btnListMarginTop = '';
+                    var rightBtnMarginTop = '';
+                    if (btns.length == 1) {
+                        rightBtnMarginTop = 'style="margin-top:35px;"';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length == 2) {
+                        rightBtnMarginTop = 'style="margin-top:18px;"';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length == 3) {
+                        rightBtnMarginTop = '';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length == 4) {
+                        rightBtnMarginTop = '';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    }
+                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' +btnListMarginTop +'><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
+                   
+
+                    for (var j = 0; j < btns.length; j++) {
+                        leftHtml += '<a href="' + btns[j].link + '">' + btns[j].text + '</a>'
+                    }
+                    leftHtml += '</div></div>'
                 }
-                $(this).siblings('.right-btn').toggle();
-            })
-            
-            if (show && show.indexOf('bjsy') != -1) {
-                $('#bjsy').show();
+                if (btnList[i].position == 'right') {
+                    var btns = btnList[i].childen;
+                    var btnListMarginTop = '';
+                    var rightBtnMarginTop = '';
+
+                    if (btns.length == 1) {
+                        rightBtnMarginTop = 'style="margin-top:35px;"';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length == 2) {
+                        rightBtnMarginTop = 'style="margin-top:18px;"';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length == 3) {
+                        rightBtnMarginTop = '';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length == 4) {
+                        rightBtnMarginTop = '';
+                        btnListMarginTop = 'style="margin-top:0;"';
+                    }
+                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop +'><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
+                    for (var j = 0; j < btns.length; j++) {
+                        rightHtml += '<a href="' + btns[j].link + '">' + btns[j].text + '</a>'
+                    }
+                    rightHtml += '</div></div>'
+                }
             }
-            if (show && show.indexOf('ystp') != -1) {
-                $('#ystp').show();
-            }
-            if (show && show.indexOf('syhy') != -1) {
-                $('#syhy').show();
-            }
-            if (show && show.indexOf('sywf') != -1) {
-                $('#sywf').show();
-            }
-            if (show && show.indexOf('jxsl') != -1) {
-                $('#jxsl').show();
-            }
-            if (show && show.indexOf('whjy') != -1) {
-                $('#whjy').show();
-            }
-            if (show && show.indexOf('jxsl') != -1) {
-                $('#jxsl').show();
-            }
+            leftHtml += '</div>';
+            rightHtml += '</div>';
+            $('#menus-box').html(leftHtml + rightHtml);
+            $('#poetry').attr('src', './img/poetry/' + id + '.jpg');
         })
         function showMediaBtn() {
             $('.media-btn').toggle();
@@ -178,7 +148,7 @@
                 if (show.indexOf('syhy') == -1) {
                     show += 'syhy'
                 }
-                if(type == 'yun'){
+                if (type == 'yun') {
                     $.cookie('show', show);
                     window.location.href = "withPage.html?id=" + id + '&theme=' + type;
                     return;
