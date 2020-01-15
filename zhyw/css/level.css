@@ -214,6 +214,7 @@ a.zw{
     z-index: 99;
     display: none;
     cursor: move;
+    opcity:0.8;
 }
 .audio-box audio{
     display: block;
