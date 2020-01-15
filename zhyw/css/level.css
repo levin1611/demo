@@ -213,6 +213,7 @@ a.zw{
     margin-left: -270px;
     z-index: 99;
     display: none;
+    cursor: move;
 }
 .audio-box audio{
     display: block;
