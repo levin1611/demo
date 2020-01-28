@@ -11,12 +11,53 @@
 
 <body>
     <div class="content">
-        <a class="index" href="firstLevel.html">
+        <a id="loginBtn" class="login-btn" onclick="showLogin()">登 录</a>
+        <a id="user" class="user-btn"></a>
+        <a class="index" href="javascript:void(0)" onclick="showLogin()">
             <img src="img/banner.jpg">
         </a>
     </div>
+    <div class="login-pop" id="login">
+        <h3>语文吟诵系统</h3>
+        <div class="login-box">
+            <div class="form-group">
+                <label class="form-label">登录名</label>
+                <input type="text" class="form-control" id="userName" placeholder="请输入登录名">
+            </div>
+            <div class="form-group">
+                <label class="form-label">密码</label>
+                <input type="password" class="form-control" id="passWord" placeholder="请输入密码">
+            </div>
+            <div class="form-group text-center">
+                <input type="button" class="btn btn-primary" onclick="login()" value="登 录">
+                <input type="button" class="btn" onclick="hideLogin()" value="取 消">
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
+    <script>
+        $(function() {
+            var userName = $.cookie('login');
+            if (userName) {
+                $('#loginBtn').css({
+                    display: 'none'
+                });
+                $('#user').html(userName);
+                $('#user').css({
+                    display: 'block'
+                });
+            } else {
+                $('#loginBtn').css({
+                    display: 'block'
+                });
+                $('#user').css({
+                    display: 'none'
+                });
+            }
+        })
+    </script>
 </body>
 
 </html>

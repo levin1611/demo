@@ -27,7 +27,8 @@
             </a>
             <a class="page-next" id="next" onclick="next()">
                 <img src="./img/next.png" alt="下一页">
-            </a></div>
+            </a>
+        </div>
         <a class="back" onclick="goBack()">
             <img src="./img/back.png" alt="返回">
         </a>
@@ -38,31 +39,42 @@
         var nowPage = 1;
         var id = getUrlParam('id');
         var type = getUrlParam('theme');
-        $(function () {
-            
+        $(function() {
+
             isShow()
             $('#themeTitle').attr('src', 'img/titlePic/' + type + '.png');
-            $('#themePic').attr('src', 'img/pic/' + id + '-' + type+nowPage + '.png')
+            $('#themePic').attr('src', 'img/pic/' + id + '-' + type + nowPage + '.png')
         })
-        function isShow(){
+
+        function isShow() {
             if (nowPage == 1) {
-                $('#pre').css({display:'none'});
-                $('#next').css({display:'block'});
-            }else{
-                $('#pre').css({display:'block'});
-                if(nowPage == 2){
-                    $('#next').css({display:'none'});
+                $('#pre').css({
+                    display: 'none'
+                });
+                $('#next').css({
+                    display: 'block'
+                });
+            } else {
+                $('#pre').css({
+                    display: 'block'
+                });
+                if (nowPage == 2) {
+                    $('#next').css({
+                        display: 'none'
+                    });
                 }
             }
         }
+
         function next() {
-            nowPage = nowPage+1;
-            $('#themePic').attr('src', 'img/pic/' + id + '-' + type+nowPage + '.png')
+            nowPage = nowPage + 1;
+            $('#themePic').attr('src', 'img/pic/' + id + '-' + type + nowPage + '.png')
             isShow()
         }
+
         function pre() {
             nowPage = nowPage - 1;
-            $('#themePic').attr('src', 'img/pic/' + id + '-' + type+nowPage + '.png')
+            $('#themePic').attr('src', 'img/pic/' + id + '-' + type + nowPage + '.png')
             isShow()
         }
     </script>

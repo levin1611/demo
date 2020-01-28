@@ -66,7 +66,7 @@
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
-        $(function () {
+        $(function() {
             var id = getUrlParam('id');
             var parentId = id.split('-')[0];
             var btnList = getIntention(parentId, id).intentionBtn;
@@ -90,8 +90,8 @@
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
                     }
-                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' +btnListMarginTop +'><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
-                   
+                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
+
 
                     for (var j = 0; j < btns.length; j++) {
                         leftHtml += '<a href="' + btns[j].link + '">' + btns[j].text + '</a>'
@@ -116,7 +116,7 @@
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
                     }
-                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop +'><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
+                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
                     for (var j = 0; j < btns.length; j++) {
                         rightHtml += '<a href="' + btns[j].link + '">' + btns[j].text + '</a>'
                     }
@@ -128,9 +128,11 @@
             $('#menus-box').html(leftHtml + rightHtml);
             $('#poetry').attr('src', './img/poetry/' + id + '.jpg');
         })
+
         function showMediaBtn() {
             $('.media-btn').toggle();
         }
+
         function toNext(type) {
             var id = getUrlParam('id');
             var show = $.cookie('show') ? $.cookie('show') : '';
