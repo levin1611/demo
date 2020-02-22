@@ -15,6 +15,67 @@ body {
     overflow: hidden;
 }
 
+.share-btn {
+    position: absolute;
+    top: 14px;
+    right: 60px;
+    color: #333;
+    line-height: 32px;
+    font-size: 16px;
+    width: 80px;
+    height: 40px;
+    background: url(../img/share.gif) no-repeat 0 0;
+    background-size: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 99;
+}
+
+.login-pop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    margin-top: -150px;
+    margin-left: -150px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    z-index: 999;
+    display: none;
+}
+
+.login-pop h3 {
+    position: relative;
+    padding: 20px 0 10px;
+    overflow: hidden;
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+}
+
+.login-pop h3 .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.login-pop .login-box {
+    padding: 15px;
+}
+
+.login-pop .login-box img {
+    display: block;
+    width: 100%;
+}
+
 .main .bj {
     display: block;
     width: 100%;
@@ -23,20 +84,22 @@ body {
 
 .main_box {
     position: absolute;
-    left: 20px;
-    top: 20px;
-    right: 20px;
-    bottom: 20px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
 }
-#menus-box{
+
+#menus-box {
     position: absolute;
     width: 100%;
     height: 100%;
 }
+
 .main_box .title,
 .main_box .poetry-title {
     width: 100%;
-    margin:5.93% 0 4.87%;
+    margin: 5.93% 0 4.87%;
 }
 
 .poetry-title {
@@ -45,7 +108,7 @@ body {
 
 .main_box .title img {
     display: block;
-    width:  8.78%;
+    width: 8.78%;
     margin: 0 auto;
 }
 
@@ -133,16 +196,20 @@ body {
     font-weight: bold;
     color: #333;
 }
+
 #intentionList {
     max-width: 566px;
 }
-#intentionList ul{
+
+#intentionList ul {
     width: 280px;
 }
-#intentionList ul li{
+
+#intentionList ul li {
     background: none;
     padding: 0;
 }
+
 .main_box .menus {
     width: 130px;
     position: absolute;
@@ -150,11 +217,11 @@ body {
 }
 
 .main_box .left-btns {
-    left: 1.5%;
+    left: 4.3%;
 }
 
 .main_box .right-btns {
-    right: 1.5%;
+    right: 4.3%;
 }
 
 .main_box .menus .btn-list {
@@ -172,6 +239,10 @@ body {
 
 .main_box .left-btns .top3 {
     top: 64%;
+}
+
+.main_box .left-btns .top4 {
+    top: 84%;
 }
 
 .main_box .right-btns .top1 {
@@ -192,12 +263,12 @@ body {
 
 .btn-list .left-btn {
     float: left;
-    padding-top: 3px;
+    padding-top: 6px;
     overflow: hidden;
-    width: 30px;
-    height: 101px;
+    width: 28px;
+    height: 94px;
     margin-top: 35px;
-    line-height: 24px;
+    line-height: 20px;
     background: url(../img/menu-bj.gif) no-repeat 0 0;
     text-align: center;
     color: #fff;
@@ -212,6 +283,7 @@ body {
 .btn-list .right-btn {
     float: left;
     margin-left: 25px;
+    display: none;
 }
 
 .btn-list .right-btn a {
@@ -220,10 +292,10 @@ body {
     line-height: 22px;
     background: url(../img/btn-bj.gif) no-repeat 0 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     cursor: pointer;
 }
 
@@ -265,6 +337,13 @@ a.back {
     bottom: 50px;
 }
 
+a.three-back {
+    right: 0;
+    bottom: 4%;
+    width: 100px;
+    height: 60px;
+}
+
 a.poetry-back {
     right: 200px;
     bottom: 50px;
@@ -272,11 +351,11 @@ a.poetry-back {
 
 .poetry-box {
     position: absolute;
-    width: 70%;
+    width: 62%;
     height: 100%;
     top: 0;
     left: 50%;
-    margin-left: -35%;
+    margin-left: -31%;
     overflow: hidden;
 }
 
@@ -284,7 +363,7 @@ a.poetry-back {
     position: absolute;
     left: 10px;
     top: 40px;
-    *top:50px;
+    *top: 50px;
     font-size: 24px;
     color: #000;
     font-family: '仿宋';
@@ -299,97 +378,120 @@ a.poetry-back {
 
 .poetry-box .poetry-title img {
     display: block;
-    width:  12%;
+    width: 12%;
     margin: 0 auto;
 }
 
 .poetry-box .poetry-com {
     width: 100%;
+    height: 73.55%;
+    position: absolute;
+    top: 9.2%;
+    left: 0;
+    overflow: auto;
 }
 
 .poetry-box .poetry-com img {
     display: block;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
 }
+
 .show-btns-btn {
     width: 100%;
     position: absolute;
-    bottom: 1%;
+    bottom: 2%;
 }
+
 .media-btn {
     width: 100%;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     display: none;
 }
+
 .media-btn a {
     display: inline-block;
     _zoom: 1;
     _display: inline;
-    width: 75px;
-    line-height: 22px;
-    background: url(../img/btn-bj.gif) no-repeat 0 0;
+    width: 66px;
+    line-height: 20px;
+    background: url(../img/audio-bj.gif) no-repeat 0 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
     font-weight: bold;
     margin-right: 10px;
 }
-.media-btn-list{
+
+.media-btn-list {
     width: 100%;
     text-align: center;
 }
-.media-btn-list a{
+
+.media-btn-list a {
     display: inline-block;
     _zoom: 1;
     _display: inline;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     margin: 0 10px;
 }
-.media-btn-list a.yin1{
+
+.media-btn-list a.yin1 {
     background: url(../img/yin1.png) no-repeat 0 0;
+    background-size: 100%;
 }
-.media-btn-list a.song{
+
+.media-btn-list a.song {
     background: url(../img/song.png) no-repeat 0 0;
+    background-size: 100%;
 }
-.media-btn-list a.lu{
+
+.media-btn-list a.lu {
     background: url(../img/lu.png) no-repeat 0 0;
+    background-size: 100%;
 }
-.media-btn-list a.yin{
+
+.media-btn-list a.yin {
     background: url(../img/yin.png) no-repeat 0 0;
+    background-size: 100%;
 }
-.audio-box{
+
+.audio-box {
     position: absolute;
     width: 300px;
     height: 30px;
     bottom: 15px;
-    left:50%;
+    left: 50%;
     margin-left: -150px;
     text-align: center;
     z-index: 99;
     display: none;
     background: #000;
 }
+
 .audio-box .audio {
     width: 100%;
     height: 30px;
     margin: 0 auto;
 }
-.theme-title{
+
+.theme-title {
     position: absolute;
     width: 100%;
     height: 10%;
     margin: 3% 0;
 }
-.theme-title img{
+
+.theme-title img {
     display: block;
     height: 100%;
     overflow: hidden;
     margin: 0 auto;
 }
-.theme-com{
+
+.theme-com {
     position: absolute;
     left: 50%;
     width: 60%;
@@ -397,50 +499,58 @@ a.poetry-back {
     height: 68%;
     margin-left: -30%;
     overflow-x: hidden;
-    overflow-y:auto;
+    overflow-y: auto;
     word-break: break-all;
 }
-.video-com{
-    width:100%;
+
+.video-com {
+    width: 100%;
     height: 100%;
     overflow: auto;
     position: relative;
-    margin:auto;
+    margin: auto;
 }
-.wzp{
+
+.wzp {
     height: 100%;
     max-height: 100%;
     overflow: hidden;
 }
-.theme-com img{
+
+.theme-com img {
     display: block;
     width: 100%;
     overflow: hidden;
-    margin:auto;
+    margin: auto;
 }
-.wzp img{
+
+.wzp img {
     width: 90%;
 }
-.video-com video{
+
+.video-com video {
     display: block;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    margin:auto;
+    margin: auto;
 }
-.page-turn{
+
+.page-turn {
     position: absolute;
     left: 60px;
     bottom: 50px;
     z-index: 99;
 }
-.page-turn a{
+
+.page-turn a {
     display: none;
     width: 120px;
     height: 72px;
     cursor: pointer;
 }
-.page-turn a img{
+
+.page-turn a img {
     display: block;
     width: 100%;
 }

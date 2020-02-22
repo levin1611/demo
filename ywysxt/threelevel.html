@@ -16,25 +16,22 @@
     <!--主体开始-->
     <div class="main">
         <!-- 独立背景开始 -->
-        <!-- <img class="bj" src="./img/poetry-bj.jpg"> -->
+        <img class="bj" src="./img/poetry-bj.jpg">
         <!-- 独立背景结束 -->
         <!-- 整体背景开始 -->
-        <img class="bj" id="poetry">
+        <!-- <img class="bj" id="poetry"> -->
         <!-- 整体背景结束 -->
         <div class="main_box">
             <div id="menus-box"></div>
             <div class="poetry-box">
-                <a class="back" href="javascript:void(0)" onclick="goBack()">
+                <a class="back three-back" href="javascript:void(0)" onclick="goBack()">
                     <img src="./img/back.png" alt="返回">
                 </a>
                 <!-- 独立背景开始 -->
-                <!-- <p class="class-abbr-title">一上 日积月累</p> 
-                <div class="poetry-title">
-                    <img id="poetryTitle" src="">
-                </div>
+                <!-- <p class="class-abbr-title">一上 日积月累</p> -->
                 <div class="poetry-com">
                     <img id="poetryCom" src="">
-                </div> -->
+                </div>
                 <!-- 独立背景结束 -->
                 <div class="show-btns-btn">
                     <div class="media-btn">
@@ -63,20 +60,25 @@
     </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+
+    <script type="text/javascript" src="js/json2.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
         $(function() {
             var id = getUrlParam('id');
             var parentId = id.split('-')[0];
+            var show = $.cookie('show') ? $.cookie('show') : '';
             var btnList = getIntention(parentId, id).intentionBtn;
             var leftHtml = '<div class="menus left-btns">';
             var rightHtml = '<div class="menus right-btns">';
+            console.log(btnList)
             for (var i = 0; i < btnList.length; i++) {
                 if (btnList[i].position == 'left') {
                     var btns = btnList[i].childen;
                     var btnListMarginTop = '';
                     var rightBtnMarginTop = '';
+                    var isBlock = '';
                     if (btns.length == 1) {
                         rightBtnMarginTop = 'style="margin-top:35px;"';
                         btnListMarginTop = 'style="margin-top:0;"';
@@ -90,11 +92,16 @@
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
                     }
-                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
-
+                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn">' + btnList[i].text + '</a>';
+                    if (show && show.indexOf(btnList[i].pid) != -1) {
+                        isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + ' style="display:block">'
+                    } else {
+                        isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>'
+                    }
+                    leftHtml += isBlock;
 
                     for (var j = 0; j < btns.length; j++) {
-                        leftHtml += '<a href="' + btns[j].link + '">' + btns[j].text + '</a>'
+                        leftHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + ' \'' + ')">' + btns[j].text + '</a>'
                     }
                     leftHtml += '</div></div>'
                 }
@@ -102,7 +109,7 @@
                     var btns = btnList[i].childen;
                     var btnListMarginTop = '';
                     var rightBtnMarginTop = '';
-
+                    var isBlock = '';
                     if (btns.length == 1) {
                         rightBtnMarginTop = 'style="margin-top:35px;"';
                         btnListMarginTop = 'style="margin-top:0;"';
@@ -116,9 +123,15 @@
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
                     }
-                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn">' + btnList[i].text + '</a><div class="right-btn" id="' + btnList[i].id + '" ' + rightBtnMarginTop + '>';
+                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn">' + btnList[i].text + '</a>';
+                    if (show && show.indexOf(btnList[i].pid) != -1) {
+                        isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + ' style="display:block">';
+                    } else {
+                        isBlock += '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>';
+                    }
+                    rightHtml += isBlock;
                     for (var j = 0; j < btns.length; j++) {
-                        rightHtml += '<a href="' + btns[j].link + '">' + btns[j].text + '</a>'
+                        rightHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + '\'' + ')">' + btns[j].text + '</a>'
                     }
                     rightHtml += '</div></div>'
                 }
@@ -126,6 +139,15 @@
             leftHtml += '</div>';
             rightHtml += '</div>';
             $('#menus-box').html(leftHtml + rightHtml);
+            $('.btn-list > .left-btn').click(function() {
+                var nowId = $(this).siblings('.right-btn').attr('id');
+                if (show && show.indexOf(nowId) != -1) {
+                    show = show.replace(nowId);
+                    $.cookie('show', show);
+                }
+                $(this).siblings('.right-btn').toggle();
+            })
+
             $('#poetry').attr('src', './img/poetry/' + id + '.jpg');
         })
 
@@ -133,51 +155,15 @@
             $('.media-btn').toggle();
         }
 
-        function toNext(type) {
-            var id = getUrlParam('id');
+        function toNext(url) {
+            var obj = JSON.parse(url);
+            var parentId = obj.parentid;
             var show = $.cookie('show') ? $.cookie('show') : '';
-            if (type == 'zs' || type == 'dy' || type == 'bj' || type == 'zz' || type == 'jt') {
-                if (show.indexOf('bjsy') == -1) {
-                    show += 'bjsy'
-                }
-            }
-            if (type == 'yyfh' || type == 'wzp') {
-                if (show.indexOf('ystp') == -1) {
-                    show += 'ystp'
-                }
-            }
-            if (type == 'wt' || type == 'rsz' || type == 'yun' || type == 'zz' || type == 'gl') {
-                if (show.indexOf('syhy') == -1) {
-                    show += 'syhy'
-                }
-                if (type == 'yun') {
-                    $.cookie('show', show);
-                    window.location.href = "withPage.html?id=" + id + '&theme=' + type;
-                    return;
-                }
-            }
-            if (type == 'yx' || type == 'xc' || type == 'sc') {
-                if (show.indexOf('sywf') == -1) {
-                    show += 'sywf'
-                }
-            }
-            if (type == 'ztfx' || type == 'whjs' || type == 'ldsr') {
-                if (show.indexOf('whjy') == -1) {
-                    show += 'whjy'
-                }
-            }
-            if (type == 'kj' || type == 'ckja') {
-                if (show.indexOf('jxsl') == -1) {
-                    show += 'jxsl'
-                }
-            }
-            if (type == 'sjyj' || type == 'jxsj' || type == 'yszl' || type == 'ysbk') {
-                if (show.indexOf('jxzy') == -1) {
-                    show += 'jxzy'
-                }
+            if (show.indexOf(parentId) == -1) {
+                show += parentId
             }
             $.cookie('show', show);
-            window.location.href = "fourlevel.html?id=" + id + '&theme=' + type;
+            window.location.href = obj.link
 
         }
     </script>

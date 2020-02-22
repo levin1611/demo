@@ -27,6 +27,9 @@
         <a class="back" href="javascript:void(0)" onclick="goBack()">
             <img src="./img/back.png" alt="返回">
         </a>
+        <a class="share" href="javascript:void(0)" onclick="share()">
+            <img src="./img/share.png" alt="分享">
+        </a>
         <a href="javascript:void(0)" onclick="toPage()" class="yinsong"></a>
         <div class="audio-box" id="audioBox">
             <div style="height:30px;"></div>
@@ -41,14 +44,15 @@
     <script type="text/javascript" src="js/drag.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
-        $(function () {
+        $(function() {
             var id = getUrlParam('id');
             $('#poetryCom').attr('src', './img/poetry/' + id + '.jpg')
         })
-        function toPage(){
+
+        function toPage() {
             var id = getUrlParam('id');
-            window.location.href = 'threelevel_ys.html?id='+id;
-            
+            window.location.href = 'threelevel_ys.html?id=' + id;
+
         }
     </script>
 </body>

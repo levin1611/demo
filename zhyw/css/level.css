@@ -36,7 +36,6 @@ body {
     text-align: center;
 }
 
-
 .main_box .title img {
     display: inline-block;
     width: 8.78%;
@@ -96,11 +95,12 @@ body {
 
 .main_box .poetry-list {
     max-width: 930px;
-    height:calc(100% - 24%);
+    height: calc(100% - 24%);
     overflow-x: hidden;
     overflow-y: auto;
     margin: 0 auto;
 }
+
 .main_box .poetry-list li {
     float: left;
     width: 270px;
@@ -110,6 +110,7 @@ body {
     padding-left: 30px;
     margin-bottom: 8px;
 }
+
 .main_box .poetry-list li a {
     display: block;
     width: 280px;
@@ -118,26 +119,36 @@ body {
     font-weight: bold;
     color: #333;
 }
+
 #intentionList {
     max-width: 566px;
 }
-#intentionList ul{
+
+#intentionList ul {
     width: 280px;
 }
-#intentionList ul li{
+
+#intentionList ul li {
     background: none;
     padding: 0;
 }
+
 a.back {
     right: 5%;
     top: 10%;
 }
 
-a.yinsong{
+a.share {
+    left: 5%;
+    top: 10%;
+}
+
+a.yinsong {
     right: 5%;
     bottom: 20%;
 }
-a.zw{
+
+a.zw {
     position: absolute;
     width: 100px;
     height: 104px;
@@ -146,6 +157,7 @@ a.zw{
     bottom: 50px;
     background: url(../img/zw.png) no-repeat 0 0;
 }
+
 .poetry-box {
     position: absolute;
     top: 0;
@@ -154,52 +166,60 @@ a.zw{
     height: 100%;
     overflow: hidden;
 }
-.poetry-box a{
+
+.poetry-box a {
     position: absolute;
     width: 8.78%;
     bottom: 10%;
     cursor: pointer;
 }
-.poetry-box .song{
+
+.poetry-box .song {
     left: 15%;
 }
-.poetry-box .yin{
+
+.poetry-box .yin {
     right: 15%;
 }
-.poetry-box a img{
-   display: block;
-   width: 100%;
-   overflow: hidden;
+
+.poetry-box a img {
+    display: block;
+    width: 100%;
+    overflow: hidden;
 }
 
-.theme-title{
+.theme-title {
     width: 100%;
     height: 60px;
     margin: 40px 0;
 }
-.theme-title img{
+
+.theme-title img {
     display: block;
     height: 100%;
     overflow: hidden;
     margin: 0 auto;
 }
-.theme-com{
+
+.theme-com {
     width: 60%;
     height: 100%;
     max-height: 430px;
-    _height:430px;
+    _height: 430px;
     overflow: auto;
     position: relative;
-    margin:auto;
+    margin: auto;
 }
-.video-com{
-    width:100%;
+
+.video-com {
+    width: 100%;
     height: 100%;
     overflow: auto;
     position: relative;
-    margin:auto;
+    margin: auto;
 }
-.audio-box{
+
+.audio-box {
     position: fixed;
     width: 540px;
     height: 60px;
@@ -214,28 +234,32 @@ a.zw{
     z-index: 99;
     display: none;
     cursor: move;
-    opacity:0.8;
+    opacity: 0.8;
 }
-.audio-box audio{
+
+.audio-box audio {
     display: block;
     width: 100%;
     height: 30px;
     margin: 0 auto;
     background: #f1f1f1;
 }
-.page-turn{
+
+.page-turn {
     position: absolute;
     left: 60px;
     bottom: 50px;
     z-index: 99;
 }
-.page-turn a{
+
+.page-turn a {
     display: none;
     width: 120px;
     height: 72px;
     cursor: pointer;
 }
-.page-turn a img{
+
+.page-turn a img {
     display: block;
     width: 100%;
 }

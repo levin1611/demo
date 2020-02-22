@@ -5,7 +5,7 @@ var ALLCLASS = [{
                 subtitle: '',
                 dynasty: '唐',
                 author: '骆宾王',
-                id: '1-1',
+                sid: '1-1',
                 intentionList: [
                     { id: '1-1-intention-1', text: '鹅' },
                     { id: '1-1-intention-2', text: '曲项' },
@@ -17,82 +17,82 @@ var ALLCLASS = [{
                 ],
                 intentionBtn: [{
                         text: '背景释义',
-                        id: 'bjsy',
+                        pid: 'lefttop1',
                         position: 'left',
                         className: 'top1',
                         childen: [
-                            { text: "注释", link: "fourlevel.html?id=1-1&theme=zs" },
-                            { text: "大义", link: "fourlevel.html?id=1-1&theme=dy" },
-                            { text: "背景", link: "fourlevel.html?id=1-1&theme=bj" },
-                            { text: "作者", link: "fourlevel.html?id=1-1&theme=zz" },
-                            { text: "解题", link: "fourlevel.html?id=1-1&theme=jt" }
+                            { text: "注释", cid: "12345678", parentid: "lefttop1", link: "fourlevel.html?id=12345678" },
+                            { text: "大义", cid: "13572468", parentid: "lefttop1", link: "fourlevel.html?id=13572468" },
+                            { text: "背景", cid: "13456789", parentid: "lefttop1", link: "fourlevel.html?id=13456789" },
+                            { text: "作者", cid: "43578833", parentid: "lefttop1", link: "fourlevel.html?id=43578833" },
+                            { text: "解题", cid: "09903830", parentid: "lefttop1", link: "fourlevel.html?id=09903830" }
                         ]
                     },
                     {
                         text: '吟诵图谱',
-                        id: 'ystp',
+                        pid: 'lefttop2',
                         position: 'left',
                         className: 'top2',
                         childen: [
-                            { text: "吟诵符号", link: "fourlevel.html?id=1-1&theme=ysfh" },
-                            { text: "文字谱", link: "fourlevel.html?id=1-1&theme=wzp" }
+                            { text: "吟诵符号", cid: "57343874", parentid: "lefttop2", link: "fourlevel.html?id=57343874" },
+                            { text: "文字谱", cid: "34543235", parentid: "lefttop2", link: "fourlevel.html?id=34543235" }
                         ]
                     },
                     {
                         text: '声韵含义',
-                        id: 'syhy',
+                        pid: 'syhy',
                         position: 'left',
                         className: 'top3',
                         childen: [
-                            { text: "文体", link: "fourlevel.html?id=1-1&theme=wt" },
-                            { text: "入声字", link: "fourlevel.html?id=1-1&theme=rsz" },
-                            { text: "韵", link: "withPage.html?id=1-1&theme=yun" },
-                            { text: "格律", link: "fourlevel.html?id=1-1&theme=gl" }
+                            { text: "文体", parentid: "syhy", link: "fourlevel.html?id=1-1&theme=wt" },
+                            { text: "入声字", parentid: "syhy", link: "fourlevel.html?id=1-1&theme=rsz" },
+                            { text: "韵", parentid: "syhy", link: "withPage.html?id=1-1&theme=yun" },
+                            { text: "格律", parentid: "syhy", link: "fourlevel.html?id=1-1&theme=gl" }
                         ]
                     },
                     {
                         text: '诗艺文法',
-                        id: 'sywf',
+                        pid: 'righttop1',
                         position: 'right',
                         className: 'top1',
                         childen: [
-                            { text: "意象", link: "fourlevel.html?id=1-1&theme=yx" },
-                            { text: "修辞", link: "fourlevel.html?id=1-1&theme=xc" },
-                            { text: "诗思", link: "fourlevel.html?id=1-1&theme=ss" }
+                            { text: "意象", cid: '65556876', parentid: "righttop1", link: "fourlevel.html?id=65556876" },
+                            { text: "修辞", cid: '65556877', parentid: "righttop1", link: "fourlevel.html?id=65556877" },
+                            { text: "诗思", cid: '65556878', parentid: "righttop1", link: "fourlevel.html?id=65556878" }
                         ]
                     },
 
                     {
                         text: '文化教育',
-                        id: 'whjy',
+                        pid: 'righttop2',
                         position: 'right',
                         className: 'top2',
                         childen: [
-                            { text: "主题分析", link: "fourlevel.html?id=1-1&theme=ztfx" },
-                            { text: "文化精神", link: "fourlevel.html?id=1-1&theme=whjs" },
-                            { text: "立德树人", link: "fourlevel.html?id=1-1&theme=ldsr" }
+                            { text: "主题分析", cid: '75556876', parentid: "righttop2", link: "fourlevel.html?id=75556876" },
+                            { text: "文化精神", cid: '75556877', parentid: "righttop2", link: "fourlevel.html?id=75556876" },
+                            { text: "立德树人", cid: '75556878', parentid: "righttop2", link: "fourlevel.html?id=75556876" }
                         ]
                     },
                     {
                         text: '教学实例',
-                        id: 'jxsl',
+                        pid: 'jxsl',
                         position: 'right',
                         className: 'top3',
                         childen: [
-                            { text: "课件", link: "fourlevel.html?id=1-1&theme=kj" },
-                            { text: "参考教案", link: "fourlevel.html?id=1-1&theme=ja" }
+                            { text: "课件", parentid: "jxsl", link: "fourlevel.html?id=1-1&theme=kj" },
+                            { text: "参考教案", parentid: "jxsl", link: "fourlevel.html?id=1-1&theme=ja" }
                         ]
                     },
                     {
                         text: '教学资源',
-                        id: 'jxzy',
+                        pid: 'jxzy',
                         position: 'right',
                         className: 'top4',
                         childen: [
-                            { text: "诗教义解", link: "fourlevel.html?id=1-1&theme=sjyj" },
-                            { text: "教学设计", link: "fourlevel.html?id=1-1&theme=jxsj" },
-                            { text: "吟诵资料", link: "fourlevel.html?id=1-1&theme=yszl" },
-                            { text: "吟诵百科", link: "fourlevel.html?id=1-1&theme=ysbk" }
+                            { text: "诗教义解", parentid: "jxzy", link: "fourlevel.html?id=1-1&theme=sjyj" },
+                            { text: "教学设计", parentid: "jxzy", link: "fourlevel.html?id=1-1&theme=jxsj" },
+                            { text: "吟诵资料", parentid: "jxzy", link: "fourlevel.html?id=1-1&theme=yszl" },
+                            { text: "吟诵百科", parentid: "jxzy", link: "fourlevel.html?id=1-1&theme=ysbk" }
                         ]
                     }
                 ]
@@ -219,7 +219,7 @@ function getPoetryList(id) {
 function getIntention(parentid, id) {
     var poetryList = getPoetryList(parentid);
     for (var i = 0; i < poetryList.length; i++) {
-        if (poetryList[i].id == id) {
+        if (poetryList[i].sid == id) {
             return poetryList[i];
         }
 
@@ -312,6 +312,7 @@ function hideLogin() {
 function login() {
     var userName = $('#userName').val();
     var passWord = $('#passWord').val();
+    window.location.href = 'firstLevel.html';
     if (!userName || !passWord) {
         alert('请输入用户名及密码');
         return
