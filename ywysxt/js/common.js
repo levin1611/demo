@@ -98,39 +98,256 @@ var ALLCLASS = [{
                 ]
             },
             {
-                title: '江南 汉乐府',
+                title: '大风歌',
+                id: 1,
+                subtitle: '',
+                dynasty: '汉',
+                author: '刘邦'
+            },
+            {
+                title: '静夜思',
+                id: 9,
+                subtitle: '',
+                dynasty: '唐',
+                author: '李白'
+            },
+            {
+                title: '池  上',
+                subtitle: '',
+                dynasty: '唐',
+                author: '白居易',
+                id: 18
+            },
+            {
+                title: '江  南',
+                id: 2,
                 subtitle: '',
                 dynasty: '',
-                author: '',
-                id: '1-2'
+                author: '汉乐府'
+            },
+            {
+                title: '赠汪伦',
+                id: 10,
+                subtitle: '',
+                dynasty: '唐',
+                author: '李白'
+            },
+            {
+                title: '寻隐者不遇',
+                subtitle: '',
+                dynasty: '唐',
+                author: '贾岛',
+                id: 19
+            },
+            {
+                title: '咏  鹅',
+                id: 3,
+                subtitle: '',
+                dynasty: '唐',
+                author: '骆宾王'
+            },
+            {
+                title: '古朗月行',
+                id: 11,
+                subtitle: '节选',
+                dynasty: '唐',
+                author: '李白'
+            },
+            {
+                title: '金缕衣',
+                subtitle: '',
+                dynasty: '唐',
+                author: '杜秋娘',
+                id: 15
+            },
+            {
+                title: '风',
+                id: 4,
+                subtitle: '',
+                dynasty: '唐',
+                author: '李峤'
+            },
+            {
+                title: '秋浦歌',
+                subtitle: '',
+                dynasty: '唐',
+                author: '李白',
+                id: 12
+            },
+            {
+                title: '乐游原',
+                subtitle: '',
+                dynasty: '唐',
+                author: '李商隐',
+                id: 20
+            },
+            {
+                title: '渡汉江',
+                id: 5,
+                subtitle: '',
+                dynasty: '唐',
+                author: '宋之问'
+            },
+            {
+                title: '听弹琴',
+                subtitle: '',
+                dynasty: '唐',
+                author: '刘长卿',
+                id: 13
+            },
+            {
+                title: '山村咏怀',
+                subtitle: '',
+                dynasty: '宋',
+                author: '邵雍',
+                id: 21
+            },
+            {
+                title: '送  兄',
+                id: 6,
+                subtitle: '',
+                dynasty: '唐',
+                author: '七岁女童'
+            },
+            {
+                title: '前出塞',
+                subtitle: '节选',
+                dynasty: '唐',
+                author: '杜甫',
+                id: 14
+            },
+            {
+                title: '小  池',
+                subtitle: '',
+                dynasty: '宋',
+                author: '杨万里',
+                id: 22
+            },
+            {
+                title: '春  晓',
+                id: 7,
+                subtitle: '',
+                dynasty: '唐',
+                author: '孟浩然'
+            },
+            {
+                title: '悯  农',
+                subtitle: '其二',
+                dynasty: '唐',
+                author: '李绅',
+                id: 16
+            },
+            {
+                title: '画  鸡',
+                subtitle: '',
+                dynasty: '唐',
+                author: '唐寅',
+                id: 23
+            },
+            {
+                title: '山  中',
+                id: 8,
+                subtitle: '',
+                dynasty: '唐',
+                author: '王维'
+            },
+            {
+                title: '问刘十九',
+                subtitle: '',
+                dynasty: '唐',
+                author: '白居易',
+                id: 17
             },
             {
                 title: '画',
                 subtitle: '',
                 dynasty: '',
                 author: '',
-                id: '1-3'
+                id: 24
             },
             {
-                title: '悯农',
-                subtitle: '其二',
-                dynasty: '唐',
-                author: '李绅',
-                id: '1-4'
+                title: '渔家傲.秋思',
+                id: 25,
+                subtitle: '',
+                dynasty: '宋',
+                author: '范仲淹'
             },
             {
-                title: '古朗月行',
-                subtitle: '节选',
-                dynasty: '唐',
-                author: '李白',
-                id: '1-5'
-            },
-            {
-                title: '风',
+                title: '问刘十九',
                 subtitle: '',
                 dynasty: '唐',
-                author: '李峤',
-                id: '1-6'
+                author: '白居易',
+                id: 17
+            },
+            {
+                title: '画',
+                subtitle: '',
+                dynasty: '',
+                author: '',
+                id: 24
+            },
+            {
+                title: '山  中',
+                id: 8,
+                subtitle: '',
+                dynasty: '唐',
+                author: '王维'
+            },
+            {
+                title: '问刘十九',
+                subtitle: '',
+                dynasty: '唐',
+                author: '白居易',
+                id: 17
+            },
+            {
+                title: '画',
+                subtitle: '',
+                dynasty: '',
+                author: '',
+                id: 24
+            },
+            {
+                title: '山  中',
+                id: 8,
+                subtitle: '',
+                dynasty: '唐',
+                author: '王维'
+            },
+            {
+                title: '问刘十九',
+                subtitle: '',
+                dynasty: '唐',
+                author: '白居易',
+                id: 17
+            },
+            {
+                title: '画',
+                subtitle: '',
+                dynasty: '',
+                author: '',
+                id: 24
+            },
+            {
+                title: '山  中',
+                id: 8,
+                subtitle: '',
+                dynasty: '唐',
+                author: '王维'
+            },
+            {
+                title: '问刘十九',
+                subtitle: '',
+                dynasty: '唐',
+                author: '白居易',
+                id: 17
+            },
+            {
+                title: '画',
+                subtitle: '',
+                dynasty: '',
+                author: '',
+                id: 24
             }
         ],
         id: 1
@@ -206,6 +423,14 @@ function getAllClass() {
         arr.push(obj);
     }
     return arr
+}
+
+function getClass(id) {
+    for (var i = 0; i < ALLCLASS.length; i++) {
+        if (ALLCLASS[i].id == id) {
+            return ALLCLASS[i];
+        }
+    }
 }
 
 function getPoetryList(id) {
@@ -288,7 +513,6 @@ function addScript() {
     js.id = 'html5media'
     js.src = 'https://api.html5media.info/1.2.2/html5media.min.js';
     document.getElementsByTagName('head')[0].appendChild(js);
-
 }
 
 function vedioPlay() {

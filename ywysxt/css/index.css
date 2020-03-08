@@ -67,3 +67,18 @@ body {
 .login-pop .login-box {
     padding: 15px;
 }
+
+.img-code {
+    width: 100%;
+    overflow: hidden;
+}
+
+.img-code input {
+    float: left;
+    width: 50%;
+}
+
+.img-code img {
+    display: block;
+    height: 36px;
+}

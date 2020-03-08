@@ -89,6 +89,8 @@ body {
     height: 100%;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 #menus-box {
@@ -99,6 +101,7 @@ body {
 
 .main_box .title,
 .main_box .poetry-title {
+    position: relative;
     width: 100%;
     margin: 5.93% 0 4.87%;
 }
@@ -109,7 +112,7 @@ body {
 
 .main_box .title img {
     display: block;
-    width: 8.78%;
+    height: 35px;
     margin: 0 auto;
 }
 
@@ -148,7 +151,9 @@ body {
 }
 
 .main_box .class-title {
-    margin-left: 100px;
+    position: absolute;
+    top: 0;
+    left: 100px;
     width: 240px;
     background: url(../img/class-title-btn.gif) no-repeat left center;
     line-height: 35px;
@@ -166,27 +171,32 @@ body {
 }
 
 .main_box .poetry-list {
-    padding-top: 20px;
-    max-width: 730px;
-    margin: 0 auto;
+    position: absolute;
+    width: 850px;
+    top: 50%;
+    left: 50%;
+    margin-left: -425px;
     overflow: hidden;
+    text-align: center;
 }
 
 .main_box .poetry-list ul {
-    width: 360px;
+    width: 280px;
     margin: 0 auto;
 }
 
 .main_box .poetry-list ul.more-list {
-    float: left;
+    display: inline-block;
+    _zoom: 1;
+    *display: inline;
 }
 
 .main_box .poetry-list li {
     background: url(../img/class-list-bj-btn.gif) no-repeat left center;
     line-height: 32px;
     height: 32px;
-    padding-left: 30px;
-    margin-bottom: 20px;
+    padding-left: 8px;
+    margin-bottom: 10px;
 }
 
 .main_box .poetry-list li a {
@@ -390,6 +400,7 @@ a.poetry-back {
     top: 9.2%;
     left: 0;
     overflow: auto;
+    overflow-x: hidden;
 }
 
 .poetry-box .poetry-com img {
@@ -461,13 +472,13 @@ a.poetry-back {
 
 .audio-box {
     position: absolute;
-    width: 300px;
+    width: 50%;
     height: 30px;
-    bottom: 15px;
+    bottom: 11.5%;
     left: 50%;
-    margin-left: -150px;
+    margin-left: -25%;
     text-align: center;
-    z-index: 99;
+    z-index: 9999;
     display: none;
     background: #000;
 }

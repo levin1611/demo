@@ -14,14 +14,14 @@
     <div class="main">
         <img class="bj" src="./img/level-bj.jpg">
         <div class="main_box">
-            <div class="title poetry-title"><img src="./img/ml.gif"></div>
-            <div class="class-title">
-                <span>一年级上册</span>
+            <div class="title poetry-title">
+                <div class="class-title">
+                    <span id="nowClass"></span>
+                </div>
+                <img src="./img/ml.gif">
             </div>
+
             <div class="poetry-list" id="poetryList">
-                <ul>
-                    <li><a href="">悯农<small>(其二)</small><small>【唐】</small><small>李绅</small></a></li>
-                </ul>
             </div>
         </div>
         <a class="back" href="javascript:void(0)" onclick="goBack()">
@@ -38,53 +38,161 @@
             }
             var id = getUrlParam('id');
             if (id) {
-                var poetryList = getPoetryList(id);
-                var listLegth = poetryList.length;
-                if (listLegth <= 10) {
-                    var html = '<ul>';
-                    for (var i = 0; i < poetryList.length; i++) {
-                        html += '<li><a href="threelevel.html?id=' + poetryList[i].sid + '">' + poetryList[i].title;
-                        if (poetryList[i].subtitle) {
-                            html += '<small>(' + poetryList[i].subtitle + ')</small>';
+                var Html = '<ul class="more-list">';
+                $.getJSON("./js/data.json", function(result) {
+                    if (result.obj) {
+                        var poetryList = result.obj;
+                        var leftList = poetryList.left ? poetryList.left : [];
+                        var midList = poetryList.middle ? poetryList.middle : [];
+                        var rightList = poetryList.right ? poetryList.right : [];
+                        var lefthtml = Html;
+                        var midhtml = Html;
+                        var righthtml = Html;
+                        var height = leftList.length * 42;
+                        $('#poetryList').css({
+                            "height": height,
+                            "margin-top": -(height / 2 + $('.poetry-title').outerHeight())
+                        })
+                        for (var i = 0; i < leftList.length; i++) {
+                            lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;
+                            if (leftList[i].subtitle) {
+                                lefthtml += '<small>(' + leftList[i].subtitle + ')</small>';
+                            }
+                            if (leftList[i].dynasty) {
+                                lefthtml += '<small>【' + leftList[i].dynasty + '】</small>';
+                            }
+                            if (leftList[i].author) {
+                                lefthtml += '<small>' + leftList[i].author + '</small>';
+                            }
+                            lefthtml += '</a></li>';
                         }
-                        if (poetryList[i].dynasty) {
-                            html += '<small>【' + poetryList[i].dynasty + '】</small>';
+                        for (var i = 0; i < midList.length; i++) {
+                            midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '">' + midList[i].name;
+                            if (midList[i].subtitle) {
+                                midhtml += '<small>(' + midList[i].subtitle + ')</small>';
+                            }
+                            if (midList[i].dynasty) {
+                                midhtml += '<small>【' + midList[i].dynasty + '】</small>';
+                            }
+                            if (midList[i].author) {
+                                midhtml += '<small>' + midList[i].author + '</small>';
+                            }
+                            midhtml += '</a></li>';
                         }
-                        if (poetryList[i].author) {
-                            html += '<small>' + poetryList[i].author + '</small>';
+                        for (var i = 0; i < rightList.length; i++) {
+                            righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '">' + rightList[i].name;
+                            if (rightList[i].subtitle) {
+                                righthtml += '<small>(' + rightList[i].subtitle + ')</small>';
+                            }
+                            if (rightList[i].dynasty) {
+                                righthtml += '<small>【' + rightList[i].dynasty + '】</small>';
+                            }
+                            if (rightList[i].author) {
+                                righthtml += '<small>' + rightList[i].author + '</small>';
+                            }
+                            righthtml += '</a></li>';
                         }
-                        html += '</a></li>'
+                        lefthtml = lefthtml += '</ul>'
+                        midhtml = midhtml += '</ul>'
+                        righthtml = righthtml += '</ul>'
+                        $('#poetryList').html(lefthtml + midhtml + righthtml);
                     }
-                    html = html += '</ul>'
-
-                } else {
-                    var html = '<ul class="more-list">';
-                    var htmlLength = html.length;
-                    for (var i = 0; i < poetryList.length; i++) {
-                        html += '<li><a href="threelevel.html?id=' + poetryList[i].sid + '">' + poetryList[i].title;
-                        if (poetryList[i].subtitle) {
-                            html += '<small>(' + poetryList[i].subtitle + ')</small>';
+                });
+                $.ajax({   
+                    url: "./js/data.json",
+                    dataType: "json",
+                    async: true,
+                    type: "GET",
+                    success: function(result) {
+                        if (result.obj) {
+                            var poetryList = result.obj;
+                            var leftList = poetryList.left ? poetryList.left : [];
+                            var midList = poetryList.middle ? poetryList.middle : [];
+                            var rightList = poetryList.right ? poetryList.right : [];
+                            var lefthtml = Html;
+                            var midhtml = Html;
+                            var righthtml = Html;
+                            var height = leftList.length * 42;
+                            $('#poetryList').css({
+                                "height": height,
+                                "margin-top": -(height / 2 + $('.poetry-title').outerHeight())
+                            })
+                            for (var i = 0; i < leftList.length; i++) {
+                                lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;
+                                if (leftList[i].subtitle) {
+                                    lefthtml += '<small>(' + leftList[i].subtitle + ')</small>';
+                                }
+                                if (leftList[i].dynasty) {
+                                    lefthtml += '<small>【' + leftList[i].dynasty + '】</small>';
+                                }
+                                if (leftList[i].author) {
+                                    lefthtml += '<small>' + leftList[i].author + '</small>';
+                                }
+                                lefthtml += '</a></li>';
+                            }
+                            for (var i = 0; i < midList.length; i++) {
+                                midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '">' + midList[i].name;
+                                if (midList[i].subtitle) {
+                                    midhtml += '<small>(' + midList[i].subtitle + ')</small>';
+                                }
+                                if (midList[i].dynasty) {
+                                    midhtml += '<small>【' + midList[i].dynasty + '】</small>';
+                                }
+                                if (midList[i].author) {
+                                    midhtml += '<small>' + midList[i].author + '</small>';
+                                }
+                                midhtml += '</a></li>';
+                            }
+                            for (var i = 0; i < rightList.length; i++) {
+                                righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '">' + rightList[i].name;
+                                if (rightList[i].subtitle) {
+                                    righthtml += '<small>(' + rightList[i].subtitle + ')</small>';
+                                }
+                                if (rightList[i].dynasty) {
+                                    righthtml += '<small>【' + rightList[i].dynasty + '】</small>';
+                                }
+                                if (rightList[i].author) {
+                                    righthtml += '<small>' + rightList[i].author + '</small>';
+                                }
+                                righthtml += '</a></li>';
+                            }
+                            lefthtml = lefthtml += '</ul>'
+                            midhtml = midhtml += '</ul>'
+                            righthtml = righthtml += '</ul>'
+                            $('#poetryList').html(lefthtml + midhtml + righthtml);
                         }
-                        if (poetryList[i].dynasty) {
-                            html += '<small>【' + poetryList[i].dynasty + '】</small>';
-                        }
-                        if (poetryList[i].author) {
-                            html += '<small>' + poetryList[i].author + '</small>';
-                        }
-                        if (((i + 1) % 10) == 0) {
-                            html += '</a></li></ul><ul class="more-list">';
-                        } else {
-                            html += '</a></li>';
-                        }
-                        html += '</a></li>';
+                    },
+                    error: function(result) { 
+                        alert(result);
                     }
-                    if (listLegth % 10 == 0) {
-                        html = html.substr(0, -htmlLength)
-                    } else {
-                        html = html += '</ul>'
-                    }
-                }
-                $('#poetryList').html(html);
+                });
+                //var poetryList = getPoetryList(id);
+                //var listLegth = poetryList.length;
+                // var html = Html;
+                // for (var i = 0; i < poetryList.length; i++) {
+                //     html += '<li><a href="threelevel.html?id=' + poetryList[i].sid + '">' + poetryList[i].title;
+                //     if (poetryList[i].subtitle) {
+                //         html += '<small>(' + poetryList[i].subtitle + ')</small>';
+                //     }
+                //     if (poetryList[i].dynasty) {
+                //         html += '<small>【' + poetryList[i].dynasty + '】</small>';
+                //     }
+                //     if (poetryList[i].author) {
+                //         html += '<small>' + poetryList[i].author + '</small>';
+                //     }
+                //     if (((i + 1) % 12) == 0) {
+                //         html += '</a></li></ul><ul class="more-list">';
+                //     } else {
+                //         html += '</a></li>';
+                //     }
+                // html += '</a></li>';
+                // }
+                // if (listLegth % 12 == 0) {
+                //     html = html.substr(0, -htmlLength)
+                // } else {
+                //     html = html += '</ul>'
+                // }
+                //$('#poetryList').html(html);
             }
         })
     </script>
