@@ -97,18 +97,19 @@
                     } else if (btns.length == 3) {
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 4) {
+                        leftBtnMarginTop = 'style="margin-top:0;"';
+                    } else if (btns.length >= 4) {
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
+                        leftBtnMarginTop = 'style="margin-top:35px;"';
                     }
-                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" '+leftBtnMarginTop +'>' + btnList[i].text + '</a>';
+                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" ' + leftBtnMarginTop + '>' + btnList[i].text + '</a>';
                     if (show && show.indexOf(btnList[i].pid) != -1) {
                         isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + ' style="display:block">'
                     } else {
                         isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>'
                     }
                     leftHtml += isBlock;
-
                     for (var j = 0; j < btns.length; j++) {
                         leftHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + ' \'' + ')">' + btns[j].text + '</a>'
                     }
@@ -131,11 +132,12 @@
                     } else if (btns.length == 3) {
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 4) {
+                    } else if (btns.length >= 4) {
                         rightBtnMarginTop = '';
                         btnListMarginTop = 'style="margin-top:0;"';
+                        leftBtnMarginTop = 'style="margin-top:35px;"';
                     }
-                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" '+leftBtnMarginTop +'>' + btnList[i].text + '</a>';
+                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" ' + leftBtnMarginTop + '>' + btnList[i].text + '</a>';
                     if (show && show.indexOf(btnList[i].pid) != -1) {
                         isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + ' style="display:block">';
                     } else {

@@ -27,7 +27,8 @@ body {
 }
 
 .login-btn,
-.user-btn {
+.user-btn,
+.logout-btn {
     position: absolute;
     top: 14px;
     right: 60px;
@@ -39,7 +40,12 @@ body {
     cursor: pointer;
 }
 
+.logout-btn {
+    display: none;
+}
+
 .user-btn {
+    right: 120px;
     display: none;
 }
 

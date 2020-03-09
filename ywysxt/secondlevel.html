@@ -115,10 +115,17 @@
                             var height = leftList.length * 42;
                             $('#poetryList').css({
                                 "height": height,
-                                "margin-top": -(height / 2 + $('.poetry-title').outerHeight())
+                                "margin-top": -(height / 2 - $('.poetry-title').outerHeight())
                             })
                             for (var i = 0; i < leftList.length; i++) {
-                                lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;
+                                if (leftList[i].name.length > 14) {
+                                    lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '" class="smaller">' + leftList[i].name;
+                                } else if (leftList[i].name.length <= 14 && leftList[i].name.length > 8) {
+                                    lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '" class="small">' + leftList[i].name;
+                                } else {
+                                    lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;
+                                }
+
                                 if (leftList[i].subtitle) {
                                     lefthtml += '<small>(' + leftList[i].subtitle + ')</small>';
                                 }
@@ -131,7 +138,13 @@
                                 lefthtml += '</a></li>';
                             }
                             for (var i = 0; i < midList.length; i++) {
-                                midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '">' + midList[i].name;
+                                if (midList[i].name.length > 14) {
+                                    midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '" class="smaller">' + midList[i].name;
+                                } else if (midList[i].name.length <= 14 && leftList[i].name.length > 8) {
+                                    midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '" class="small">' + midList[i].name;
+                                } else {
+                                    midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '">' + midList[i].name;
+                                }
                                 if (midList[i].subtitle) {
                                     midhtml += '<small>(' + midList[i].subtitle + ')</small>';
                                 }
@@ -144,7 +157,13 @@
                                 midhtml += '</a></li>';
                             }
                             for (var i = 0; i < rightList.length; i++) {
-                                righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '">' + rightList[i].name;
+                                if (rightList[i].name.length > 14) {
+                                    righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '" class="smaller">' + mirightListdList[i].name;
+                                } else if (rightList[i].name.length <= 14 && leftList[i].name.length > 8) {
+                                    righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '" class="small">' + rightList[i].name;
+                                } else {
+                                    righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '">' + rightList[i].name;
+                                }
                                 if (rightList[i].subtitle) {
                                     righthtml += '<small>(' + rightList[i].subtitle + ')</small>';
                                 }

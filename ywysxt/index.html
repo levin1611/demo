@@ -13,6 +13,7 @@
     <div class="content">
         <a id="loginBtn" class="login-btn" onclick="showLogin()">登 录</a>
         <a id="user" class="user-btn"></a>
+        <a id="logoutBtn" class="logout-btn" onclick="logOut()" style="display: none;">退 出</a>
         <a class="index" href="javascript:void(0)" onclick="showLogin()">
             <img src="img/banner.jpg">
         </a>
@@ -54,14 +55,14 @@
                     display: 'none'
                 });
                 $('#user').html(userName);
-                $('#user').css({
+                $('#user,#logoutBtn').css({
                     display: 'block'
                 });
             } else {
                 $('#loginBtn').css({
                     display: 'block'
                 });
-                $('#user').css({
+                $('#user,#logoutBtn').css({
                     display: 'none'
                 });
             }
