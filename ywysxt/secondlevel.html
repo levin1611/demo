@@ -98,120 +98,128 @@
                         $('#poetryList').html(lefthtml + midhtml + righthtml);
                     }
                 });
-                $.ajax({   
-                    url: "./js/data.json",
-                    dataType: "json",
-                    async: true,
-                    type: "GET",
-                    success: function(result) {
-                        if (result.obj) {
-                            var poetryList = result.obj;
-                            var leftList = poetryList.left ? poetryList.left : [];
-                            var midList = poetryList.middle ? poetryList.middle : [];
-                            var rightList = poetryList.right ? poetryList.right : [];
-                            var lefthtml = Html;
-                            var midhtml = Html;
-                            var righthtml = Html;
-                            var height = leftList.length * 42;
-                            $('#poetryList').css({
-                                "height": height,
-                                "margin-top": -(height / 2 - $('.poetry-title').outerHeight())
-                            })
-                            for (var i = 0; i < leftList.length; i++) {
-                                if (leftList[i].name.length > 14) {
-                                    lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '" class="smaller">' + leftList[i].name;
-                                } else if (leftList[i].name.length <= 14 && leftList[i].name.length > 8) {
-                                    lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '" class="small">' + leftList[i].name;
-                                } else {
-                                    lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;
-                                }
+                // $.ajax({   
+                //     url: "./js/data.json",
+                //     dataType: "json",
+                //     async: true,
+                //     type: "GET",
+                //     success: function(result) {
+                //         if (result.obj) {
+                //             var poetryList = result.obj;
+                //             var leftList = poetryList.left ? poetryList.left : [];
+                //             var midList = poetryList.middle ? poetryList.middle : [];
+                //             var rightList = poetryList.right ? poetryList.right : [];
+                //             var lefthtml = Html;
+                //             var midhtml = Html;
+                //             var righthtml = Html;
+                //             var height = leftList.length * 42;
+                //             $('#poetryList').css({
+                //                 "height": height,
+                //                 "margin-top": -(height / 2 - $('.poetry-title').outerHeight())
+                //             })
+                //             for (var i = 0; i < leftList.length; i++) {
+                //                 if (leftList[i].name.length > 14) {
+                //                     lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '" class="smaller">' + leftList[i].name;
+                //                 } else if (leftList[i].name.length <= 14 && leftList[i].name.length > 8) {
+                //                     lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '" class="small">' + leftList[i].name;
+                //                 } else {
+                //                     lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;
+                //                 }
 
-                                if (leftList[i].subtitle) {
-                                    lefthtml += '<small>(' + leftList[i].subtitle + ')</small>';
-                                }
-                                if (leftList[i].dynasty) {
-                                    lefthtml += '<small>【' + leftList[i].dynasty + '】</small>';
-                                }
-                                if (leftList[i].author) {
-                                    lefthtml += '<small>' + leftList[i].author + '</small>';
-                                }
-                                lefthtml += '</a></li>';
-                            }
-                            for (var i = 0; i < midList.length; i++) {
-                                if (midList[i].name.length > 14) {
-                                    midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '" class="smaller">' + midList[i].name;
-                                } else if (midList[i].name.length <= 14 && leftList[i].name.length > 8) {
-                                    midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '" class="small">' + midList[i].name;
-                                } else {
-                                    midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '">' + midList[i].name;
-                                }
-                                if (midList[i].subtitle) {
-                                    midhtml += '<small>(' + midList[i].subtitle + ')</small>';
-                                }
-                                if (midList[i].dynasty) {
-                                    midhtml += '<small>【' + midList[i].dynasty + '】</small>';
-                                }
-                                if (midList[i].author) {
-                                    midhtml += '<small>' + midList[i].author + '</small>';
-                                }
-                                midhtml += '</a></li>';
-                            }
-                            for (var i = 0; i < rightList.length; i++) {
-                                if (rightList[i].name.length > 14) {
-                                    righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '" class="smaller">' + mirightListdList[i].name;
-                                } else if (rightList[i].name.length <= 14 && leftList[i].name.length > 8) {
-                                    righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '" class="small">' + rightList[i].name;
-                                } else {
-                                    righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '">' + rightList[i].name;
-                                }
-                                if (rightList[i].subtitle) {
-                                    righthtml += '<small>(' + rightList[i].subtitle + ')</small>';
-                                }
-                                if (rightList[i].dynasty) {
-                                    righthtml += '<small>【' + rightList[i].dynasty + '】</small>';
-                                }
-                                if (rightList[i].author) {
-                                    righthtml += '<small>' + rightList[i].author + '</small>';
-                                }
-                                righthtml += '</a></li>';
-                            }
-                            lefthtml = lefthtml += '</ul>'
-                            midhtml = midhtml += '</ul>'
-                            righthtml = righthtml += '</ul>'
-                            $('#poetryList').html(lefthtml + midhtml + righthtml);
-                        }
-                    },
-                    error: function(result) { 
-                        alert(result);
+                //                 if (leftList[i].subtitle) {
+                //                     lefthtml += '<small>(' + leftList[i].subtitle + ')</small>';
+                //                 }
+                //                 if (leftList[i].dynasty) {
+                //                     lefthtml += '<small>【' + leftList[i].dynasty + '】</small>';
+                //                 }
+                //                 if (leftList[i].author) {
+                //                     lefthtml += '<small>' + leftList[i].author + '</small>';
+                //                 }
+                //                 lefthtml += '</a></li>';
+                //             }
+                //             for (var i = 0; i < midList.length; i++) {
+                //                 if (midList[i].name.length > 14) {
+                //                     midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '" class="smaller">' + midList[i].name;
+                //                 } else if (midList[i].name.length <= 14 && leftList[i].name.length > 8) {
+                //                     midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '" class="small">' + midList[i].name;
+                //                 } else {
+                //                     midhtml += '<li><a href="threelevel.html?id=' + midList[i].id + '">' + midList[i].name;
+                //                 }
+                //                 if (midList[i].subtitle) {
+                //                     midhtml += '<small>(' + midList[i].subtitle + ')</small>';
+                //                 }
+                //                 if (midList[i].dynasty) {
+                //                     midhtml += '<small>【' + midList[i].dynasty + '】</small>';
+                //                 }
+                //                 if (midList[i].author) {
+                //                     midhtml += '<small>' + midList[i].author + '</small>';
+                //                 }
+                //                 midhtml += '</a></li>';
+                //             }
+                //             for (var i = 0; i < rightList.length; i++) {
+                //                 if (rightList[i].name.length > 14) {
+                //                     righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '" class="smaller">' + mirightListdList[i].name;
+                //                 } else if (rightList[i].name.length <= 14 && leftList[i].name.length > 8) {
+                //                     righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '" class="small">' + rightList[i].name;
+                //                 } else {
+                //                     righthtml += '<li><a href="threelevel.html?id=' + rightList[i].id + '">' + rightList[i].name;
+                //                 }
+                //                 if (rightList[i].subtitle) {
+                //                     righthtml += '<small>(' + rightList[i].subtitle + ')</small>';
+                //                 }
+                //                 if (rightList[i].dynasty) {
+                //                     righthtml += '<small>【' + rightList[i].dynasty + '】</small>';
+                //                 }
+                //                 if (rightList[i].author) {
+                //                     righthtml += '<small>' + rightList[i].author + '</small>';
+                //                 }
+                //                 righthtml += '</a></li>';
+                //             }
+                //             lefthtml = lefthtml += '</ul>'
+                //             midhtml = midhtml += '</ul>'
+                //             righthtml = righthtml += '</ul>'
+                //             $('#poetryList').html(lefthtml + midhtml + righthtml);
+                //         }
+                //     },
+                //     error: function(result) { 
+                //         alert(result);
+                //     }
+                // });
+                var poetryList = getPoetryList(id);
+                var listLegth = poetryList.length;
+                var html = Html;
+                for (var i = 0; i < poetryList.length; i++) {
+                    if (poetryList[i].title.length > 14) {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '" class="smaller">' + poetryList[i].title;
+                    } else if (poetryList[i].title.length <= 14 && poetryList[i].title.length > 8) {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '" class="small">' + poetryList[i].title;
+                    } else {
+                        html += '<li><a href="threelevel.html?id=' + poetryList[i].id + '">' + poetryList[i].title;
                     }
-                });
-                //var poetryList = getPoetryList(id);
-                //var listLegth = poetryList.length;
-                // var html = Html;
-                // for (var i = 0; i < poetryList.length; i++) {
-                //     html += '<li><a href="threelevel.html?id=' + poetryList[i].sid + '">' + poetryList[i].title;
-                //     if (poetryList[i].subtitle) {
-                //         html += '<small>(' + poetryList[i].subtitle + ')</small>';
-                //     }
-                //     if (poetryList[i].dynasty) {
-                //         html += '<small>【' + poetryList[i].dynasty + '】</small>';
-                //     }
-                //     if (poetryList[i].author) {
-                //         html += '<small>' + poetryList[i].author + '</small>';
-                //     }
-                //     if (((i + 1) % 12) == 0) {
-                //         html += '</a></li></ul><ul class="more-list">';
-                //     } else {
-                //         html += '</a></li>';
-                //     }
-                // html += '</a></li>';
-                // }
-                // if (listLegth % 12 == 0) {
-                //     html = html.substr(0, -htmlLength)
-                // } else {
-                //     html = html += '</ul>'
-                // }
-                //$('#poetryList').html(html);
+
+                    if (poetryList[i].subtitle) {
+                        html += '<small>(' + poetryList[i].subtitle + ')</small>';
+                    }
+                    if (poetryList[i].dynasty) {
+                        html += '<small>【' + poetryList[i].dynasty + '】</small>';
+                    }
+                    if (poetryList[i].author) {
+                        html += '<small>' + poetryList[i].author + '</small>';
+                    }
+                    html += '</a></li>';
+                    if (((i + 1) % 12) == 0) {
+                        html += '</a></li></ul><ul class="more-list">';
+                    } else {
+                        html += '</a></li>';
+                    }
+                    html += '</a></li>';
+                }
+                if (listLegth % 12 == 0) {
+                    html = html.substr(0, -htmlLength)
+                } else {
+                    html = html += '</ul>'
+                }
+                $('#poetryList').html(html);
             }
         })
     </script>

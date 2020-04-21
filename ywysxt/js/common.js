@@ -175,10 +175,10 @@ var ALLCLASS = [{
                 id: 12
             },
             {
-                title: '乐游原',
+                title: '李商隐李商隐李商隐乐游原·唐·李商',
                 subtitle: '',
-                dynasty: '唐',
-                author: '李商隐',
+                dynasty: '',
+                author: '',
                 id: 20
             },
             {

@@ -255,15 +255,15 @@ body {
 }
 
 .main_box .left-btns .top2 {
-    top: 36%;
+    top: 32%;
 }
 
 .main_box .left-btns .top3 {
-    top: 64%;
+    top: 56%;
 }
 
 .main_box .left-btns .top4 {
-    top: 84%;
+    top: 80%;
 }
 
 .main_box .right-btns .top1 {
@@ -271,15 +271,15 @@ body {
 }
 
 .main_box .right-btns .top2 {
-    top: 30%;
+    top: 32%;
 }
 
 .main_box .right-btns .top3 {
-    top: 52%;
+    top: 56%;
 }
 
 .main_box .right-btns .top4 {
-    top: 72%;
+    top: 80%;
 }
 
 .btn-list .left-btn {
@@ -332,8 +332,7 @@ body {
     margin-top: 20px;
 }
 
-.left-btns .top2 .right-btn,
-.right-btns .top3 .right-btn {
+.left-btns .top2 .right-btn {
     margin-top: 18px;
 }
 

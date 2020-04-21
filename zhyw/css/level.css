@@ -158,6 +158,8 @@ a.zw {
     background: url(../img/zw.png) no-repeat 0 0;
 }
 
+.logout-btn {}
+
 .poetry-box {
     position: absolute;
     top: 0;
