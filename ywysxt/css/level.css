@@ -110,6 +110,15 @@ body {
     margin: 40px 0 10px;
 }
 
+.poetry-title .create-courseware {
+    position: absolute;
+    right: 10%;
+    top: 2px;
+    width: 120px;
+    height: 31px;
+    background: url(../img/kejian.png) no-repeat 0 0;
+}
+
 .main_box .title img {
     display: block;
     height: 35px;
@@ -410,6 +419,10 @@ a.poetry-back {
     left: 18px;
     overflow: auto;
     overflow-x: hidden;
+}
+
+.poetry-box .poetry-com .poetry-body {
+    padding-right: 15px;
 }
 
 .poetry-box .poetry-com img {
