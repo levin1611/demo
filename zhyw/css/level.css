@@ -169,6 +169,10 @@ a.zw {
     overflow: hidden;
 }
 
+.poetry-com .poetry-body {
+    padding-right: 10px;
+}
+
 .poetry-box a {
     position: absolute;
     width: 8.78%;

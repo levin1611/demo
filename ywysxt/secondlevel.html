@@ -49,10 +49,26 @@
                         var lefthtml = Html;
                         var midhtml = Html;
                         var righthtml = Html;
-                        var height = leftList.length * 42;
+                        var bigLength = 0;
+                        if (leftList != null && leftList.length > 0)
+                            bigLength = leftList.length;
+                        if (midList != null && midList.length > 0) {
+                            if (midList.length > bigLength)
+                                bigLength = midList.length;
+                        }
+                        if (rightList != null && rightList.length > 0) {
+                            if (rightList.length > bigLength)
+                                bigLength = rightList.length;
+                        }
+
+                        var heightPage = bigLength * 42;
+                        var screenH = document.body.clientHeight;
+                        var screenW = document.body.clientWidth;
                         $('#poetryList').css({
-                            "height": height,
-                            "margin-top": -(height / 2 + $('.poetry-title').outerHeight())
+                            "height": screenH - 135 - (screenW * 0.05) - (screenW * 0.04),
+                            "top": 35 + (screenW * 0.0593) + (screenW * 0.04),
+                            "overflow-y": 'auto',
+                            "overflow-X": 'hidden',
                         })
                         for (var i = 0; i < leftList.length; i++) {
                             lefthtml += '<li><a href="threelevel.html?id=' + leftList[i].id + '">' + leftList[i].name;

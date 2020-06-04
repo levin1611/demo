@@ -181,7 +181,7 @@ body {
 
 .main_box .poetry-list {
     position: absolute;
-    width: 850px;
+    width: 860px;
     top: 50%;
     left: 50%;
     margin-left: -425px;
@@ -195,6 +195,7 @@ body {
 }
 
 .main_box .poetry-list ul.more-list {
+    float: left;
     display: inline-block;
     vertical-align: top;
     _zoom: 1;
