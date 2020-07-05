@@ -119,6 +119,15 @@ body {
     background: url(../img/kejian.png) no-repeat 0 0;
 }
 
+.main_box .title .author {
+    position: absolute;
+    right: 10%;
+    top: 2px;
+    width: 80px;
+    line-height: 30px;
+    text-align: center;
+}
+
 .main_box .title img {
     display: block;
     height: 35px;
@@ -261,35 +270,35 @@ body {
 }
 
 .main_box .left-btns .top1 {
-    top: 8%;
+    top: 6%;
 }
 
 .main_box .left-btns .top2 {
-    top: 32%;
+    top: 30.5%;
 }
 
 .main_box .left-btns .top3 {
-    top: 56%;
+    top: 51.1%;
 }
 
 .main_box .left-btns .top4 {
-    top: 80%;
+    top: 75%;
 }
 
 .main_box .right-btns .top1 {
-    top: 8%;
+    top: 6%;
 }
 
 .main_box .right-btns .top2 {
-    top: 32%;
+    top: 30.5%;
 }
 
 .main_box .right-btns .top3 {
-    top: 56%;
+    top: 51.1%;
 }
 
 .main_box .right-btns .top4 {
-    top: 80%;
+    top: 75%;
 }
 
 .btn-list .left-btn {
@@ -297,7 +306,7 @@ body {
     padding-top: 6px;
     overflow: hidden;
     width: 28px;
-    height: 94px;
+    height: 88px;
     margin-top: 35px;
     line-height: 20px;
     background: url(../img/menu-bj.gif) no-repeat 0 0;
@@ -323,11 +332,16 @@ body {
     line-height: 22px;
     background: url(../img/btn-bj.gif) no-repeat 0 0;
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     text-align: center;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     cursor: pointer;
+}
+
+.btn-list .right-btn a.disabled {
+    background: url(../img/btn-bj-disabled.gif) no-repeat 0 0;
+    cursor: default;
 }
 
 .left-btns .top2 .left-btn,
@@ -412,18 +426,41 @@ a.poetry-back {
     margin: 0 auto;
 }
 
-.poetry-box .poetry-com {
+.poetry-com {
     width: 100%;
     height: 72%;
     position: absolute;
     top: 10%;
-    left: 18px;
+    left: 10px;
     overflow: auto;
     overflow-x: hidden;
 }
 
+.screen-all {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin-left: 0;
+}
+
+.screen-all .poetry-com {
+    width: auto;
+    height: auto;
+    background: #fbf3e8;
+    top: 7px;
+    left: 7px;
+    right: 7px;
+    bottom: 7px;
+}
+
+.screen-all .back {
+    display: none;
+}
+
 .poetry-box .poetry-com .poetry-body {
-    padding-right: 15px;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
 .poetry-box .poetry-com img {
@@ -457,6 +494,11 @@ a.poetry-back {
     text-align: center;
     font-weight: bold;
     margin-right: 10px;
+}
+
+.media-btn a.disabled {
+    background: url(../img/audio-bj-disabled.gif) no-repeat 0 0;
+    cursor: default;
 }
 
 .media-btn-list {
@@ -588,4 +630,83 @@ a.poetry-back {
 .page-turn a img {
     display: block;
     width: 100%;
+}
+
+.video-pop,
+.notic-pop {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    background: #fff;
+    border: #eee solid 1px;
+}
+
+.video-pop video {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.video-pop .close-video,
+.notic-pop .close-video {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 10px;
+    right: 10px;
+    background: url(../img/close.png) no-repeat 50% 50%;
+    z-index: 100;
+}
+
+.notic-pop .pop-header {
+    background: #eee;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.notic-pop .pop-text {
+    padding: 0 20px;
+    overflow: auto;
+    line-height: 24px;
+    height: 85%;
+}
+
+.notic-pop .pop-text h3 {
+    margin-top: 30px;
+    overflow: auto;
+    line-height: 24px;
+}
+
+.courseware-generation {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    top: 50%;
+    margin-top: -30px;
+    opacity: 0.3;
+}
+
+.courseware-generation:hover {
+    opacity: 1;
+}
+
+.courseware-left {
+    left: 0;
+    background: url(../img/pre.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.courseware-right {
+    right: 10px;
+    background: url(../img/next.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.display-none {
+    display: none;
 }

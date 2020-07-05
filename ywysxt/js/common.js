@@ -484,27 +484,91 @@ function audioPlay(id) {
 
     $('#audioBox').fadeIn();
     //dragFunc('audio');
-    $('#audioBox').html('')
-    var audio1 = 'http://music.163.com/song/media/outer/url?id=435289279.mp3';
+    //$('#audioBox').html('')
+    var audio1 = '/ywysxt/audio/1.mp3';
     var audio2 = 'https://www.runoob.com/try/demo_source/horse.mp3';
-    var html = '';
-    if (id == 'ds') {
-        html = '<audio id="audio" src="' + audio2 + '" class="audio" controls autoplay>'
-    } else {
-        html = '<audio id="audio" src="' + audio1 + '" class="audio" controls autoplay>'
+    //获取歌词
+    // var lrc = getLrc(id);
+    // console.log(lrc.data);
+    //var html = '';
+    // if (id == 'ds') {
+    //     html = '<audio id="audio" src="' + audio2 + '" class="audio" controls autoplay ontimeupdate="audioTime(this)">'
+    // } else {
+    //     html = '<audio id="audio" src="' + audio1 + '" class="audio" controls autoplay> ontimeupdate="audioTime(this)"'
+    // }
+    // $('#audioBox').html(html)
+    var audio = document.getElementById('audio');
+    if (audio) {
+        $('#audio').attr('src', audio1);
+        //audio.play();
     }
-    $('#audioBox').html(html)
-    addScript();
-    //var audio = document.getElementById('audio');
-    // if (audio) {
-    // if(id == 'ds'){
-    //     $('#audio').attr('src',audio1)
-    // }else{
-    //     $('#audio').attr('src',audio2)
-    // }
-    //     //audio.load();
-    //     //audio.play();
-    // }
+    addScript();;
+    var lrc = getLrc();
+    audioTime(audio, lrc);
+
+}
+
+function audioTime(audio, lrc) {
+
+    audio.ontimeupdate = function() {
+        console.log()
+        for (var i = 0; i < lrc.length; i++) {
+            /*当前播放的时间*/
+            console.log(this.currentTime)
+            if (this.currentTime > lrc[i][0]) {
+                console.log(lrc[i][0])
+                $(".musicContent01").html(lrc[i][1]);
+
+            }
+        }
+
+    }
+}
+var timeFormat = function(seconds) {
+    var m = Math.floor(seconds / 60) < 10 ? "0" + Math.floor(seconds / 60) : Math.floor(seconds / 60);
+    var s = Math.floor(seconds - (m * 60)) < 10 ? "0" + Math.floor(seconds - (m * 60)) : Math.floor(seconds - (m * 60));
+    return m + ":" + s;
+};
+
+function getLrc(type) {
+    var htmlobj = $.ajax({ url: "/ywysxt/audio/1.lrc", async: false }); //获取test1.txt内容并赋值
+    console.log(htmlobj.responseText)
+    if (htmlobj.responseText)
+        return translateArray(htmlobj.responseText)
+            //     $.ajax({   
+            //         url: "",
+            //         dataType: "json",
+            //         async: true,
+            //         type: "get",
+            //         success: function(result) {
+            //             return result;
+            //         },
+            //         error: function(result) { 
+            //             alert(result);
+            //         }
+            //     });
+}
+
+
+function translateArray(text) {
+    var lines = text.split('\n'),
+        pattern = /\[\d{2}:\d{2}.\d{2}\]/g,
+        result = [];
+    console.log(lines)
+    lines[lines.length - 1].length === 0 && lines.pop();
+    lines.forEach(function(v, i, a) {
+        var time = v.match(pattern),
+            value = v.replace(pattern, '');
+        console.log(time)
+        time.forEach(function(v1, i1, a1) {
+            var t = v1.slice(1, -1).split(':');
+            result.push([parseInt(t[0], 10) * 60 + parseFloat(t[1]), value]);
+        });
+    });
+    result.sort(function(a, b) {
+        return a[0] - b[0];
+    });
+    return result;
 }
 
 function addScript() {
@@ -522,6 +586,7 @@ function vedioPlay() {
 
 function showLogin() {
     var loginStates = $.cookie('login') ? $.cookie('login') : '';
+    fullScreen(document.body);
     if (loginStates) {
         window.location.href = 'firstLevel.html';
         return
@@ -559,3 +624,25 @@ function login() {
         }
     });
 }
+//var isFullScreen = $.cookie('isfullscreen') ? $.cookie('isfullscreen') : false;
+
+function fullScreen(element) {
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen; //IE11
+    if (requestMethod) {
+        requestMethod.call(element);
+    }
+    if (typeof window.ActiveXObject !== "undefined") {
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
+$(document).ready(function() {
+    //fullScreen(document.documentElement)
+    document.body.onclick = function(event) {
+        //if (isFullScreen) return;
+        //fullScreen(document.body);
+    }
+})

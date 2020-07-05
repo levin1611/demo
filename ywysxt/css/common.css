@@ -314,6 +314,8 @@ a.back img {
 .tongzhi span.con-text {
     padding: 0 8px 0 0;
     max-width: 450px;
+    height: 24px;
+    overflow: hidden;
 }
 
 .tongzhi span.con-text a {

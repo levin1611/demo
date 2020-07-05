@@ -14,218 +14,354 @@
 
 <body>
     <!--主体开始-->
-    <div class="main">
-        <a class="share-btn" onclick="showShare()">分 享</a>
+    <div class="main" id="content">
+
         <!-- 独立背景开始 -->
         <img class="bj" src="./img/poetry-bj.jpg">
         <!-- 独立背景结束 -->
         <!-- 整体背景开始 -->
-        <!-- <img class="bj" id="poetry"> -->
+        <!--<img class="bj" id="poetry">-->
         <!-- 整体背景结束 -->
         <div class="main_box">
             <div id="menus-box"></div>
             <div class="poetry-box">
-                <a class="back three-back" href="javascript:void(0)" onclick="goBack()">
+                <a class="back  three-back" href="javascript:void(0)" onclick="goBack()">
                     <img src="./img/back.png" alt="返回">
                 </a>
                 <!-- 独立背景开始 -->
-                <!-- <p class="class-abbr-title">一上 日积月累</p> -->
+
                 <div class="poetry-com">
                     <div class="poetry-body" id="poetry-com">
-                        <p style="text-align: center; line-height: 150%;"><span style="font-family: 隶书, SimLi; font-size: 48px;"><strong><span style="line-height: 150%; font-family: 隶书, SimLi;">桃花源记并诗</span></strong>
-                            </span>
-                        </p>
-                        <p style="text-align: center; line-height: 3em;"><span style="line-height: 150%; font-family: 楷体,楷体_GB2312, SimKai; font-size: 20px;">[晋] 陶渊明</span></p>
-                        <p style="line-height: 3em;"><span style="line-height: 150%; font-family: 楷体,楷体_GB2312, SimKai; font-size: 20px;"><br></span></p>
-                        <p style="line-height: 3em; text-indent: 37px; -ms-text-autospace: ideograph-numeric;"><span style="font-family: 楷体,楷体_GB2312, SimKai; font-size: 36px;">&nbsp; 序：晋太元中，武陵人捕鱼为业。缘溪行，忘路之远近。忽逢桃花林，夹岸数百步，中无杂树，芳草鲜美，落英缤纷。渔人甚异之。复前行，欲穷其林。</span></p>
-                        <p style="line-height: 3em; -ms-text-autospace: ideograph-numeric;"><span style="font-family: 楷体,楷体_GB2312, SimKai; font-size: 36px;">　　林尽水源，便得一山，山有小口，仿佛若有光。便舍船，从口入。初极狭，才通人。复行数十步，豁然开朗。土地平旷，屋舍俨然，有良田、美池、桑竹之属。阡陌交通，鸡犬相闻。其中往来种作，男女衣着，悉如外人。黄发垂髫，并怡然自乐。</span></p>
-                        <p style="line-height: 3em; text-indent: 37px; -ms-text-autospace: ideograph-numeric;"><span style="font-family: 楷体,楷体_GB2312, SimKai; font-size: 36px;">&nbsp; 见渔人，乃大惊，问所从来。具答之。便要还家，设酒杀鸡作食。村中闻有此人，咸来问讯。自云先世避秦时乱，率妻子邑人来此绝境，不复出焉，遂与外人间隔。问今是何世，乃不知有汉，无论魏晋。此人一一为具言所闻，皆叹惋。余人各复延至其家，皆出酒食。停数日，辞去。此中人语云：“不足为外人道也。”</span></p>
-                        <p style="line-height: 3em; text-indent: 37px; -ms-text-autospace: ideograph-numeric;"><span style="font-family: 楷体,楷体_GB2312, SimKai; font-size: 36px;">&nbsp; 既出，得其船，便扶向路，处处志之。及郡下，诣太守，说如此。太守即遣人随其往，寻向所志，遂迷，不复得路。</span></p>
-                        <p style="line-height: 3em; text-indent: 37px; -ms-text-autospace: ideograph-numeric;"><span style="font-family: 楷体,楷体_GB2312, SimKai; font-size: 36px;">&nbsp; 南阳刘子骥，高尚士也，闻之，欣然规往。未果，寻病终，后遂无问津者。</span></p>
-                        <p style="text-align: center; line-height: 3em; -ms-text-autospace: ideograph-numeric;"><span style="font-family: 楷体,楷体_GB2312, SimKai; font-size: 36px;">嬴氏乱天纪 贤者避其世</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px;">黄绮之商山 伊人亦云逝</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px;">往迹寖复湮 来径遂芜废</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">相命肆农耕 日入从所憩</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">桑竹垂馀荫 菽稷随时艺</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">春蚕收长丝 秋熟靡王税</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">荒路暧交通 鸡犬互鸣吠</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">俎豆犹古法 衣裳无新制</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">童孺纵行歌 斑白欢游诣</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">草荣识节和 木衰知风厉</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">虽无纪历志 四时自成岁</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">怡然有余乐 于何劳智慧</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">奇踪隐五百 一朝敞神界</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">淳薄既异源 旋复还幽蔽</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">借问游方士 焉测尘嚣外</span></p>
-                        <p style="line-height: 3em; text-align: center;"><span style="font-family: 楷体, 楷体_GB2312, SimKai; font-size: 36px; text-align: center;">愿言蹑轻风 高举寻吾契</span></p>
-                        <p>&nbsp;</p>
                     </div>
-
+                    <a href="javascript:void(0)" class="courseware-generation courseware-left display-none" onclick="reduceCoursewareIndex()" title="上一页"></a>
+                    <a href="javascript:void(0)" class="courseware-generation courseware-right display-none" onclick="addCoursewareIndex()" title="下一页"></a>
                 </div>
                 <!-- 独立背景结束 -->
                 <div class="show-btns-btn">
-                    <div class="media-btn">
-                        <a href="javascript:void(0)" onclick="audioPlay('ds')">读诵</a>
-                        <a href="javascript:void(0)" onclick="audioPlay('qy')">清吟</a>
-                        <a href="javascript:void(0)" onclick="audioPlay('yy')">乐吟</a>
-                        <a href="javascript:void(0)" onclick="audioPlay('ct')">传统</a>
-                        <a href="javascript:void(0)" onclick="audioPlay('bz')">伴奏</a>
-                        <a href="javascript:void(0)" onclick="vedioPlay()">录像</a>
+                    <div class="media-btn" id="mp3ListMenu">
                     </div>
                     <!-- <div class="media-btn-list">
-                        <a href="javascript:void(0)" onclick="showMediaBtn()" class="yin1"></a>
+                        <a href="javascript:void(0)" onclick="showMediaBtn()" class="yin1 disabled"></a>
                         <a href="javascript:void(0)" onclick="showMediaBtn()" class="song"></a>
                         <a href="javascript:void(0)" onclick="showMediaBtn()" class="lu"></a>
                         <a href="javascript:void(0)" onclick="showMediaBtn()" class="yin"></a>
                     </div> -->
+
                 </div>
             </div>
         </div>
         <div class="audio-box" id="audioBox">
-            <audio id="audio" class="audio" controls preload>
+            <audio id="audio" class="audio" controlsList="nodownload" controls preload>
                 <!-- <audio controls id="audio" ondrag>
                 您的浏览器不支持 audio 元素。
             </audio> -->
         </div>
-        <div class="login-pop" id="share">
-            <h3>古诗分享 <a class="close-btn" href="javascript:void(0)" onclick="hideShare()">X</a></h3>
-            <div class="login-box">
-                <img id="shareImg" src="">
-            </div>
-        </div>
+    </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-
     <script type="text/javascript" src="js/json2.js"></script>
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script>
+        var courseware = {
+            index: 0,
+            list: []
+        };
         $(function() {
+
+            //requestFullScreen(elem);
             var id = getUrlParam('id');
-            var parentId = id.split('-')[0];
+            var token = getUrlParam('token');
+            var name = getUrlParam('name');
             var show = $.cookie('show') ? $.cookie('show') : '';
-            var btnList = getIntention(parentId, id).intentionBtn;
-            var leftHtml = '<div class="menus left-btns">';
-            var rightHtml = '<div class="menus right-btns">';
-            console.log(btnList)
-            for (var i = 0; i < btnList.length; i++) {
-                if (btnList[i].position == 'left') {
-                    var btns = btnList[i].childen;
-                    var btnListMarginTop = '';
-                    var rightBtnMarginTop = '';
-                    var leftBtnMarginTop = '';
-                    var isBlock = '';
-                    if (btns.length == 1) {
-                        rightBtnMarginTop = 'style="margin-top:35px;"';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 2) {
-                        rightBtnMarginTop = 'style="margin-top:18px;"';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 3) {
-                        rightBtnMarginTop = '';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 4) {
-                        rightBtnMarginTop = '';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:10px;"';
-                    } else if (btns.length > 4) {
-                        rightBtnMarginTop = '';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:35px;"';
-                    }
-                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" ' + leftBtnMarginTop + '>' + btnList[i].text + '</a>';
-                    if (show && show.indexOf(btnList[i].pid) != -1) {
-                        isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + ' style="display:block">'
-                    } else {
-                        isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>'
-                    }
-                    leftHtml += isBlock;
-                    for (var j = 0; j < btns.length; j++) {
-                        leftHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + ' \'' + ')">' + btns[j].text + '</a>'
-                    }
-                    leftHtml += '</div></div>'
-                }
-                if (btnList[i].position == 'right') {
-                    var btns = btnList[i].childen;
-                    var btnListMarginTop = '';
-                    var rightBtnMarginTop = '';
-                    var leftBtnMarginTop = '';
-                    var isBlock = '';
-                    if (btns.length == 1) {
-                        rightBtnMarginTop = 'style="margin-top:35px;"';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 2) {
-                        rightBtnMarginTop = 'style="margin-top:18px;"';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 3) {
-                        rightBtnMarginTop = '';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                    } else if (btns.length == 4) {
-                        rightBtnMarginTop = '';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:10px;"';
-                    } else if (btns.length > 4) {
-                        rightBtnMarginTop = '';
-                        btnListMarginTop = 'style="margin-top:0;"';
-                        leftBtnMarginTop = 'style="margin-top:35px;"';
-                    }
-                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" ' + leftBtnMarginTop + '>' + btnList[i].text + '</a>';
-                    if (show && show.indexOf(btnList[i].pid) != -1) {
-                        isBlock = '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + ' style="display:block">';
-                    } else {
-                        isBlock += '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>';
-                    }
-                    rightHtml += isBlock;
-                    for (var j = 0; j < btns.length; j++) {
-                        rightHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + '\'' + ')">' + btns[j].text + '</a>'
-                    }
-                    rightHtml += '</div></div>'
-                }
+            if (name) {
+                $('#gradeName').html(name);
             }
-            leftHtml += '</div>';
-            rightHtml += '</div>';
-            $('#menus-box').html(leftHtml + rightHtml);
-            $('.btn-list > .left-btn').click(function() {
-                var nowId = $(this).siblings('.right-btn').attr('id');
-                if (show && show.indexOf(nowId) != -1) {
-                    show = show.replace(nowId);
-                    $.cookie('show', show);
-                }
-                $(this).siblings('.right-btn').toggle();
+            $('#poetry-com').click(function() {
+                $('.poetry-box').toggleClass('screen-all')
             })
+            var id = getUrlParam('id');
+            if (id) {
+                $.getJSON("/front/web/getMp3ListById?id=" + id + "&token=" + token, function(data) {
 
-            $('#poetry').attr('src', './img/poetry/' + id + '.jpg');
+                    if (data.status == "200") {
+
+                        var mp3BtnList = data.obj;
+                        var htmladd = '';
+                        if (mp3BtnList != null) {
+                            for (var i = 0; i < mp3BtnList.length; i++) {
+                                if (mp3BtnList[i].name && mp3BtnList[i].name.indexOf('mp4') > 0) {
+                                    htmladd += '<a href="javascript:void(0)" onclick="vedioPlay()">录像</a>';
+                                } else {
+                                    if (mp3BtnList[i].url) {
+                                        htmladd += ' <a href="javascript:void(0)" onclick="audioPlay(\'' + mp3BtnList[i].type + '\')">' + mp3BtnList[i].name + '</a>';
+                                    } else {
+                                        htmladd += ' <a href="javascript:void(0)" class="disabled">' + mp3BtnList[i].name + '</a>';
+                                    }
+                                }
+                            }
+                            $('#mp3ListMenu').html(htmladd);
+                            $('#mp3ListMenu').show();
+                        }
+                    } else {
+                        alert(data.msg);
+                        if (data.status == "401") {
+                            $.cookie('token', '');
+                            $.cookie('loginName', '');
+                            window.location.href = "/index.html";
+                        }
+
+                    }
+                })
+                $.getJSON("/front/web/getFourLevel?id=" + id + "&token=" + token, function(data) {
+
+                    if (data.status == "200") {
+                        var description = data.obj.description;
+                        var pattern1 = /<p style="line-height: 3em;"><span style="font-family: 隶书,SimLi; font-size: 48px;"><br\/><\/span><\/p>/g;
+                        var pattern2 = /<p style="text-align: center; line-height: 3em;"><span style="font-family: 隶书,SimLi; font-size: 48px;"><br\/><\/span><\/p>/g
+                        description = description.replace(pattern1, "");
+                        description = description.replace(pattern2, "");
+                        $('#poetry-com').html(description);
+
+                    } else {
+                        alert(data.msg);
+                        if (data.status == "401") {
+                            window.location.href = "/index.html";
+                        }
+
+                    }
+                })
+                $.getJSON("/front/web/getThreeLevel?id=" + id + "&token=" + token, function(data) {
+                    if (data.status == "200") {
+
+                        var btnList = data.obj;
+                        var leftHtml = '<div class="menus left-btns">';
+                        var rightHtml = '<div class="menus right-btns">';
+                        var show = $.cookie('show') ? $.cookie('show') : '';
+                        console.log(show);
+                        if (btnList != null) {
+                            for (var i = 0; i < btnList.length; i++) {
+                                if (btnList[i].position == 'left') {
+                                    var btns = btnList[i].children;
+                                    var btnListMarginTop = '';
+                                    var rightBtnMarginTop = '';
+                                    var leftBtnMarginTop = '';
+                                    var isBlock = '';
+
+
+                                    if (btns != null && btns.length == 1) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="margin-top:28px;display:block"';
+
+                                        } else {
+                                            rightBtnMarginTop = 'style="margin-top:28px;"';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:0;"';
+                                    } else if (btns != null && btns.length == 2) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="margin-top:18px;display:block"';
+                                        } else {
+                                            rightBtnMarginTop = 'style="margin-top:18px;"';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:0;"';
+                                    } else if (btns != null && btns.length == 3) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="display:block;margin-top:6px"';
+                                        } else {
+                                            rightBtnMarginTop = 'style="margin-top:6px;"';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:0;"';
+                                    } else if (btns != null && btns.length == 4) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="display:block"';
+                                        } else {
+                                            rightBtnMarginTop = '';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:8px;"';
+                                    } else if (btns != null && btns.length > 4) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="display:block"';
+                                        } else {
+                                            rightBtnMarginTop = '';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:35px;"';
+                                    }
+
+                                    leftHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" ' + leftBtnMarginTop + '>' + btnList[i].text + '</a>';
+
+                                    leftHtml += '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>';
+                                    if (btns != null) {
+                                        for (var j = 0; j < btns.length; j++) {
+                                            if (btns[j].contentlength) {
+                                                leftHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + ' \'' + ')">' + btns[j].text + '</a>';
+                                            } else {
+                                                leftHtml += '<a href="javascript:void(0)" class="disabled">' + btns[j].text + '</a>'
+                                            }
+                                        }
+                                    }
+                                    leftHtml += '</div></div>'
+                                }
+                                if (btnList[i].position == 'right') {
+                                    var btns = btnList[i].children;
+                                    var btnListMarginTop = '';
+                                    var rightBtnMarginTop = '';
+                                    var leftBtnMarginTop = '';
+                                    var isBlock = '';
+                                    if (btns != null && btns.length == 1) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="margin-top:28px;display:block"';
+                                        } else {
+                                            rightBtnMarginTop = 'style="margin-top:28px;"';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:0;"';
+                                    } else if (btns != null && btns.length == 2) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="margin-top:18px;display:block"';
+                                        } else {
+                                            rightBtnMarginTop = 'style="margin-top:18px;"';
+                                        }
+
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:0;"';
+                                    } else if (btns != null && btns.length == 3) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="display:block;margin-top:6px"';
+                                        } else {
+                                            rightBtnMarginTop = 'style="margin-top:6px;"';
+                                        }
+
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:0;"';
+                                    } else if (btns != null && btns.length == 4) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="display:block"';
+                                        } else {
+                                            rightBtnMarginTop = '';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:8px;"';
+                                    } else if (btns != null && btns.length > 4) {
+                                        if (show && show.indexOf(btnList[i].pid) != -1) {
+                                            rightBtnMarginTop = 'style="display:block"';
+                                        } else {
+                                            rightBtnMarginTop = '';
+                                        }
+                                        btnListMarginTop = 'style="margin-top:0;"';
+                                        leftBtnMarginTop = 'style="margin-top:35px;"';
+                                    }
+                                    rightHtml += '<div class="btn-list ' + btnList[i].className + '" ' + btnListMarginTop + '><a class="left-btn" ' + leftBtnMarginTop + '>' + btnList[i].text + '</a>';
+
+                                    rightHtml += '<div class="right-btn" id="' + btnList[i].pid + '" ' + rightBtnMarginTop + '>';
+                                    if (btns != null) {
+                                        for (var j = 0; j < btns.length; j++) {
+                                            if (btns[j].contentlength) {
+                                                rightHtml += '<a href="javascript:void(0)" onclick="toNext(' + ' \'' + JSON.stringify(btns[j]).replace(/"/g, '&quot;') + '\'' + ')">' + btns[j].text + '</a>';
+                                            } else {
+                                                rightHtml += '<a href="javascript:void(0)" class="disabled">' + btns[j].text + '</a>';
+                                            }
+                                        }
+                                    }
+                                    rightHtml += '</div></div>'
+                                }
+                            }
+                            leftHtml += '</div>';
+                            rightHtml += '</div>';
+                            $('#menus-box').html(leftHtml + rightHtml);
+                            $('.btn-list > .left-btn').click(function() {
+                                var nowId = $(this).siblings('.right-btn').attr('id');
+                                if (show && show.indexOf(nowId) != -1) {
+                                    show = show.replace(nowId);
+                                    $.cookie('show', show);
+                                }
+                                $(this).siblings('.right-btn').toggle();
+                            })
+                        }
+                    } else {
+                        alert(data.msg);
+                        if (data.status == "401") {
+                            $.cookie('token', '');
+                            $.cookie('loginName', '');
+                            window.location.href = "index.html";
+                        }
+                    }
+
+                })
+            }
         })
-
-        function showShare() {
-            console.log($('#share'))
-            $('#share').fadeIn();
-            $('#shareImg').attr('src', '')
-        }
-
-        function hideShare() {
-            $('#share').fadeOut();
-        }
 
         function showMediaBtn() {
             $('.media-btn').toggle();
         }
 
         function toNext(url) {
+            var token = getUrlParam('token');
             var obj = JSON.parse(url);
             var parentId = obj.parentid;
             var show = $.cookie('show') ? $.cookie('show') : '';
             if (show.indexOf(parentId) == -1) {
-                show += parentId
+                show += ';' + parentId
             }
             $.cookie('show', show);
-            window.location.href = obj.link
+            if (obj.text == '课件生成') {
+                coursewareGeneration(obj)
+            } else {
+                window.location.href = obj.link + '&token=' + token;
+            }
 
+
+        }
+
+        function coursewareGeneration() {
+            $('.courseware-generation').removeClass('display-none');
+            $.getJSON("/front/web/getFourLevel?id=" + id + "&token=" + token, function(data) {
+                if (data.status == "200") {
+                    courseware.list = data.obj.description;
+                    var description = replaceHtml(courseware.list[courseware.index]);
+
+                    $('#poetry-com').html(description);
+                } else {
+                    alert(data.msg);
+                    if (data.status == "401") {
+                        window.location.href = "/index.html";
+                    }
+
+                }
+            })
+
+        }
+
+        function addCoursewareIndex() {
+            if (courseware.index == courseware.list.length) {
+                alert('已到最后一页');
+                return;
+            }
+            courseware.index++;
+            var description = replaceHtml(courseware.list[courseware.index]);
+            $('#poetry-com').html(description);
+        }
+
+        function reduceCoursewareIndex() {
+            if (courseware.index == 0) {
+                alert('已到第一页');
+                return;
+            }
+            courseware.index--;
+            var description = replaceHtml(courseware.list[courseware.index]);
+            $('#poetry-com').html(description);
+        }
+
+        function replaceHtml(html) {
+            var pattern1 = /<p style="line-height: 3em;"><span style="font-family: 隶书,SimLi; font-size: 48px;"><br\/><\/span><\/p>/g;
+            var pattern2 = /<p style="text-align: center; line-height: 3em;"><span style="font-family: 隶书,SimLi; font-size: 48px;"><br\/><\/span><\/p>/g
+            var description = html.replace(pattern1, "");
+            description = html.replace(pattern2, "");
+            return description;
         }
     </script>
 </body>
