@@ -382,10 +382,10 @@ a.back {
 }
 
 a.three-back {
-    right: 0;
-    bottom: 4%;
-    width: 100px;
-    height: 60px;
+    right: -30px;
+    bottom: 9.5%;
+    width: 80px;
+    height: 48px;
 }
 
 a.poetry-back {
@@ -400,7 +400,6 @@ a.poetry-back {
     top: 0;
     left: 50%;
     margin-left: -31%;
-    overflow: hidden;
 }
 
 .poetry-box .class-abbr-title {
@@ -420,6 +419,16 @@ a.poetry-back {
     margin-bottom: 4.87%;
 }
 
+.poetry-box .poetry-name {
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    font-size: 48px;
+    line-height: 82px;
+    text-align: center;
+    font-weight: normal;
+}
+
 .poetry-box .poetry-title img {
     display: block;
     width: 12%;
@@ -427,7 +436,7 @@ a.poetry-back {
 }
 
 .poetry-com {
-    width: 100%;
+    width: 98%;
     height: 72%;
     position: absolute;
     top: 10%;
@@ -460,19 +469,24 @@ a.poetry-back {
 .poetry-box .poetry-com .poetry-body {
     height: 100%;
     overflow-y: auto;
-    padding-right: 10px;
+    padding-top: 20px;
 }
 
 .poetry-box .poetry-com img {
     display: block;
-    width: 100%;
+    width: 100% !important;
     margin: 0 auto;
+}
+
+.poetry-box .poetry-com p,
+.poetry-box .poetry-com span {
+    background: inherit !important;
 }
 
 .show-btns-btn {
     width: 100%;
     position: absolute;
-    bottom: 2%;
+    bottom: 4%;
 }
 
 .media-btn {
@@ -643,6 +657,7 @@ a.poetry-back {
     overflow: hidden;
     background: #fff;
     border: #eee solid 1px;
+    z-index: 100;
 }
 
 .video-pop video {

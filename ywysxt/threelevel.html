@@ -28,6 +28,8 @@
                 <a class="back  three-back" href="javascript:void(0)" onclick="goBack()">
                     <img src="./img/back.png" alt="返回">
                 </a>
+
+                <h2 class="poetry-name" id="poetry-title"></h2>
                 <!-- 独立背景开始 -->
 
                 <div class="poetry-com">
@@ -56,7 +58,10 @@
                 您的浏览器不支持 audio 元素。
             </audio> -->
         </div>
-    </div>
+        <div class="video-pop" id="videoPop">
+            <a class="close-video" href="javascript:void(0)" id="closeVideo"></a>
+            <video id="videoUrl" controls="controls" autoplay preload src="https://vdept.bdstatic.com/6444644b6a6345737a594757427a677a/646e4b537151554d/64903521dcc603e92689995f18503ea38736d9285359e68cb1d72cfd0ae4e136ee086bfa9b39ffefedcd817700dbb238.mp4?auth_key=1576982922-0-0-4bd70944073464ae9ae549420aee83a3"></video>
+        </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="js/json2.js"></script>
@@ -79,7 +84,10 @@
             }
             $('#poetry-com').click(function() {
                 $('.poetry-box').toggleClass('screen-all')
-            })
+            });
+            $('#closeVideo').click(function() {
+                $('#videoPop').hide();
+            });
             var id = getUrlParam('id');
             if (id) {
                 $.getJSON("/front/web/getMp3ListById?id=" + id + "&token=" + token, function(data) {
@@ -91,7 +99,11 @@
                         if (mp3BtnList != null) {
                             for (var i = 0; i < mp3BtnList.length; i++) {
                                 if (mp3BtnList[i].name && mp3BtnList[i].name.indexOf('mp4') > 0) {
-                                    htmladd += '<a href="javascript:void(0)" onclick="vedioPlay()">录像</a>';
+                                    if (mp3BtnList[i].url) {
+                                        htmladd += '<a href="javascript:void(0)" onclick="shoeMp4(\'' + mp3BtnList[i].type + '\')">录像</a>';
+                                    } else {
+                                        htmladd += '<a href="javascript:void(0)" class="disabled">录像</a>';
+                                    }
                                 } else {
                                     if (mp3BtnList[i].url) {
                                         htmladd += ' <a href="javascript:void(0)" onclick="audioPlay(\'' + mp3BtnList[i].type + '\')">' + mp3BtnList[i].name + '</a>';
@@ -121,6 +133,7 @@
                         var pattern2 = /<p style="text-align: center; line-height: 3em;"><span style="font-family: 隶书,SimLi; font-size: 48px;"><br\/><\/span><\/p>/g
                         description = description.replace(pattern1, "");
                         description = description.replace(pattern2, "");
+                        $('#poetry-title').text(data.obj.name);
                         $('#poetry-com').html(description);
 
                     } else {
@@ -317,11 +330,21 @@
 
         }
 
+        function shoeMp4(type) {
+            var categoryId = getUrlParam('id');
+            var token = getUrlParam('token');
+            var video = '/front/web/executerecord?categoryId=' + categoryId + '&token=' + token + '&type=' + type;
+            $('#videoPop').show();
+            $('#videoUrl').attr('src', video)
+        }
+
         function coursewareGeneration() {
-            $('.courseware-generation').removeClass('display-none');
             $.getJSON("/front/web/getFourLevel?id=" + id + "&token=" + token, function(data) {
                 if (data.status == "200") {
                     courseware.list = data.obj.description;
+                    if (courseware.list.length > 1) {
+                        $('.courseware-right').removeClass('display-none');
+                    }
                     var description = replaceHtml(courseware.list[courseware.index]);
 
                     $('#poetry-com').html(description);
@@ -330,15 +353,14 @@
                     if (data.status == "401") {
                         window.location.href = "/index.html";
                     }
-
                 }
             })
-
         }
 
         function addCoursewareIndex() {
+            $('.courseware-left').removeClass('display-none');
             if (courseware.index == courseware.list.length) {
-                alert('已到最后一页');
+                $('.courseware-right').addClass('display-none');
                 return;
             }
             courseware.index++;
@@ -347,8 +369,9 @@
         }
 
         function reduceCoursewareIndex() {
+            $('.courseware-right').removeClass('display-none');
             if (courseware.index == 0) {
-                alert('已到第一页');
+                $('#courseware-left').addClass('display-none');
                 return;
             }
             courseware.index--;
