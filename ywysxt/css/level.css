@@ -114,7 +114,7 @@ body {
     position: absolute;
     right: 10%;
     top: 2px;
-    width: 120px;
+    width: 180px;
     height: 31px;
     background: url(../img/kejian.png) no-repeat 0 0;
 }
@@ -468,7 +468,6 @@ a.poetry-back {
 
 .poetry-box .poetry-com .poetry-body {
     height: 100%;
-    overflow-y: auto;
     padding-top: 20px;
 }
 
