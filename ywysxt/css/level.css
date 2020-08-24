@@ -357,7 +357,7 @@ body {
 }
 
 .left-btns .top2 .right-btn {
-    margin-top: 18px;
+    /* margin-top: 18px; */
 }
 
 .right-btns .btn-list {
@@ -424,7 +424,6 @@ a.poetry-back {
     height: 10%;
     width: 100%;
     font-size: 48px;
-    line-height: 82px;
     text-align: center;
     font-weight: normal;
 }
@@ -474,6 +473,7 @@ a.poetry-back {
 .poetry-box .poetry-com img {
     display: block;
     width: 100% !important;
+    height: auto !important;
     margin: 0 auto;
 }
 
