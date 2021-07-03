@@ -3,7 +3,7 @@ import Router from 'vue-router';
 //import index from '@/pages/index'
 //路由懒加载
 const index = () =>
-    import ('@/pages/index');
+    import ('@/pages/index1');
 
 const work = () =>
     import ('@/pages/work');
@@ -26,7 +26,6 @@ const router = new Router({
 });
 //全局路由守卫
 router.beforeEach((to, from, next) => {
-    console.log(to);
     next();
 });
 // 全局后置钩子
