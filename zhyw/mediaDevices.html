@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>摄像头调用1</title>
+</head>
+
+<body>
+    <video id="v"></video>
+    <script>
+       var constraints = { audio: true, video: { width: 1280, height: 720 } };
+
+        navigator.mediaDevices.getUserMedia(constraints)
+        .then(function(mediaStream) {
+        var video = document.querySelector('video');
+        video.srcObject = mediaStream;
+        video.onloadedmetadata = function(e) {
+            video.play();
+        };
+        })
+        .catch(function(err) { console.log(err.name + ": " + err.message); }); // 总是在最后检查错误
+    </script>
+</body>
+</html>
