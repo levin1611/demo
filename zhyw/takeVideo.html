@@ -99,7 +99,7 @@
                 chunks = [];
                 let videoURL = window.URL.createObjectURL(blob);
                 vidSave.src = videoURL;
-                const file = new File([recorderFile], (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
+                const file = new File([blob], (new Date).toISOString().replace(/:|\./g, '-') + '.mp4', {
                     type: 'video/mp4'
                 });
                 download(URL.createObjectURL(file));
