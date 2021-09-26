@@ -12,13 +12,7 @@
     <br />
     <img src="http://placehold.it/640&text=Your%20image%20here%20..." id="photo" alt="photo">
     <script>
-        !(function () {
-            function userMedia() {
-                return navigator.getUserMedia = navigator.getUserMedia ||
-                    navigator.webkitGetUserMedia ||
-                    navigator.mozGetUserMedia ||
-                    navigator.msGetUserMedia || null;
-            }
+            
             if (userMedia()) {
                 let videoPlaying = false;
                 let constraints = {
@@ -48,7 +42,12 @@
             } else {
                 console.log("不支持");
             }
-        })();
+            function userMedia() {
+                return navigator.getUserMedia = navigator.getUserMedia ||
+                    navigator.webkitGetUserMedia ||
+                    navigator.mozGetUserMedia ||
+                    navigator.msGetUserMedia || null;
+            }
     </script>
 </body>
 </html>
