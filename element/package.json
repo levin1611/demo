@@ -22,7 +22,7 @@
     "compression-webpack-plugin": "^5.0.1",
     "core-js": "^3.24.1",
     "cross-env": "^7.0.2",
-    "crypto-js": "3.3.0",
+    "crypto-js": "4.2.0",
     "echarts": "5.4.2",
     "echarts-wordcloud": "2.1.0",
     "element-resize-detector": "1.2.1",
