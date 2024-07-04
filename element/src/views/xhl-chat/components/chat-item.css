@@ -1,0 +1,237 @@
+.msg-img {
+    width: 100%;
+    max-width: 300px;
+    vertical-align: bottom;
+}
+
+.msg-text a {
+    text-decoration: underline;
+}
+
+.msg-text pre {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, "\5FAE\8F6F\96C5\9ED1", Arial, sans-serif;
+    word-break: break-word;
+    margin: 0;
+}
+
+.text-border {
+    border-top: 1px solid #cccccc;
+}
+
+.u-msg.session-chat {
+    padding: 10px 0;
+    clear: both;
+}
+
+.u-msg {
+    position: relative;
+    padding: 0.2rem 0;
+}
+
+.u-msg.session-chat.item-me .msg-head {
+    float: right;
+    margin-right: 0;
+    margin-left: 16px;
+}
+.u-msg.session-chat.item-me .msg-text {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+
+.u-msg.session-chat.item-me .msg-more {
+    float: right;
+}
+
+.u-msg .msg-head {
+    position: relative;
+    display: inline-block;
+    /*top: 0.1rem;*/
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.u-msg.session-chat.item-me .msg-text {
+    color: rgba(0,0,0,0.80);
+    background-color: #FFEBE0;
+    border: 1px solid #FBD5BF;
+
+    border-radius: 4px;
+}
+
+.u-msg.session-chat.item-me .msg-text.msg-text-img-wrapper {
+    border: 1px solid #EAEAEA;
+    background-color: transparent;
+    padding: 0;
+}
+
+.u-msg.session-chat .msg-text {
+    padding: 7px 10px;
+}
+
+.u-msg .msg-text {
+    position: relative;
+    display: inline-block;
+    max-width: 70%;
+    min-height: 1.2rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: auto;
+    line-height: 22px;
+    font-size: 0.9rem;
+    border: none;
+    text-align: left;
+    margin-top: 5px;
+}
+
+.u-msg .msg-text video, .u-msg .msg-text audio {
+    max-width: 100%;
+}
+
+.u-msg.session-chat.item-me .msg-text::before {
+    background: none;
+}
+
+.u-msg .msg-head img {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    width: inherit;
+    height: inherit;
+}
+
+.u-msg.session-chat.item-you .msg-head{
+    float: left;
+    margin-right: 16px;
+    margin-left: 0;
+}
+.u-msg.session-chat.item-you .msg-text {
+    float: left;
+    margin-right: 10px;
+    margin-left: 0;
+}
+.u-msg.session-chat.item-you .msg-more {
+    float: left;
+}
+
+.u-msg.session-chat.item-you .msg-text {
+    background-color: #ffffff;
+    border: 1px solid #EAEAEA;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+.u-msg.session-chat.item-you .msg-text.msg-text-img-wrapper {
+    background-color: transparent;
+    padding: 0;
+ }
+
+.u-msg.session-chat.item-you .msg-head, .u-msg.session-chat.item-you .msg-text {
+    float: left;
+}
+.u-msg.session-chat.item-you:hover .msg-more, .u-msg.session-chat.item-me:hover .msg-more {
+    /* display: inline-block; */
+    visibility: visible;
+}
+
+.poptip-item:hover, .lang-item:hover {
+    background-color: #F4F5F8;
+    /*color: #ffffff;*/
+}
+
+.poptip-block, .poptip-lang {
+    cursor: pointer;
+    display: inline-block;
+    width: 95px;
+    line-height: 24px;
+    background-color: #ffffff;
+    color: #6d6d6d;
+}
+
+.pop-tip {
+    position: absolute;
+    bottom: 0;
+}
+
+.u-msg.session-chat.item-you .pop-tip {
+    right: -32px;
+}
+
+.u-msg.session-chat.item-me .pop-tip {
+    left: -32px;
+}
+
+.pop-tip:hover .msg-more {
+    /* display: inline-block; */
+    visibility: visible;
+    color: #fc8c30;
+    border-color: #feddc1;
+    background-color: #fff4ea;
+}
+
+.lang-tip .ivu-poptip-arrow {
+    display: none;
+}
+
+.pop-tip .ivu-poptip-body {
+    padding: 5px 0px 5px 2px;
+}
+
+.pop-tip .ivu-poptip-popper {
+    min-width: 90px;
+}
+
+.msg-more {
+    /* display: none; */
+    visibility: hidden;
+    border-radius: 3px;
+    padding: 0px 5px !important;
+    webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+}
+
+.poptip-block {
+    vertical-align: top;
+}
+
+.poptip-lang {
+    right: 0;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.lang-item {
+    padding: 0 10px;
+}
+
+.lang-btn {
+    border-color: none !important;
+}
+
+.lang-btn:hover {
+    border-color: none !important;
+}
+
+.msg-error-icon {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 12px;
+    border-radius: 8px;
+    border: 1px solid red;
+    color: red;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.msg-error {
+    color: #6b8299;
+    font-size: 12px;
+    padding: 5px 5px;
+    text-align: right;
+    line-height: 37px;
+    float: right;
+    /*cursor: pointer;*/
+}

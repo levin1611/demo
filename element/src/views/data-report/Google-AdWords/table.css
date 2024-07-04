@@ -1,0 +1,72 @@
+.pagewrap {
+  width: 100%;
+  text-align: center;
+}
+.tabmain /deep/ .ivu-table table {
+  width: 100% !important;
+}
+.tabmain /deep/ .ivu-table td,
+.tabmain /deep/ .ivu-table th {
+  text-align: center;
+}
+.tabmain /deep/ .ivu-table th {
+  font-size: 14px;
+}
+.tabmain /deep/ .ivu-table tbody tr:hover td {
+  background: #f8f8f9;
+  color: #FA8241;
+}
+.checkboxgroup > label {
+  display: block;
+  margin-bottom: 5px;
+}
+.conditionwrap {
+  max-height: 136px;
+  overflow: auto;
+}
+.conditionmain > .ivu-select .ivu-select-dropdown {
+  max-height: 140px;
+}
+.conditionmain > div {
+  width: 125px;
+  display: inline-block;
+}
+.condition > h3 {
+  margin-bottom: 10px;
+}
+.datewrap {
+  margin-bottom: 15px;
+}
+.datewrap > span {
+  float: right;
+  position: relative;
+}
+.datewrap .table-filter-item {
+  padding: 10px;
+}
+.onnetwork {
+  overflow: hidden;
+}
+.onnetwork > h3 {
+  float: left;
+  margin-right: 20px;
+}
+.onnetwork label {
+  margin-bottom: 10px;
+}
+.extensiondevice > h3 {
+  float: left;
+  margin-right: 20px;
+}
+.extensiondevice label {
+  margin-bottom: 10px;
+}
+.alldevice,
+.allnetwork {
+  float: left;
+  margin: 2px 15px 0 0;
+}
+.ivu-checkbox-group {
+  white-space: normal;
+}
+/*# sourceMappingURL=table.css.map */

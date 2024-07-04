@@ -1,0 +1,129 @@
+.condition3 {
+  width: 180px;
+  margin-right: 5px;
+}
+.container {
+  position: relative;
+  text-align: center;
+  height: 100%;
+}
+.annotation {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 550px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #888;
+  text-align: center;
+}
+.filter-top {
+  display: flex;
+  justify-content: center;
+}
+.filter-top .filter-top-li {
+  width: 180px;
+  list-style: none;
+  text-align: center;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #908f8f;
+  cursor: pointer;
+}
+.filter-top .filter-top-li.filter-checked {
+  color: #414040;
+}
+.filter-top .filter-top-li.filter-checked:after {
+  content: " ";
+  width: 47px;
+  height: 7px;
+  border-radius: 3px;
+  background-color: #fb8b2f;
+  display: block;
+  margin: auto;
+  transform: translateY(7px);
+}
+.formitem-select1 {
+  width: 120px;
+  margin-right: 15px;
+  float: left;
+}
+.formitem-select2 {
+  width: 90px;
+  margin-right: 15px;
+  float: left;
+}
+.filter-tips {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #535353;
+}
+.commentwrap {
+  max-height: 136px;
+  transform: translateX(13px);
+  overflow-y: scroll;
+  padding-right: 10px;
+}
+.commentwrap li {
+  list-style: none;
+}
+.commentwrap .eachlist {
+  line-height: 30px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+.commentwrap .eachlist:hover {
+  background: #f7f7f8;
+}
+.commentwrap .eachlist:hover .removelist {
+  display: block;
+}
+.commentwrap .eachlist .removelist {
+  font-size: 18px;
+  float: right;
+  display: none;
+}
+.commentwrap .eachlist .removelist:hover {
+  color: #fb8b2f;
+}
+.actionButtons {
+  text-align: right;
+  padding-top: 5px;
+}
+.actionButtons button.empty {
+  width: 50px;
+  background-color: #727272;
+  color: #fff;
+}
+/* 超出部分隐藏 */
+td.ivu-table-column-center span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 超出部分显示 */
+td.ivu-table-column-center:hover span {
+  text-overflow: inherit;
+  overflow: visible;
+  white-space: pre-line;
+}
+/* 更改表格滚动条样式 */
+.ivu-table .ivu-table-body::-webkit-scrollbar {
+  width: 4px;
+  height: 10px;
+  background-color: #c9c9c9;
+}
+table {
+  width: 100% !important;
+}
+.ivu-table .ivu-table-body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  background-color: #c9c9c9;
+}
+.ivu-table .ivu-table-body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #fc8b2f;
+}
+/*# sourceMappingURL=form-table.css.map */

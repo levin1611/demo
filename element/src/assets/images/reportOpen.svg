@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>打开</title>
+    <defs>
+        <circle id="path-1" cx="30" cy="30" r="30"></circle>
+        <filter x="-21.7%" y="-18.3%" width="143.3%" height="143.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.944072812   0 0 0 0 0.913567073  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="打开" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="椭圆形">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFE9DD" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <g id="打开" transform="translate(18.000000, 18.000000)" fill="#FF752A">
+            <path d="M2.1729948,23.2196927 L11.5103281,15.193026 L12.5609948,15.193026 L21.9356615,23.2196927 L2.1729948,23.2196927 Z M16.0103281,16.0183594 L23.2863281,9.71835937 L23.2863281,22.3183594 L16.0103281,16.0183594 Z M12.6343281,0.719692687 L22.8716615,7.99435936 L14.7343281,14.9316927 L12.9716615,13.581026 L11.1356615,13.581026 L9.33566147,14.9316927 L1.23566147,8.0316927 L11.5103281,0.719692687 L12.6343281,0.719692687 Z M8.13566147,16.0183594 L0.784994812,22.3183594 L0.784994812,9.71835937 L8.13566147,16.0183594 Z" id="形状"></path>
+        </g>
+    </g>
+</svg>

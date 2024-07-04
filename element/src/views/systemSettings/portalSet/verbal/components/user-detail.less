@@ -1,0 +1,59 @@
+.user-detail /deep/ .ivu-drawer-body {
+  overflow: auto;
+}
+
+.user-detail /deep/ .chat-svg-avatar {
+  width: 46px;
+  height: 46px;
+}
+
+.user {
+  .user_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .user_name {
+      display: flex;
+      align-items: center;
+
+      .user_name_short {
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+      }
+    }
+
+    .user_operate {
+      & /deep/ .ivu-btn {
+        padding: 5px 10px 6px;
+      }
+
+      .moreOperateGroup {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .user_bottom {
+    width: 100%;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 21px 0;
+    border-bottom: 1px solid #EAEAEA;
+  }
+}
+
+.user_info {
+  .web-tip {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 15px;
+  }
+}
+
+.autho_role /deep/ .ivu-tabs-tab {
+  padding: 0 16px 11px;
+}

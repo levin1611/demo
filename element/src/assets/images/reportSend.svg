@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>发送</title>
+    <defs>
+        <circle id="path-1" cx="30" cy="30" r="30"></circle>
+        <filter x="-21.7%" y="-18.3%" width="143.3%" height="143.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="4" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.893183587   0 0 0 0 0.932188875   0 0 0 0 0.99719769  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="发送" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="椭圆形">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#DFEBFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <g id="发送" transform="translate(17.000000, 17.000000)" fill="#4285F2">
+            <path d="M0.456103751,10.0114709 L24.3445323,0.0571852354 C24.6037299,-0.0508465702 24.9016916,-0.00348829436 25.1146209,0.179583767 C25.3275502,0.362655828 25.4190498,0.650148011 25.3511038,0.922613796 L19.400818,24.7256138 C19.3386494,24.9734276 19.1534939,25.1719041 18.9105892,25.2511121 C18.6676845,25.3303202 18.4011204,25.2791435 18.204818,25.1156138 L13.0382466,20.8107566 C12.7428038,20.564972 12.3086698,20.5851081 12.0372466,20.8571852 L9.38710375,23.5054709 C9.17470607,23.7166138 8.85629118,23.7795625 8.57952797,23.6651238 C8.30276476,23.5506851 8.12178973,23.2812437 8.12053231,22.9817566 L8.12053231,17.3843281 C8.12037734,17.1872508 8.19854081,16.9981888 8.33781804,16.8587566 L19.114818,6.08175665 L6.39153231,15.6256138 C6.11598304,15.8319785 5.73475034,15.8219865 5.47038946,15.6014709 L0.266675165,11.2668995 C0.0675521796,11.1005911 -0.0303803355,10.8424475 0.00832759815,10.5859126 C0.0470355318,10.3293777 0.216775256,10.1116225 0.456103751,10.0114709 Z" id="路径"></path>
+        </g>
+    </g>
+</svg>

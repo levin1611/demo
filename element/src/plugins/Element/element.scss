@@ -1,0 +1,5 @@
+// 引入样式变量
+@import "./element-variables";
+
+// 这里同样也能按需引入
+@import "~element-ui/packages/theme-chalk/src/index";

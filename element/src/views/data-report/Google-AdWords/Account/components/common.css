@@ -1,0 +1,43 @@
+.drop-down-menu-category {
+  color: #7c7c7c;
+  font-size: 10px;
+  padding: 5px 16px;
+}
+.account-body-col-panel {
+  height: 400px;
+  margin: 14px;
+}
+.xpy-shadow {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+}
+.account-body-col-panel-content {
+  padding: 25px;
+  height: 100%;
+}
+.account-body-col-panel-head-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  float: left;
+  width: 20%;
+}
+.drop-down-main {
+  width: 20%;
+  float: left;
+  font-size: 14px;
+}
+.drop-down-main /deep/ .ivu-dropdown-rel {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.drop-down-main /deep/ .ivu-dropdown-rel > a {
+  color: black;
+}
+.drop-down-main /deep/ .ivu-select-dropdown {
+  width: auto;
+}
+/*# sourceMappingURL=common.css.map */

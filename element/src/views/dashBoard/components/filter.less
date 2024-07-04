@@ -1,0 +1,154 @@
+/deep/ .card-filter__title{
+    padding: 0px 8px;
+}
+.card-filter {
+    padding: 0;
+    border: 0;
+
+    &__trigger {
+        display: flex;
+        align-items: center;
+        border: 1px solid #CBD6E2;
+        border-radius: 4px;
+        padding: 0 8px;
+        line-height: 30px;
+        font-size: 12px;
+        cursor: pointer;
+
+        .el-select__caret.el-input__icon {
+            line-height: 29px;
+        }
+     }
+
+    &__title {
+        color: #606266;
+        display: inline-block;
+        padding: 0px 8px;
+    }
+    &__icon {
+        padding: 0 8px;
+    }
+
+    .small-date-panel-container {
+        line-height: 0;
+    }
+}
+
+.small-date-panel-container {
+    width: 100%;
+    //height: 280px;
+    //overflow: hidden;
+}
+
+.small-date-panel {
+    //transform: scale(0.84);
+    //transform-origin: 0 0 0;
+    &.dateMothe {
+        .el-month-table td .cell{
+            width: 44px;
+            height: 24px;
+            line-height: 24px;
+        }
+        .el-month-table td div{
+            padding: 11px 0;
+        }
+    }
+    .el-picker-panel {
+        width: 100%;
+        box-shadow: none;
+        margin: 0;
+
+        .el-picker-panel__sidebar {
+            width: 92px;
+
+            .el-picker-panel__shortcut {
+                font-size: 12px;
+            }
+
+            &+.el-picker-panel__body {
+                margin-left: 92px;
+            }
+        }
+
+        .el-picker-panel__body {
+            min-width: 555px;
+
+            .el-date-range-picker__header div {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.active-shortCut {
+    color: #FA8241;
+}
+.filter-content {
+    margin-top: 4px;
+    padding: 0 16px;
+
+
+    .filter-items {
+        margin-top: 4px;
+        max-height: 130px;
+        overflow: auto;
+
+        .el-checkbox, .el-radio {
+            display: block;
+            word-wrap: break-word;
+            word-break: break-all;
+            // margin: 5px 0;
+
+            &__label {
+                 font-size: 12px;
+             }
+        }
+    }
+    .filter-tree {
+        .el-checkbox{
+            display: inline-block;
+        }
+    }
+    .title {
+        font-size: 12px;
+        height: 36px;
+        line-height: 36px;
+
+        i {
+            color: #7d9abe;
+            margin-right: 8px;
+        }
+    }
+}
+
+.card-filter-btns {
+    .el-button {
+        padding: 0 17px;
+        height: 33px;
+        line-height: 33px;
+    }
+
+    text-align: right;
+    margin: 16px 15px 10px;
+}
+
+.treeItem{
+    background: '#F5F7FA';
+}
+.department-filter {
+    .el-tree-node__content {
+        cursor: default;
+    }
+}
+.department-filter-title {
+    max-width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.googleState-filter-title {
+    max-width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

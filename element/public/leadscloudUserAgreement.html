@@ -1,0 +1,1588 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+
+    <style type='text/css'>html {
+        overflow-x: initial !important;
+    }
+
+    :root {
+        --bg-color: #ffffff;
+        --text-color: #333333;
+        --select-text-bg-color: #B5D6FC;
+        --select-text-font-color: auto;
+        --monospace: "Lucida Console", Consolas, "Courier", monospace;
+        --title-bar-height: 20px;
+    }
+
+    .mac-os-11 {
+        --title-bar-height: 28px;
+    }
+
+    html {
+        font-size: 14px;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: auto;
+        inset: 0px;
+        font-size: 14px;
+        line-height: 1.42857;
+        overflow-x: hidden;
+        background: inherit;
+        tab-size: 4;
+    }
+
+    iframe {
+        margin: auto;
+    }
+
+    a.url {
+        word-break: break-all;
+    }
+
+    a:active, a:hover {
+        outline: 0px;
+    }
+
+    .align-right {
+        text-align: right;
+    }
+
+    .align-center {
+        text-align: center;
+    }
+
+    .in-text-selection, ::selection {
+        text-shadow: none;
+        background: var(--select-text-bg-color);
+        color: var(--select-text-font-color);
+    }
+
+    #write {
+        margin: 0px auto;
+        height: auto;
+        width: inherit;
+        word-break: normal;
+        overflow-wrap: break-word;
+        position: relative;
+        white-space: normal;
+        overflow-x: visible;
+        padding-top: 36px;
+    }
+
+    #write.first-line-indent p {
+        text-indent: 2em;
+    }
+
+    #write.first-line-indent li p, #write.first-line-indent p * {
+        text-indent: 0px;
+    }
+
+    #write.first-line-indent li {
+        margin-left: 2em;
+    }
+
+    .for-image #write {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    body.typora-export {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .typora-export .footnote-line, .typora-export li, .typora-export p {
+        white-space: pre-wrap;
+    }
+
+    .typora-export .task-list-item input {
+        pointer-events: none;
+    }
+
+    @media screen and (max-width: 500px) {
+        body.typora-export {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        #write {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .CodeMirror-sizer {
+            margin-left: 0px !important;
+        }
+
+        .CodeMirror-gutters {
+            display: none !important;
+        }
+    }
+
+    #write li > figure:last-child {
+        margin-bottom: 0.5rem;
+    }
+
+    #write ol, #write ul {
+        position: relative;
+    }
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+        image-orientation: from-image;
+    }
+
+    button, input, select, textarea {
+        color: inherit;
+        font: inherit;
+    }
+
+    input[type="checkbox"], input[type="radio"] {
+        line-height: normal;
+        padding: 0px;
+    }
+
+    *, ::after, ::before {
+        box-sizing: border-box;
+    }
+
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre {
+        width: inherit;
+    }
+
+    #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p {
+        position: relative;
+    }
+
+    p {
+        line-height: inherit;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid-page;
+        break-inside: avoid;
+        orphans: 4;
+    }
+
+    p {
+        orphans: 4;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    h6 {
+        font-size: 1rem;
+    }
+
+    .md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .md-blockmeta {
+        color: rgb(204, 204, 204);
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    sup.md-footnote {
+        padding: 2px 4px;
+        background-color: rgba(238, 238, 238, 0.7);
+        color: rgb(85, 85, 85);
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    sup.md-footnote a, sup.md-footnote a:hover {
+        color: inherit;
+        text-transform: inherit;
+        text-decoration: inherit;
+    }
+
+    #write input[type="checkbox"] {
+        cursor: pointer;
+        width: inherit;
+        height: inherit;
+    }
+
+    figure {
+        overflow-x: auto;
+        margin: 1.2em 0px;
+        max-width: calc(100% + 16px);
+        padding: 0px;
+    }
+
+    figure > table {
+        margin: 0px;
+    }
+
+    tr {
+        break-inside: avoid;
+        break-after: auto;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0px;
+        width: 100%;
+        overflow: auto;
+        break-inside: auto;
+        text-align: left;
+    }
+
+    table.md-table td {
+        min-width: 32px;
+    }
+
+    .CodeMirror-gutters {
+        border-right: 0px;
+        background-color: inherit;
+    }
+
+    .CodeMirror-linenumber {
+        user-select: none;
+    }
+
+    .CodeMirror {
+        text-align: left;
+    }
+
+    .CodeMirror-placeholder {
+        opacity: 0.3;
+    }
+
+    .CodeMirror pre {
+        padding: 0px 4px;
+    }
+
+    .CodeMirror-lines {
+        padding: 0px;
+    }
+
+    div.hr:focus {
+        cursor: none;
+    }
+
+    #write pre {
+        white-space: pre-wrap;
+    }
+
+    #write.fences-no-line-wrapping pre {
+        white-space: pre;
+    }
+
+    #write pre.ty-contain-cm {
+        white-space: normal;
+    }
+
+    .CodeMirror-gutters {
+        margin-right: 4px;
+    }
+
+    .md-fences {
+        font-size: 0.9rem;
+        display: block;
+        break-inside: avoid;
+        text-align: left;
+        overflow: visible;
+        white-space: pre;
+        background: inherit;
+        position: relative !important;
+    }
+
+    .md-fences-adv-panel {
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+        padding-top: 0px;
+        padding-bottom: 8px;
+        overflow-x: auto;
+    }
+
+    #write .md-fences.mock-cm {
+        white-space: pre-wrap;
+    }
+
+    .md-fences.md-fences-with-lineno {
+        padding-left: 0px;
+    }
+
+    #write.fences-no-line-wrapping .md-fences.mock-cm {
+        white-space: pre;
+        overflow-x: auto;
+    }
+
+    .md-fences.mock-cm.md-fences-with-lineno {
+        padding-left: 8px;
+    }
+
+    .CodeMirror-line, twitterwidget {
+        break-inside: avoid;
+    }
+
+    .footnotes {
+        opacity: 0.8;
+        font-size: 0.9rem;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .footnotes + .footnotes {
+        margin-top: 0px;
+    }
+
+    .md-reset {
+        margin: 0px;
+        padding: 0px;
+        border: 0px;
+        outline: 0px;
+        vertical-align: top;
+        background: 0px 0px;
+        text-decoration: none;
+        text-shadow: none;
+        float: none;
+        position: static;
+        width: auto;
+        height: auto;
+        white-space: nowrap;
+        cursor: inherit;
+        -webkit-tap-highlight-color: transparent;
+        line-height: normal;
+        font-weight: 400;
+        text-align: left;
+        box-sizing: content-box;
+        direction: ltr;
+    }
+
+    li div {
+        padding-top: 0px;
+    }
+
+    blockquote {
+        margin: 1rem 0px;
+    }
+
+    li .mathjax-block, li p {
+        margin: 0.5rem 0px;
+    }
+
+    li blockquote {
+        margin: 1rem 0px;
+    }
+
+    li {
+        margin: 0px;
+        position: relative;
+    }
+
+    blockquote > :last-child {
+        margin-bottom: 0px;
+    }
+
+    blockquote > :first-child, li > :first-child {
+        margin-top: 0px;
+    }
+
+    .footnotes-area {
+        color: rgb(136, 136, 136);
+        margin-top: 0.714rem;
+        padding-bottom: 0.143rem;
+        white-space: normal;
+    }
+
+    #write .footnote-line {
+        white-space: pre-wrap;
+    }
+
+    @media print {
+        body, html {
+            border: 1px solid transparent;
+            height: 99%;
+            break-after: avoid;
+            break-before: avoid;
+            font-variant-ligatures: no-common-ligatures;
+        }
+
+        #write {
+            margin-top: 0px;
+            padding-top: 0px;
+            border-color: transparent !important;
+        }
+
+        .typora-export * {
+            -webkit-print-color-adjust: exact;
+        }
+
+        .typora-export #write {
+            break-after: avoid;
+        }
+
+        .typora-export #write::after {
+            height: 0px;
+        }
+
+        .is-mac table {
+            break-inside: avoid;
+        }
+
+        .typora-export-show-outline .typora-export-sidebar {
+            display: none;
+        }
+    }
+
+    .footnote-line {
+        margin-top: 0.714em;
+        font-size: 0.7em;
+    }
+
+    a img, img a {
+        cursor: pointer;
+    }
+
+    pre.md-meta-block {
+        font-size: 0.8rem;
+        min-height: 0.8rem;
+        white-space: pre-wrap;
+        background: rgb(204, 204, 204);
+        display: block;
+        overflow-x: hidden;
+    }
+
+    p > .md-image:only-child:not(.md-img-error) img, p > img:only-child {
+        display: block;
+        margin: auto;
+    }
+
+    #write.first-line-indent p > .md-image:only-child:not(.md-img-error) img {
+        left: -2em;
+        position: relative;
+    }
+
+    p > .md-image:only-child {
+        display: inline-block;
+        width: 100%;
+    }
+
+    #write .MathJax_Display {
+        margin: 0.8em 0px 0px;
+    }
+
+    .md-math-block {
+        width: 100%;
+    }
+
+    .md-math-block:not(:empty)::after {
+        display: none;
+    }
+
+    .MathJax_ref {
+        fill: currentcolor;
+    }
+
+    [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus {
+        outline: 0px;
+        box-shadow: none;
+    }
+
+    .md-task-list-item {
+        position: relative;
+        list-style-type: none;
+    }
+
+    .task-list-item.md-task-list-item {
+        padding-left: 0px;
+    }
+
+    .md-task-list-item > input {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin-left: -1.2em;
+        margin-top: calc(1em - 10px);
+        border: none;
+    }
+
+    .math {
+        font-size: 1rem;
+    }
+
+    .md-toc {
+        min-height: 3.58rem;
+        position: relative;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .md-toc-content {
+        position: relative;
+        margin-left: 0px;
+    }
+
+    .md-toc-content::after, .md-toc::after {
+        display: none;
+    }
+
+    .md-toc-item {
+        display: block;
+        color: rgb(65, 131, 196);
+    }
+
+    .md-toc-item a {
+        text-decoration: none;
+    }
+
+    .md-toc-inner:hover {
+        text-decoration: underline;
+    }
+
+    .md-toc-inner {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .md-toc-h1 .md-toc-inner {
+        margin-left: 0px;
+        font-weight: 700;
+    }
+
+    .md-toc-h2 .md-toc-inner {
+        margin-left: 2em;
+    }
+
+    .md-toc-h3 .md-toc-inner {
+        margin-left: 4em;
+    }
+
+    .md-toc-h4 .md-toc-inner {
+        margin-left: 6em;
+    }
+
+    .md-toc-h5 .md-toc-inner {
+        margin-left: 8em;
+    }
+
+    .md-toc-h6 .md-toc-inner {
+        margin-left: 10em;
+    }
+
+    @media screen and (max-width: 48em) {
+        .md-toc-h3 .md-toc-inner {
+            margin-left: 3.5em;
+        }
+
+        .md-toc-h4 .md-toc-inner {
+            margin-left: 5em;
+        }
+
+        .md-toc-h5 .md-toc-inner {
+            margin-left: 6.5em;
+        }
+
+        .md-toc-h6 .md-toc-inner {
+            margin-left: 8em;
+        }
+    }
+
+    a.md-toc-inner {
+        font-size: inherit;
+        font-style: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+    }
+
+    .footnote-line a:not(.reversefootnote) {
+        color: inherit;
+    }
+
+    .md-attr {
+        display: none;
+    }
+
+    .md-fn-count::after {
+        content: ".";
+    }
+
+    code, pre, samp, tt {
+        font-family: var(--monospace);
+    }
+
+    kbd {
+        margin: 0px 0.1em;
+        padding: 0.1em 0.6em;
+        font-size: 0.8em;
+        color: rgb(36, 39, 41);
+        background: rgb(255, 255, 255);
+        border: 1px solid rgb(173, 179, 185);
+        border-radius: 3px;
+        box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .md-comment {
+        color: rgb(162, 127, 3);
+        opacity: 0.8;
+        font-family: var(--monospace);
+    }
+
+    code {
+        text-align: left;
+        vertical-align: initial;
+    }
+
+    a.md-print-anchor {
+        white-space: pre !important;
+        border-width: initial !important;
+        border-style: none !important;
+        border-color: initial !important;
+        display: inline-block !important;
+        position: absolute !important;
+        width: 1px !important;
+        right: 0px !important;
+        outline: 0px !important;
+        background: 0px 0px !important;
+        text-decoration: initial !important;
+        text-shadow: initial !important;
+    }
+
+    .os-windows.monocolor-emoji .md-emoji {
+        font-family: "Segoe UI Symbol", sans-serif;
+    }
+
+    .md-diagram-panel > svg {
+        max-width: 100%;
+    }
+
+    [lang="flow"] svg, [lang="mermaid"] svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    [lang="mermaid"] .node text {
+        font-size: 1rem;
+    }
+
+    table tr th {
+        border-bottom: 0px;
+    }
+
+    video {
+        max-width: 100%;
+        display: block;
+        margin: 0px auto;
+    }
+
+    iframe {
+        max-width: 100%;
+        width: 100%;
+        border: none;
+    }
+
+    .highlight td, .highlight tr {
+        border: 0px;
+    }
+
+    mark {
+        background: rgb(255, 255, 0);
+        color: rgb(0, 0, 0);
+    }
+
+    .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong {
+        color: inherit;
+    }
+
+    .md-expand mark .md-meta {
+        opacity: 0.3 !important;
+    }
+
+    mark .md-meta {
+        color: rgb(0, 0, 0);
+    }
+
+    @media print {
+        .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 {
+            break-inside: avoid;
+        }
+    }
+
+    .md-diagram-panel .messageText {
+        stroke: none !important;
+    }
+
+    .md-diagram-panel .start-state {
+        fill: var(--node-fill);
+    }
+
+    .md-diagram-panel .edgeLabel rect {
+        opacity: 1 !important;
+    }
+
+    .md-require-zoom-fix foreignobject {
+        font-size: var(--mermaid-font-zoom);
+    }
+
+    .md-fences.md-fences-math {
+        font-size: 1em;
+    }
+
+    .md-fences-advanced:not(.md-focus) {
+        padding: 0px;
+        white-space: nowrap;
+        border: 0px;
+    }
+
+    .md-fences-advanced:not(.md-focus) {
+        background: inherit;
+    }
+
+    .typora-export-show-outline .typora-export-content {
+        max-width: 1440px;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .typora-export-sidebar {
+        width: 300px;
+        font-size: 0.8rem;
+        margin-top: 80px;
+        margin-right: 18px;
+    }
+
+    .typora-export-show-outline #write {
+        --webkit-flex: 2;
+        flex: 2 1 0%;
+    }
+
+    .typora-export-sidebar .outline-content {
+        position: fixed;
+        top: 0px;
+        max-height: 100%;
+        overflow: hidden auto;
+        padding-bottom: 30px;
+        padding-top: 60px;
+        width: 300px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .typora-export-sidebar, .typora-export-sidebar .outline-content {
+            width: 240px;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .typora-export-sidebar {
+            display: none;
+        }
+    }
+
+    .outline-content li, .outline-content ul {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        list-style: none;
+    }
+
+    .outline-content ul {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .outline-content strong {
+        font-weight: 400;
+    }
+
+    .outline-expander {
+        width: 1rem;
+        height: 1.42857rem;
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        cursor: pointer;
+        padding-left: 4px;
+    }
+
+    .outline-expander::before {
+        content: "";
+        position: relative;
+        font-family: Ionicons;
+        display: inline-block;
+        font-size: 8px;
+        vertical-align: middle;
+    }
+
+    .outline-item {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        cursor: pointer;
+    }
+
+    .outline-expander:hover::before {
+        content: "";
+    }
+
+    .outline-h1 > .outline-item {
+        padding-left: 0px;
+    }
+
+    .outline-h2 > .outline-item {
+        padding-left: 1em;
+    }
+
+    .outline-h3 > .outline-item {
+        padding-left: 2em;
+    }
+
+    .outline-h4 > .outline-item {
+        padding-left: 3em;
+    }
+
+    .outline-h5 > .outline-item {
+        padding-left: 4em;
+    }
+
+    .outline-h6 > .outline-item {
+        padding-left: 5em;
+    }
+
+    .outline-label {
+        cursor: pointer;
+        display: table-cell;
+        vertical-align: middle;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .outline-label:hover {
+        text-decoration: underline;
+    }
+
+    .outline-item:hover {
+        border-color: rgb(245, 245, 245);
+        background-color: var(--item-hover-bg-color);
+    }
+
+    .outline-item:hover {
+        margin-left: -28px;
+        margin-right: -28px;
+        border-left: 28px solid transparent;
+        border-right: 28px solid transparent;
+    }
+
+    .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before {
+        display: none;
+    }
+
+    .outline-item-open > .outline-item > .outline-expander::before {
+        content: "";
+    }
+
+    .outline-children {
+        display: none;
+    }
+
+    .info-panel-tab-wrapper {
+        display: none;
+    }
+
+    .outline-item-open > .outline-children {
+        display: block;
+    }
+
+    .typora-export .outline-item {
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+
+    .typora-export .outline-item:hover {
+        margin-right: -8px;
+        border-right: 8px solid transparent;
+    }
+
+    .typora-export .outline-expander::before {
+        content: "+";
+        font-family: inherit;
+        top: -1px;
+    }
+
+    .typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before {
+        content: "−";
+    }
+
+    .typora-export-collapse-outline .outline-children {
+        display: none;
+    }
+
+    .typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children {
+        display: block;
+    }
+
+    .typora-export-no-collapse-outline .outline-expander::before {
+        content: "" !important;
+    }
+
+    .typora-export-show-outline .outline-item-active > .outline-item .outline-label {
+        font-weight: 700;
+    }
+
+    .md-inline-math-container mjx-container {
+        zoom: 0.95;
+    }
+
+
+    html {
+        font-size: 19px;
+    }
+
+    html, body {
+        margin: auto;
+        background: #fefefe;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+        font-family: "Vollkorn", Palatino, Times;
+        color: #333;
+        line-height: 1.4;
+        text-align: justify;
+    }
+
+    #write {
+        max-width: 960px;
+        margin: 0 auto;
+        margin-bottom: 2em;
+        line-height: 1.53;
+        padding-top: 40px;
+    }
+
+    @media only screen and (min-width: 1400px) {
+        #write {
+            max-width: 1100px;
+        }
+    }
+
+    @media print {
+        html {
+            font-size: 13px;
+        }
+    }
+
+    /* Typography
+    -------------------------------------------------------- */
+
+    #write > h1:first-child,
+    h1 {
+        margin-top: 1.6em;
+        font-weight: normal;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        margin-top: 2em;
+        font-weight: normal;
+    }
+
+    h3 {
+        font-weight: normal;
+        font-style: italic;
+        margin-top: 3em;
+    }
+
+    h1,
+    h2,
+    h3 {
+        text-align: center;
+    }
+
+    h2:after {
+        border-bottom: 1px solid #2f2f2f;
+        content: '';
+        width: 100px;
+        display: block;
+        margin: 0 auto;
+        height: 1px;
+    }
+
+    h1 + h2, h2 + h3 {
+        margin-top: 0.83em;
+    }
+
+    p,
+    .mathjax-block {
+        margin-top: 0;
+        -webkit-hypens: auto;
+        -moz-hypens: auto;
+        hyphens: auto;
+    }
+
+    ul {
+        list-style: square;
+        padding-left: 1.2em;
+    }
+
+    ol {
+        padding-left: 1.2em;
+    }
+
+    blockquote {
+        margin-left: 1em;
+        padding-left: 1em;
+        border-left: 1px solid #ddd;
+    }
+
+    code,
+    pre {
+        font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+        font-size: .9em;
+        background: white;
+    }
+
+    .md-fences {
+        margin-left: 1em;
+        padding-left: 1em;
+        border: 1px solid #ddd;
+        padding-bottom: 8px;
+        padding-top: 6px;
+        margin-bottom: 1.5em;
+    }
+
+    a {
+        color: #2484c1;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    a img {
+        border: none;
+    }
+
+    h1 a,
+    h1 a:hover {
+        color: #333;
+        text-decoration: none;
+    }
+
+    hr {
+        color: #ddd;
+        height: 1px;
+        margin: 2em 0;
+        border-top: solid 1px #ddd;
+        border-bottom: none;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .ty-table-edit {
+        background: #ededed;
+        padding-top: 4px;
+    }
+
+    table {
+        margin-bottom: 1.333333rem
+    }
+
+    table th,
+    table td {
+        padding: 8px;
+        line-height: 1.333333rem;
+        vertical-align: top;
+        border: 1px solid #ddd
+    }
+
+    table th {
+        font-weight: bold
+    }
+
+    table thead th {
+        vertical-align: bottom
+    }
+
+    table tbody + tbody {
+        border-top: 2px solid #ddd
+    }
+
+    .task-list {
+        padding: 0;
+    }
+
+    .md-task-list-item {
+        padding-left: 1.6rem;
+    }
+
+    .md-task-list-item > input:before {
+        content: '\221A';
+        display: inline-block;
+        width: 1.33333333rem;
+        height: 1.6rem;
+        vertical-align: middle;
+        text-align: center;
+        color: #ddd;
+        background-color: #fefefe;
+    }
+
+    .md-task-list-item > input:checked:before,
+    .md-task-list-item > input[checked]:before {
+        color: inherit;
+    }
+
+    .md-tag {
+        color: inherit;
+        font: inherit;
+    }
+
+    #write pre.md-meta-block {
+        min-height: 35px;
+        padding: 0.5em 1em;
+    }
+
+    #write pre.md-meta-block {
+        white-space: pre;
+        background: #f8f8f8;
+        border: 0px;
+        color: #999;
+
+        width: 100vw;
+        max-width: calc(100% + 60px);
+        margin-left: -30px;
+        border-left: 30px #f8f8f8 solid;
+        border-right: 30px #f8f8f8 solid;
+
+        margin-bottom: 2em;
+        margin-top: -1.3333333333333rem;
+        padding-top: 26px;
+        padding-bottom: 10px;
+        line-height: 1.8em;
+        font-size: 0.9em;
+        font-size: 0.76em;
+        padding-left: 0;
+    }
+
+    .md-img-error.md-image > .md-meta {
+        vertical-align: bottom;
+    }
+
+    #write > h5.md-focus:before {
+        top: 2px;
+    }
+
+    .md-toc {
+        margin-top: 40px;
+    }
+
+    .md-toc-content {
+        padding-bottom: 20px;
+    }
+
+    .outline-expander:before {
+        color: inherit;
+        font-size: 14px;
+        top: auto;
+        content: "\f0da";
+        font-family: FontAwesome;
+    }
+
+    .outline-expander:hover:before,
+    .outline-item-open > .outline-item > .outline-expander:before {
+        content: "\f0d7";
+    }
+
+    /** source code mode */
+    #typora-source {
+        font-family: Courier, monospace;
+        color: #6A6A6A;
+    }
+
+    .html-for-mac #typora-sidebar {
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+
+    .cm-s-typora-default .cm-header,
+    .cm-s-typora-default .cm-property,
+    .CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+        color: #428bca;
+    }
+
+    .cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+        color: #777777;
+    }
+
+    .typora-node .file-list-item-parent-loc,
+    .typora-node .file-list-item-time,
+    .typora-node .file-list-item-summary {
+        font-family: arial, sans-serif;
+    }
+
+    .md-task-list-item > input {
+        margin-left: -1.3em;
+        margin-top: calc(1rem - 12px);
+    }
+
+    .md-mathjax-midline {
+        background: #fafafa;
+    }
+
+    .md-fences .code-tooltip {
+        bottom: -2em !important;
+    }
+
+    .dropdown-menu .divider {
+        border-color: #e5e5e5;
+    }
+
+
+    mjx-container[jax="SVG"] {
+        direction: ltr;
+    }
+
+    mjx-container[jax="SVG"] > svg {
+        overflow: visible;
+        min-height: 1px;
+        min-width: 1px;
+    }
+
+    mjx-container[jax="SVG"] > svg a {
+        fill: blue;
+        stroke: blue;
+    }
+
+    mjx-assistive-mml {
+        position: absolute !important;
+        top: 0px;
+        left: 0px;
+        clip: rect(1px, 1px, 1px, 1px);
+        padding: 1px 0px 0px 0px !important;
+        border: 0px !important;
+        display: block !important;
+        width: auto !important;
+        overflow: hidden !important;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    mjx-assistive-mml[display="block"] {
+        width: 100% !important;
+    }
+
+    mjx-container[jax="SVG"][display="true"] {
+        display: block;
+        text-align: center;
+        margin: 1em 0;
+    }
+
+    mjx-container[jax="SVG"][display="true"][width="full"] {
+        display: flex;
+    }
+
+    mjx-container[jax="SVG"][justify="left"] {
+        text-align: left;
+    }
+
+    mjx-container[jax="SVG"][justify="right"] {
+        text-align: right;
+    }
+
+    g[data-mml-node="merror"] > g {
+        fill: red;
+        stroke: red;
+    }
+
+    g[data-mml-node="merror"] > rect[data-background] {
+        fill: yellow;
+        stroke: none;
+    }
+
+    g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+        stroke-width: 70px;
+        fill: none;
+    }
+
+    g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+        stroke-width: 70px;
+        fill: none;
+    }
+
+    g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+        stroke-dasharray: 140;
+    }
+
+    g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+        stroke-linecap: round;
+        stroke-dasharray: 0, 140;
+    }
+
+    g[data-mml-node="mtable"] > g > svg {
+        overflow: visible;
+    }
+
+    [jax="SVG"] mjx-tool {
+        display: inline-block;
+        position: relative;
+        width: 0;
+        height: 0;
+    }
+
+    [jax="SVG"] mjx-tool > mjx-tip {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    mjx-tool > mjx-tip {
+        display: inline-block;
+        padding: .2em;
+        border: 1px solid #888;
+        font-size: 70%;
+        background-color: #F8F8F8;
+        color: black;
+        box-shadow: 2px 2px 5px #AAAAAA;
+    }
+
+    g[data-mml-node="maction"][data-toggle] {
+        cursor: pointer;
+    }
+
+    mjx-status {
+        display: block;
+        position: fixed;
+        left: 1em;
+        bottom: 1em;
+        min-width: 25%;
+        padding: .2em .4em;
+        border: 1px solid #888;
+        font-size: 90%;
+        background-color: #F8F8F8;
+        color: black;
+    }
+
+    foreignObject[data-mjx-xml] {
+        font-family: initial;
+        line-height: normal;
+        overflow: visible;
+    }
+
+    mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+        stroke-width: 3;
+    }
+
+    g[data-mml-node="xypic"] path {
+        stroke-width: inherit;
+    }
+
+    .MathJax g[data-mml-node="xypic"] path {
+        stroke-width: inherit;
+    }
+
+    </style>
+    <title>询盘云外贸营销解决方案用户协议</title>
+</head>
+<body class='typora-export os-windows'>
+<div class='typora-export-content'>
+    <div id='write' class=''>
+        <h1 id='询盘云隐私权保护声明' style="font-size:16px;font-weight: bold;"><span>询盘云外贸营销解决方案用户协议</span></h1>
+        <p><span>欢迎您/询盘云外贸营销解决方案用户（以下简称&quot;您&quot;或&quot;用户&quot;）与北京鑫互联科技有限公司（以下简称&quot;鑫互联&quot;或&quot;我们&quot;）共同签署本《询盘云外贸营销解决方案服务协议》（下称&quot;本协议&quot;）并使用询盘云外贸营销解决方案服务。</span></p>
+        <p><span>协议中条款前所列关键词仅为帮助您理解该条款表达的主旨之用，不影响或限制本协议条款的含义或解释。为维护您自身权益，建议您仔细阅读各条款具体表述。</span></p>
+        <p><span><strong>【审慎阅读】</strong>您在同意本协议之前，应当认真阅读本协议。请您务必审慎阅读、充分理解各条款的内容，特别是免除或者限制责任的条款、法律适用和争议解决条款，这些条款将以粗体下划线标识，您应重点阅读。如您对协议有任何疑问，可以向客户经理和相关业务部门进行咨询。</span></p>
+        <p><span><strong>【签约动作】<ins>当您阅读并点击同意本协议或以其他方式选择接受本协议后，即表示您已充分阅读、理解并接受本协议的全部内容，并与鑫互联达成一致。本协议自您通过网络页面点击确认或以其他方式选择接受（包括但不限于我们已为您开通账户，您已实际使用我们的服务等）本协议之日起成立</ins></strong>。</span></p>
+        <p><span><strong>【不时修订】</strong>本协议内容包括以下条款及已经发布的或将来可能发布的各类规则。所有规则为本协议不可分割的一部分，与协议正文具有同等法律效力。鑫互联有权根据需要不定时地制定、修改本协议或各类规则，如本协议及规则有任何变更，一切变更以本网站最新公布的内容为准。经修订的协议、规则一经公布，立即自动生效，对新协议、规则生效之后注册的用户发生法律效力；对新协议、规则生效之前注册的用户而言，您继续使用询盘云外贸营销服务视为您接受新协议、规则。</span></p>
+        <p><strong><span>一、定义及解释</span></strong></p>
+        <p><span>1、询盘云外贸营销解决方案服务/（本）服务：指鑫互联向您提供的询盘云外贸营销解决方案服务，服务种类包括但不限于询盘云Marketing CRM系统、询盘云网站定制服务、询盘云广告代运营服务中的一种或多种，具体服务内容以您所使用或订购的内容为准。</span></p>
+        <p><span>2、CRM系统：指询盘云Marketing CRM系统。</span></p>
+        <p><span>3、账户/账号：指基于您订购的CRM系统服务，由鑫互联为您开立的操作账号。</span></p>
+        <p><span>4、员工：指您授权使用账户的人员。</span></p>
+        <p><span>5、本系统：指鑫互联为用户提供服务的线上系统，指<a href="https://admin.leadscloud.com/Front-Vue/#/login" target="_blank">https://admin.leadscloud.com/Front-Vue/#/login</a>及相关移动客户端应用程序。</span></p>
+        <p><span>6、服务费用：指根据您订购的服务类别而需支付的费用。</span></p>
+        <p><span>7、先付费：指您在付费之后，鑫互联才开始为您提供服务。</span></p>
+        <p><strong><span>二、服务简介</span></strong></p>
+        <p><span>鑫互联是国内领先的外贸私域管理专家。我们的询盘云外贸营销解决方案通过一款围绕外贸企业的客户旅程，打通营销链路上所有触点的Marketing CRM系统，帮助用户构建多渠道获客的营销能力，并为用户搭建精细化运营的私域管理体系。询盘云外贸营销解决方案可以对海外客户全域营销的交互触点，包括但不限于网站、社交媒体、在线客服、邮件、WhatsApp、Instagram、销售物料等，进行精细化运营，沉淀企业营销销售的全流程数据，全面提升外贸企业的获客和转化效率。公司依托CRM系统，为用户提供出海所必备的其他相关服务。</span></p>
+        <p><strong><span>三、服务费用</span></strong></p>
+        <p><span>1、询盘云外贸营销解决方案为先付费服务，用户使用上述服务时，应事先按照用户订购的服务种类向鑫互联支付服务费用，具体服务费用根据您的具体订单为准。</span></p>
+        <p><span>2、鑫互联在避免用户损失的前提下，有权单方决定暂时或永久地改变或停止某些服务。</span></p>
+        <p><strong><span>四、账号管理</span></strong></p>
+        <p><span>1、鑫互联将根据用户要求的数量为其开通账号，您有权将账号授权您的员工使用和管理，但您应保证您及员工均按照本协议及鑫互联不时发布和修订的规则妥善使用并管理账号。</span></p>
+        <p><span>2、当您要求我们为您的员工开立账号时，应保证，<strong><ins>您的员工通过其工作软件（包括但不限于邮件、工作手机号、WhatsApp等）绑定我们为其开立的CRM系统账号，且您及您的员工授权我们获取其产生的数据</ins></strong>。</span></p>
+        <p><span>3、鑫互联将通过用户的登录名、密码以及登录后的其他操作识别用户的相关指示，用户应当妥善保管登录名、密码、身份信息，各类产品或设备，<strong><ins>对于因用户及/或员工泄露登录名、密码、身份信息或是因产品或设备遗失导致的损失，由用户自行承担</ins></strong>。用户及/或员工在退出系统时，应以正确步骤离开网站。用户及/或员工如果发现有他人冒用或盗用其登录名及密码或任何其他未经合法授权之情形，或发生与账户关联的手机或其他设备遗失或其他可能危及到账户安全情形时，应立即以有效方式通知鑫互联，向鑫互联申请账户锁定。</span></p>
+        <p><span>4、用户应对其持有的账户负责，只有用户本人/企业/员工方可使用该账户。该账户不可转让、不可继承，在您决定不再使用该账户时，您应将该账户内的数据导出或删除。</span></p>
+        <p><span>5、账号项下的行为（包括点击操作、确认同意等）均视为用户行为，用户及/或员工同意接受账号项下操作行为的全部法律后果。</span></p>
+        <p><span>6、鑫互联可以暂时停止提供或者限制本服务部分功能，或提供新的功能，在任何功能减少、增加或者变化时，只要用户仍然使用本服务，即表示同意本协议或者变更后的协议。</span></p>
+        <p>7、<strong><ins><span>鑫互联对因用户及/或员工未能遵守本协议及/或鑫互联不时发布和修订的规则而发生的任何直接或间接损失等不利后果不承担任何责任</span></ins></strong>。</p>
+        <p>8、<strong><ins><span>用户同意并承诺，用户及/或其员工在使用本服务时，将严格遵守本协议及/或鑫互联不时发布和修订的规则，用户知晓并同意其员工在使用本服务时违反本协议约定的，用户将承担连带责任</span></ins></strong>。</p>
+        <p><span>9、若用户为企业组织用户，该企业用户指定开通的账号（含为其员工开通的账号）在CRM平台创建或产生的数据的所有权归属于该企业组织用户，您及您的员工同意，<strong><ins>在服务期内，该企业组织用户指定的管理员有权对数据进行任何形式的处置，包括但不限于从平台中复制、导出和删除</ins></strong>。</span></p>
+        <p><span>10、鑫互联有权了解您使用本公司产品或服务的真实交易背景及目的，用户应如实提供本公司所需的真实、全面、准确的信息。如果本公司有合理理由怀疑用户提供虚假信息、进行欺诈等违法违规行为的，本公司有权根据相关国家法律法规的规定对用户个人信息以及签署的文件信息等进行核实、查询、披露，有权锁定相应账户并配合相关机关进行后续调查。</span></p>
+        <p><strong><span>五、用户使用规范</span></strong></p>
+        <p><span>1、行为要求</span></p>
+        <p><span>您应正确配置和使用服务，并自行采取一定的安全性措施，对您的内容进行保护和备份。</span></p>
+        <p><span>您使用本服务不得：</span></p>
+        <p><span>（1）使用未经我们授权或许可的任何插件、外挂、系统、程序或第三方工具对本服务的正常运行进行干扰、破坏、修改或施加其他影响，包括但不限于使用自动化脚本等方式收集来自本服务的信息或与服务互动、大量占用服务系统或者网络带宽资源，给服务系统或者使用本服务的其他用户的网络、服务器、产品或应用带来严重负荷，影响系统通畅。</span></p>
+        <p><span>（2）利用或针对服务进行任何危害计算机网络安全的行为，包括但不限于：</span></p>
+        <p><span>a) 非法侵入网络、干扰网络正常功能、窃取网络数据等危害网络安全的活动；</span></p>
+        <p><span>b) 提供专门用于从事侵入网络、干扰网络正常功能及防护措施、窃取网络数据等危害网络安全活动的程序、工具；</span></p>
+        <p><span>c) 明知他人从事危害网络安全的活动的，为其提供技术支持、广告推广、支付结算等帮助；</span></p>
+        <p><span>d) 使用未经许可的数据或进入未经许可的服务器/账号；</span></p>
+        <p><span>e) 未经允许进入公众计算机网络或者他人计算机系统并删除、修改、增加存储信息；</span></p>
+        <p><span>f) 未经许可，企图探查、扫描、测试本服务系统或网络的弱点或其它实施破坏网络安全的行为；</span></p>
+        <p><span>g) 企图干涉、破坏本服务系统或网站的正常运行，故意传播恶意程序或病毒以及其他破坏干扰正常网络信息服务的行为；</span></p>
+        <p><span>h) 伪造TCP/IP数据包名称或部分名称；</span></p>
+        <p><span>i) 复制、模仿、修改、翻译、改编、出借、出售、转许可、在信息网络上传播或转让相关服务，或对本服务及相关服务进行反向工程、反向汇编、编译或者以其他方式尝试发现本服务的源代码；</span></p>
+        <p><span>j) 违反法律、法规、协议、我们的相关规则及侵犯他人合法权益的其他行为。</span></p>
+        <p><span>（3）绕过我们可能用于阻止或限制访问服务的任何措施。</span></p>
+        <p><span>（4）将本服务或其任何部分纳入任何其他程序或产品。</span></p>
+        <p><span>（5）冒充他人或其他组织机构，或对您自己的身份或您与他人或其他组织机构的关系作出虚假或不当的陈述，包括给人以您上传、发布、传播、散布或提供的任何内容是出自本服务的印象。</span></p>
+        <p><span>（6）未经我们授权而使用或试图使用他人的账号、服务或系统，或在本服务创建一个虚假身份。</span></p>
+        <p><span>（7）进行违反法律法规、本规范、使用规则及侵犯他人合法权益的其他行为。</span></p>
+        <p><span>2、信息内容规范</span></p>
+        <p><span>（1）您使用本服务制作、利用、上传、评论、发布、传播、存储、分享的内容（包括但不限于上传至本服务的未公开分享的内容）应自觉遵守相关法律法规，否则我们有权立即采取相应处理措施。您不得利用本服务制作、复制、存储、发表、传播下列信息：</span></p>
+        <p><span>a) 反对宪法确定的基本原则的；</span></p>
+        <p><span>b) 危害国家安全，泄露国家秘密的；</span></p>
+        <p><span>c) 颠覆国家政权，推翻社会主义制度，煽动分裂国家，破坏国家统一的；</span></p>
+        <p><span>d) 损害国家荣誉和利益的；</span></p>
+        <p><span>e) 宣扬恐怖主义、极端主义的；</span></p>
+        <p><span>f) 宣扬民族仇恨、民族歧视，破坏民族团结的；</span></p>
+        <p><span>g) 煽动地域歧视、地域仇恨的；</span></p>
+        <p><span>h) 破坏国家宗教政策，宣扬邪教和封建迷信的；</span></p>
+        <p><span>i) 编造、散布谣言、虚假信息，扰乱经济秩序和社会秩序、破坏社会稳定的；</span></p>
+        <p><span>j) 散布、传播淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</span></p>
+        <p><span>k) 危害网络安全、利用网络从事危害国家安全、荣誉和利益的；</span></p>
+        <p><span>l) 侮辱或者诽谤他人，侵害他人合法权益的；</span></p>
+        <p><span>m) 对他人进行暴力恐吓、威胁，实施人肉搜索的；</span></p>
+        <p><span>n) 歪曲、丑化、亵渎、否定英雄烈士事迹和精神，以侮辱、诽谤或者其他方式侵害英雄烈士的姓名、肖像、名誉、荣誉的；</span></p>
+        <p><span>o) 散布污言秽语，损害社会公序良俗的；</span></p>
+        <p><span>p) 侵犯他人隐私权、名誉权、肖像权、知识产权等合法权益内容的；</span></p>
+        <p><span>q) 任何未经我们或接收方同意的广告、招揽推广材料、“垃圾邮件”、“垃圾短信”、“连锁信”、“传销”或任何其它被禁止的招揽形式内容；</span></p>
+        <p><span>r) 侵害未成年人合法权益或者损害未成年人身心健康的；</span></p>
+        <p><span>s) 其他违反法律法规、公共政策、社会治安及公序良俗、干扰本服务正常运营或侵犯其他用户或第三方合法权益内容的其他信息。</span></p>
+        <p><span>（2） 如果我们发现或收到他人举报或投诉用户违反本协议约定的，我们有权不经通知随时对相关内容进行删除、屏蔽，并视行为情节对违规账号处以包括但不限于警告、限制或禁止使用部分或全部功能、账号封禁直至注销的处罚，并公告处理结果。</span></p>
+        <p><strong><span>六、数据安全</span></strong></p>
+        <p><span>1、用户在CRM系统中创建、存储、上传以及通过其他方式处理的数据均为用户的用户数据（&quot;<strong>用户数据</strong>&quot;）并归属于用户所有。用户有权自行对该用户数据进行复制、修改和删除等操作，但用户知悉并理解，数据的修改、删除等操作可能导致数据变更或无法恢复，因此请谨慎操作。</span></p>
+        <p><span>2、<strong><ins>用户同意，为提供本协议约定服务的目的，鑫互联提供对应的服务过程中所收集、使用的特定范围内的数据，用户为该数据的数控制者，鑫互联作为数据处理者仅基于用户的请求或授权提供相应的数据处理服务。涉及到收集、处理用户员工个人信息的，用户应确保就鑫互联作为数据处理者处理的个人数据获得相应员工的授权同意，否则由于用户未获得员工个人的授权同意而导致的风险和责任由用户自行承担，鑫互联不承担任何责任</ins></strong>。</span></p>
+        <p><span>3、鑫互联尊重用户以及员工的个人隐私，也相信用户会同样尊重其客户、供应商等合作伙伴的个人隐私。本服务为满足用户需求而设计，若用户在使用服务功能时涉及采集合作伙伴个人信息的，考虑到各国对个人信息保护力度在不断加强，<strong><ins>用户应告知其工作人员在使用这些功能前告知合作伙伴相关个人信息的采集及使用情况并征得其同意，未能征得其同意的，请不要使用这些功能，否则由于用户及/或用户工作人员未征得个人同意而收集使用个人信息导致的风险和责任由用户自行承担，鑫互联不承担任何责任</ins></strong>。</span></p>
+        <p><span>4、用户同意，用户在CRM系统中创建的用户数据存储在中国大陆境内第三方的云服务器上。用户所在地或使用CRM系统时的所在地监管部门对数据的存储或传输有相关要求及/或设置相应条件（如须提前备案等）的，用户应当自行对满足该要求或符合该条件负责；由于用户未满足要求或未符合条件导致政府处罚或引发的其他风险或责任，由用户自行承担。</span></p>
+        <p><span>5、用户同意，用户作为用户数据的控制者，应按照相关法律法规的规定控制、使用相关数据，用户违规使用数据产生的任何风险和责任由用户自行承担，鑫互联不承担任何责任。</span></p>
+        <p><span>6、用户授权<strong><ins>鑫互联收集与服务相关的数据，包括但不限于使用服务时录入数据和提供的资料以及其他为提供服务目的合理要求提供的信息</ins></strong>（&quot;<strong>用户数据</strong>&quot;）；且您同意上述授权免费、长期有效且不可撤销，不受本协议的中止、终止、失效、解除的影响。根据监管机构的要求，鑫互联有权按照相关法律法规或政策文件配合提供相关数据。</span></p>
+        <p><span>7、您同意在如下范围内向鑫互联或鑫互联关联公司授权使用用户数据，并且鑫互联承诺仅在如下情况中使用用户数据：</span></p>
+        <p><span>（1） 向用户反馈服务的使用情况；</span></p>
+        <p><span>（2） 为完善现有服务、开发新服务、展示服务使用一般趋势以及数据分析、商业策略目的而使用汇总及/或匿名信息；</span></p>
+        <p><span>（3）为安全及技术支持之目的或为确认您遵守使用规范之目的或为履行鑫互联对您的义务之目的；</span></p>
+        <p><span>（4）为进行行业研究、发布行业数据报告、进一步完善询盘云外贸营销解决方案服务等目的， 在已经对用户数据进行脱敏的前提下，使用用户数据。为本条之目的，&quot;脱敏&quot;是指鑫互联可对用的数据进行适当处理，以使得该等数据通过任何技术手段或方式都无法定位至用户或用户保密信息，鑫互联将确保该等数据仅构成某一行业或大数据的组成本分，但该等数据不会在任何方面向外界透露甲方保密信息或根据该等大数据统计使其他第三方明确定位至用户。</span></p>
+        <p><span>8、鑫互联将尽合理的努力保护您的数据安全，并为此采取合理的数据传输、存储、转换等预防保护措施。但是，互联网数据传输、存储、转换均可能存在一定未知且不确定的数据安全风险，该等风险将导致包括但不限于数据丢失、泄露、损坏、无法读取或提取等后果。<strong><ins>您确认，您已明确知晓并同意接受该等因互联网引发的风险和后果，并已采取恰当的措施（例如数据备份等），以便在该等风险发生时将损失降至最低</ins></strong>。</span></p>
+        <p><span>9、因互联网技术本身等非鑫互联主观故意或重大过失导致危害您数据安全的，鑫互联不承担赔偿责任。因鑫互联的重大过失危害您数据安全的，鑫互联的赔偿责任以您支付的年度服务费用为上限。</span></p>
+        <p><span>10、若您不再使用本服务，用户应在服务到期之日起10个工作日内将用户数据迁移至本地；您亦有权要求鑫互联将该等数据删除或在不会造成鑫互联额外成本及费用的前提下返还至您。若在服务到期之日起10个工作日内，您仍未能就用户数据处理向鑫互联做出书面通知，则鑫互联有权删除您的用户数据且无需承担任何责任。</span></p>
+        <p><strong><span>七、隐私条款</span></strong></p>
+        <p><span>详见隐私政策。</span></p>
+        <p><strong><span>八、知识产权</span></strong></p>
+        <p><span>1、您了解并同意，除非我们另有说明或相关权利人依照法律规定享有权利，否则服务包含的固有产品、技术、软件、程序、数据及其他所有信息内容，包括但不限于文字、图片、音频、视频、图表、界面设计、版面框架、有关数据或电子文档等的所有知识产权（包括但不限于版权、商标权、专利权、商业秘密等）及相关权利均归鑫互联或鑫互联的关联公司所有。未经鑫互联书面同意，您不得为任何商业或非商业目的自行或许可任何第三方使用（包括但不限于通过任何机器人、蜘蛛等程序或设备监视、复制、转载、散布、传播、播放、展示、出售、许可、镜像、上载、下载本服务中的内容）。</span></p>
+        <p><span>2、<strong><ins>您应保证提交给鑫互联的素材、对外贸营销解决方案服务的使用及使用外贸营销解决方案服务所产生的成果未侵犯任何第三方的合法权益</ins></strong>。</span></p>
+        <p><strong><span>九、保密条款</span></strong></p>
+        <p><span>1、本协议所称保密信息，是指一方（以下简称“接受方”）从对方（以下简称“披露方”）取得的、获知的、或因双方履行本协议而产生的商业秘密（包括财务秘密）、技术秘密、经营诀窍和（或）其他应予保密的信息和资料（包括产品资料，产品计划，价格，财务及营销规划，业务战略，用户信息，用户数据，研发，软件，硬件，API应用数据接口，技术说明，设计，特殊公式，特殊算法等），无论上述信息和资料以何种形式或载于何种载体，无论披露方在披露时是否以口头、图像或书面等方式表明其具有保密性。</span></p>
+        <p><span>2、双方应采取适当措施妥善保存对方提供的保密信息，措施的审慎程度不少于其保护自身的保密信息时的审慎程度。双方仅能将保密信息用于与本协议项下的有关用途或目的。</span></p>
+        <p><span>3、双方保证保密信息仅可在各自一方从事该业务的负责人和雇员范围内知悉，并严格限制接触上述保密信息的员工遵守本条之保密义务。</span></p>
+        <p><span>4、本条上述限制条款不适用于以下情况：</span></p>
+        <p><span>5、在签署本协议之时或之前，该保密信息已以合法方式属接受方所有；</span></p>
+        <p><span>（1）保密信息在通知给接受方时，已经公开或能从公开领域获得；</span></p>
+        <p><span>（2）保密信息是接受方从与其没有保密或不透露义务的第三方获得的；</span></p>
+        <p><span>（3）在不违反本协议约定责任的前提下，该保密信息已经公开或能从公开领域获得；</span></p>
+        <p><span>（4）该保密信息是接受方或其关联或附属公司独立开发，而且未从通知方或其关联或附属公司获得的信息中获益；</span></p>
+        <p><span>（5）接受方应法院或其它法律、行政管理部门要求（通过口头提问、询问、要求资料或文件、传唤、民事或刑事调查或其他程序）因而透露保密信息；</span></p>
+        <p><span>（6）接受方为向行政管理部门、行业协会等机构申请某项业务资质、获得某项认定、或符合国家、行业标准/认证，需结合对方情况向前述机构提交材料或进行说明的而披露的信息，在该等情况下，接受方应秉持必要情况下最少披露原则及要求因此获知保密信息的机构按不低于本协议的标准予以保密认证，需结合对方情况向前述机构提交材料或进行说明的而披露的信息，在该等情况下，接受方应秉持必要情况下最少披露原则及要求因此获知保密信息的机构按不低于本协议的标准予以保密。</span></p>
+        <p><span>6、您和鑫互联都应尽最大的努力保护上述保密信息不被泄露。一旦发现有上述保密信息泄露事件，双方应合作采取一切合理措施避免或者减轻损害后果的产生。如因此给对方造成损失的，应赔偿因此给对方造成的直接经济损失。</span></p>
+        <p><strong><span>十、违约责任</span></strong></p>
+        <p><span>1、您违反本协议中的规则或义务的任一内容，或鑫互联根据其判断认为您的使用行为存在异常的，鑫互联均有权就其情节，根据独立判断并单方采取以下措施中的一种或多种：</span></p>
+        <p><span>（1）限制、中止使用服务；</span></p>
+        <p><span>（2）终止提供服务，终止本协议；</span></p>
+        <p><span>（3）追究您的法律责任；</span></p>
+        <p><span>（4）其他鑫互联认为适合的处理措施。鑫互联依据前述约定采取中止服务、终止服务等措施而造成的用户损失将由您承担。</span></p>
+        <p><span>2、如因您违反有关法律法规或者本协议、相关规则之规定，使鑫互联遭受任何损失、受到其他用户、任何第三方的索赔或任何行政管理部门的处罚，<strong><ins>您应对鑫互联、其他用户或相关第三方的实际损失进行全额赔偿，包括合理的律师费用</ins></strong>。</span></p>
+        <p><span>3、您理解且同意，鉴于计算机、互联网的特殊性，下述情况不属于鑫互联违约：</span></p>
+        <p><span>（1）鑫互联在进行系统及服务器配置、维护、升级时，需要短时间中断服务；</span></p>
+        <p><span>（2）由于Internet上的通路阻塞造成您网站访问速度下降。</span></p>
+        <p><span>4、<ins>在任何情况下，鑫互联均不对任何间接性、后果性、惩戒性、偶然性、特殊性的损害，包括您使用鑫互联服务而遭受的利润损失承担责任（即使您已被告知该等损失的可能性）</ins>。</span></p>
+        <p><span>5、<strong><ins>在法律允许的情况下，鑫互联在本协议项下所承担的损失赔偿责任不超过您就该服务支付的尚未使用的费用</ins></strong>。</span></p>
+        <p><strong><span>十一、不可抗力</span></strong></p>
+        <p><span>1、因不可抗力或者其他意外事件，使得本服务条款的履行不可能、不必要或者无意义的，遭受不可抗力、意外事件的一方不承担责任。</span></p>
+        <p><span>2、不可抗力、意外事件是指不能预见、不能克服并不能避免且对一方或双方当事人造成重大影响的客观事件，包括自然灾害如洪水、地震、瘟疫流行等以及社会事件如战争、动乱、政府行为、电信主干线路中断、黑客、网络阻塞、电信部门技术调整和政府管制等。</span></p>
+        <p><strong><span>十二、法律适用及争议解决</span></strong></p>
+        <p><span>1、本协议之订立、生效、解释、修订、补充、终止、执行与争议解决均适用中华人民共和国大陆法律。</span></p>
+        <p><span>2、您因使用服务所产生及与、鑫互联服务有关的争议，由鑫互联与您协商解决。协商不成时，任何一方均可向北京市朝阳区人民法院提起诉讼。</span></p>
+        <p><strong><span>十三、附则</span></strong></p>
+        <p><span>1、<strong><ins>本协议自您同意勾选确认/同意或鑫互联收到您支付的全部费用之日或您接受本服务之日（以发生孰早之日为准）起生效，除非本网站终止本服务协议或者用户丧失本网站用户资格，否则本服务协议始终有效。本服务协议终止并不免除用户根据本服务协议或其他有关协议、规则所应承担的义务和责任</ins></strong>。</span></p>
+        <p><span>2、<strong><ins>本合同签署后，任何一方不得单方无理由提前终止本合同，双方另有约定的除外</ins></strong>。</span></p>
+        <p><span>3、本服务协议部分条款被认定为无效时，不影响本服务协议其他条款的效力。</span></p>
+        <p><span>4、本协议中的标题仅为方便而设，在解释本协议时应被忽略。</span></p>
+        <p><span>5、鑫互联对本服务协议享有最终的解释权。</span></p>
+        <p><strong><span>附件一：询盘云Marketing CRM系统</span></strong></p>
+        <p><span>1、询盘云Marketing CRM系统为包年服务，您在使用前预先付费购买，使用到期后如您需继续使用的需提前续费。</span></p>
+        <p><span>2、询盘云Marketing CRM系统服务中包含 AMP 精品站模块， AMP 精品站模块内置多套网站模板可供用户使用，用户可根据自己业务及产品情况选择适合自己的模板自行进行 AMP 网站搭建；特别的，AMP精品站模块不包含鑫互联的网站搭建服务，若用户拟委托鑫互联搭建网站，则应另行购买AMP精品站搭建服务。</span></p>
+        <p><span>3、用户使用期限到期，未在到期前5个工作日内支付下一个年度的使用费用或未与鑫互联续约的，则鑫互联有权注销用户账号并有权永久删除用户数据。</span></p>
+        <p><strong><span>附件二：询盘云网站服务</span></strong></p>
+        <p><span>询盘云网站服务包括AMP精品站和定制独立站服务。</span></p>
+        <p><span>（一）AMP精品站</span></p>
+        <p><span>AMP精品站为询盘云Marketing CRM系统内嵌功能，用户可自由设置，鑫互联不为此额外收费；但是，若您需要询盘云提供网站实施服务，则应按照双方约定支付实施服务费。</span></p>
+        <p><span>（二）定制独立站</span></p>
+        <p><span>1、定制独立站为鑫互联根据用户品牌及营销诉求，为用户个性化打造企业网站的服务，您支付服务费后，才能使用询盘云定制独立站服务。</span></p>
+        <p><span>2、定制独立站服务依据您提供的素材为您提供设计服务，就您提供的素材仅用于为您提供服务，不用于其他用途。</span></p>
+        <p><span>3、您保证您提供给鑫互联的素材均系您原创或已获得有效的、完全的授权，不会侵犯任何主体的肖像权、名誉权、知识产权、隐私权等合法权益。由于您的素材造成的侵权或其他的违法违规行为，以及因纠纷、诉讼、仲裁导致的损失，鑫互联均不承担任何法律责任。</span></p>
+        <p><span>4、您进一步同意对鑫互联/定制独立站的任何部分（软件产品、页面标识、服务品牌、资讯、信息）不进行复制、翻译、修改、适应、增强、反编译、反汇编、反向工程、分解拆卸、出售、转租等。用户同意约束其有必要使用上述服务的员工、代理、咨询者或顾问遵守前述之义务，并就其违反前述规定的行为对我们负责就如同用户自身违反一样。</span></p>
+        <p><span>5、若您对于定制独立站的效果有意见或建议，均应在接到我们的通知（包括但不限于书面通知、邮件通知、微信、电话、短信等）之日起3日内反馈，超期未反馈的，视为您认可我们的设计/实施效果。</span></p>
+        <p><span>6、定制独立站的相关程序、文件源码的版权由鑫互联所有。</span></p>
+        <p><strong><span>附件三：询盘云推广服务</span></strong></p>
+        <p><span>1、询盘云推广服务，围绕Google、Facebook两大主流媒体渠道，为用户提供基于询盘云Marketing CRM系统的推广。</span></p>
+        <p><span>2、询盘云推广服务，为预付费形式，费用包括广告费、服务费及税费，使用到期后如您需继续使用的需提前续费。</span></p>
+        <p><span>3、您购买询盘云推广服务并支付约定费用后，鑫互联将为您开通Google 广告账户和/或Facebook 广告账户，并将双方约定的广告费存入上述账户。</span></p>
+        <p><span>4、您保证您提供给鑫互联的素材均系您原创或已获得有效的、完全的授权，不会侵犯任何主体的肖像权、名誉权、知识产权、隐私权等合法权益。由于您的素材造成的侵权或其他的违法违规行为，以及因纠纷、诉讼、仲裁导致的损失，鑫互联均不承担任何法律责任。</span></p>
+        <p><span>5、您理解并同意，您提供给鑫互联的数据，是您所有或被相关权利人授权同意处理的数据，鑫互联根据您的指令分析、处理该等数据并进行推广服务不会侵犯任何第三方的权利。因任何第三方向鑫互联主张未获取授权处理其数据而引起的纠纷及相关后果、责任均应由您负责解决并保证使鑫互联免责。</span></p>
+    </div>
+</div>
+</body>
+</html>

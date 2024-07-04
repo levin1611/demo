@@ -1,0 +1,170 @@
+.fb-page-dynamic {
+  .company-page-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .fb-page-list {
+    background: #FAFCFF;
+    padding: 30px 0;
+    border-right: 1px solid #F5F5F5;
+
+      .el-menu {
+        border: none;
+      }
+
+      .el-menu-item {
+        background: #FAFCFF;
+        color: rgba(0, 0, 0, 0.80);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        box-sizing: content-box;
+        padding: 5px 20px;
+
+        &:hover, &.is-active {
+          background-color: #EEF1F5;
+          //box-shadow: 0 1px 8px 0 #EEF1F5;
+        }
+
+        &.is-active {
+          z-index: 1;
+        }
+
+        &:hover {
+          z-index: 2;
+        }
+
+        .brand-page-name {
+          // font-size: 16px;
+          // margin-left: 10px;
+          width:100%;
+          display: inline-block;
+          vertical-align: middle;
+          // max-width: 240px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-size: 14px;
+          color: rgba(0,0,0,0.80);
+          // padding: 0 10px;
+        }
+      }
+
+    .add-page-button {
+      font-size: 14px;
+      height: 38px;
+      line-height: 36px;
+      padding-top: 0;
+      padding-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  .page-post-content-body {
+    .empty-content {
+      text-align: center;
+      margin-top: calc(~"50vh - 75px");
+    }
+
+    .page-post-content-item {
+      margin: 20px;
+      padding: 16px;
+      background: #F9FBFD;
+      border-radius: 4px;
+
+      .post-content-author, .post-content-operate {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.60);
+      }
+
+      .post-content-operate {
+        span {
+          padding-left: 8px;
+        }
+      }
+
+      .post-content-info {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.80);
+        margin: 8px 0;
+
+        .header-source {
+          float: none;
+          padding-left: 0;
+          //border-left: 1px solid #d5d8dd;
+          color: #4285F4;
+          cursor: pointer;
+
+          &:hover {
+            color: #2d63bc;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .fb-page-info {
+    padding: 20px;
+
+    .page-info-avatar {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      margin: 0 auto;
+    }
+
+    .fb-page-info-title {
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.80);
+      font-weight: 500;
+    }
+
+    .fb-page-info-content {
+      text-align: center;
+      padding: 30px;
+
+      .page-info-name {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.80);
+        margin: 14px 0 4px 0;
+        font-weight: 700;
+      }
+
+      .page-info-fans {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.60);
+      }
+
+      .page-info-link {
+        margin-top: 20px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.80);
+        word-wrap: break-word;
+        word-break: break-all;
+
+        a {
+          font-size: 12px;
+          color: rgba(0, 0, 0, 0.80);
+        }
+      }
+    }
+  }
+}
+
+.homepage-dynamic-select-account {
+  .comment-account-list {
+    .comment-account-item {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+    }
+
+    .active {
+      color: #fa8241;
+      background: #fff8f0;
+    }
+  }
+}

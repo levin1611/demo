@@ -1,0 +1,154 @@
+.visitor-table{
+    margin-right: 400px;
+}
+.show-detail{
+    display: block;
+}
+#info-data li {
+    line-height: 30px;
+}
+
+.infoItem {
+    font-weight: bold;
+    margin-right: 5px
+}
+.visitor-date{
+    background-color: #fff;
+    padding: 0 10px;
+    color: #717171;
+}
+.bg-line{
+    height: 1px;
+    background-color: #d2d2d2;
+    margin-top: -9px;
+}
+
+.visitor-body{
+    margin-top: 12px;
+}
+.title-cell-class-name-test{
+    background-color: #f7f7f7;
+    font-weight: bold;
+}
+.visitor-content{
+    width: 370px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.13);
+    -moz-box-shadow: 0 0 4px rgba(0,0,0,.13);
+    box-shadow: 0 0 4px rgba(0,0,0,.13);
+
+}
+#visitor-title {
+    height: 52px;
+    border-bottom:1px solid #d2d2d2;
+}
+
+#visitor-title li {
+    text-align: center;
+    width: 120px;
+    height: 52px;
+    line-height: 52px;
+    display: inline-block;
+    cursor: pointer;
+}
+#visitor-detail{
+    padding: 20px 15px;
+    overflow-y: scroll;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.visitor-detail-item{
+    color: #7e7e7e;
+}
+.item-active{
+    display:block;
+}
+.show-this span{
+    width: 47px;
+    height: 7px;
+    border-radius: 3px;
+    background-color: #fb8b2f;
+    display: block;
+    margin:auto;
+    margin-top: -3px;
+}
+.chat-itme,.way-item{
+    line-height: 20px;
+    font-size: 12px;
+}
+.chat-itme p{
+    color:#717171;
+}
+.chat-item-top{
+    margin: 5px 0;
+}
+.chat-cus{
+    color: #0638f2;
+}
+.chat-ser{
+    color: #0ab512;
+}
+.way-time{
+    padding: 2px;
+    background-color: #59d8d6;
+    margin-right: 5px;
+    color: #ffffff;
+    border-radius: 2px;
+}
+.way-item{
+    margin-bottom: 10px;
+}
+.way-item p{
+    color: #d1d1d1;
+}
+#arrow-btn{
+    background-image: url("../img/arrow-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    padding: 47px 5px;
+    position: absolute;
+    right: 1px;
+    top:50%;
+    margin-top: -55px;
+}
+.arrowAct{
+    right:378px !important;
+}
+
+.filter-top{
+    height: 40px;
+    border-bottom:1px solid #d0cece;
+    margin-bottom: 15px;
+}
+.filter-top-li{
+    display: inline-block;
+    width: 181px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #908f8f;
+    cursor: pointer;
+}
+.filter-checked{
+    color: #414040;
+}
+.filter-checked span{
+    width: 47px;
+    height: 7px;
+    border-radius: 3px;
+    background-color: #fb8b2f;
+    display: block;
+    margin:auto;
+    margin-top: -4px;
+}
+.filter-tips{
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #535353;
+}

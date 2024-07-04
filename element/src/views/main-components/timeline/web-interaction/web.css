@@ -1,0 +1,30 @@
+.info-item{
+    border-top:1px dashed #E6E6E6;
+    padding: 10px 0;
+}
+.info-item .item-header{
+    margin-bottom: 10px;
+}
+.info-time{
+    margin-right: 10px;
+    color: #b8b8b8;
+    font-size: 12px;
+    display: inline-block;
+}
+.info-title{
+    display: inline-block;
+}
+.web-tip{
+    font-weight:bolder;
+    line-height: 20px;
+}
+.web-link{
+    cursor: pointer;
+    color: #3b78de;
+}
+.web-link:hover {
+  text-decoration: underline;
+  color: #2d63bc;
+}
+
+

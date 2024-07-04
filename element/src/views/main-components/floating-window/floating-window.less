@@ -1,0 +1,49 @@
+.floating-window{
+    &-header{
+        height: 24px;
+        line-height: 24px;
+        margin: 20px;
+        color: rgba(0,0,0,0.6);
+        &-title{
+            font-size: 16px;
+            // color: rgba(0,0,0,0.80);
+            color: #2d2f2e;
+            font-weight: 500;
+            float: left;
+        }
+        &-left{
+            width: 25%;
+            float: left;
+        }
+        &-center{
+            text-align: center;
+            width: 50%;
+            float: left;
+            // overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        &-right{
+            text-align: right;
+            width: 25%;
+            float: left;
+        }
+        &-name{
+            font-size: 16px;
+            color: rgba(0,0,0,0.80);
+            font-weight: 700;
+        }
+        &-back-arrow{
+            cursor: pointer;
+            transform: rotate(90deg);
+            -ms-transform: rotate(90deg);		/* IE 9 */
+            -webkit-transform: rotate(90deg);	/* Safari and Chrome */
+            -o-transform: rotate(90deg);		/* Opera */
+            -moz-transform: rotate(90deg);		/* Firefox */
+        }
+    }
+    &-fix-icon{
+        float: right;
+        cursor: pointer;
+    }
+}

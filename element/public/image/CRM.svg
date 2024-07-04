@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>帮助中心/icon/CRM系统</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#5994F7" offset="0%"></stop>
+            <stop stop-color="#5868F5" offset="100%"></stop>
+        </linearGradient>
+        <filter x="-7.5%" y="-7.5%" width="115.0%" height="115.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0.7" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="帮助中心/icon/CRM系统" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="编组" transform="translate(2.000000, 2.000000)" fill-rule="nonzero">
+            <path d="M14,28 C6.2680135,28 0,21.7319865 0,14 C0,6.2680135 6.2680135,0 14,0 C21.7319865,0 28,6.2680135 28,14 C28,21.7319865 21.7319865,28 14,28 Z" id="合并形状备份" fill="url(#linearGradient-1)" filter="url(#filter-2)"></path>
+            <path d="M14,28 C6.2680135,28 0,21.7319865 0,14 C0,6.2680135 6.2680135,0 14,0 C21.7319865,0 28,6.2680135 28,14 C28,21.7319865 21.7319865,28 14,28 Z" id="合并形状备份-2" fill="url(#linearGradient-1)"></path>
+            <path d="M15.2294343,12.6633396 L27.1856995,9.28341986 C27.3625705,9.8040973 27.4860854,10.1966347 27.5562439,10.4610322 C27.6264024,10.7254296 27.7044664,11.092556 27.7904358,11.5624116 L15.3734227,15.0793107 C15.1973464,15.1287637 15.0152227,15.1538462 14.8322209,15.1538462 C13.7353463,15.1538462 12.8461538,14.2720518 12.8461538,13.1843033 L12.8461538,0.0582306466 C13.2106391,0.0194102155 13.5952545,8.97060204e-14 14,8.97060204e-14 C14.4047455,8.97060204e-14 14.8145569,0.0194102155 15.2294343,0.0582306466 L15.2294343,12.6633396 Z" id="Path-6" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

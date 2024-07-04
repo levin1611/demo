@@ -1,0 +1,115 @@
+
+.bind-container {
+  position: relative;
+  width: 96%;
+  margin-left: 2%;
+  height: 616px;
+  // -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+  // -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+  // box-shadow: 0 0 4px rgba(0, 0, 0, 0.13);
+
+  .title {
+    height: 36px;
+    background-color: #F5F6F9;
+    // border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .title span {
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 36px;
+    margin-left: 235px;
+  }
+
+  .title span:nth-child(2) {
+    float: right;
+    margin-right: 240px;
+  }
+
+  .images {
+    height: 162px;
+    /* position: relative; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 120px 0 120px;
+
+    .logo-title {
+      font-size: 16px;
+      line-height: 40px;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  .match-words {
+    background-color: #F5F6F9;
+    height: 35px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 36px;
+    // border-top: 1px solid #e8e8e8;
+    // border-bottom: 1px solid #e8e8e8;
+    text-align: center;
+  }
+
+  .match-main {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 425px;
+  }
+
+  .match-content {
+    padding: 0 80px;
+    min-height: 300px;
+    // overflow-y: scroll;
+    margin-top: 30px;
+    transform: translateX(12px);
+  }
+
+  .matched {
+    padding: 0 100px;
+
+    .ivu-input {
+      border: none;
+    }
+
+    li .ivu-input {
+      text-align: center;
+    }
+  }
+
+  .matched span {
+    width: 60px;
+  }
+
+  .match-content li {
+    position: relative;
+    height: 34px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .ivu-input {
+      width: 250px;
+    }
+
+    .little-arrow {
+      margin: 0 30px;
+    }
+  }
+
+  .actiopns-btn {
+    text-align: center;
+    margin: 8px 0;
+
+    button {
+      margin: 10px 10px;
+    }
+  }
+}

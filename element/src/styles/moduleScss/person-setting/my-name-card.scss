@@ -1,0 +1,664 @@
+// 我的名片 从翟敏那拿出来修改了下
+.my-name-card-wrapper {
+  // height          : 100%;
+  background-color: #f4f5f8;
+
+  // overflow        : hidden;
+  // /deep/ .el-card {
+  //   border-radius: 8px;
+  //   // background-color: #ffffff;
+  // }
+  .my-name-card-background {
+    padding   : 14px 30px;
+    background: #FFFFFF;
+
+    .my-name-card-tip {
+      float     : right;
+      margin-top: 10px;
+    }
+  }
+
+  .my-name-card-head {
+
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+  }
+
+  ._icon_bussiness_base {
+    float: right;
+    width: 26px;
+    font-size  : 26px;
+    margin-left: 10px;
+    color      : #22203F;
+  }
+
+  .card-standard-avatar-header {
+    width        : 76px;
+    height       : 76px;
+    background   : #FFFFFF;
+    overflow     : hidden;
+    border-radius: 50%;
+    position     : relative;
+    border       : 1px solid #EAEAEA;
+
+    img {
+      position: absolute;
+    }
+  }
+
+  .my-name-card-qrcode-ma {
+    width : 60px;
+    height: 60px;
+    border: #fff solid 1px;
+    img {
+      width : 100%;
+      height: 100%
+    }
+
+    + .my-name-card-qrcode-ma {
+      margin-left: 20px;
+    }
+  }
+
+  .my-name-card-qrcode-ma-single {
+    width : 72px;
+    height: 72px;
+  }
+
+  .qrcode-ma-bg {
+    background: #FFFFFF;
+    display: inline-block;
+  }
+
+  .my-card-bussiness {
+    width          : 100%;
+    display        : flex;
+    justify-content: center;
+    margin-bottom  : 46px;
+  }
+
+  .company-address {
+    color      : rgba(0, 0, 0, .8);
+    line-height: 16px;
+    font-size  : 13px;
+    margin-top : 5px;
+    width      : 100%;
+    max-height : 48px;
+
+    //white-space  : nowrap;
+    // margin-left: -12px
+  }
+
+  ._card_label {
+    max-height        : 40px;
+    // display           : -webkit-box;
+    // -webkit-line-clamp: 2;
+    // -webkit-box-orient: vertical;
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+    color             : rgba(0, 0, 0, 0.80)
+  }
+
+  .destory-flex {
+    display          : flex;
+    width            : 50%;
+    flex-direction   : column;
+    align-items      : flex-start;
+    // height        : 52px
+  }
+
+  .my-name-card-standard {
+    width          : 600px;
+    height         : 360px;
+    // /deep/ .el-card__body {
+    //   background: #FFFFFF;
+    // }
+
+
+
+    // .my-name-card-screen {
+    //   background-color: #FFFFFF;
+    // }
+    // .my-name-card-screen {
+    //   /deep/ .el-card {
+    //     height: 332px;
+    //   }
+    // }
+
+    .my-name-card-head-box {
+      display          : flex;
+      flex-direction   : row;
+      width            : 100%;
+      height           : 90px;
+      margin-top       : 15px;
+      // padding-bottom: 20px ;
+      justify-content  : space-between;
+      border-bottom    : 1px solid #999999;
+
+      .card-standard-avatar-header {
+        margin-right: 16px;
+      }
+
+      .my-name-card-infor {
+        display        : flex;
+        flex-direction : column;
+        justify-content: flex-start;
+        box-sizing     : border-box;
+        padding        : 5px 0;
+        //width          : 290px;
+        flex: 1;
+        width: 0;
+
+        .my-name-card-name-box {
+          display       : flex;
+          flex-direction: row;
+        }
+
+        .my-name-card-name {
+          max-width    : 50%;
+          font-weight  : 700;
+          font-size    : 22px;
+          color        : rgba(0, 0, 0, 0.80);
+          line-height  : 32px;
+          overflow     : hidden;
+          text-overflow: ellipsis;
+          white-space  : nowrap;
+        }
+
+        .my-name-card-name-nodian {
+          font-weight: 700;
+          font-size  : 22px;
+          color      : rgba(0, 0, 0, 0.80);
+          line-height: 32px;
+          max-width: 50%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .my-name-card-position {
+          width         : 100%;
+          font-size     : 14px;
+          color         : rgba(0, 0, 0, 0.60);
+          letter-spacing: 0.2px;
+          line-height   : 24px;
+          overflow      : hidden;
+          text-overflow : ellipsis;
+          white-space   : nowrap;
+        }
+      }
+
+
+    }
+
+    .my-name-card-standard-intro {
+      display             : inline-block;
+      max-width           : 100%;
+      /*font-family       : SourceHanSansCN-Regular;*/
+      font-size           : 14px;
+      color               : rgba(0, 0, 0, 0.80);
+      letter-spacing      : 0;
+      line-height         : 20px;
+      /*display           : -webkit-box;*/
+      /*-webkit-box-orient: vertical;*/
+      /*-webkit-line-clamp: 2;*/
+      /*overflow          : hidden;*/
+      overflow            : hidden;
+      text-overflow       : ellipsis;
+      white-space         : nowrap;
+    }
+
+    .my-name-card-information-box {
+      width: 100%;
+      margin         : 20px 0;
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+
+      .my-name-card-information {
+        width         : 100%;
+        height        : 94px;
+        display       : flex;
+        flex-direction: row;
+        flex-wrap     : wrap;
+        align-items   : flex-start;
+
+        ._conten_base {
+          font-size     : 13px;
+          box-sizing    : border-box;
+          padding-right : 5px;
+          line-height   : 20px;
+          display       : flex;
+          flex-direction: row;
+          align-items   : flex-start;
+          margin        : 3px 0;
+
+          ._card_icon {
+            font-size   : 16px;
+            margin-top  : 2px;
+            margin-right: .5em;
+            color       : rgba(0, 0, 0, 0.70)
+          }
+
+          ._card_label {
+            display: inline-block;
+            width  : 195px;
+            color  : rgba(0, 0, 0, 0.80)
+          }
+
+          ._card_label-100 {
+            width: 95%
+          }
+        }
+
+        ._width-50 {
+          width: 50%;
+        }
+
+        ._width-100 {
+          width: 100%;
+        }
+      }
+
+    }
+  }
+
+  .my-name-card-standard-dash {
+    //width          : 540px;
+    height         : 330px;
+    // /deep/ .el-card__body {
+    //   background: #FFFFFF;
+    // }
+
+
+
+    // .my-name-card-screen {
+    //   background-color: #FFFFFF;
+    // }
+    .card-standard-avatar-header {
+      margin-right: 16px;
+    }
+    .my-name-card-screen {
+      /deep/ .el-card {
+        height: 351px;
+      }
+    }
+    .my-name-card-head-box {
+      background: #fff;
+      display          : flex;
+      flex-direction   : row;
+      width            : 100%;
+      height           : 100px;
+      margin-top       : 15px;
+      // padding-bottom: 20px ;
+      justify-content  : space-between;
+      border-bottom    : 1px solid #999999;
+
+      .my-name-card-infor {
+        display        : flex;
+        flex-direction : column;
+        justify-content: flex-start;
+        box-sizing     : border-box;
+        padding        : 5px 0;
+        //width          : 290px;
+        width: 0;
+        flex: 1;
+
+        .my-name-card-name-box {
+          display       : flex;
+          flex-direction: row;
+        }
+
+        .my-name-card-name {
+          max-width    : 50%;
+          font-weight  : 700;
+          font-size    : 22px;
+          color        : rgba(0, 0, 0, 0.80);
+          line-height  : 32px;
+          overflow     : hidden;
+          text-overflow: ellipsis;
+          white-space  : nowrap;
+        }
+
+        .my-name-card-name-nodian {
+          font-weight: 700;
+          font-size  : 22px;
+          color      : rgba(0, 0, 0, 0.80);
+          line-height: 32px;
+          max-width: 50%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .my-name-card-position {
+          width         : 100%;
+          font-size     : 14px;
+          color         : rgba(0, 0, 0, 0.60);
+          letter-spacing: 0.2px;
+          line-height   : 24px;
+          overflow      : hidden;
+          text-overflow : ellipsis;
+          white-space   : nowrap;
+        }
+      }
+
+
+    }
+
+    .my-name-card-standard-intro {
+      display             : inline-block;
+      max-width           : 100%;
+      /*font-family       : SourceHanSansCN-Regular;*/
+      font-size           : 14px;
+      color               : rgba(0, 0, 0, 0.80);
+      letter-spacing      : 0;
+      line-height         : 20px;
+      /*display           : -webkit-box;*/
+      /*-webkit-box-orient: vertical;*/
+      /*-webkit-line-clamp: 2;*/
+      /*overflow          : hidden;*/
+      overflow            : hidden;
+      text-overflow       : ellipsis;
+      white-space         : nowrap;
+    }
+
+    .my-name-card-information-box {
+      margin-top     : 20px;
+      margin-bottom  : 10px;
+      display        : flex;
+      flex-direction : row;
+      justify-content: space-between;
+
+      .my-name-card-information {
+        width         : 100%;
+        height        : 94px;
+        display       : flex;
+        flex-direction: row;
+        flex-wrap     : wrap;
+        align-items   : center;
+
+        ._conten_base {
+          font-size     : 13px;
+          box-sizing    : border-box;
+          padding-right : 5px;
+          line-height   : 20px;
+          display       : flex;
+          flex-direction: row;
+          align-items   : flex-start;
+          margin        : 3px 0;
+
+          ._card_icon {
+            font-size   : 16px;
+            margin-top  : 2px;
+            margin-right: .5em;
+            color       : rgba(0, 0, 0, 0.70)
+          }
+
+          ._card_label {
+            display: inline-block;
+            width  : 195px;
+            color  : rgba(0, 0, 0, 0.80)
+          }
+
+          ._card_label-100 {
+            width: 95%
+          }
+        }
+
+        ._width-50 {
+          width: 50%;
+        }
+
+        ._width-100 {
+          width: 100%;
+        }
+      }
+
+    }
+  }
+
+  .my-name-card-business {
+    margin: 30px;
+    width : 600px;
+    color : rgba(0, 0, 0, 0.80);
+
+    .my-name-card-business-wrapper {
+      height         : 360px;
+      display        : flex;
+      flex-direction : row;
+      background     : #FFFFFF;
+      justify-content: space-between;
+    }
+
+    // .my-name-card-business-ladder {
+    //   position    : absolute;
+    //   height      : 0;
+    //   width       : 260px;
+    //   border-top  : 330px solid #22203F;
+    //   border-right: 60px solid transparent;
+    // }
+
+    .my-name-card-business-intro {
+      position       : relative;
+      z-index        : 999;
+      display        : flex;
+      flex-direction : column;
+      width          : 250px;
+      height         : 100%;
+      justify-content: space-between;
+
+      &:before {
+        content      : '';
+        position     : absolute;
+        top          : 0;
+        right        : 0;
+        bottom       : 0;
+        left         : -38px;
+        z-index      : -1;
+        transform    : SkewX(-12deg);
+        background   : #22203F;
+        // background: -webkit-gradient(linear,0 0,0 bottom, from(#7abeec),to(#56abe4));;
+      }
+
+      .my-name-card-business-left {
+        display        : flex;
+        justify-content: center;
+        flex-direction : column;
+        align-items    : center;
+        background     : transparent;
+      }
+
+      .card-business-name {
+        width        : 100%;
+        padding      : 6px 10px 4px 10px;
+        overflow     : hidden;
+        text-overflow: ellipsis;
+        white-space  : nowrap;
+        text-align   : center;
+
+      }
+
+      .my-name-card-business-enname {
+        padding             : 6px 10px 0 10px;
+        width               : 100%;
+        text-align          : center;
+        font-weight         : 700;
+        font-size           : 20px;
+        color               : #FFFFFF;
+        line-height         : 32px;
+        text-align          : center;
+        /*display           : -webkit-box;*/
+        /*-webkit-box-orient: vertical;*/
+        /*-webkit-line-clamp: 2;*/
+        /*overflow          : hidden;*/
+        overflow            : hidden;
+        text-overflow       : ellipsis;
+        white-space         : nowrap;
+      }
+
+      .my-name-card-business-chname {
+        text-align     : center;
+        font-weight    : 700;
+        font-size      : 14px;
+        color          : #FFFFFF;
+        line-height    : 32px;
+      }
+
+      .my-name-card-business-position {
+        /*margin-left: 44px;*/
+        /*font-family: SourceHanSansCN-Regular;*/
+        font-size        : 14px;
+        color            : #FFFFFF;
+        width            : 100%;
+        letter-spacing   : 0.2px;
+        line-height      : 24px;
+        padding          : 0 20px;
+        box-sizing       : border-box;
+        text-align       : center;
+        // overflow      : hidden;
+        // text-overflow : ellipsis;
+        // white-space   : nowrap;
+      }
+
+      .my-name-card-qrcode-base {
+        text-align   : center;
+        margin-left  : 0;
+        margin-top   : 0;
+        margin-bottom: 30px;
+        padding      : 2px;
+        background   : #FFFFFF;
+        width        : 78px;
+        height       : 78px;
+        box-sizing   : border-box;
+
+        img {
+          width : 100%;
+          height: 100%;
+        }
+      }
+
+      .card-business-avatar {
+        width        : 76px;
+        height       : 76px;
+        margin-top   : 30px;
+        margin-bottom: 6px;
+        background   : #22203F;
+      }
+    }
+
+    .my-name-card-business-information {
+      // float             : right;
+      display              : flex;
+      flex-direction       : column;
+      padding              : 0px 30px 0 0;
+      text-align           : right;
+      /*font-family        : SourceHanSansCN-Regular;*/
+      font-size            : 13px;
+      color                : rgba(0, 0, 0, 0.80);
+      letter-spacing       : 0.5px;
+      line-height          : 20px;
+      width                : 50%;
+      justify-content      : center;
+      // height            : 100%;
+      // justify-content: space-between;
+      // .my-name-card-business-top{
+
+      // }
+      /*这样设置截图截不出来*/
+      /*display: -webkit-box;*/
+      /*-webkit-box-orient: vertical;*/
+      /*-webkit-line-clamp: 2;*/
+      /*overflow: hidden;*/
+      .my-name-card-business-bottom {
+        // margin-bottom: 30px;
+        // height            : 80px;
+        box-sizing        : border-box;
+        // padding-bottom : 30px;
+        display           : flex;
+        flex-direction    : column;
+        justify-content   : space-between;
+      }
+
+      // .my-name-card-business-com {
+      //   width         : 100%;
+      //   padding-bottom: 2px;
+      //   position      : relative;
+      //   line-height   : 20px;
+      //   max-height    : 40px;
+      //   overflow      : hidden;
+
+      //   &::after {
+      //     content   : "...";
+      //     position  : absolute;
+      //     bottom    : 0;
+      //     right     : 0;
+      //     background: #fff;
+      //   }
+      // }
+
+      // .my-name-card-business-com-oneline {
+      //   width         : 100%;
+      //   padding-bottom: 2px;
+      // }
+
+      .my-name-card-business-company-oneline {
+        width           : 100%;
+        font-weight     : 700;
+        // overflow     : hidden;
+        // text-overflow: ellipsis;
+        // white-space  : nowrap;
+      }
+
+      .my-name-card-business-line {
+        text-align   : right;
+        height       : 3px;
+        overflow     : hidden;
+        margin-bottom: 10px;
+
+        .my-name-card-business-line-back {
+          float     : right;
+          width     : 50px;
+          height    : 3px;
+          background: #22203F;
+        }
+      }
+
+      .my-name-card-business-content {
+        padding-top    : 8px;
+        width: 100%;
+        // overflow: hidden;
+        display        : flex;
+        align-items    : center;
+        // /*定义body的元素垂直居中*/
+        justify-content: flex-end;
+        /*定义body的里的元素水平居中*/
+        height         : 38px;
+      }
+
+      .company-address {
+        // display           : -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow          : hidden;
+        text-overflow     : ellipsis;
+        word-break        : break-word;
+      }
+    }
+  }
+
+  .el-radio-button__inner:hover {
+    color: #606266;
+  }
+
+  .el-radio-button:first-child .el-radio-button__inner {
+    border-left: 1px solid #abbfd5
+  }
+
+  .el-radio-button__inner {
+    border   : 1px solid #abbfd5;
+    font-size: 12px;
+    padding  : 10px 20px;
+  }
+}

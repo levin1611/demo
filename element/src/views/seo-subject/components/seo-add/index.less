@@ -1,0 +1,131 @@
+.add_container {
+  margin-top: 24px;
+  margin-left: 30px;
+  .top_header {
+    .add_title {
+      font-family: PingFangSC-Medium;
+      font-size: 16px;
+      color: rgba(0,0,0,0.80);
+      letter-spacing: 0;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  .select_container {
+    display: flex;
+    justify-content: space-between;
+    float: left;
+    .country_filter,
+    .lang_filter{
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 30px;
+      align-items: center;
+    }
+    .country_filter {
+      margin-right: 30px;
+    }
+    .filter_name {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0,0,0,0.80);
+      letter-spacing: 0;
+      line-height: 18px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+  .search_filter {
+    clear: both;
+    .p_1 {
+      font-family: PingFangSC-Medium;
+      font-size: 14px;
+      color: rgba(0,0,0,0.80);
+      letter-spacing: 0;
+      line-height: 22px;
+      margin-bottom: 8px;
+    }
+    .p_2 {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0,0,0,0.80);
+      letter-spacing: 0;
+      line-height: 18px;
+    }
+    .search_content {
+      margin-bottom: 30px;
+    }
+    .search_input {
+      /deep/ .el-input {
+        width: 354px
+      }
+      /deep/ .el-input__inner {
+        //height: 36px;
+      }
+      /deep/ .el-button {
+        padding: 10px 10px;
+      }
+      .get_seo_button {
+        margin-left: 30px;
+      }
+      /deep/ .is-disabled {
+        background: #E7ECF2;
+        border-color: #e7ecf2;
+        span {
+          font-family: PingFangSC-Regular;
+          font-size: 12px;
+          color: rgba(110,129,154,0.40);
+        }
+      }
+    }
+    .empty_content {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0,0,0,0.80);
+      letter-spacing: 0;
+      line-height: 18px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .back_to_list {
+    position: absolute;
+    top: 17px;
+    right: 38px;
+  }
+}
+.add_footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  height: 56px;
+  width: 100%;
+  padding: 9px 28px;
+  background: #fff;
+  box-shadow: 0 -1px 4px 0 #eceff4;
+  span {
+    display: inline-block;
+    ont-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: rgba(0,0,0,0.80);
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-left: 20px;
+  }
+  /deep/ .el-button {
+    margin-left: 12px;
+  }
+}
+.countryName {
+  position: absolute;
+  left: 40px;
+}
+.el-table {
+  /deep/ .hasTipAndFilterCell {
+    a {
+      right: -20px !important;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@keyframes error404animation {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(-60deg);
+    }
+    40% {
+        transform: rotateZ(-10deg);
+    }
+    60% {
+        transform: rotateZ(50deg);
+    }
+    80% {
+        transform: rotateZ(-20deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+.error404{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    &-body-con{
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%,-50%);
+        &-title{
+
+        }
+        &-tip{
+            margin-top: 60px;
+        }
+        &-message{
+            font-size: 14px;
+            line-height: 30px;
+            color: rgba(0,0,0,0.80);
+        }
+    }
+}

@@ -1,0 +1,165 @@
+.edit-card-container {
+  background-color: white;
+  height: 100%;
+  min-width: 1010px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.edit-card-header-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px 30px;
+  align-items: center;
+  .edit-card-header {
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+.edit-card-head {
+  padding: 20px 0 0 0;
+  .edit-card-button {
+    padding: 12px 0;
+  }
+  .edit-card-preserve {
+    .el-button {
+      background: #abbfd5;
+      border-radius: 15px;
+      border-radius: 4px;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 18px;
+    }
+    .el-button:active {
+      border-color: #abbfd5;
+    }
+  }
+  .edit-card-cancel {
+    .el-button {
+      border: 1px solid #abbfd5;
+      border-radius: 15px;
+      border-radius: 4px;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+    }
+    .el-button:focus,
+    .el-button:hover {
+      background-color: #ffffff;
+    }
+  }
+}
+.edit-card-person {
+  padding: 20px 0 0 0;
+  .edit-card-tip {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.4);
+    line-height: 18px;
+    text-align: left;
+  }
+  .edit-card-span {
+    font-size: 12px;
+    .edit-card-modify-button {
+      border: none;
+      background: #ffffff;
+      color: #3b78de;
+      margin-left: 20px;
+      display: none;
+    }
+  }
+  .edit-card-to-whatsapp {
+    border: none;
+    background: #ffffff;
+    color: #3b78de;
+    margin-left: 20px;
+    font-size: 12px;
+  }
+}
+.edit-card-image {
+  font-family: PingFangSC-Regular;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.28);
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-top: 12px;
+}
+.image-preview {
+  background: #fff;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .image-item {
+    padding-right: 20px;
+    border-right: 1px solid #eaeaea;
+    img {
+      cursor: pointer;
+      width: 222px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+  .picture-item {
+    margin-left: 20px;
+    width: 222px;
+    /*height: 222px;*/
+    padding: 73px;
+    img {
+      cursor: pointer;
+      width: 76px;
+      height: 76px;
+      object-fit: cover;
+      line-height: 76px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #eff0f4;
+      border-radius: 50%;
+    }
+  }
+  .default-item {
+    background: #eff0f4;
+    width: 222px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    span {
+      text-align: center;
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.4);
+      padding: 0 5px;
+    }
+  }
+}
+.edit-card-modify {
+  display: none;
+  /deep/ .el-input {
+    font-size: 12px;
+  }
+}
+.my-name-card-business-line {
+  // width: 1px;
+  // height: 222px;
+  // background: #eaeaea;
+  /*margin-left: 232px;*/
+  /*margin-bottom: 8px;*/
+}
+/deep/ .el-form-item {
+  margin-bottom: 10px;
+  .el-form-item__content {
+    font-size: 12px;
+  }
+}
+/deep/ .el-form-item__label {
+  text-align: left;
+  font-size: 12px;
+  .el-form-item__content {
+    font-size: 12px;
+  }
+}

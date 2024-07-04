@@ -1,0 +1,116 @@
+.filter-popper {
+  .ivu-poptip-body {
+    padding: 6px 0;
+
+    .ivu-poptip-body-content {
+      overflow: visible;
+    }
+  }
+
+  /* 排序部分 */
+
+  .filter-seq {
+    li {
+      height: 30px;
+      line-height: 30px;
+      font-size: 12px;
+      padding: 0 12px;
+      cursor: pointer;
+
+      i {
+        color: #7d9abe;
+        margin-right: 8px;
+        font-size: 12px;
+      }
+    }
+
+    li:hover {
+      background-color: #f5f5f5;
+    }
+
+    .statistical-period {
+      position: relative;
+
+    }
+
+    .ivu-tooltip {
+      width: 100%;
+
+      .ivu-tooltip-popper {
+        left: 232px !important;
+      }
+
+      .ivu-tooltip-light.ivu-tooltip-popper[x-placement^=right] {
+        padding: 0;
+      }
+
+      .ivu-tooltip-inner {
+        padding: 0;
+      }
+
+      .ivu-tooltip-arrow {
+        display: none;
+      }
+
+      .period-list {
+        li {
+          list-style: none;
+          width: 80px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  /* 内容筛选 */
+
+  .filter-content {
+    margin-top: 4px;
+    padding: 0 12px;
+
+    .line {
+      height: 1px;
+      background-color: #e9eaec;
+    }
+
+    .title {
+      // border-top: 1px solid #e9eaec;
+      font-size: 12px;
+      height: 36px;
+      line-height: 36px;
+
+      i {
+        color: #7d9abe;
+        margin-right: 8px;
+      }
+    }
+
+    .filter-items {
+      padding-top: 4px;
+      // border: 1px solid #e9eaec;
+      // padding: 2px 8px;
+
+      .ivu-checkbox-group-item {
+        display: block;
+      }
+    }
+
+    .filter-btn {
+      margin: 10px 0;
+    }
+
+    .float-right {
+      float: right;
+
+      &:first-child {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+.down-icon {
+  font-size: 18px;
+  color: #c3cdd9;
+  cursor: pointer;
+}

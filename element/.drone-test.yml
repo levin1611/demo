@@ -1,0 +1,96 @@
+kind: pipeline
+type: docker
+name: default
+
+platform:
+os: linux
+arch: amd64
+
+#environment:
+ # user:
+  #  from_secret: user
+ ##- kube_name: agent-pod-test2
+ ##- namespace: deve-first
+
+steps:
+
+
+  - name: build-node
+    image: harbor.leadscloud.com:8443/library/node:10.15.3-stretch
+    #image: harbor.leadscloud.com:8443/library/element:v1.1.1
+    #volumes:
+      #- name: cache
+        #path: /drone/src/node_modules/
+    environment:
+      username:
+        from_secret: user
+      password:
+        from_secret: pwd
+      build:
+        from_secret: build
+    settings:
+    commands:
+      - /usr/local/bin/npm set registry http://10.2.2.164:8081/repository/npm-public/
+      #- npm i
+      - /usr/local/bin/npm i 
+      - /usr/local/bin/npm install image-webpack-loader 
+      #- npm rebuild node-sass
+      - npm run build:$build
+      - cp -r dist Front-Vue
+    when:
+      event:
+        #    - merge
+        - push
+  #    - pull_request
+
+
+  - name: scp-files
+    image: appleboy/drone-scp
+    settings:
+      #target: /home/rancher/TestEnvs/var/www/automatic-site/
+      #target: /home/rancher/TestEnvs/var/www/
+      target:
+        from_secret: file_path
+      host:
+        #- 10.2.2.154
+        from_secret: host
+      #target: /tmp/test/
+      user:
+        from_secret: user
+      password: 
+        from_secret: pwd
+      #key:
+        #from_secret: ssh_key
+      source: Front-Vue
+      #rm: true
+    when:
+      event:
+        #    - merge
+        - push
+  #    - pull_request
+
+
+  #
+  - name: dingtalk
+    image: lddsb/drone-dingtalk-message
+    settings:
+      token:
+        from_secret: dingtalk_token
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
+    when:
+      event:
+        - push
+trigger:
+status:
+  - success
+  - error
+  - failure
+  - killed
+
+volumes:
+- name: cache
+  host:
+    path: /var/lib/cache/

@@ -1,0 +1,21 @@
+.new-chat-info-top {
+    height: 63px;
+    /*padding: 5px 10px;*/
+    padding: 5px 20px 5px 10px;
+    line-height: 50px;
+}
+
+.new-top-icon {
+    margin-left: 10px;
+}
+
+.new-chat-info-title {
+    height: 50px;
+    padding: 15px;
+    color: #495060;
+    font-weight: bold;
+}
+
+.new-chat-info-top, .new-chat-info-title {
+    border-bottom: 1px solid #E8E8E8;
+}

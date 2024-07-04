@@ -1,0 +1,8 @@
+// 按功能模块引入全局 样式
+@import 'moduleScss/recover/v-tour.scss';
+@import 'moduleScss/recover/element.scss'; // element 样式覆写
+@import 'moduleScss/recover/base.scss'; // 基础样式
+@import 'moduleScss/recover/selfDefine.scss'; // 自定义样式修改
+@import 'moduleScss/person-setting/my-name-card.scss'; // 自定义样式修改
+@import 'moduleScss/recover/animate'; // 自定义加载动画
+// @import 'moduleScss/portal-set/common'; 

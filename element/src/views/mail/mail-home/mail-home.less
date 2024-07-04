@@ -1,0 +1,560 @@
+@R: 40px;
+@primary-color: #FA8241;
+@tab-padding: 16px;
+@gray: rgba(0, 0, 0, 0.28);
+@black: rgba(0, 0, 0, 0.80);
+@blue: #7B98B6;
+@bggray: #F3F6FB;
+.mail-home {
+  height: 100%;
+  /**侧边栏 */
+
+  .menu-sider {
+    border-right: 1px solid #eceef5;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    flex: 0 0 200px;
+    background-color: #FAFCFF;
+    box-sizing: content-box;
+  }
+
+  .letter-action {
+    padding: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+
+    .write-letter {
+      width: 148px;
+      // height: 40px;
+      height: 36px;
+      box-shadow: 0 2px 4px 0 #FCDCCB;
+
+      & > span {
+        display: inline-block;
+        line-height: 100%;
+        vertical-align: middle;
+      }
+    }
+
+    li {
+      list-style: none;
+      text-align: center;
+      line-height: 40px;
+      font-weight: 800;
+
+      div {
+        width: @R;
+        height: @R;
+        border-radius: 100%;
+        text-align: center;
+        cursor: pointer;
+
+        &.receiveMail {
+          opacity: 0.6;
+        }
+
+        .ivu-icon {
+          line-height: @R;
+          color: #fff;
+        }
+
+        .seconds {
+          color: #fff;
+          font-size: 20px;
+          line-height: @R;
+        }
+      }
+    }
+  }
+
+  .mail-tab {
+    height: calc(~'100% - 66px');
+
+    .el-menu {
+      border-right: none;
+      .el-menu-item {
+        color: @black;
+
+        padding: 11px 24px;
+        height: 46px;
+        line-height: 26px;
+
+        &:hover {
+          background-color: @bggray;
+        }
+      }
+
+      i {
+        color: @gray;
+      }
+
+      .el-menu-item.is-active {
+        color: @primary-color;
+        background-color: #fff8f0;
+
+        &:not(.el-menu-submenu) {
+          &::after {
+            display: none;
+          }
+          &::before {
+            content: "";
+            display: block;
+            width: 3px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: #fa8241;
+          }
+        }
+
+        i {
+          color: @primary-color;
+        }
+      }
+
+      .el-menu-submenu-title {
+        padding: 11px 0 11px 24px;
+
+        &:hover {
+          color: @black;
+          background-color: @bggray;
+
+          .addFolder {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    .el-tabs__nav-wrap {
+      line-height: 50px;
+      &::after {
+        display: none;
+      }
+    }
+
+    .el-tabs__content {
+      height: calc(~'100% - 80px');
+    }
+
+    .ivu-tabs-bar {
+      margin-bottom: 0;
+      border: none;
+    }
+
+    .el-tabs__nav {
+      padding-left: @tab-padding;
+      height: 59px;
+      width: 100%;
+      box-sizing: border-box;
+      .el-tabs__item {
+        display: inline-block;
+        height: 100%;
+        color: rgba(0,0,0,.6);
+        padding: 8px 32px 8px 16px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+        -webkit-transition: color .3s ease-in-out;
+        transition: color .3s ease-in-out;
+        outline: none;
+      }
+      .is-active {
+        color: #fc8a32;
+        font-weight: 600;
+      }
+    }
+
+    .el-tabs__active-bar {
+      left: @tab-padding;
+    }
+
+    .el-tabs__header {
+      margin: 0;
+    }
+
+    .el-tab-pane{
+      position: relative;
+      height: 100%;
+      overflow: auto;
+      padding-top: 12px;
+
+      .el-menu {
+        &::after {
+          display: none;
+        }
+      }
+
+      .active-menu-item {
+        &::before {
+          content: "";
+          display: block;
+          width: 3px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          background: #fa8241;
+        }
+      }
+
+      .el-tree {
+        font-size: 12px;
+        padding-left: 20px;
+        margin-top: 12px;
+        background-color: #fafcff !important;
+
+        // 去掉自定义文件夹的选中的 橘色竖杠样式
+        .tree-submenu-width-customfolder{
+          .el-menu-item.is-active{
+            background-color: transparent;
+          }
+          .el-menu-item.is-active:not(.el-menu-submenu)::before{
+            display: none;
+          }
+        }
+      }
+      
+      .folders{
+        .el-tree {
+          margin-top: 0;
+          padding-left: 0;
+          
+        .custom-menu-arrow-forward-medium {
+          margin-left: 20px;
+        }
+        }
+
+        .el-tree-node__content{
+          height: 44px;
+          line-height: 44px;
+          
+          .float-right {
+            display: none;
+          }
+        
+          .tree-folder-name-move {
+            display: none;
+          }
+
+          &:hover{
+            // #fff3ec  有下级的颜色
+            background-color: #F3F6FB;
+            .float-right {
+              display: inline-block;
+            }
+            
+            .tree-folder-name-move {
+              display: inline-block;
+            }
+          }
+        }
+
+
+      }
+
+      .el-input {
+        font-size: 12px;
+        width: 90%;
+        margin: 0 7px;
+      }
+    }
+
+    .ivu-menu-light {
+      background: #FAFCFF;
+    }
+
+    .el-popover {
+      width: 90%;
+      margin: 0 7px;
+      position: fixed;
+
+      .el-popover__reference {
+        width: 100%;
+      }
+    }
+
+    .mail-search-item {
+      color: rgba(0, 0, 0, 0.8);
+      padding-left: 16px;
+      border-bottom: 1px solid #EFF0F4;
+      .search-item-title {
+        color: rgba(0, 0, 0, 0.4);
+        height: 33px;
+        line-height: 33px;
+      }
+      .search-list-body {
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+        justify-content: center;
+        .header-source {
+          color: #4285F4;
+          cursor: pointer;
+          &:hover {
+            color: #2d63bc;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .mail-customer-active {
+      color: #FA8241;
+    }
+  }
+
+
+  .message-count-badge-outer {
+    float: right;
+
+    .el-badge__content {
+      background: @primary-color;
+      margin-top: 3px;
+    }
+  }
+  
+  .is-opened{
+    i.el-submenu__icon-arrow {
+      transform: rotate(90deg) !important;
+    }
+  }
+
+  .folders.tree-submenu-mail-customfolder{
+    i.el-submenu__icon-arrow {
+      transform: rotate(0deg) !important;
+    }
+  }
+  .folders.tree-submenu-mail-customfolder.is-opened{
+    i.el-submenu__icon-arrow {
+      transform: rotate(90deg) !important;
+    }
+  }
+
+  .folders {
+    width: 100%;
+    // border-top: 1px solid #ccc;
+    .addFolder {
+      font-size: 12px;
+      margin-left: 32px;
+      transition: color 0.3s ease-in;
+      font-weight: 900;
+      color: #7B98B6 !important;
+    }
+    .addTag {
+      font-size: 12px;
+      margin-left: 60px;
+      transition: color 0.3s ease-in;
+      font-weight: 900;
+      color: #7B98B6 !important;
+    }
+    .el-menu {
+      border: none;
+      background-color: #fafcff;
+    }
+
+    i.el-submenu__icon-arrow {
+      position: absolute;
+      right: auto;
+      left: 22px;
+      margin-top: -5px;
+      color: #7B98B6;
+    }
+
+    .el-tree{
+
+      .tree-width-customfolder{
+        width: calc(~'100% - 24px');
+      }
+
+      .tree-mail-customfolder{
+        height: 44px;
+        line-height: 44px;
+        padding:0 15px 0 0 !important;
+        width: 100%;
+        color: #303133;
+
+        .treeFolderName {
+          height: 44px;
+          display: inline-block;
+          width: calc(~'100% - 16px');
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;  
+          font-size: 14px;
+        }
+      }
+    }
+
+    .el-menu-item {
+      padding-left: 30px !important;
+      line-height: 44px;
+      height: 44px;
+
+      .folderName {
+        display: inline-block;
+        width: calc(~'100% - 61px');
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+        font-size: 14px;
+        margin-left: 6px;
+        color: rgba(0, 0, 0, .8);
+      }
+
+      .ivu-icon-edit, .ivu-icon-close-circled {
+        display: none;
+      }
+
+      &:hover {
+        .ivu-icon-edit, .ivu-icon-close-circled {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .float-right {
+    float: right;
+    margin-left: 6px;
+  }
+
+  .ivu-btn-large {
+    padding: 0 15px;
+  }
+
+  .keyword {
+    color: #4285F4;
+  }
+
+ 
+
+  .el-menu-submenu-title {
+
+    & /deep/ .el-tree-node__expand-icon.expanded {
+      transform: rotate(90deg) !important;
+    }
+    .custom-menu-arrow-forward-medium {
+      transform: none;
+    }
+  }
+}
+
+/* 标签 */
+.tag-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.tag-in-table {
+  .span-in-lable {
+    display: inline-block;
+    height: 100%;
+    max-width: 100px;
+    vertical-align: top;
+  }
+
+  & .ivu-icon-ios-close {
+    display: none;
+  }
+
+  &:hover {
+    & .ivu-icon-ios-close {
+      display: inline-block;
+    }
+  }
+}
+
+/* 超出隐藏 */
+.overflow-hide {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.color {
+  margin-top: 10px;
+  margin-left: 125px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.color > ul {
+  overflow: hidden;
+}
+
+.color > ul > li {
+  width: 16px;
+  height: 16px;
+  color: #fff;
+  float: left;
+  cursor: pointer;
+  margin-right: 25px;
+  text-align: center;
+  line-height: 16px;
+}
+
+.layermain {
+  text-align: center;
+}
+
+// 以下代码为更改iview Tree组件前面默认的三角形的样式
+/*.ivu-tree .ivu-icon {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}*/
+.ivu-tree .ivu-icon-ios-arrow-forward:before { // 改变tree默认的三角箭头
+  /*  content: '\F61A';
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-bottom: -7px;*/
+  color: #7B98B6;
+}
+
+.ivu-tree .ivu-tree-arrow-open .ivu-icon-ios-arrow-forward:before { // 改变tree默认的三角箭头
+  /* content: '\F620';
+   display: block;
+   background-size: cover;
+   width: 20px;
+   height: 20px;
+   margin-bottom: -7px;*/
+  color: #7B98B6;
+}
+
+.clickToGetMore {
+  color: #4285F4 !important;
+  cursor: pointer !important;
+
+  &:hover {
+    color: #2d63bc !important;
+    text-decoration: underline !important;
+  }
+}
+.custom-deletesendmail{
+  content: ' ';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url('./images/deletesendmail.png') no-repeat center center;
+  background-size: 100%;
+}
+.move-to-folders{
+  .el-tree-node__content{
+      height: 36px;
+  }
+  .el-dropdown-menu__item{
+      width: 100%;
+      padding:0 20px 0 0;
+  }
+}

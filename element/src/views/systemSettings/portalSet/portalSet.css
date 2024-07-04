@@ -1,0 +1,26 @@
+.item,.item span{
+    font-size: 12px;
+}
+.item .item-tip{
+    width: 100px;
+    display: inline-block;
+}
+.protal-custom-icon {
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    fill: currentColor;
+    overflow: hidden;
+}
+.protal-custom-span{
+    width: 35px;
+    display: block;
+}
+.item-color-pick{
+    margin-left: -12px;
+    display: inline-block;
+}
+.color-pick-plug-in{
+    margin-left:18px;
+    vertical-align: middle;
+}

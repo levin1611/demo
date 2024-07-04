@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 根据 host 的不同, 动态插入不同 js 到页面 -->
+    <script>
+        // 动态插入 js 到页面
+        const insertScript = (url, defer, async, priority = 'high', loadCb) => {
+            const scriptTag = document.createElement('script');
+            // 动态插入的 script, 默认 async 为 true
+            if (async) {
+                scriptTag.async = async;
+            }
+            // 考虑兼容性问题, 设置 async 为 true 时也要设置 defer
+            if (scriptTag.async) {
+                scriptTag.defer = true;
+            } else if (defer) {
+                scriptTag.defer = defer;
+            }
+            scriptTag.importance = priority;
+            scriptTag.fetchPriority = priority;
+            scriptTag.src = url;
+            document.head.prepend(scriptTag);
+            if (loadCb) {
+                scriptTag.onload = loadCb;
+            }
+        };
+
+        // 动态插入 audio
+        const insertAudio = (url, id) => {
+            const audioEl = document.createElement('audio');
+            audioEl.id = id;
+            audioEl.style = 'display: none';
+            audioEl.source = 'true';
+            audioEl.src = url;
+            audioEl.type = 'audio/mp3';
+            // audio 阻塞加载, 这里先设置 preload 为 none 避免影响加载, 只要用户点击过页面, notice js 调用 audio play 时, 还是能播放的, 可能声音稍微延迟下
+            audioEl.preload = 'none';
+            document.head.append(audioEl);
+        };
+
+        // 根据地址不同做不同处理
+        var HOST = window.location.host;
+        var titleEl = document.createElement("title");
+        var linkEl = document.querySelector("link[rel*='icon']") || document.createElement('link');
+        linkEl.type = 'image/x-icon';
+        linkEl.rel = 'shortcut icon';
+        if (/wsmate\.com$/.test(HOST)) {
+            // 当前在 wa 个人版页面
+
+            // 添加 title
+            titleEl.innerText = "WhatsApp Mate（WSMate.com）,网页版,自带谷歌翻译,封号也能看聊天记录,多账号同时在线";
+            document.head.prepend(titleEl);
+
+            // 替换当前页面 icon
+            linkEl.href = './favicon-wa.ico';
+            document.head.appendChild(linkEl);
+
+            // 产品要求 wa 个人版登录页添加百度统计代码, 而目前 wa 个人版登录页扫码成功后跳转到询盘云 + 个人版无相关按钮, 所以它不需要埋 google tag manager
+            // 百度统计代码
+            var _hmt=_hmt || [];
+            (function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?9ce9f53ed3c43ce613ff2ed90059f2a0";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();
+        } else {
+            // 在询盘云页面
+
+            // 添加 title + 替换当前页面 icon
+            if (/seashelllogistics\.leadscloud\.com$/.test(HOST)) {
+                titleEl.innerText = "富怡天成客户管理系统";
+                linkEl.href = './11729_favicon.ico';
+            } else if (/hcyy\.leadscloud\.com$/.test(HOST)) {
+                titleEl.innerText = "铧铖贸易营销数字化管理平台";
+                linkEl.href = './11802_favicon.ico';
+            } else if (/singo\.leadscloud\.com$/.test(HOST)) {
+                titleEl.innerText = "星谷管理系统";
+                linkEl.href = './12200_favicon.ico';
+            } else {
+                titleEl.innerText = "询盘云管理系统";
+                linkEl.href = './favicon.ico';
+            }
+            document.head.prepend(titleEl);
+            document.head.appendChild(linkEl);
+
+            // Google Tag Manager
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N27CXKS');
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5KGG7KZ');
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NZ7ZTHZ');
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PRZW7PK');
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.defer=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WQPTN5Z');
+
+            <!-- Google tag (gtag.js) -->
+            insertScript('https://www.googletagmanager.com/gtag/js?id=G-Q6LPBDEVXV', true, true, 'high');
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q6LPBDEVXV');
+
+            // <!-- Google tag (gtag.js) -->
+            // insertScript('https://www.googletagmanager.com/gtag/js?id=G-Q6LPBDEVXV', false, true);
+            // (function(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-Q6LPBDEVXV")})();
+
+            // 系统 tips 库文件 ，需要用到jquery库
+            // insertScript('https://www.helpdocsonline.com/jquery-1.10.2.min.js', true, false, 'low');
+            insertScript('<%= BASE_URL %>jquery-1.10.2.min.js', true, false, 'low');
+            // insertScript('https://www.helpdocsonline.com/jquery-1.10.2.min.js', true, false, 'low', function() {
+            //     insertScript('https://www.helpdocsonline.com/v2/tooltips.js', true, false, 'low');
+            // });
+            // 富文本编辑器
+            // insertScript('https://admintx.leadscloud.com/js/tinymce.min.js', true, false, 'low');
+        }
+
+        // 不同地址都要执行的相同代码
+        insertAudio('<%= BASE_URL %>audio/notice.mp3', 'bgMusic');
+        insertAudio('<%= BASE_URL %>audio/6809.mp3', 'fbMusic');
+        insertAudio('<%= BASE_URL %>audio/8858.mp3', 'wsMusic');
+        insertAudio('<%= BASE_URL %>audio/1689.mp3', 'emMusic');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"/>-->
+
+      <!-- 使用CDN的JS文件 -->
+    <% for (var i in htmlWebpackPlugin.options.CDN && htmlWebpackPlugin.options.CDN.js) { %>
+        <script src="<%= htmlWebpackPlugin.options.CDN.js[i] %>" rel="preload" ></script>
+    <% } %>
+
+    <!-- <title>询盘云管理系统</title>-->
+  </head>
+  <body ondragover="return false"
+        ondrop="return false">
+	<!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N27CXKS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KGG7KZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ7ZTHZ" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRZW7PK" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQPTN5Z" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            <audio id="bgMusic" style="display: none" source src="<%= BASE_URL %>audio/notice.mp3" type="audio/mp3" preload="none"></audio>
+            <audio id="fbMusic" style="display: none" source src="<%= BASE_URL %>audio/6809.mp3" type="audio/mp3" preload="none"></audio>
+            <audio id="wsMusic" style="display: none" source src="<%= BASE_URL %>audio/8858.mp3" type="audio/mp3" preload="none"></audio>
+            <audio id="emMusic" style="display: none" source src="<%= BASE_URL %>audio/1689.mp3" type="audio/mp3" preload="none"></audio>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <noscript>
+        <strong>We're sorry but leadsCloud doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+        <div id="app"></div>
+	</body>
+</html>

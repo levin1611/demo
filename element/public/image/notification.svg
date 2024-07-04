@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>icon/应用中心/消息通知</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="2.78091779%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF2143" offset="0%"></stop>
+            <stop stop-color="#E60072" offset="100%"></stop>
+        </linearGradient>
+        <path d="M16.9944572,27 C16.9944572,28.6568542 15.6513114,30 13.9944572,30 C12.3967763,30 11.0907963,28.75108 10.9995499,27.1762728 L10.9944572,27 L16.9944572,27 Z M14,1.59161573e-12 C15.0268507,1.59161573e-12 15.8729576,0.773856468 15.98694,1.77018888 C20.8974484,2.67937614 24.6179199,6.98602932 24.6179199,12.1616452 L24.6179199,18.5635986 L27.1446936,21.8949496 C27.4039024,22.2366959 27.5463757,22.6527222 27.551085,23.0816249 L27.5612584,23.9994103 C27.5706283,24.8615227 26.8794218,25.5680766 26.0173093,25.5776367 L2.07605832,25.5776367 C1.25428617,25.5776367 0.579464086,24.9484686 0.507020188,24.1455606 L0.500659363,23.9865201 L0.509780719,23.0677385 C0.514111442,22.6315109 0.660954396,22.2086623 0.927927988,21.8636428 L3.48147854,18.5635986 L3.48147854,12.1616452 C3.48147854,7.02194623 7.15049174,2.73919123 12.0122437,1.78965457 C12.1157162,0.784257648 12.9662715,1.59161573e-12 14,1.59161573e-12 Z M14.1747806,4.47623698 C10.1241884,4.47623698 6.80688672,7.65929934 6.6113066,11.6762757 L6.60325314,11.923235 L6.47574123,19.6118164 L4.56155666,22.597168 L23.6594238,22.597168 L21.6228027,19.6118164 L21.6228027,11.9242591 C21.6228027,7.81083007 18.2882097,4.47623698 14.1747806,4.47623698 Z" id="path-2"></path>
+        <filter x="-9.2%" y="-11.7%" width="125.8%" height="123.3%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="1" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.949019608   0 0 0 0 0.062745098   0 0 0 0 0.360784314  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="icon/应用中心/消息通知" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 0.000000)" id="形状">
+            <g>
+                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+            </g>
+        </g>
+    </g>
+</svg>

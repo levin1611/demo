@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>详情页/时间轴/Facebook</title>
+    <defs>
+        <circle id="path-1" cx="19" cy="19" r="16"></circle>
+        <filter x="-21.9%" y="-15.6%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.321568627   0 0 0 0 0.537254902   0 0 0 0 0.97254902  0 0 0 0.32 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#159EF8" offset="0%"></stop>
+            <stop stop-color="#036CE4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="详情页/时间轴/Facebook" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="38" height="38"></rect>
+        <g id="Oval-11-Copy-6备份">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <circle stroke-opacity="0.8" stroke="#0179E9" stroke-width="1" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" cx="19" cy="19" r="15.5"></circle>
+        </g>
+        <g id="形状" transform="translate(11.000000, 11.000000)" fill="url(#linearGradient-3)">
+            <path d="M8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 Z M8.94146797,3.80615583 C7.70380473,3.80615583 6.87705316,4.52331892 6.80750135,5.82756227 L6.80274292,6.00904035 L6.80274292,7.25661094 L5.36429221,7.25661094 L5.36429221,8.89347652 L6.80274292,8.89347652 L6.80274292,12.8505859 L8.57226563,12.8505859 L8.57226563,8.89347652 L9.89153042,8.89347652 L10.1426885,7.25661094 L8.57226563,7.25661094 L8.57226563,6.19375569 C8.57226563,5.77585912 8.76340554,5.3677085 9.36065311,5.31514573 L9.49492901,5.30945099 L10.2091312,5.30945099 L10.2091312,3.91666538 L9.86152355,3.86777358 L9.86152355,3.86777358 L9.63056413,3.84262348 L9.63056413,3.84262348 L9.36668594,3.82109499 C9.22897978,3.81204095 9.08447,3.80615583 8.94146797,3.80615583 Z"></path>
+        </g>
+    </g>
+</svg>

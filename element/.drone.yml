@@ -1,0 +1,219 @@
+kind: pipeline
+type: docker
+name: default
+
+platform:
+os: linux
+arch: amd64
+
+#environment:
+#  user:
+#    from_secret: user
+# #- kube_name: agent-pod-test2
+# #- namespace: deve-first
+
+steps:
+
+  ## 线上环境
+  - name: build-node
+    image: harbor.leadscloud.com:8443/library/node:13.10.1-stretch
+    #image: harbor.leadscloud.com:8443/library/element:v1.1.1
+    #volumes:
+      #- name: cache
+       # path: /drone/src/node_modules/
+    environment:
+      username:
+        from_secret: user
+      password:
+        from_secret: pwd
+      build:
+        from_secret: build
+    settings:
+    commands:
+      
+      - /usr/local/bin/npm set registry http://10.2.2.164:8081/repository/npm-public/
+      #- npm i
+      - rm -rf package-lock.json
+      - /usr/local/bin/npm cache verify
+      - /usr/local/bin/npm i 
+      - npm install html2canvas
+      - npm run build:$build
+      - cp -r dist Front-Vue
+      - cp -r dist Front-Vue-new
+    when:
+      event:
+        #    - merge
+      - push
+  #    - pull_request
+      branch:
+      - master
+
+  ## 测试环境
+  - name: test-build-node
+    image: harbor.leadscloud.com:8443/library/node:10.15.3-stretch
+    #image: harbor.leadscloud.com:8443/library/element:v1.1.1
+    #volumes:
+      #- name: cache
+        #path: /drone/src/node_modules/
+    environment:
+      username:
+        from_secret: testuser
+      password:
+        from_secret: testpwd
+      build:
+        from_secret: build
+    settings:
+    commands:
+      - /usr/local/bin/npm set registry http://10.2.2.164:8081/repository/npm-public/
+      #- npm i
+      - /usr/local/bin/npm i
+      - /usr/local/bin/npm install image-webpack-loader
+      #- npm rebuild node-sass
+      - npm run build:$build
+      - cp -r dist Front-Vue
+    when:
+      event:
+        #    - merge
+      - push
+  #    - pull_request
+      branch:
+      - test
+
+  - name: test-scp-files
+    image: appleboy/drone-scp
+    settings:
+      #target: /home/rancher/TestEnvs/var/www/automatic-site/
+      #target: /home/rancher/TestEnvs/var/www/
+      target:
+        from_secret: test_file_path
+      host:
+        #- 10.2.2.154
+        from_secret: testhost
+      #target: /tmp/test/
+      user:
+        from_secret: testuser
+      password:
+        from_secret: testpwd
+      #key:
+        #from_secret: ssh_key
+      source: Front-Vue
+      #rm: true
+    when:
+      event:
+        #    - merge
+        - push
+  #    - pull_request
+      branch:
+      - test
+
+  - name: scp-files
+    image: appleboy/drone-scp
+    settings:
+      #target: /home/rancher/TestEnvs/var/www/automatic-site/
+      #target: /home/rancher/TestEnvs/var/www/
+      target:
+        from_secret: file_path
+      host:
+        #- 10.2.2.154
+        from_secret: host
+      #target: /tmp/test/
+      user:
+        from_secret: user
+      #password: rancher
+      key:
+        from_secret: ssh_key_75
+      source: Front-Vue
+      #rm: true
+    when:
+      event:
+        #    - merge
+      - push
+  #    - pull_request
+      branch:
+      - master
+
+  - name: scp-files-75
+    image: appleboy/drone-scp
+    settings:
+      #target: /home/rancher/TestEnvs/var/www/automatic-site/
+      #target: /home/rancher/TestEnvs/var/www/
+      target:
+        from_secret: file_path_75
+      host:
+        #- 10.2.2.154
+        from_secret: host_75
+      #target: /tmp/test/
+      user:
+        from_secret: user_75
+      #password: rancher
+      key:
+        from_secret: ssh_key_75
+      source: Front-Vue-new
+      #rm: true
+    when:
+      event:
+        #    - merge
+      - push
+  #    - pull_request
+      branch:
+      - master
+
+  - name: scp-files-138
+    image: appleboy/drone-scp
+    settings:
+      #target: /home/rancher/TestEnvs/var/www/automatic-site/
+      #target: /home/rancher/TestEnvs/var/www/
+      target:
+        from_secret: file_path_75
+      host:
+        #- 10.2.2.154
+        from_secret: host_138
+      #target: /tmp/test/
+      user:
+        from_secret: user_75
+      #password: rancher
+      key:
+        from_secret: ssh_key_138
+      source: Front-Vue-new
+      #rm: true
+    when:
+      event:
+        #    - merge
+      - push
+  #    - pull_request
+      branch:
+      - master
+
+  - name: dingtalk
+    image: lddsb/drone-dingtalk-message
+    settings:
+      token:
+        from_secret: dingtalk_token
+      type: markdown
+      message_color: true
+      message_pic: true
+      sha_link: true
+    when:
+      event:
+      - push
+      branch:
+      - master
+      - test
+
+trigger:
+  branch:
+    - test
+    - master
+status:
+  - success
+  - error
+  - failure
+  - killed
+  
+volumes:
+- name: cache
+  host:
+    path: /var/lib/cache/
+  when:
+    branch:
+    - test

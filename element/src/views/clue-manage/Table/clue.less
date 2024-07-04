@@ -1,0 +1,361 @@
+.clue {
+  padding-left: 12px;
+  padding-top: 12px;
+  background: #F5F6F9;
+
+  .table-filter-title{
+    font-size: 14px;
+    color: #333;
+  }
+
+  .checkrepeatbtn {
+    line-height: 34px;
+    cursor: pointer;
+    position: absolute;
+    color: #b5b5b5;
+    top: -9px;
+    right: 10px;
+  }
+
+  .appoint-sale {
+    height: 68px;
+    background-color: #f0f0f0;
+    line-height: 68px;
+    padding-left: 15px;
+  }
+
+  .clue-label {
+    width: 100px;
+    display: inline-block;
+    margin-right: 20px;
+    text-align: right;
+  }
+
+  .clue-item {
+    display: inline-block;
+  }
+
+  /*表单始终铺满界面*/
+
+  .tabmain {
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    border-radius: 4px 0 0 4px; 
+
+    &.el-table--border{
+      th:first-child{
+        .cell {
+          padding-left: 20px;
+          padding-right: 0;
+        }
+      }
+    } 
+
+    &.el-table--border td:first-child{
+      .cell {
+        padding-left: 20px;
+        padding-right: 0;
+      }
+    }
+    
+    table {
+      font-size: 14px;
+      width: 100% !important;
+      color: #333;
+
+      .pair_row_background{
+        background: #fff;
+      }
+
+      .one_row_background{
+        background: #F7F8F9;
+      }
+    }
+    
+    table.el-table__body tr > td{
+      background: #F6F6F6;
+    }
+    table.el-table__body tr > td{
+      background: #F6F6F6;
+    }
+    table.el-table__body tr.el-table__row--striped > td {
+      background: #fff;
+    }
+    table.el-table__body tr.hover-row > td{
+      background-color: #FFF7F2;
+    }
+    table.el-table__body tr.el-table__row--striped.current-row > td, table.el-table__body tr.el-table__row--striped.heightLight > td {
+      background: #FFEBE0;
+      border-bottom: 1px solid #FFEBE0;
+    }
+    table.el-table__body tr.current-row > td, table.el-table__body tr.heightLight > td{
+      background-color: #FFEBE0;
+      border-bottom: 1px solid #FFEBE0;
+    }
+    table.el-table__body tr.hover-row.current-row > td, table.el-table__body tr.hover-row.heightLight > td{
+      background-color: #FFF7F2;
+    }
+  }
+
+  .grade {
+    width: 236px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .wrap {
+    float: left;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .customFieldTextarea {
+    width: 100% !important;
+    height: auto !important;
+    clear: left;
+  }
+
+  .lowGrade,
+  .heightGrade {
+    position: absolute;
+    bottom: -3px;
+  }
+
+  .lowGrade {
+    left: -3px;
+  }
+
+  .heightGrade {
+    right: -7px;
+  }
+
+  .switch-title {
+    font-size: 16px;
+    color: #2d2f2e;
+    cursor: pointer;
+    font-weight: 500;
+
+    .switch-title-icon{
+      margin-left: 6px;
+    }
+  }
+
+  .pagewrap {
+    padding: 10px 20px;
+    position: relative;
+    text-align: right;
+    background: #fff;
+  }
+
+  .datewrap {
+    padding: 8px 30px 8px 20px;
+    background: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+    border-radius: 4px 0 0 4px;
+    margin-bottom: 8px;
+
+    & > span {
+      float: right;
+      position: relative;
+      line-height: 36px;
+    }
+  }
+
+  .conditionmain {
+    & > div {
+      width: 110px;
+      display: inline-block;
+    }
+  }
+
+  .conditionwrap {
+    max-height: 136px;
+    overflow: auto;
+  }
+
+  .filter-top {
+    height: 40px;
+    border-bottom: 1px solid #d0cece;
+    margin-bottom: 15px;
+  }
+
+  .filter-top-li {
+    display: inline-block;
+    width: 181px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #908f8f;
+    cursor: pointer;
+  }
+
+  .filter-checked {
+    color: #414040;
+
+    span {
+      width: 47px;
+      height: 7px;
+      border-radius: 3px;
+      background-color: #fb8b2f;
+      display: block;
+      margin: auto;
+      margin-top: -4px;
+    }
+  }
+
+  .filter-tips {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #535353;
+  }
+
+  .commentwrap {
+    max-height: 136px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+  }
+
+  .eachlist {
+    height: 36px;
+    cursor: pointer;
+
+    &:hover {
+      background: #f7f7f8;
+    }
+
+    .listtitle {
+      line-height: 36px;
+      margin-left: 10px;
+    }
+
+    .removelist {
+      font-size: 18px;
+      float: right;
+      margin: 4px 10px 0 0;
+
+      &:hover {
+        color: #fb8b2f;
+      }
+    }
+  }
+
+  .newcustome {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    height: 76px;
+    width: 76px;
+    background: #51b7a3;
+    border-color: #51b7a3;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .table {
+    .title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .each {
+    width: 357px;
+    height: 38px;
+    margin-top: 15px;
+    color: #b5b5b5;
+    float: left;
+
+    & > p {
+      width: 80px;
+      line-height: 38px;
+      float: left;
+      text-align: right;
+      margin-right: 5px;
+
+      & > span {
+        color: #fe2725;
+      }
+    }
+  }
+
+  .inputwrap1 {
+    height: 38px;
+    border-radius: 2px;
+    float: left;
+    /*position: relative;*/
+  }
+
+  .picwrap1 {
+    float: left;
+    width: 188px;
+    height: 32px;
+    border: 1px solid #dbdbdb;
+    border-radius: 2px;
+    margin: 2px 0 0 5px;
+  }
+
+  .layermain {
+    text-align: center;
+
+    & > span {
+      font-weight: bold;
+      margin: 0 5px;
+    }
+  }
+
+  .addmark {
+    color: #fc8b2f;
+    text-align: center;
+    margin-left: 300px;
+    cursor: pointer;
+  }
+
+  .el-button--text {
+      color: rgba(0, 0, 0, 0.8);
+      
+      &:not(.newCreate-btn-group-newCreate) {
+          &:hover {
+            color: #4285f4;
+          }
+        }
+  }
+
+  .newCreate-btn-group {
+      margin-left: 10px;
+      button {
+          padding-left: 20px;
+          padding-right: 20px;
+      }
+      .newCreate-btn-group-newCreate, .newCreate-btn-group-import {
+          color: #FFF;
+          background-color: #FA8241;
+          height: 36px;
+          font-size: 14px;
+          margin: -2px;
+      }
+
+      .dropIcon {
+          color: #FFF;
+          background: #FA8241;
+          border: 1px solid #FA8241;
+          border-left: 1px solid #E56926;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          padding-left: 10px;
+          padding-right: 10px;
+          height: 36px;
+          font-size: 14px;
+        
+          & > .custom-menu-arrow {
+            color: #fff !important;
+          }
+      }
+  }
+  
+}

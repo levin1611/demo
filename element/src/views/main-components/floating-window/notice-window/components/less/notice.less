@@ -1,0 +1,132 @@
+.notice-window-header {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+ }
+
+.notice-window-header-icon {
+  i {
+    &:hover {
+      color: #4285f4;
+    }
+  }
+}
+
+.notice-list {
+  height: calc(~"100vh - 210px");
+  list-style: none;
+  overflow-y: auto;
+}
+.search-btn {
+  display: flex;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ECECEC;
+  margin-bottom: 20px;
+  span{
+    margin-right: 26px;
+    color:rgba(0, 0, 0, 0.8);
+    position: relative;
+    padding-bottom: 8px;
+    cursor: pointer;
+    &.active{
+      color: #FF752A;
+      font-weight: bold;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 28px;
+        height: 3px;
+        background: #FF752A;
+        border-radius: 2px;
+        bottom: -1px;
+        left: 0;
+      }
+    }
+  }
+  .notice-markAll {
+    font-size: 12px;
+    float: right;
+
+    color: #3b78de;
+    position: absolute;
+    right: 20px;
+    &:hover {
+      color: #2d63bc;
+      text-decoration: underline;
+    }
+  }
+}
+.notice-tip {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.80);
+  letter-spacing: 0;
+  line-height: 22px;
+  padding: 10px 10px 3px 20px;
+  margin-bottom: 6px;
+
+  // &:first-child {
+  //   margin-top: -10px;
+  // }
+
+  .notice-markAll {
+    font-size: 12px;
+    float: right;
+
+    color: #3b78de;
+
+    &:hover {
+      color: #2d63bc;
+      text-decoration: underline;
+    }
+  }
+}
+
+.detail-info-clip {
+  font-size: 12px;
+  white-space: nowrap;
+  word-wrap: break-word;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+.notice-item{
+  display: flex;
+}
+.notice-item {
+  padding: 0px 10px 0px 20px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  .is-read-point {
+    display: block;
+    min-width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: #A9B9C9;
+    position: relative;
+    top: 9px;
+    margin-right: 8px;
+    &.is-read{
+      background: #EA4335;
+    }
+  }
+  &:hover {
+    background-color: #f5f6f9;
+  }
+
+  &-content {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &-active {
+    background: #f1f4f7;
+  }
+
+  &-time {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.40);
+    margin: 0 4px 4px 0;
+  }
+}

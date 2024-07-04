@@ -1,0 +1,191 @@
+// 基础样式
+._boxSizing {
+  box-sizing: border-box;
+}
+
+._padRowL10 {
+  padding-left: 10px;
+}
+
+._font_size12 {
+  font-size: 12px;
+}
+
+._textOverFlow {
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+  width        : calc(100% - 25px);
+}
+
+._textOverFlowCom {
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+}
+
+._text__overflow-com {
+  overflow      : hidden;
+  text-overflow : ellipsis;
+  white-space   : nowrap;
+  vertical-align: middle;
+}
+
+._form-item_label {
+  display: inline-block;
+  width  : 85%;
+}
+
+
+
+.height_auto {
+  height: auto;
+}
+
+// 内部模块自定义样式修改或新增
+
+.timeline-dot {
+  z-index: 1;
+}
+
+._customModalVerbal {
+  min-width: 700px;
+}
+
+.modal-item {
+  font-size: 12px;
+}
+
+.modalItem,
+.addSocialPlatform,
+.appoint-sale,
+.el-form-item__label,
+.clue-label {
+  font-size: 12px;
+}
+
+._font_12 {
+
+  .el-cascader-node__label,
+  .el-select-dropdown__item {
+    font-size: 12px;
+  }
+}
+
+
+._conditionmainLimitHeight {
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+._self_content ol {
+  padding: 0 12px;
+}
+
+// 自定义基础样式
+._warningActive {
+  font-weight: bold;
+  box-shadow : none;
+}
+
+._link_push {
+  color      : #3b78de;
+  cursor     : pointer;
+  font-weight: 400;
+
+  &:hover {
+    color: #2d63bc
+  }
+}
+
+._lineHeight32 {
+  line-height: 24px;
+}
+
+._icon_close {
+  font-size: 20px;
+  color    : #677f99;
+  cursor   : pointer;
+
+  &:hover {
+    color: #4285f2
+  }
+}
+
+._tabModalDetailContent {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+._personDropdownLongName {
+  display      : inline-block;
+  max-width    : 60%;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+}
+
+._dataFormMB-10 {
+  .el-form-item {
+    margin-bottom: 15px;
+  }
+}
+
+._vertical-align {
+  vertical-align: middle
+}
+._tailIconOnly {
+  margin: 0 5px;
+}
+._tailIcon {
+  margin: 0 0 0 5px
+}
+.clear-dropdown {
+  padding: 0;
+}
+.clear-dropdown:focus, .clear-dropdown:not(.is-disabled):hover {
+  background-color: #ffffff;
+}
+.chang_zindex {
+  // 导航时改变导航栏的z-index
+  z-index: 22;
+}
+.click-forbidden-modal {
+  position: relative;
+  padding: 0;
+  &-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+  }
+  &-padding {
+    padding: 12px;
+    border-radius: 4px;
+  }
+}
+.click-forbidden-modal-common {
+  position: relative;
+  &-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    cursor: pointer;
+  }
+}
+.cursor-default {
+  cursor: default;
+}
+.base__icon_config {
+  cursor: pointer;
+  font-size: 12px;
+}

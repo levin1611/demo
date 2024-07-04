@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>详情页/时间轴/邮件</title>
+    <defs>
+        <circle id="path-1" cx="19" cy="19" r="16"></circle>
+        <filter x="-21.9%" y="-15.6%" width="143.8%" height="143.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.17254902   0 0 0 0 0.752941176   0 0 0 0 0.623529412  0 0 0 0.32 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#00E8B7" offset="0%"></stop>
+            <stop stop-color="#00CC99" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="详情页/时间轴/邮件" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="矩形" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="38" height="38"></rect>
+        <g id="Oval-11-Copy-2">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <circle stroke-opacity="0.8" stroke="#00CC99" stroke-width="1" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" cx="19" cy="19" r="15.5"></circle>
+        </g>
+        <g id="形状" transform="translate(11.000000, 11.000000)" fill="url(#linearGradient-3)">
+            <path d="M10.071,9.97154743 L15.2229858,14.5519203 C14.8848728,14.8135832 14.4606211,14.9692993 14,14.9692993 L2,14.9692993 C1.58512581,14.9692993 1.19975568,14.8429774 0.8802542,14.6266982 L5.969,9.98454743 L7.05893795,10.8817709 C7.6127459,11.3376785 8.41182926,11.3376785 8.96563721,10.8817709 L10.071,9.97154743 Z M0.189650949,5.22652815 L5.196,9.34854743 L0.22190022,13.8858322 C0.0800856109,13.611264 -1.24877886e-12,13.2996341 -1.24877886e-12,12.9692993 L-1.24877886e-12,6.07661885 C-1.24877886e-12,5.83772459 0.0426352774,5.60466211 0.122682452,5.38686568 L0.189650949,5.22652815 Z M16,6.07896756 L16,12.9692993 C16,13.2543246 15.9403772,13.5254242 15.8329233,13.7708064 L10.844,9.33454743 L15.8167881,5.24272387 C15.9357,5.50101798 16,5.78558624 16,6.07896756 Z M8.5143062,0.300074013 L15.058476,4.38202072 L15.184,4.46754743 L8.33007079,10.1097247 C8.14546814,10.2616939 7.87910702,10.2616939 7.69450437,10.1097247 L0.827539111,4.45631572 L0.938476702,4.38157658 L7.45430656,0.3010263 C7.77839517,0.0980652215 8.18985344,0.0976955738 8.5143062,0.300074013 Z"></path>
+        </g>
+    </g>
+</svg>

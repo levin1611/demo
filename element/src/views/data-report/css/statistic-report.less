@@ -1,0 +1,157 @@
+@filter-width: 44px;
+.statistic-report {
+  min-height: 100%;
+  padding: 0 14px;
+
+  .float-right {
+    float: right;
+  }
+
+  .header {
+    margin-top: 10px;
+    margin-bottom: 14px;
+
+    .dimension {
+      display: inline-block;
+      font-family: 'PingFangSC-Medium';
+      font-size: 16px;
+      line-height: 32px;
+      font-weight: normal;
+      cursor: pointer;
+      color: #2d2f2e;
+    }
+
+    .export-data {
+      display: inline-block;
+      font-size: 12px;
+      line-height: 32px;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .table-slot {
+    width: 100%;
+    border-collapse: separate;
+    border-color: grey;
+    border-width: 0px;
+    border-spacing: 0;
+
+    .ivu-table-cell {
+      width: 100%;
+
+      .column-title {
+        float: left;
+        max-width: calc(~"100% - @{filter-width}");
+      }
+
+      .arrow {
+        font-size: 14px;
+        color: #fa8241;
+      }
+    }
+  }
+
+  .font-bold {
+    font-weight: bold;
+  }
+
+  /* 超出隐藏 */
+
+  .overflow-hide {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 超出显示 */
+
+  .overflow-show {
+    text-overflow: inherit;
+    overflow: visible;
+    white-space: pre-line;
+  }
+
+  .page-component {
+    text-align: right;
+    margin-top: 14px;
+  }
+
+  /* datepicker把options放到右边栏 options看上去分两栏显示 */
+
+  .date-picker {
+    .ivu-picker-panel-body-wrapper.ivu-picker-panel-with-sidebar {
+      padding-right: 185px;
+      padding-left: 0px;
+    }
+
+    .ivu-picker-panel-sidebar {
+      right: 0;
+      width: 185px;
+    }
+
+    .ivu-picker-panel-shortcut {
+      float: left;
+      width: 50%;
+      padding: 7px 10px;
+
+      &:nth-child(2n) {
+        border-left: 1px solid #E6E6E6;
+      }
+
+      &:last-child, &:nth-last-child(2) {
+        padding-bottom: 16px;
+      }
+
+      &:nth-child(2), &:first-child {
+        padding-top: 15px;
+      }
+    }
+  }
+
+  table {
+    width: 100% !important;
+  }
+
+  .ivu-table-cell {
+    padding: 0 8px;
+  }
+
+  .ivu-table-title {
+    overflow: hidden;
+
+    th {
+      background-color: #fff;
+    }
+  }
+
+  .ivu-table-overflowY::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+    background-color: #c9c9c9;
+
+    &:hover {
+      width: 8px;
+    }
+  }
+
+  .ivu-table-overflowY::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    background-color: #c9c9c9;
+
+    &:hover {
+      width: 8px;
+    }
+  }
+
+  .ivu-table-overflowY::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #fc8b2f;
+
+    &:hover {
+      width: 8px;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+.login {
+  width: 100%;
+  height: 100%;
+  background-color: #F5F6F9;
+  position: relative;
+
+  &-con {
+    position: absolute;
+    margin: auto;
+    top: -100px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 560px;
+    height: 600px;
+    background-color: #ffffff;
+    box-shadow: 0 0 6px #CBD6E2;
+    border-radius: 4px;
+
+    &-header {
+      font-size: 16px;
+      font-weight: 300;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    .loginIcon {
+      text-align: center;
+      margin: 85px 0 60px;
+    }
+
+    .ivu-card-head p {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .form-con {
+      padding: 0 70px;
+    }
+
+    .login-tip {
+      font-size: 10px;
+      text-align: center;
+      color: #c3c3c3;
+    }
+
+    .introduction {
+      color: #fff;
+      font-size: 13px;
+      text-align: center;
+      margin: 6px 0;
+    }
+  }
+}
+
+.lang-switch {
+  .ivu-btn-small {
+    padding: 3px 12px;
+  }
+}
+
+@media screen and (max-height: 745px) {
+  .login {
+    min-height: 530px;
+  }
+
+  .login-con {
+    top: 45px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .login {
+    min-width: 400px;
+  }
+
+  .login-con {
+    width: 100%;
+  }
+}
+

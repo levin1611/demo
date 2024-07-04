@@ -1,0 +1,71 @@
+.user-detail {
+  margin: -16px -16px 0px;
+  padding: 21px 0 0 21px;
+  position: relative;
+  height: 100%;
+  font-size: 14px;
+  /deep/ .chat-svg-avatar {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.user {
+  .user_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    .user_name {
+      display: flex;
+      align-items: center;
+
+      .user_name_short {
+        font-size: 18px;
+        line-height: 25px;
+        font-weight: 700;
+      }
+    }
+
+    .user_operate {
+      & /deep/ .el-button {
+        padding: 5px 10px 6px;
+      }
+    }
+  }
+
+  .user_bottom {
+    width: 100%;
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 16px 0;
+    border-bottom: 1px solid #EAEAEA;
+  }
+}
+
+.user_info {
+  .web-tip {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 15px;
+  }
+
+  .showMoreStyle:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.tree_icon {
+  color: rgba(0, 0, 0, .8);
+
+  &:hover {
+    color: #4285F4;
+  }
+
+  /deep/ .el-icon {
+    color: #677F99;
+  }
+}
