@@ -1,0 +1,415 @@
+// 自定义的 element-plus 全局样式
+// 有些属性不支持修改变量初始值, 或者某一类组件需要单独处理/定义, 使用 css 变量覆盖默认变量或者直接写样式, 注意命名空间
+
+@use 'sass:math';
+@use './element_custom.scss' as elVars;
+
+// 基于 element-plus/theme-chalk/src/common/var.scss 的同名 @mixin 修改
+// (直接引用会报错, 估计是原 @mixin 里面有引入其他变量的缘故)
+// 用于基于主色生成不同深浅程度的颜色, 并加入到
+@mixin set-color-mix-level(
+  $type,
+  $base-color,
+  $number,
+  $mode: 'light',
+  $mix-color: elVars.$color-white
+) {
+  --#{$elnamespace}-color-#{$type}-#{$mode}-#{$number}: #{mix($mix-color, $base-color, math.percentage(math.div($number, 10)))};
+}
+
+// element-plus 相关全局 css 变量
+:root {
+  // 定义品牌色基色
+  --#{$elnamespace}-color-brand: #{$brandColor};
+  // 调用 mixin 基于基色生成各种颜色
+  @for $i from 1 through 9 {
+    @include set-color-mix-level('brand', $brandColor, $i, 'light', elVars.$color-white);
+    @include set-color-mix-level('brand', $brandColor, $i, 'dark', elVars.$color-black);
+  }
+}
+
+// tabs
+.#{$elnamespace}-tabs {
+  // header
+  &__header {
+    // 使用主色
+    --#{$elnamespace}-color-primary: #{$brandColor};
+    margin: 0;
+  }
+  // tab 项
+  &__item {
+    font-weight: 400;
+    // 选中项
+    &.is-active {
+      font-weight: 600;
+    }
+  }
+  // 导航条
+  &__nav-wrap::after {
+    height: 1px;
+  }
+  // 去掉 header
+  &.noHeader {
+    > .#{$elnamespace}-tabs__header {
+      display: none;
+    }
+  }
+}
+
+// 二级 tabs
+.#{$elnamespace}-secondary-tabs {
+  // header
+  .#{$elnamespace}-tabs__header {
+    // 使用第二主色
+    --#{$elnamespace}-color-primary: #{$secondaryColor};
+  }
+  // 导航条
+  .#{$elnamespace}-tabs__nav-wrap::after {
+    display: none;
+  }
+  // 当前选中 tab 底部高亮条
+  .#{$elnamespace}-tabs__active-bar {
+    display: none;
+  }
+}
+
+// pagination
+.#{$elnamespace}-pagination {
+  // 使用主色
+  --#{$elnamespace}-color-primary: #{$brandColor};
+
+  // background 模式
+  &.is-background {
+    // 按钮
+    .#{$elnamespace}-pager li {
+      &:hover {
+          background-color: var(--#{$elnamespace}-color-brand-light-6);
+      }
+    }
+  }
+}
+
+// steps
+.#{$elnamespace}-steps {
+  // 使用主色
+  --#{$elnamespace}-color-success: #{$brandColor};
+  --#{$elnamespace}-text-color-primary: rgba(0,0,0,.28);
+  --#{$elnamespace}-text-color-placeholder: rgba(0,0,0,.28);
+}
+
+// message
+@each $type in (success, info, warning, error) {
+  .#{$elnamespace}-message--#{$type} {
+    // 内容
+    .#{$elnamespace}-message__content {
+      // 统一显示文字基色
+      --#{$elnamespace}-message-text-color: var(--#{$elnamespace}-text-color-primary);
+    }
+  }
+}
+
+// spin
+.#{$elnamespace}-loading-spinner {
+  // 使用主色
+  --#{$elnamespace}-color-primary: #{$brandColor};
+}
+
+// table
+.#{$elnamespace}-table {
+  width: 100%;
+  overflow-y: auto;
+  // header
+  &__header {
+    min-width: 100% !important;
+  }
+  // body
+  &__body {
+    min-width: 100% !important;
+  }
+  // 斑马纹颜色修改 + 改变斑马纹显示顺序(通过对换斑马纹单元格颜色和普通单元格颜色实现)
+  &--striped {
+    .#{$elnamespace}-table__body td.#{$elnamespace}-table__cell {
+      background-color: #F6F6F6;
+    }
+    .#{$elnamespace}-table__body tr.#{$elnamespace}-table__row--striped td.#{$elnamespace}-table__cell {
+      background-color: #FFF;
+    }
+  }
+  // 斑马纹颜色修改后, hover 样式被覆盖(样式优先级近似, 但样式代码更靠前), 此处重写一遍 hover 样式, 覆盖斑马纹样式
+  &--enable-row-hover &__body tr:hover > td.#{$elnamespace}-table__cell {
+    background-color: var(--#{$elnamespace}-table-row-hover-bg-color);
+  }
+  // 单元格
+  & &__cell {
+    padding: 9.5px 0;
+
+    .#{$elnamespace}-checkbox {
+      height: auto;
+    }
+  }
+  .cell {
+    line-height: 24px;
+    // height: 24px;
+  }
+}
+
+// badge
+.#{$elnamespace}-badge {
+  // 修改默认色
+  // 默认是 danger 类型, 在 @forward 时修改 bg-color 没用, 还是按 danger 走的, 于是直接修改 danger 色
+  --#{$elnamespace}-color-danger: #EA4335;
+}
+
+// input
+.#{$elnamespace}-input {
+  &__wrapper {
+    &:hover, &.is-focus {
+      // 修改默认 focus 样式(在原基础上加了一重阴影)
+      box-shadow: 0 0 0 1px var(--#{$elnamespace}-input-focus-border-color) inset,
+                  0 3px 0 0 var(--#{$elnamespace}-input-focus-border-color);
+    }
+  }
+  // 清空按钮
+  & &__clear {
+    order: -1;
+  }
+  // 文字长度限制
+  & &__count {
+    color: var(--#{$elnamespace}-text-color-placeholder);
+  }
+
+  &.defaultSuffx &-group__append {
+    background-color:#FFF
+  }
+  &.defaultSuffx &___wrapper{
+    box-shadow: none;
+    border: 1px solid var(--xhl-el-input-border-color,var(--xhl-el-border-color));
+  }
+  &.defaultSuffx &-group__append{
+    width: 115px;
+  }
+}
+
+// textarea
+.#{$elnamespace}-textarea {
+  &__inner {
+    &:hover, &:focus {
+      // 修改默认 focus 样式(在原基础上加了一重阴影)
+      box-shadow: 0 0 0 1px var(--#{$elnamespace}-input-focus-border-color) inset,
+                  0 3px 0 0 var(--#{$elnamespace}-input-focus-border-color);
+    }
+  }
+  // 文字长度限制
+  & .#{$elnamespace}-input__count {
+    color: var(--#{$elnamespace}-text-color-placeholder);
+  }
+}
+
+// select
+.#{$elnamespace}-select {
+  &__wrapper {
+    &:hover, &.is-focused, &.is-hovering, &.is-hovering:not(.is-focused) {
+      // 修改默认 hover 样式(在原基础上加了一重阴影)
+      box-shadow: 0 0 0 1px var(--#{$elnamespace}-select-input-focus-border-color) inset,
+                  0 3px 0 0 var(--#{$elnamespace}-select-input-focus-border-color);
+    }
+  }
+}
+
+// button
+.#{$elnamespace}-button {
+  // 使用主色
+  --#{$elnamespace}-color-primary: #{$brandColor};
+  --#{$elnamespace}-color-primary-light-3: var(--#{$elnamespace}-color-brand-light-3);
+  --#{$elnamespace}-color-primary-light-5: var(--#{$elnamespace}-color-brand-light-5);
+  --#{$elnamespace}-color-primary-light-7: var(--#{$elnamespace}-color-brand-light-7);
+  --#{$elnamespace}-color-primary-light-9: var(--#{$elnamespace}-color-brand-light-9);
+  --#{$elnamespace}-color-primary-dark-2: var(--#{$elnamespace}-color-brand-dark-2);
+
+
+  // large
+  &--large {
+    padding: 12px 15px;
+  }
+
+  // 默认按钮附加样式 使用主色
+  &.useBrandColor {
+    --#{$elnamespace}-button-text-color: #{$brandColor};
+    --#{$elnamespace}-button-border-color: #{$brandColor};
+    --#{$elnamespace}-button-hover-border-color: #{$brandColor};
+  }
+  // 默认按钮附加样式 使用禁用颜色
+  &.useDisableColor, &.useDisableColor:active  {
+    --#{$elnamespace}-color-primary: #{$disableBtnColor};
+    --#{$elnamespace}-color-primary-light-3: var(--#{$elnamespace}-color-brand-light-3);
+    --#{$elnamespace}-color-primary-light-5: var(--#{$elnamespace}-color-brand-light-5);
+    --#{$elnamespace}-color-primary-light-7: var(--#{$elnamespace}-color-brand-light-7);
+    --#{$elnamespace}-color-primary-light-9: var(--#{$elnamespace}-color-brand-light-9);
+    --#{$elnamespace}-color-primary-dark-2: var(--#{$elnamespace}-color-brand-dark-2);
+    --#{$elnamespace}-button-text-color: #{$disableBtnTextColor};
+    --#{$elnamespace}-button-disabled-bg-color: #{$disableBtnColor};
+    color: #{$disableBtnTextColor};
+    border-color: #{$disableBtnColor};
+    background-color: #{$disableBtnColor};
+  }
+}
+
+// link
+.#{$elnamespace}-link {
+  // 默认不加粗
+  --#{$elnamespace}-link-font-weight: 400;
+
+  & + & {
+    margin-left: 20px;
+  }
+}
+
+// link primary
+.#{$elnamespace}-link.#{$elnamespace}-link--primary {
+  // 使用文字链默认色
+  --#{$elnamespace}-color-primary: #{$textlinkColor};
+  --#{$elnamespace}-color-primary-light-3: #{$textlinkHoverColor};
+  @include set-color-mix-level('primary', $textlinkColor, 5, 'light', elVars.$color-white);
+}
+
+// text primary
+.#{$elnamespace}-text.#{$elnamespace}-text--primary {
+  // 使用文字链默认色
+  --#{$elnamespace}-color-primary: #{$textlinkColor};
+
+  &.useBrandColor {
+    --#{$elnamespace}-color-primary: #{$brandColor};
+  }
+}
+
+// dialog
+.#{$elnamespace}-dialog {
+  border-radius: 8px;
+  padding: 0px;
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+  }
+  // 修改默认 padding
+  &__header{
+    padding: 24px 24px 16px;
+  }
+  &__body {
+    padding: 0 24px;
+  }
+  &__footer {
+    padding: 16px 24px 24px;
+  }
+  // 顶部按钮
+  &__headerbtn {
+    // 配合 padding 修改
+    font-size: 20px;
+    top: 11px;
+    right: 3px;
+    // 删除按钮
+    & .#{$elnamespace}-dialog__close, &:hover .#{$elnamespace}-dialog__close {
+      color: var(--#{$elnamespace}-text-color-regular);
+    }
+  }
+}
+
+// drawer
+.#{$elnamespace}-drawer {
+  // header
+  &__header {
+      padding: 12px 24px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--#{$elnamespace}-border-color-light);
+  }
+  // close button
+  &__close-btn {
+    background: #9C9FA7;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+    // hover
+    &:hover {
+      i {
+        color: white;
+      }
+    }
+  }
+  // body
+  &__body {
+      padding: 0 24px 12px;
+  }
+}
+.no-autofill-pwd {
+  .#{$elnamespace}-input__inner {
+    -webkit-text-security: disc !important;
+  }
+}
+
+// form
+.#{$elnamespace}-form {
+  .#{$elnamespace}-form-item {
+    position: relative;
+  }
+
+  .#{$elnamespace}-form-item__label {
+    padding-left: 10px;
+    color: #303133;
+  }
+
+  // 表单项必填项标记(左侧的红点)
+  .#{$elnamespace}-form-item.is-required:not(.is-no-asterisk).asterisk-left > .#{$elnamespace}-form-item__label:before,
+  .#{$elnamespace}-form-item.is-required:not(.is-no-asterisk).asterisk-left > .#{$elnamespace}-form-item__label-wrap > .#{$elnamespace}-form-item__label:before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-weight: 600;
+  }
+
+}
+
+// description
+.#{$elnamespace}-descriptions {
+  &__label {
+    &:not(.is-bordered-label) {
+      // color: var(--#{$elnamespace}-text-color-regular);
+      color: #787878;
+    }
+    &.#{$elnamespace}-descriptions__cell {
+      &:not(.is-bordered-label) {
+        &.is-vertical-label {
+          padding-bottom: 4px;
+        }
+      }
+    }
+  }
+  &__content {
+    &:not(.is-bordered-label) {
+      color: var(--#{$elnamespace}-text-color-primary);
+    }
+  }
+}
+
+// checkbox
+.#{$elnamespace}-checkbox {
+  &__input {
+    &.is-checked {
+      & + .#{$elnamespace}-checkbox__label {
+        color: var(--#{$elnamespace}-checkbox-text-color);
+      }
+    }
+  }
+}
+.#{$elnamespace}-switch {
+  height: 20px;
+  vertical-align: baseline;
+}
+
+// tooltip
+.#{$elnamespace}-popper:not(.#{$elnamespace}-popover):not(.#{$elnamespace}-select__popper):not(.#{$elnamespace}-picker__popper) {
+  > span:first-child {
+    display: block;
+    max-width: 600px;
+    max-height: 210px;
+    overflow-y: auto;
+  }
+}

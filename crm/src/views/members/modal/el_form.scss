@@ -1,0 +1,17 @@
+.custom-class-add89 {
+    .#{$elnamespace}-select, .#{$elnamespace}-input-number{
+        width: 100%;
+        
+    }
+    .#{$elnamespace}-input-number{
+        :deep{
+            .#{$elnamespace}-input__inner{
+                text-align: left;
+            }
+        }
+        
+    }
+    .#{$elnamespace}-form-item{
+        margin-bottom: 24px;        
+    }
+}

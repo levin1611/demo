@@ -1,0 +1,79 @@
+input:-internal-autofill-previewed,
+input:-internal-autofill-selected {
+    // -webkit-text-fill-color: #ffffff !important;
+    transition: background-color 99999s ease-in-out 0s !important;
+}
+
+.login-form {
+    font-size: 12px;
+    font-weight: 400;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-transition-delay: 99999s;
+        -webkit-transition: color 99999s ease-out,
+            background-color 99999s ease-out;
+    }
+
+    .input,
+    input {
+        transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .input,
+    input {
+        width: 100%;
+    }
+
+    .input {
+        // input框
+        input {
+            position: relative;
+            height: 42px;
+            border: 1px solid #DCDFE6;
+            border-radius: 5px;
+            background: transparent;
+            color: #333 !important;
+            caret-color: #333;
+            padding-left: 10px;
+            margin-bottom: 4px;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            font-family: "PingFangSC-Regular";
+            font-size: 14px;
+            &:focus{
+                border: 1px solid #ff7b27;
+                outline: none;
+            }
+            &:focus-visible{
+                border: 1px solid #ff7b27;
+                outline: none;
+            }
+        }
+        .isErr {
+            border-color: #F56C6C;
+        }
+        // 账号密码为空的提示
+        .err-tip {
+            color: #F56C6C;
+            margin-bottom: 9px;
+            min-height: 12px;
+            display: block;
+        }
+    }
+}
+.phoneLoginBox{
+    padding-bottom: 7px;
+    .phone-input{
+        height: 42px;
+        line-height: 42px;
+        color: #333;
+        &::placeholder{
+            font-size: 14px;
+        }
+
+    }
+}

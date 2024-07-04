@@ -1,0 +1,10 @@
+// 导出 scss 变量给 js 用
+
+// 引入全局 scss 变量
+// 如果外部使用 @use 引入本文件时, 不 @use 全局变量文件的话, 全局变量会报错 undefined (用 import @import 就没事)
+@use './variables.module.scss' as *;
+
+// 导出变量 - 导出的才能用, 要用啥导出啥
+:export {
+    elnamespace: $elnamespace;
+}

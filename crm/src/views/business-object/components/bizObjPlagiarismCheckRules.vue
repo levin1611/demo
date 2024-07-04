@@ -1,0 +1,7 @@
+<template>
+    <div>查重规则</div>
+</template>
+<script setup>
+</script>
+<style lang="scss" scoped>
+</style>

@@ -1,0 +1,29 @@
+// 表格页通用样式
+
+// 引入全局 scss 变量(@use 引入本文件时需要)
+@use '@/style/variables.module.scss' as *;
+
+// 基本混入
+@mixin tablePage() {
+    background: #FFF;
+    padding: 25px 24px 20px;
+    box-sizing: border-box;
+
+    &-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    &-title-tip {
+        color: var(--#{$elnamespace}-text-color-regular);
+
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+// element-plus 表格定制修改
+// 注意, 全局性的内容应当放到 element_global.scss 中
+.#{$elnamespace}-table {
+}

@@ -1,0 +1,10 @@
+.convertable{
+    :deep{
+        .#{$elnamespace}-select__wrapper {
+            min-height: 28px;
+        }
+        .#{$elnamespace}-table__cell {
+            padding: 7px 0;
+        }
+    }
+}

@@ -1,0 +1,33 @@
+// 全局 scss 变量配置
+// 1. 此处应当只定义询盘云相关的全局 scss 变量, 比如, 询盘云 UI 设计统一的各种颜色, 字体大小等
+// 2. 除了上述内容外, 询盘云使用到的 UI 框架的询盘云定制命名空间, 也放在此处定义, 方便导出给 js 用
+// 3. 在 vue.config.js 中 additionalData 属性引用了此文件, 组件中可直接使用相关变量
+
+// element-plus 命名空间
+$elnamespace: xhl-el;
+// 品牌色
+$brandColor: #FF752A;
+// 第二主色
+$secondaryColor: #4285F2;
+// success 色
+$successColor: #24A353;
+// warning 色
+$warningColor: #F26805;
+// danger 色
+$dangerColor: #EA4335;
+// error 色
+$errorColor: #F54C38;
+// info 色
+$infoColor: #4E7FFF;
+// 文字链 色
+$textlinkColor: #3B78DE;
+// 文字链 hover 色
+$textlinkHoverColor: #2D63BC;
+// 文字 搜索后高亮 色
+$textSearchHightlightColor: #FFF6A0;
+// 表格行选中色
+$tableRowSelectedColor: #E1E7EE;
+// 按钮禁用颜色
+$disableBtnColor: #E4E6EA;
+// 禁用按钮字体颜色
+$disableBtnTextColor: #909399

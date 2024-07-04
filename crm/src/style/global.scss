@@ -1,0 +1,137 @@
+// 全局通用的样式
+
+// 原子化 class 样式文件
+@use './common.scss';
+@use './detailPage.scss' as detailPage;
+
+// body 样式
+html, body {
+    width: 100%;
+    height: 100%;
+    color: #303133; // 与 element-plus 的 scss 变量 text-color-primary 一致
+    margin: 0;
+    padding: 0;
+}
+.custom_tag{
+    // 自定义select多选下的tag样式
+    
+    .#{$elnamespace}-tag__close{
+        color: #919399;
+        &:hover{
+            background: #c0c4cc;
+        color: #919399;
+
+        }
+    }
+    .#{$elnamespace}-tag.#{$elnamespace}-tag--info{
+            background-color:#f4f4f5;
+            color: #919399;
+            border: 1px solid #cdd0d6;
+            box-sizing: border-box;
+    }
+}
+.#{$elnamespace}-tag--default.in-tooltip{
+    background-color:#f4f4f5;
+    color: #919399;
+    border: 1px solid #cdd0d6;
+    box-sizing: border-box;
+    .#{$elnamespace}-tag__close{
+        color: #919399;
+        &:hover{
+            background: #c0c4cc;
+        color: #919399;
+
+        }
+    }
+
+}
+.custom-table{
+    .#{$elnamespace}-table-v2__row:hover{
+        background: #e1e7ee;
+
+    }
+    .activeRow{
+        background: var(--+$elnamespace+'-table-current-row-bg-color');
+    }
+    &.dividerBorder .#{$elnamespace}-table-v2__row-cell, &.dividerBorder .#{$elnamespace}-table-v2__header-cell{
+        border-left: var(--xhl-el-table-border);
+    }
+    
+    .stripe_dark{
+        background: #fafafa;
+
+    }
+}
+.common-table {
+    @include detailPage.detailPage();
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+    font-size: 14px;
+    &-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 6px;
+    }
+    &-search {
+        margin-bottom: 10px;
+        .label {
+            margin-right: 20px;
+            line-height: 32px;
+        }
+        .xhl-el-select {
+            width: 200px;
+            margin-right: 20px;
+        }
+    }
+    .xhl-el-table .cell {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.#{$elnamespace}-popover.#{$elnamespace}-popper.settingTabel-popver {
+    padding: 0px;
+    & > div > div {
+       padding: 12px 20px; 
+       border-bottom: 1px solid #E4E7ED;
+    }
+    .settingTabel-changeModel-box {
+        .settingTabel-changeModel {
+            margin-top: 8px;
+            line-height: 24px;
+            & > span{
+                border: 1px solid #DCDEE0;
+                border-right: 0px;
+                padding: 5px 12px;
+                cursor: pointer;
+                &.active{
+                    color: #4285F2;
+                    border: 1px solid #4285F2;
+                }
+            }
+            span:nth-child(1){
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            span:nth-child(2){
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+            }
+        }
+    }
+}
+.#{$elnamespace}-radio__input.is-checked + .#{$elnamespace}-radio__label {
+    color: #303133;
+}
+input:-webkit-autofill:focus,  // /* 输入框聚焦时的样式代码 */
+input:-webkit-autofill:hover, // * 鼠标悬浮时的样式代码 */
+input:-webkit-autofill {
+    /* 自动填充时的样式代码 */
+    -webkit-transition-delay: 111111s;
+    -webkit-transition: color 11111s ease-out, background-color 111111s ease-out;
+}

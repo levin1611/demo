@@ -1,0 +1,181 @@
+// 通用的原子化 css class, 复制 tailwindcss 的类名和样式
+// 在 tailwindcss 官网(https://www.tailwindcss.cn)搜要用的 class, 搜到但项目里 class 没有定义, 就自己复制下代码粘过来, 方便不重名
+
+// cursor
+.cursor-pointer {
+  cursor: pointer;
+}
+.cursor-move {
+  cursor: move;
+}
+
+// margin
+.ml-3 {
+  margin-left: 0.75rem; /* 12px */
+}
+.mb-3px {
+  margin-bottom: 3px;
+}
+.mx-3 {
+  margin-left: 0.75rem; /* 12px */
+  margin-right: 0.75rem; /* 12px */
+}
+.mx-5 {
+  margin-left: 1.25rem; /* 20px */
+  margin-right: 1.25rem; 
+}
+.margin-right-20 {
+  margin-right: 20px;
+}
+.margin-top-12 {
+  margin-top: 12px;
+}
+.margin-right-12 {
+  margin-right: 12px;
+}
+
+// font size
+.text-base {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+}
+
+// font weight
+.font-bold {
+  font-weight: 700;
+}
+
+// display
+.flex {
+  display: flex;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.hidden {
+  display: none;
+}
+
+// flex
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+// padding
+.p-0 {
+  padding: 0px;
+}
+.padding-left-20{
+  padding-left: 20px;
+}
+.padding-lr-20{
+  padding: 0px 20px;
+}
+// text overflow
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// pointer-events
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+// position
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+// Top / Right / Bottom / Left
+.top-0 {
+  top: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.inset-0 {
+  inset: 0px;
+}
+
+.max-w-300 {
+  max-width: 300px;
+}
+.max-w-310 {
+  max-width: 310px;
+}
+.min-h-300 {
+  min-height: 300px;
+}
+.min-h-500 {
+  min-height: 500px;
+}
+
+// color
+.text-secondary {
+  color: #4285F2;
+}
+
+// width
+.w-full {
+  width: 100%;
+}
+.w-22 {
+  width: 88px;
+}
+.w-75 {
+  width: 300px;
+}
+
+// height
+.h-50 {
+  height: 200px;
+}
+.h-75 {
+  height: 300px;
+}
+.h-115 {
+  height: 460px;
+}
+
+// z-index
+.z-10 {
+  z-index: 10;
+}
+
+// line-height
+.leading-none {
+  line-height: 1;
+}
+
+// rotate
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+// white-space
+.whitespace-break-spaces {
+  white-space: break-spaces;
+}

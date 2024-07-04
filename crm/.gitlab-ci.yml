@@ -1,0 +1,259 @@
+#定义变量 
+variables:
+  #定义克隆的路径 $CI_BUILDS_DIR为runners.build_dir设置的路径
+  GIT_CLONE_TPATH: $CI_BUILDS_DIR/test/fe/front-permissionSystem
+  GIT_CLONE_DPATH: $CI_BUILDS_DIR/dev/fe/front-permissionSystem
+  GIT_CLONE_MPATH: $CI_BUILDS_DIR/master/fe/front-permissionSystem
+
+  #git ssh地址
+  GITLAB_SSH: git@codeserv.leadscloud.com:fe/front-permissionsystem.git
+
+  # 指定git获取代码的方式（clone，fetch,none）
+  GIT_STRATEGY: none
+ 
+# 全局定义流水线阶段（pipeline）  
+stages:
+  #构建所需要的资源包
+  - build 
+  #部署到远程服务器
+  - deploy
+  - message
+
+########测试环境部署########
+build_job_dev:
+  stage: build
+  only:
+    # 指定 分支
+    - dev
+  except:
+    - master
+    - test
+  tags:
+    # 指定执行作业的runner
+    - test66
+  script:
+    - echo "环境部署操作"
+    - docker run --rm -v /root/FrontPermissionSystem_nodecache/node_cache:/node_build/node_cache node18_dev:v1
+    # 创建对应目录
+    #- mkdir -p $GIT_CLONE_DPATH
+    #- cd $GIT_CLONE_DPATH
+    # 代码克隆
+    #- if [ ! -d ".git" ]; then
+    #- git clone $GITLAB_SSH $GIT_CLONE_DPATH
+    #- else
+    #- git stash
+    #- fi
+    #- git checkout dev
+    #- git pull
+    #- git status
+    #- echo $CI_COMMIT_BRANCH
+    #- echo "========开始构建项目========"
+    #- node -v
+    # 切换镜像地址为私服地址
+    #- /usr/local/node-v16.9.1/bin/npm set registry http://172.18.136.5:8081/repository/npm-public/-
+    #- npm set registry http://172.18.136.5:8081/repository/npm-public/-
+    #- git config --global url.“https://”.insteadOf ssh://git@-
+    #- npm set registry https://registry.npmmirror.com
+    #- rm -rf package-lock.json
+    # 清理缓存
+    #- npm cache verify
+    # 下载依赖
+    #- npm i --unsafe-perm=true --allow-root
+    #- npm install html2canvas --unsafe-perm=true --allow-root
+    #- npm install element-ui@2.13.0-custom.26
+    # 打包资源
+    #- npm run build:prod-linux-
+    #- npm run build
+    
+
+deploy_job_dev:
+  stage: deploy
+  only:
+    - dev
+  except:
+    - master
+    - test
+  tags:
+    - test66
+  script:
+    - echo "========完成部署========"
+    #- ssh root@10.110.40.17 'rm -rf /usr/local/nginx/html/www/Front-PermissionSystem/*'
+    #- scp -r $GIT_CLONE_DPATH/dist/* root@10.110.40.17:/usr/local/nginx/html/ykwww/Front-PermissionSystem/
+
+    #- cd $CI_BUILDS_DIR/dev/fe
+    #- rm -rf front-permissionSystem
+
+
+########测试环境部署########
+build_job_test:
+  stage: build
+  only:
+    # 指定 分支
+    - test
+  except:
+    - master
+    - dev
+  tags:
+    # 指定执行作业的runner
+    - test66
+  script:
+    - echo "环境部署操作"
+    - docker run --rm -v /root/FrontPermissionSystem_nodecache/node_cache:/node_build/node_cache node18_test:v1
+#    #  创建对应目录
+#    - mkdir -p $GIT_CLONE_TPATH
+#    - cd $GIT_CLONE_TPATH
+#    # 代码克隆
+#    - if [ ! -d ".git" ]; then
+#    - git clone $GITLAB_SSH $GIT_CLONE_TPATH
+#    - else
+#    - git stash
+#    - fi
+#    - git checkout test
+#    - git pull
+#    - git status
+#    - echo $CI_COMMIT_BRANCH
+#    - echo "========开始构建项目========"
+#    # 切换镜像地址为私服地址
+#    - npm set registry http://172.18.136.5:8081/repository/npm-public/
+#    - rm -rf package-lock.json
+#    # 清理缓存
+#    - npm cache verify
+#    # 下载依赖
+#    - npm i --unsafe-perm=true --allow-root
+#    - npm install html2canvas --unsafe-perm=true --allow-root
+#    #- npm install element-ui@2.13.0-custom.26
+#    # 打包资源
+#    - npm run build:prod-linux
+#    
+#
+deploy_job_test:
+  stage: deploy
+  only:
+    - test
+  except:
+    - master
+    - dev
+  tags:
+    - test66
+  script:
+    - echo "========测试环境部署完成========"
+#    - ssh root@10.110.40.17 'rm -rf /usr/local/nginx/html/www/Front-Mail/*'
+#    - scp -r $GIT_CLONE_TPATH/Front-Mail/* root@10.110.40.17:/usr/local/nginx/html/www/Front-Mail/
+#
+#    - cd $CI_BUILDS_DIR/test/fe
+#    - rm -rf front-mail
+
+
+########生产环境部署########
+#build_job_master:
+#  stage: build
+#  only:
+#    # 指定 分支
+#    - master
+#  except:
+#    - dev
+#    - test
+#  tags:
+#    # 指定执行作业的runner
+#    - hk75
+#  script:
+#    - echo "环境部署操作"
+#    # 创建对应目录
+#    - mkdir -p $GIT_CLONE_MPATH
+#    - cd $GIT_CLONE_MPATH
+#    # 代码克隆
+#    - if [ ! -d ".git" ]; then
+#    - git clone $GITLAB_SSH $GIT_CLONE_MPATH
+#    - else
+#    - git stash
+#    - fi
+#    - git checkout master
+#    - git pull
+#    - git status
+#    - echo $CI_COMMIT_BRANCH
+#    - echo "========开始构建项目========"
+#    # 切换镜像地址为私服地址
+#    - npm set registry http://172.18.136.5:8081/repository/npm-public/
+#    - rm -rf package-lock.json
+#    # 清理缓存
+#    - npm cache verify
+#    # 下载依赖
+#    - npm i --unsafe-perm=true --allow-root
+#    - npm install html2canvas --unsafe-perm=true --allow-root
+#    # 打包资源
+#    - npm run build:prod-linux
+#
+#deploy_job_master:
+#  stage: deploy
+#  only:
+#    - master
+#  except:
+#    - dev
+#    - test
+#  tags:
+#    - hk75
+#  script:
+#    - cd $GIT_CLONE_MPATH/Front-Mail/
+#    - tar zcvf front-mail.tar.gz *
+#
+#    - echo "========开始远程部署项目并重启========"
+##    - ssh ${user}@${host_3} 'rm -rf /var/www/Front-Mail/*'
+##    - scp -r $GIT_CLONE_MPATH/Front-Mail/front-mail.tar.gz ${user}@${host_3}:/var/www/Front-Mail/
+##    - ssh ${user}@${host_3} 'cd /var/www/Front-Mail/ && tar zxf front-mail.tar.gz'
+#
+#  # 正式环境发布资源包
+#    - echo "========推送至CN-27========"
+#    - ssh root@10.10.32.27 'mkdir -p /usr/local/nginx/html/www/Front-Mail-new'
+#    - ssh root@10.10.32.27 'rm -rf /usr/local/nginx/html/www/Front-Mail-new/*'
+#    - scp -r $GIT_CLONE_MPATH/Front-Mail/front-mail.tar.gz root@10.10.32.27:/usr/local/nginx/html/www/Front-Mail-new/
+#    - ssh root@10.10.32.27 'cd /usr/local/nginx/html/www/Front-Mail-new/ && tar zxf front-mail.tar.gz'
+#    - ssh root@10.10.32.27 'rm -rf  /usr/local/nginx/html/www/Front-Mail-new/front-mail.tar.gz'
+#
+#    - echo "========推送至HK========"
+#    - ssh root@172.18.18.4 'mkdir -p /usr/local/nginx/html/www/Front-Mail-new'
+#    - ssh root@172.18.18.4 'rm -rf /usr/local/nginx/html/www/Front-Mail-new/*'
+#    - scp -r $GIT_CLONE_MPATH/Front-Mail/front-mail.tar.gz root@172.18.18.4:/usr/local/nginx/html/www/Front-Mail-new/
+#    - ssh root@172.18.18.4 'cd /usr/local/nginx/html/www/Front-Mail-new/ && tar zxf front-mail.tar.gz'
+#    - ssh root@172.18.18.4 'rm -rf  /usr/local/nginx/html/www/Front-Mail-new/front-mail.tar.gz'
+#
+#
+#    - echo "========推送至SG========"
+#    - ssh root@119.28.115.150 'mkdir -p /usr/local/nginx/html/www/Front-Mail-new'
+#    - ssh root@119.28.115.150 'rm -rf /usr/local/nginx/html/www/Front-Mail-new/*'
+#    - scp -r $GIT_CLONE_MPATH/Front-Mail/front-mail.tar.gz root@119.28.115.150:/usr/local/nginx/html/www/Front-Mail-new/
+#    - ssh root@119.28.115.150 'cd /usr/local/nginx/html/www/Front-Mail-new/ && tar zxf front-mail.tar.gz'
+#    - ssh root@119.28.115.150 'rm -rf  /usr/local/nginx/html/www/Front-Mail-new/front-mail.tar.gz'
+#
+#
+#
+#
+#    - cd $CI_BUILDS_DIR/master/fe
+#    - rm -rf front-mail
+#构建成功通知
+message_ok_master:
+  stage: message
+  only:
+    - master
+  when: on_success
+  except:
+    - dev
+    - test
+  tags:
+    - develop
+  script:
+    - echo "OK"
+    - "curl 'https://oapi.dingtalk.com/robot/send?access_token=cf77edb69798005b881c36bd18a6073d15988590da9fff43b7ee1fa7ff9f0d4f' -H 'Content-Type: application/json' -d '{\"msgtype\": \"text\",\"text\": {\"content\": \"迭代通知---Message! 前端项目Front-Mail&&上传成功\"}}'"
+#构建失败通知
+message_error_master:
+  stage: message
+  only:
+    - master
+  when: on_failure
+  except:
+    - dev
+    - test
+  tags:
+    - develop
+  script:
+    - echo "OK"
+    - "curl 'https://oapi.dingtalk.com/robot/send?access_token=cf77edb69798005b881c36bd18a6073d15988590da9fff43b7ee1fa7ff9f0d4f' -H 'Content-Type: application/json' -d '{\"msgtype\": \"text\",\"text\": {\"content\": \"迭代通知---Message! 前端项目Front-Mail&&上传失败，请检查流水线状态\"}}'"

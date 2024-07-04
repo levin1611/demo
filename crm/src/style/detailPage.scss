@@ -1,0 +1,34 @@
+// 详情页通用样式
+
+// 引入全局 scss 变量(@use 引入本文件时需要)
+@use '@/style/variables.module.scss' as *;
+
+// 基本混入
+@mixin detailPage() {
+    background: #FFF;
+    padding: 16px 24px 10px;
+    box-sizing: border-box;
+    height: 100%;
+
+    &-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-left {
+            display: flex;
+            align-items: center;
+        }
+
+        &-right {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

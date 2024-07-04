@@ -1,0 +1,53 @@
+// 定制修改 element-plus 主题(组件样式)
+// 原则:
+// 1. 优先使用 element-plus 官方推荐的定制主题方式修改样式, 使用 scss 变量覆盖 element-plus 默认 scss 变量, 同时注意命名空间
+// 2. element-plus 有些变量不支持覆盖, 或者某一类组件需要单独处理/定义, 则可使用 css 变量覆盖全局或某类组件的默认变量, 写到 element_global.scss 中
+
+// 引入全局 scss 变量
+// 全局变量已经在 additionalData 里引了, 但此处如果不再引入, 外部使用 @use 引入本文件时, 全局变量会报错 undefined (用 @import 就没事)
+@use '@/style/variables.module.scss' as *;
+
+// 自定义命名空间
+@forward 'element-plus/theme-chalk/src/mixins/config.scss' with (
+  $namespace: $elnamespace
+);
+
+// 修改 element-plus 默认样式的变量初始值
+// https://github.com/element-plus/element-plus/blob/dev/packages/theme-chalk/src/var.scss
+@forward 'element-plus/theme-chalk/src/common/var.scss' with (
+  $colors: (
+    'primary': (
+      'base': $secondaryColor
+    ),
+    'success': (
+      'base': $successColor
+    ),
+    'warning': (
+      'base': $warningColor
+    ),
+    'danger': (
+      'base': $dangerColor
+    ),
+    'error': (
+      'base': $errorColor
+    ),
+    'info': (
+      'base': $infoColor
+    ),
+  ),
+  $common-component-size: (
+    'large': 36px
+  ),
+  $pagination: (
+    'hover-color': black
+  ),
+  $slider: (
+    'main-bg-color': $brandColor
+  ),
+  $table: (
+    'text-color': var(--#{$elnamespace}-text-color-primary),
+    'header-text-color': var(--#{$elnamespace}-text-color-primary),
+    'row-hover-bg-color': #EFF2F7,
+    'current-row-bg-color': #FFF7F2
+  )
+);
