@@ -42,7 +42,7 @@
     "qiankun": "^2.7.5",
     "qiniu-js": "^3.4.1",
     "qrcodejs2": "0.0.2",
-    "qs": "6.9.1",
+    "qs": "6.9.7",
     "sortablejs": "1.10.2",
     "swiper": "5.3.6",
     "tinymce": "^5.5.0",
